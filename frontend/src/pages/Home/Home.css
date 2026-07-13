@@ -1,0 +1,16 @@
+.home-page {
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #f5f7f6;
+}
+
+.home-page h1 {
+  margin: 0 0 16px;
+  font-size: 36px;
+}
+
+.home-page p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
