@@ -1,0 +1,63 @@
+.masjid-search-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.masjid-search-row input {
+  flex: 1;
+  min-width: 220px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.masjid-helper-text {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.masjid-nearest-pill {
+  margin-top: 8px;
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #e8f4ed;
+  color: var(--brand-strong);
+  border: 1px solid #c9dfd1;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.masjid-live-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.masjid-live-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.masjid-live-item {
+  display: grid;
+  grid-template-columns: minmax(130px, 1.5fr) repeat(3, minmax(90px, 1fr));
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .masjid-live-item {
+    grid-template-columns: 1fr;
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 8px;
+  }
+}

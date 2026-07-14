@@ -1,0 +1,35 @@
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: min(780px, calc(100% - 20px));
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-around;
+  gap: 6px;
+  padding: 8px;
+  box-shadow: var(--shadow);
+  z-index: 30;
+}
+
+.bottom-nav a {
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.bottom-nav a.active {
+  color: var(--brand-strong);
+  background: var(--brand-ink);
+}
+
+@media (max-width: 640px) {
+  .bottom-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}

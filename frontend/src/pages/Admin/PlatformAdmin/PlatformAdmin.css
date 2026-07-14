@@ -1,29 +1,22 @@
-.platFormAdmin{
-  padding: 30px;
-}
-
-.platFormAdminMargin {
-  margin-bottom: 25px;
-}
-
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  gap: 14px;
 }
 
 .card {
-  background: white;
-  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .card p {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--brand-strong);
 }
