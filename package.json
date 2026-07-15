@@ -1,4 +1,13 @@
 {
+  "name": "marakah",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix Backend run dev",
+    "build": "npm --prefix frontend run build",
+    "start:backend": "npm --prefix Backend run start"
+  },
   "dependencies": {
     "react-router-dom": "^7.18.1"
   }

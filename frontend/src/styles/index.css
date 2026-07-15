@@ -4,15 +4,39 @@
   box-sizing: border-box;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   background: radial-gradient(circle at top right, #e6efe8 0%, var(--bg) 46%);
   color: var(--text);
   font-family: "Manrope", "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
 }
 
 #root {
   min-height: 100vh;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -25,4 +49,32 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #1a6b53;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

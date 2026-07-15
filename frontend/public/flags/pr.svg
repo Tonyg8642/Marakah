@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Puerto Rico flag">
+  <rect width="900" height="600" fill="#ffffff"/>
+  <rect width="900" height="80" y="0" fill="#ed1c24"/>
+  <rect width="900" height="80" y="160" fill="#ed1c24"/>
+  <rect width="900" height="80" y="320" fill="#ed1c24"/>
+  <rect width="900" height="80" y="480" fill="#ed1c24"/>
+  <polygon points="0,0 390,300 0,600" fill="#0050a4"/>
+  <polygon fill="#ffffff" points="145,225 162,275 215,275 172,307 189,358 145,326 101,358 118,307 75,275 128,275"/>
+</svg>

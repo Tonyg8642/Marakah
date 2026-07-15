@@ -1,0 +1,43 @@
+{
+  "default": [
+    {
+      "title": "Fajr Reminder",
+      "startsAt": "05:20",
+      "hall": "Main Prayer Hall"
+    },
+    {
+      "title": "After Maghrib Tafsir",
+      "startsAt": "20:50",
+      "hall": "Lecture Hall"
+    }
+  ],
+  "cities": {
+    "Dallas": [
+      {
+        "title": "Community Quran Circle",
+        "startsAt": "19:15",
+        "hall": "Library"
+      },
+      {
+        "title": "Youth Halaqah",
+        "startsAt": "18:30",
+        "hall": "Multipurpose Room"
+      }
+    ],
+    "Irving": [
+      {
+        "title": "Family Night",
+        "startsAt": "19:45",
+        "hall": "Main Hall"
+      }
+    ],
+    "Plano": [
+      {
+        "title": "Sisters Tajweed",
+        "startsAt": "17:30",
+        "hall": "Room B"
+      }
+    ]
+  },
+  "placeIds": {}
+}

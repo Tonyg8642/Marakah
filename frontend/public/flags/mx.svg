@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Mexico flag">
+  <rect width="300" height="600" x="0" fill="#006847"/>
+  <rect width="300" height="600" x="300" fill="#ffffff"/>
+  <rect width="300" height="600" x="600" fill="#ce1126"/>
+  <circle cx="450" cy="300" r="30" fill="#9b7c30"/>
+</svg>

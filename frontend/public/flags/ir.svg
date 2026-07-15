@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Iran flag">
+  <rect width="900" height="200" y="0" fill="#239f40"/>
+  <rect width="900" height="200" y="200" fill="#ffffff"/>
+  <rect width="900" height="200" y="400" fill="#da0000"/>
+  <circle cx="450" cy="300" r="28" fill="none" stroke="#da0000" stroke-width="8"/>
+</svg>

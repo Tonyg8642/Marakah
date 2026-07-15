@@ -12,6 +12,7 @@ import Login from "../pages/Auth/Login";
 import Signup from "../pages/Auth/Signup";
 import PlatformAdmin from "../pages/Admin/PlatformAdmin/PlatformAdmin";
 import MasjidDashboard from "../pages/Admin/MasjidDashboard/MasjidDashboard";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function AppRouter() {
   return (
@@ -24,13 +25,17 @@ export default function AppRouter() {
         <Route path="/scholars" element={<Scholars />} />
         <Route path="/events" element={<Events />} />
         <Route path="/feed" element={<Feed />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Route>
 
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/platform-admin" element={<PlatformAdmin />} />
-      <Route path="/masjid-dashboard" element={<MasjidDashboard />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="/platform-admin" element={<PlatformAdmin />} />
+        <Route path="/masjid-dashboard" element={<MasjidDashboard />} />
+      </Route>
     </Routes>
   );
 }

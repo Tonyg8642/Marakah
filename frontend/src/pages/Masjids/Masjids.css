@@ -7,9 +7,20 @@
 
 .masjid-search-row input {
   flex: 1;
-  min-width: 220px;
+  min-width: 180px;
   border: 1px solid var(--border);
   border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.masjid-search-row select {
+  min-width: 180px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
   padding: 10px 12px;
   font: inherit;
   background: #fff;
@@ -34,9 +45,124 @@
   font-size: 0.82rem;
 }
 
+.masjid-nearest-card {
+  margin-top: 12px;
+  border: 1px solid #c9dfd1;
+  background: #f4fbf7;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.masjid-nearest-card h3 {
+  margin: 0;
+  color: var(--brand-strong);
+}
+
+.masjid-salah-line {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.45;
+}
+
+.masjid-salah-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.masjid-salah-card {
+  width: 132px;
+  min-height: 58px;
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.masjid-salah-card strong {
+  color: var(--text);
+}
+
+.masjid-salah-card--current {
+  border-color: var(--brand-strong);
+  background: #e8f4ed;
+  box-shadow: 0 0 0 1px #c9dfd1 inset;
+}
+
+.masjid-next-prayer {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+
+.masjid-result-card {
+  overflow: hidden;
+}
+
+.masjid-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.masjid-image--placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--surface-muted);
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
 .masjid-live-panel {
   display: grid;
   gap: 10px;
+}
+
+.masjid-pagination-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.masjid-page-label {
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.masjid-map-panel {
+  display: grid;
+  gap: 10px;
+}
+
+.masjid-map-links {
+  display: grid;
+  gap: 8px;
+}
+
+.masjid-map-link {
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+
+.masjid-map-embed {
+  width: 100%;
+  min-height: 280px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
 }
 
 .masjid-live-head {
@@ -49,15 +175,57 @@
 
 .masjid-live-item {
   display: grid;
-  grid-template-columns: minmax(130px, 1.5fr) repeat(3, minmax(90px, 1fr));
+  grid-template-columns: minmax(140px, 1.6fr) repeat(2, minmax(110px, 1fr));
   gap: 8px;
   align-items: center;
 }
 
 @media (max-width: 720px) {
+  .masjid-search-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .masjid-search-row input,
+  .masjid-search-row select,
+  .masjid-search-row button {
+    width: 100%;
+  }
+
+  .masjid-salah-line {
+    font-size: 0.86rem;
+    line-height: 1.4;
+  }
+
+  .masjid-salah-grid {
+    gap: 8px;
+  }
+
+  .masjid-salah-card {
+    width: 100%;
+    max-width: 260px;
+    font-size: 0.86rem;
+  }
+
   .masjid-live-item {
     grid-template-columns: 1fr;
     border-bottom: 1px dashed var(--border);
     padding-bottom: 8px;
+  }
+
+  .masjid-pagination-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
+    width: 100%;
+  }
+
+  .masjid-page-label {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .masjid-map-embed {
+    min-height: 220px;
   }
 }

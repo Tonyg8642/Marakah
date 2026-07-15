@@ -1,13 +1,22 @@
 .searchbar {
   flex: 1;
   max-width: 420px;
+  min-width: 220px;
 }
 
 .searchbar input {
   width: 100%;
   border: 1px solid var(--border);
   border-radius: 999px;
+  min-height: 44px;
   padding: 10px 14px;
   font: inherit;
   background: #fff;
+}
+
+@media (max-width: 850px) {
+  .searchbar {
+    max-width: none;
+    width: 100%;
+  }
 }

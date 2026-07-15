@@ -1,34 +1,37 @@
 import "./PlatformAdmin.css";
+import { useTranslation } from "react-i18next";
 
 export default function PlatformAdmin() {
+  const { t } = useTranslation();
+
   return (
     <main className="page platform-admin">
       <section className="page-hero">
-        <p className="eyebrow">Platform Control</p>
-        <h1>Platform Administration</h1>
+        <p className="eyebrow">{t("admin.platformControl")}</p>
+        <h1>{t("admin.platformTitle")}</h1>
       </section>
 
-      <div className="dashboard-grid">
-        <div className="card">
-          <h2>Total Masjids</h2>
+      <section className="dashboard-grid" aria-label="Platform metrics">
+        <article className="card">
+          <h2>{t("admin.totalMasjids")}</h2>
           <p>128</p>
-        </div>
+        </article>
 
-        <div className="card">
-          <h2>Total Users</h2>
+        <article className="card">
+          <h2>{t("admin.totalUsers")}</h2>
           <p>19,402</p>
-        </div>
+        </article>
 
-        <div className="card">
-          <h2>Pending Approvals</h2>
+        <article className="card">
+          <h2>{t("admin.pendingApprovals")}</h2>
           <p>17</p>
-        </div>
+        </article>
 
-        <div className="card">
-          <h2>Total Donations</h2>
+        <article className="card">
+          <h2>{t("admin.totalDonations")}</h2>
           <p>$84.2K</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </main>
   );
 }

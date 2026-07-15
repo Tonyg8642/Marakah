@@ -1,7 +1,7 @@
 .home {
-  padding: 24px 16px 88px;
-  max-width: 1040px;
-  margin: 0 auto;
+  padding: 18px 0 88px;
+  width: 100%;
+  margin: 0;
 }
 
 .hero {
@@ -21,13 +21,16 @@
   line-height: 1.5;
 }
 
-.hero button {
+.hero__cta {
   background: #1e4a3f;
   color: #fff;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
+  min-height: 44px;
   padding: 10px 14px;
-  cursor: pointer;
+  font-weight: 700;
 }
 
 .welcome-user {
@@ -81,6 +84,7 @@
   border: 1px solid #d8d8d8;
   background: #fafafa;
   border-radius: 8px;
+  min-height: 44px;
   padding: 8px 12px;
   cursor: pointer;
 }
@@ -90,4 +94,25 @@
   padding-top: 10px;
   border-top: 1px dashed #d7d7d7;
   color: #2b2b2b;
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .welcome-user,
+  .reminder-card {
+    padding: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+  }
+
+  .reminders__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__cta,
+  .reminder-card button {
+    width: 100%;
+  }
 }

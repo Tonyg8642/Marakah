@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const posts = [
   {
     author: "Amina S.",
@@ -14,11 +16,13 @@ const posts = [
 ];
 
 export default function Feed() {
+  const { t } = useTranslation();
+
   return (
     <main className="page">
       <section className="page-hero">
-        <p className="eyebrow">Community Feed</p>
-        <h1>Stay connected with beneficial updates</h1>
+        <p className="eyebrow">{t("feed.eyebrow")}</p>
+        <h1>{t("feed.title")}</h1>
       </section>
 
       <section className="stack">

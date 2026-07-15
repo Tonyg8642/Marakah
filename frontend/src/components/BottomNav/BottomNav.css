@@ -16,10 +16,15 @@
 }
 
 .bottom-nav a {
+  min-height: 44px;
   padding: 8px 10px;
   border-radius: 10px;
   color: var(--text-soft);
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .bottom-nav a.active {
@@ -31,5 +36,11 @@
   .bottom-nav {
     overflow-x: auto;
     justify-content: flex-start;
+    scrollbar-width: thin;
+    padding-inline: 10px;
+  }
+
+  .bottom-nav a {
+    flex: 0 0 auto;
   }
 }

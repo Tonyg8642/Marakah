@@ -7,7 +7,7 @@
 .app-content {
   width: min(1100px, 100% - 24px);
   margin: 0 auto;
-  padding-bottom: 90px;
+  padding-bottom: calc(90px + env(safe-area-inset-bottom));
 }
 
 .page {
@@ -15,6 +15,7 @@
   flex-direction: column;
   gap: 18px;
   padding: 18px 0;
+  min-width: 0;
 }
 
 .page-hero {
@@ -107,6 +108,7 @@
 .btn-primary,
 .btn-secondary {
   border-radius: 10px;
+  min-height: 44px;
   padding: 10px 14px;
   font-weight: 700;
   cursor: pointer;
@@ -125,11 +127,21 @@
   align-self: flex-start;
 }
 
+.btn-primary:hover,
+.btn-secondary:hover {
+  filter: brightness(0.98);
+}
+
 .list-rows {
   margin: 10px 0 0;
   padding-left: 18px;
   display: grid;
   gap: 8px;
+}
+
+html[dir="rtl"] .list-rows {
+  padding-left: 0;
+  padding-right: 18px;
 }
 
 .auth-page {
@@ -191,13 +203,37 @@
 .auth-form input {
   border: 1px solid var(--border);
   border-radius: 10px;
+  min-height: 44px;
   padding: 10px 12px;
   font: inherit;
+}
+
+.auth-form select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
 }
 
 .auth-biometric {
   display: grid;
   gap: 8px;
+}
+
+.auth-ping {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.auth-ping .btn-secondary,
+.auth-biometric .btn-secondary {
+  width: 100%;
 }
 
 .auth-biometric .btn-secondary {
@@ -207,4 +243,48 @@
 .auth-note {
   color: var(--text-soft);
   font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .app-content {
+    width: calc(100% - 16px);
+    padding-bottom: calc(102px + env(safe-area-inset-bottom));
+  }
+
+  .auth-page {
+    min-height: calc(100vh - 156px);
+    align-items: start;
+    padding-top: 14px;
+  }
+
+  .auth-card {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .auth-symbols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .page-hero {
+    padding: 18px;
+  }
+
+  .card-grid.two,
+  .card-grid.three {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1536px) {
+  .app-content {
+    width: min(1340px, 100% - 48px);
+  }
 }

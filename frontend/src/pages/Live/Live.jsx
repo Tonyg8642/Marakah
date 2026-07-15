@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const streamRooms = [
   { title: "Maghrib Reflection", host: "Ustadh Hamza", viewers: "1.3K" },
   { title: "Qur'an Circle", host: "Shaykh Idris", viewers: "840" },
@@ -5,11 +7,13 @@ const streamRooms = [
 ];
 
 export default function Live() {
+  const { t } = useTranslation();
+
   return (
     <main className="page">
       <section className="page-hero">
-        <p className="eyebrow">Live Sessions</p>
-        <h1>Join beneficial broadcasts in real time</h1>
+        <p className="eyebrow">{t("live.eyebrow")}</p>
+        <h1>{t("live.title")}</h1>
       </section>
 
       <section className="card-grid three">
@@ -17,21 +21,23 @@ export default function Live() {
           <article className="surface-card" key={room.title}>
             <span className="pill live">LIVE</span>
             <h3>{room.title}</h3>
-            <p>Host: {room.host}</p>
-            <p>{room.viewers} watching now</p>
+            <p>
+              {t("live.host")}: {room.host}
+            </p>
+            <p>{t("live.watchingNow", { count: room.viewers })}</p>
             <button type="button" className="btn-secondary">
-              Join Stream
+              {t("live.joinStream")}
             </button>
           </article>
         ))}
       </section>
 
       <section className="surface-panel">
-        <h2>Today's Schedule</h2>
+        <h2>{t("live.schedule")}</h2>
         <ul className="list-rows">
-          <li>5:15 PM - Evening Adhkar</li>
-          <li>7:00 PM - Tafsir Session</li>
-          <li>9:00 PM - Open Q&A</li>
+          <li>{t("live.items.one")}</li>
+          <li>{t("live.items.two")}</li>
+          <li>{t("live.items.three")}</li>
         </ul>
       </section>
     </main>

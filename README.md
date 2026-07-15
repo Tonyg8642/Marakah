@@ -20,8 +20,8 @@ Use Vercel or Netlify to host the frontend so users can open it on computer or p
 2. Import the repo at https://vercel.com/new.
 3. Set Root Directory to `frontend`.
 4. Use:
-	- Build command: `npm run build`
-	- Output directory: `dist`
+   - Build command: `npm run build`
+   - Output directory: `dist`
 5. Deploy.
 
 ### Netlify
@@ -30,8 +30,8 @@ Use Vercel or Netlify to host the frontend so users can open it on computer or p
 2. Import the repo at https://app.netlify.com/start.
 3. Set Base directory to `frontend`.
 4. Use:
-	- Build command: `npm run build`
-	- Publish directory: `dist`
+   - Build command: `npm run build`
+   - Publish directory: `dist`
 5. Deploy.
 
 After deployment, you will get a live URL (for example, `https://your-app.vercel.app`).

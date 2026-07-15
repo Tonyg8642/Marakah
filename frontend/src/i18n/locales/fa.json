@@ -1,0 +1,470 @@
+{
+  "language": {
+    "label": "زبان",
+    "description": "زبان ترجیحی خود را انتخاب کنید",
+    "save": "ذخیره زبان",
+    "saved": "ترجیح زبان به‌روزرسانی شد.",
+    "failed": "ذخیره ترجیح زبان ممکن نشد.",
+    "detecting": "Detecting language...",
+    "options": {
+      "en": "انگلیسی",
+      "ar": "عربی",
+      "fa": "فارسی",
+      "ur": "اردو",
+      "so": "سومالیایی",
+      "es": "اسپانیایی"
+    }
+  },
+  "nav": {
+    "home": "خانه",
+    "live": "زنده",
+    "recordings": "ضبط‌ها",
+    "masjids": "مساجد",
+    "feed": "خوراک",
+    "profile": "پروفایل",
+    "events": "رویدادها",
+    "login": "ورود",
+    "signup": "ثبت‌نام",
+    "logout": "خروج"
+  },
+  "search": {
+    "label": "Search reminders, events, and scholars",
+    "placeholder": "Search reminders, events, scholars"
+  },
+  "home": {
+    "heroTitle": "به مَرَکه خوش آمدید",
+    "heroText": "ایمان خود را با یادآوری‌ها، سخنرانی‌ها و دانش اسلامی مفید تقویت کنید.",
+    "explore": "کاوش",
+    "welcome": "Welcome {{name}}",
+    "todayReminders": "یادآوری‌های امروز",
+    "readMore": "Read More",
+    "readLess": "Read Less",
+    "reminders": {
+      "remember": {
+        "title": "Remember Allah",
+        "text": "Verily, in the remembrance of Allah do hearts find rest.",
+        "reason": "Regular remembrance keeps the heart calm, strengthens trust in Allah, and helps you respond with wisdom during stress."
+      },
+      "salah": {
+        "title": "Protect Your Salah",
+        "text": "Prayer is your daily connection with Allah.",
+        "reason": "Salah builds discipline, keeps your day anchored around worship, and protects you from drifting into harmful habits."
+      },
+      "gratitude": {
+        "title": "Practice Gratitude",
+        "text": "Thank Allah for every blessing, big or small.",
+        "reason": "Gratitude shifts focus from what is missing to what Allah has provided, which increases contentment and spiritual strength."
+      },
+      "charity": {
+        "title": "Give Charity",
+        "text": "Every act of kindness is rewarded.",
+        "reason": "Charity purifies wealth, supports people in need, and grows mercy in your heart while earning reward from Allah."
+      },
+      "patience": {
+        "title": "Have Patience",
+        "text": "Allah is with those who are patient.",
+        "reason": "Patience helps you stay principled through tests, avoid regretful reactions, and remain hopeful in Allah's plan."
+      },
+      "quran": {
+        "title": "Read the Qur'an",
+        "text": "Spend a few minutes reading and reflecting today.",
+        "reason": "Reading Qur'an gives guidance, heals spiritual emptiness, and keeps your decisions aligned with truth and purpose."
+      }
+    }
+  },
+  "live": {
+    "eyebrow": "Live Sessions",
+    "title": "Join beneficial broadcasts in real time",
+    "host": "Host",
+    "watchingNow": "{{count}} watching now",
+    "joinStream": "Join Stream",
+    "schedule": "Today's Schedule",
+    "items": {
+      "one": "5:15 PM - Evening Adhkar",
+      "two": "7:00 PM - Tafsir Session",
+      "three": "9:00 PM - Open Q&A"
+    }
+  },
+  "recordings": {
+    "eyebrow": "Library",
+    "title": "Browse khutbahs and lecture recordings",
+    "duration": "Duration: 28-45 min",
+    "play": "Play",
+    "save": "Save",
+    "remove": "Remove",
+    "historyTitle": "Lecture History",
+    "historyEmpty": "No lecture history yet.",
+    "historyAria": "Lecture history list"
+  },
+  "scholars": {
+    "eyebrow": "Teachers",
+    "title": "Learn from trusted scholars and educators",
+    "viewSessions": "View Sessions"
+  },
+  "events": {
+    "eyebrow": "Calendar",
+    "title": "Upcoming events for the ummah",
+    "rsvp": "RSVP",
+    "save": "Save",
+    "remove": "Remove"
+  },
+  "feed": {
+    "eyebrow": "Community Feed",
+    "title": "Stay connected with beneficial updates"
+  },
+  "auth": {
+    "welcomeBack": "خوش آمدید",
+    "createAccount": "ایجاد حساب",
+    "joinCommunity": "Join the Marakah community in minutes.",
+    "email": "ایمیل",
+    "password": "رمز عبور",
+    "fullName": "نام کامل",
+    "login": "ورود",
+    "signup": "ثبت‌نام",
+    "mobileFlow": "Phone sign-in uses a ping approval and Face ID/Fingerprint.",
+    "desktopFlow": "Sign in to continue your learning journey.",
+    "sendPing": "Send Login Ping",
+    "sendingPing": "Sending Ping...",
+    "approvePing": "Approve Ping",
+    "useBiometric": "Use Face ID / Fingerprint",
+    "authenticating": "Authenticating...",
+    "pingReference": "Ping reference: {{code}}",
+    "secureMobileOnly": "Secure mobile ping is only required on phone/tablet.",
+    "pingSent": "Login ping sent ({{code}}). Tap Approve Ping, then use biometrics.",
+    "pingApproved": "Ping approved. Continue with Face ID/Fingerprint.",
+    "approveFirst": "Approve the mobile ping before biometric sign-in.",
+    "biometricUnsupported": "Biometric sign-in is not supported on this device/browser.",
+    "noAuthenticator": "No Face ID/Fingerprint authenticator is available.",
+    "biometricSuccess": "Biometric sign-in successful.",
+    "biometricFailed": "Biometric sign-in was cancelled or failed. Please try again.",
+    "mobileInstruction": "On phone, use Secure Mobile Sign-In (ping approval + Face ID/Fingerprint).",
+    "pingFailed": "Could not send mobile ping. Please try again.",
+    "symbolsAria": "Islamic symbols",
+    "placeholders": {
+      "email": "you@example.com",
+      "password": "Create password",
+      "name": "Your full name"
+    }
+  },
+  "masjids": {
+    "eyebrow": "Community",
+    "title": "یافتن مساجد واقعی نزدیک",
+    "cityPlaceholder": "City, state, or ZIP (optional with location)",
+    "queryPlaceholder": "Masjid name or keyword",
+    "distanceFilter": "Distance filter",
+    "search": "جستجوی مسجد",
+    "searching": "Searching...",
+    "useLocation": "استفاده از موقعیت فعلی",
+    "useLocation25": "Use my location + 25 mi",
+    "status": {
+      "allowLocation": "Allow location access to find nearest masjids nationwide.",
+      "searchHint": "Use current location for nearest masjids nationwide, or enter a city manually.",
+      "enterCity": "Enter a city or enable current location first.",
+      "searching": "Searching real masjids...",
+      "noResults": "No masjids found for that search.",
+      "searchFailed": "Could not search masjids.",
+      "locationUnavailable": "Location is unavailable: your browser does not support geolocation.",
+      "findingLocation": "Finding your location...",
+      "locationDenied": "Location permission denied. Allow location access in browser settings or search by city, state, or ZIP.",
+      "locationUnknown": "Location unavailable right now. Check your device location services and try again.",
+      "locationTimeout": "Location request timed out. Please try again or search by city, state, or ZIP.",
+      "locationFailed": "Could not determine your location. Search by city, state, or ZIP instead."
+    },
+    "resultSummary": "Found {{count}} masjids {{locationMode}}. Showing page {{page}} of {{totalPages}}.",
+    "resultCount": "Results: {{count}} total | Page {{page}} of {{totalPages}}",
+    "locationMode": {
+      "nationwideWithLocation": "nationwide, prioritized by your current location",
+      "withinMiles": "within {{miles}} miles of your current location",
+      "cityNationwide": "for {{city}} nationwide",
+      "search": "for your search"
+    },
+    "distanceLine": "Distance filter: {{distance}}.",
+    "distanceValue": {
+      "nationwide": "Nationwide",
+      "miles": "{{miles}} miles"
+    },
+    "radiusOptions": {
+      "10": "10 miles",
+      "25": "25 miles (default)",
+      "50": "50 miles",
+      "nationwide": "Nationwide"
+    },
+    "nearestMasjid": "Nearest Masjid",
+    "city": "City",
+    "distance": "Distance",
+    "driveTime": "Drive Time",
+    "nextPrayer": "Next Prayer: {{label}} in {{countdown}}",
+    "salahTimes": "Salah times",
+    "noImage": "No image",
+    "imageAlt": "Photo of {{name}}{{locationSuffix}}",
+    "distanceAway": "{{miles}} mi away",
+    "distanceUnknown": "Use my location + 25 mi to show distance",
+    "distanceFromLocation": "{{miles}} mi from your current location",
+    "distanceCalcHint": "Use my location + 25 mi to calculate distance",
+    "driveUnknown": "Use my location + 25 mi",
+    "driveLine": "{{distance}} drive ({{time}})",
+    "rating": "Rating: {{rating}}",
+    "ratingWithCount": "Rating: {{rating}} ({{count}})",
+    "viewEvents": "View Events",
+    "previous": "Previous",
+    "next": "Next",
+    "pageXofY": "Page {{page}} / {{totalPages}}",
+    "pagination": "Masjid search pagination",
+    "mapPins": "Map Pins",
+    "liveCoordinates": "Live coordinates",
+    "pin": "Pin: {{name}}",
+    "eventsAt": "Events at {{name}}",
+    "databaseBacked": "Database-backed",
+    "prayers": {
+      "fajr": "Fajr",
+      "dhuhr": "Dhuhr",
+      "asr": "Asr",
+      "maghrib": "Maghrib",
+      "isha": "Isha"
+    }
+  },
+  "profile": {
+    "eyebrow": "My Profile",
+    "title": "پروفایل من",
+    "subtitle": "Track your progress, stay consistent, and keep everything important in one place.",
+    "guestName": "Guest",
+    "aria": {
+      "stats": "Profile statistics"
+    },
+    "empty": {
+      "activities": "No lectures or events saved yet. Add one to begin building your journey.",
+      "photos": "No photos saved yet. Add a photo, screenshot, or memory from your device.",
+      "reminders": "No favorite reminders saved yet. Save a reminder that you would like to revisit.",
+      "lectures": "No lectures or events saved yet. Add one to begin building your journey.",
+      "events": "No saved events yet. Save events from the Events page to see them here."
+    },
+    "stats": {
+      "lectures": "Lectures Watched",
+      "streak": "Current Streak",
+      "reminders": "Saved Reminders",
+      "completed": "Completed lectures",
+      "consistency": "Consistency tracker",
+      "active": "Active saved reminders",
+      "loading": "Loading...",
+      "loadFailed": "Could not load yet.",
+      "noActivity": "No activity yet.",
+      "noStreak": "No streak yet.",
+      "noReminders": "No reminders yet.",
+      "days": "{{count}} days"
+    },
+    "errors": {
+      "loadStats": "Could not load profile statistics.",
+      "saveImage": "Could not save this image."
+    },
+    "validation": {
+      "titleRequired": "Title is required.",
+      "onlyImages": "Only image files are allowed.",
+      "unsupportedImageType": "This image type is not supported. Use JPG, PNG, WEBP, GIF, or HEIC.",
+      "imageTooLarge": "Image is too large. Maximum allowed size is 5 MB.",
+      "chooseImage": "Please choose an image before saving.",
+      "reminderTitleRequired": "Reminder title is required.",
+      "reminderTextRequired": "Reminder text is required."
+    },
+    "confirm": {
+      "deleteActivity": "Delete this saved lecture/event?",
+      "deletePhoto": "Delete this saved photo?",
+      "deleteReminder": "Delete this favorite reminder?"
+    },
+    "modal": {
+      "activity": {
+        "editTitle": "Edit Lecture or Event",
+        "addTitle": "Add Lecture or Event"
+      },
+      "photo": {
+        "editTitle": "Edit Photo",
+        "addTitle": "Add Photo"
+      },
+      "reminder": {
+        "editTitle": "Edit Favorite Reminder",
+        "addTitle": "Add Favorite Reminder"
+      }
+    },
+    "form": {
+      "common": {
+        "urlPlaceholder": "https://"
+      },
+      "activity": {
+        "title": "Title",
+        "speaker": "Speaker, Scholar, or Organization",
+        "venue": "Masjid or Venue",
+        "dateAttended": "Date Attended",
+        "eventType": "Event Type (optional)",
+        "notes": "Personal Notes (optional)",
+        "photoUrl": "Optional Photo URL",
+        "photoAlt": "Optional Photo Alt Text"
+      },
+      "photo": {
+        "previewAlt": "Image preview before save"
+      },
+      "reminder": {
+        "title": "Reminder Title",
+        "text": "Reminder Text",
+        "category": "Category (optional)",
+        "source": "Source or Reference (optional)",
+        "note": "Personal Note (optional)",
+        "dateSaved": "Date Saved",
+        "markPinned": "Mark as pinned"
+      }
+    },
+    "sections": {
+      "activities": "My Past Lectures and Events",
+      "photos": "My Photos",
+      "reminders": "My Favorite Islamic Reminders",
+      "lectures": "My Past Lectures",
+      "events": "My Events"
+    },
+    "actions": {
+      "addActivity": "Add Lecture or Event",
+      "addPhoto": "Add Photo",
+      "addReminder": "Add Favorite Reminder",
+      "edit": "ویرایش",
+      "delete": "حذف",
+      "cancel": "لغو",
+      "saveChanges": "Save Changes",
+      "saveActivity": "Save Lecture/Event",
+      "savePhoto": "Save Photo",
+      "saveReminder": "Save Reminder",
+      "uploadImage": "Upload Image",
+      "pin": "Pin",
+      "unpin": "Unpin",
+      "viewEvents": "View Events"
+    },
+    "card": {
+      "lectureEvent": "Lecture/Event",
+      "speaker": "Speaker/Organization",
+      "venue": "Masjid/Venue",
+      "dateAttended": "Date Attended",
+      "notes": "Notes",
+      "savedMemory": "Saved Islamic memory",
+      "untitledMemory": "Untitled memory",
+      "date": "Date",
+      "linkedActivity": "Linked Lecture/Event",
+      "none": "None",
+      "notSpecified": "Not specified",
+      "pinned": "Pinned",
+      "notPinned": "Not pinned",
+      "category": "Category",
+      "source": "Source",
+      "personalNote": "Personal Note",
+      "dateSaved": "Date Saved",
+      "event": "Event"
+    },
+    "identity": {
+      "title": "قومیت، میراث، یا حمایت",
+      "description": "می‌توانید به صورت اختیاری یک پرچم پروفایل بر اساس میراث یا حمایت انتخاب کنید. Marakah فقط موردی را اعمال می‌کند که خودتان دستی انتخاب کنید.",
+      "labels": {
+        "selectionType": "نوع انتخاب",
+        "firstHeritage": "میراث اول",
+        "secondHeritage": "میراث دوم",
+        "palestinianSupport": "افزودن حمایت از فلسطین",
+        "splitDirection": "جهت تقسیم"
+      },
+      "selectPlaceholder": "یک گزینه انتخاب کنید",
+      "selectionType": {
+        "none": "بدون انتخاب",
+        "oneHeritage": "یک میراث",
+        "twoHeritages": "دو میراث",
+        "supportFlag": "پرچم حمایت"
+      },
+      "supportOnlyDescription": "حمایت از فلسطین، پرچم فلسطین را به عنوان یک پس‌زمینه حمایتی اختیاری نمایش می‌دهد.",
+      "previewTitle": "پیش‌نمایش زنده",
+      "previewEmpty": "هیچ پرچم پروفایلی انتخاب نشده است.",
+      "previewAria": "پیش‌نمایش پرچم پروفایل: {{flags}}",
+      "previewOrder": "{{left}} در سمت چپ و {{right}} در سمت راست.",
+      "actions": {
+        "save": "ذخیره",
+        "cancel": "لغو",
+        "remove": "حذف انتخاب",
+        "swapOrder": "جابجایی ترتیب چپ/راست"
+      },
+      "messages": {
+        "saved": "انتخاب پرچم پروفایل ذخیره شد.",
+        "cancelled": "تغییرات ذخیره‌نشده لغو شد.",
+        "removed": "انتخاب پرچم پروفایل حذف شد."
+      },
+      "validation": {
+        "primaryRequired": "یک میراث اول انتخاب کنید.",
+        "secondaryRequired": "یک میراث دوم انتخاب کنید.",
+        "mustDiffer": "دو میراث متفاوت انتخاب کنید.",
+        "invalidSelection": "این انتخاب معتبر نیست."
+      },
+      "options": {
+        "egyptian": "مصری",
+        "somali": "سومالیایی",
+        "afghan": "افغان",
+        "iranian": "ایرانی",
+        "mexican": "مکزیکی",
+        "puertoRican": "پورتوریکویی",
+        "palestinianSupport": "حمایت از فلسطین"
+      },
+      "accessibility": {
+        "egyptian": "پرچم مصر",
+        "somali": "پرچم سومالی",
+        "afghan": "پرچم افغانستان",
+        "iranian": "پرچم ایران",
+        "mexican": "پرچم مکزیک",
+        "puertoRican": "پرچم پورتوریکو",
+        "palestinianSupport": "پرچم حمایت از فلسطین"
+      }
+    },
+    "details": {
+      "avatarAlt": "Profile photo",
+      "identityLabel": "Heritage & Identity",
+      "noIdentity": "No background selected",
+      "bioPlaceholder": "Add a short bio to introduce your learning journey.",
+      "joinDateLabel": "Join Date",
+      "joinDateFuture": "Coming soon",
+      "removeProfileImage": "Delete Image",
+      "displayNameLabel": "Display Name",
+      "usernameLabel": "Username (optional)",
+      "usernamePlaceholder": "e.g. tonyglass",
+      "bioLabel": "Bio (optional)",
+      "editDetails": "Edit Profile Details",
+      "saveDetails": "Save Details"
+    }
+  },
+  "admin": {
+    "platformControl": "Platform Control",
+    "platformTitle": "Platform Administration",
+    "totalMasjids": "Total Masjids",
+    "totalUsers": "Total Users",
+    "pendingApprovals": "Pending Approvals",
+    "totalDonations": "Total Donations",
+    "masjidAdmin": "Masjid Admin",
+    "masjidTitle": "Dashboard overview for your local masjid",
+    "attendance": "Today's Attendance",
+    "classes": "Classes This Week",
+    "volunteers": "Volunteer Requests"
+  },
+  "seo": {
+    "homeTitle": "Marakah | یادآوری، آموزش و جامعه اسلامی",
+    "homeDescription": "یادآوری‌های اسلامی، جلسات زنده، مساجد نزدیک، علما و رویدادها را در Marakah کشف کنید.",
+    "liveTitle": "جلسات زنده | Marakah",
+    "liveDescription": "به جلسات زنده اسلامی و حلقه‌های قرآن در Marakah بپیوندید.",
+    "recordingsTitle": "ضبط سخنرانی‌ها | Marakah",
+    "recordingsDescription": "آرشیو خطبه‌ها و سخنرانی‌های اسلامی را مرور کنید.",
+    "masjidsTitle": "یافتن مساجد نزدیک | Marakah",
+    "masjidsDescription": "مساجد نزدیک را جستجو کنید و اوقات نماز و رویدادها را ببینید.",
+    "scholarsTitle": "علما و مربیان | Marakah",
+    "scholarsDescription": "از علما و مربیان قابل اعتماد بیاموزید.",
+    "eventsTitle": "تقویم رویدادهای اسلامی | Marakah",
+    "eventsDescription": "رویدادهای آینده جامعه اسلامی را بررسی کنید.",
+    "feedTitle": "خوراک جامعه | Marakah",
+    "feedDescription": "با به‌روزرسانی‌های مفید جامعه Marakah در ارتباط بمانید.",
+    "profileTitle": "پروفایل من | Marakah",
+    "profileDescription": "پیشرفت، یادآوری‌ها و فعالیت شخصی خود را پیگیری کنید.",
+    "loginTitle": "ورود | Marakah",
+    "loginDescription": "برای ادامه مسیر یادگیری اسلامی با امنیت وارد شوید.",
+    "signupTitle": "ثبت‌نام | Marakah",
+    "signupDescription": "حساب Marakah خود را ایجاد کنید و به جامعه بپیوندید.",
+    "platformAdminTitle": "مدیریت پلتفرم | Marakah",
+    "platformAdminDescription": "ابزارهای مدیریت پلتفرم Marakah.",
+    "masjidDashboardTitle": "داشبورد مسجد | Marakah",
+    "masjidDashboardDescription": "داشبورد مدیریت مسجد برای حضور، کلاس‌ها و داوطلبان."
+  }
+}

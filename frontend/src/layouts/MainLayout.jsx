@@ -7,9 +7,9 @@ export default function MainLayout() {
     <div className="app-layout">
       <Header />
 
-      <main className="app-content">
+      <div className="app-content">
         <Outlet />
-      </main>
+      </div>
 
       <BottomNav />
     </div>

@@ -4,17 +4,22 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
+    "prebuild": "node scripts/generate-sitemap.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/prerender-public-routes.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
+    "i18next": "^25.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-i18next": "^15.7.3",
     "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
+    "playwright": "^1.61.1",
     "vite": "^7.0.0"
   }
 }

@@ -1,14 +1,28 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
+import "./i18n";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import "./styles/index.css";
 import "./styles/App.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+const rootElement = document.getElementById("root");
+
+function RootApp() {
+  return (
     <BrowserRouter>
-      <App />
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-);
+  );
+}
+
+if (rootElement) {
+  createRoot(rootElement).render(
+    <React.StrictMode>
+      <RootApp />
+    </React.StrictMode>,
+  );
+}

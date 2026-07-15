@@ -1,55 +1,57 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SearchBar from "../SearchBar/SearchBar";
+import {
+  clearSession,
+  isSignedIn as hasActiveSession,
+} from "../../auth/session";
 import "./Header.css";
 
-const SIGNED_IN_KEY = "marakah_is_signed_in";
-const NAME_KEY = "marakah_user_name";
-
 export default function Header() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
-    setIsSignedIn(localStorage.getItem(SIGNED_IN_KEY) === "true");
+    setSignedIn(hasActiveSession());
   }, [location.pathname]);
 
   function handleLogout() {
-    localStorage.removeItem(SIGNED_IN_KEY);
-    localStorage.removeItem(NAME_KEY);
-    setIsSignedIn(false);
+    clearSession();
+    setSignedIn(false);
     navigate("/login");
   }
 
   return (
     <header className="header">
       <div className="header__row">
-        <Link className="header__logo" to="/">
+        <Link className="header__logo" to="/" aria-label="Marakah homepage">
           Marakah
         </Link>
 
-        {isSignedIn ? null : <SearchBar />}
+        {signedIn ? null : <SearchBar />}
 
-        <nav className="header__nav">
-          {isSignedIn ? (
+        <nav className="header__nav" aria-label="Header navigation">
+          {signedIn ? (
             <button
               type="button"
               className="header__logout"
               onClick={handleLogout}
             >
-              Log Out
+              {t("nav.logout")}
             </button>
           ) : (
             <>
               <Link className="header__link" to="/events">
-                Events
+                {t("nav.events")}
               </Link>
               <Link className="header__link" to="/login">
-                Log In
+                {t("nav.login")}
               </Link>
               <Link className="header__signup" to="/signup">
-                Sign Up
+                {t("nav.signup")}
               </Link>
             </>
           )}
