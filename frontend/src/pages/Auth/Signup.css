@@ -1,0 +1,107 @@
+.signup-ethnicity-fieldset {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.signup-identity-note {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.signup-ethnicity-fieldset input[type="search"],
+.signup-ethnicity-fieldset input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.signup-ethnicity-fieldset legend {
+  padding: 0 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.signup-ethnicity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.signup-selected-list,
+.signup-custom-list {
+  display: grid;
+  gap: 8px;
+}
+
+.signup-selected-row,
+.signup-custom-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.signup-selected-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.signup-custom-row {
+  display: grid;
+  gap: 8px;
+}
+
+.signup-ethnicity-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-soft);
+}
+
+.signup-ethnicity-flag {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.signup-ethnicity-badge {
+  min-width: 26px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  color: var(--text-soft);
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.signup-ethnicity-option input {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 640px) {
+  .signup-ethnicity-grid {
+    grid-template-columns: 1fr;
+  }
+}

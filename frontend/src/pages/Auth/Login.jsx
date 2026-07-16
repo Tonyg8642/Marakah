@@ -50,15 +50,11 @@ export default function Login() {
 
     return mobileUA || window.matchMedia(MOBILE_VIEW_QUERY).matches;
   });
-  const [pingState, setPingState] = useState("idle");
-  const [pingReference, setPingReference] = useState("");
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(MOBILE_VIEW_QUERY);
     const handleQueryChange = (event) => {
       setIsMobileClient(event.matches);
-      setPingState("idle");
-      setPingReference("");
     };
 
     mediaQuery.addEventListener("change", handleQueryChange);
@@ -68,61 +64,7 @@ export default function Login() {
     };
   }, []);
 
-  async function handleSendMobilePing() {
-    if (!isMobileClient) {
-      setAuthMessage(t("auth.secureMobileOnly"));
-      return;
-    }
-
-    try {
-      setPingState("sending");
-      setAuthMessage("");
-
-      const newPingReference = `MRK-${Math.random()
-        .toString(36)
-        .slice(2, 8)
-        .toUpperCase()}`;
-
-      setPingReference(newPingReference);
-
-      if ("Notification" in window) {
-        let permission = Notification.permission;
-
-        if (permission === "default") {
-          permission = await Notification.requestPermission();
-        }
-
-        if (permission === "granted") {
-          new Notification("Marakah Login Approval", {
-            body: `Approve request ${newPingReference}, then use Face ID/Fingerprint.`,
-            tag: "marakah-login-ping",
-          });
-        }
-      }
-
-      if (navigator.vibrate) {
-        navigator.vibrate([120, 80, 120]);
-      }
-
-      setPingState("sent");
-      setAuthMessage(t("auth.pingSent", { code: newPingReference }));
-    } catch {
-      setPingState("idle");
-      setAuthMessage(t("auth.pingFailed"));
-    }
-  }
-
-  function handleApproveMobilePing() {
-    setPingState("approved");
-    setAuthMessage(t("auth.pingApproved"));
-  }
-
   async function handleBiometricSignIn() {
-    if (isMobileClient && pingState !== "approved") {
-      setAuthMessage(t("auth.approveFirst"));
-      return;
-    }
-
     if (!window.PublicKeyCredential || !navigator.credentials) {
       setAuthMessage(t("auth.biometricUnsupported"));
       return;
@@ -193,8 +135,6 @@ export default function Login() {
         await changeLanguage(remoteLanguage);
       }
       setAuthMessage(t("auth.biometricSuccess"));
-      setPingState("idle");
-      setPingReference("");
       navigate("/");
     } catch {
       setAuthMessage(t("auth.biometricFailed"));
@@ -206,26 +146,18 @@ export default function Login() {
   async function handlePasswordSignIn(event) {
     event.preventDefault();
 
-    if (isMobileClient) {
-      setAuthMessage(t("auth.mobileInstruction"));
-      return;
-    }
-
     const form = new FormData(event.currentTarget);
-    const email = String(form.get("email") || "").trim();
-    const nameFromEmail = (form.get("email") || "").toString().split("@")[0];
-    const normalizedName = nameFromEmail
-      ? nameFromEmail
+    const nameInput = String(form.get("name") || "").trim();
+    const normalizedName = nameInput
+      ? nameInput
           .split(/[._-]/)
           .filter(Boolean)
           .map((chunk) => chunk.charAt(0).toUpperCase() + chunk.slice(1))
           .join(" ")
       : "Guest";
 
-    saveSession(normalizedName, email);
-    const remoteLanguage = await fetchPreferredLanguage(
-      email || normalizedName,
-    );
+    saveSession(normalizedName);
+    const remoteLanguage = await fetchPreferredLanguage(normalizedName);
     if (remoteLanguage) {
       await changeLanguage(remoteLanguage);
     }
@@ -254,60 +186,35 @@ export default function Login() {
         <p>{isMobileClient ? t("auth.mobileFlow") : t("auth.desktopFlow")}</p>
 
         <form className="auth-form" onSubmit={handlePasswordSignIn}>
-          <label htmlFor="login-email">{t("auth.email")}</label>
+          <label htmlFor="login-name">{t("auth.username")}</label>
           <input
-            id="login-email"
-            name="email"
-            type="email"
-            placeholder={t("auth.placeholders.email")}
+            id="login-name"
+            name="name"
+            type="text"
+            autoComplete="username"
+            placeholder={t("auth.placeholders.username")}
+            required
           />
 
           <label htmlFor="login-password">{t("auth.password")}</label>
-          <input id="login-password" type="password" placeholder="••••••••" />
+          <input
+            id="login-password"
+            type="password"
+            placeholder="••••••••"
+            required
+          />
 
           <button type="submit" className="btn-primary">
             {t("auth.login")}
           </button>
         </form>
 
-        {isMobileClient ? (
-          <div className="auth-ping" aria-live="polite">
-            <button
-              type="button"
-              className="btn-secondary"
-              onClick={handleSendMobilePing}
-              disabled={pingState === "sending"}
-            >
-              {pingState === "sending"
-                ? t("auth.sendingPing")
-                : t("auth.sendPing")}
-            </button>
-
-            {pingReference ? (
-              <p className="auth-note">
-                {t("auth.pingReference", { code: pingReference })}
-              </p>
-            ) : null}
-
-            <button
-              type="button"
-              className="btn-secondary"
-              onClick={handleApproveMobilePing}
-              disabled={pingState !== "sent"}
-            >
-              {t("auth.approvePing")}
-            </button>
-          </div>
-        ) : null}
-
         <div className="auth-biometric">
           <button
             type="button"
             className="btn-secondary"
             onClick={handleBiometricSignIn}
-            disabled={
-              isAuthenticating || (isMobileClient && pingState !== "approved")
-            }
+            disabled={isAuthenticating}
           >
             {isAuthenticating
               ? t("auth.authenticating")

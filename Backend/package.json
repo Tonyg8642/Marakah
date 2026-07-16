@@ -12,9 +12,11 @@
     "cors": "^2.0.0",
     "dotenv": "^16.0.0",
     "express": "^5.0.0",
-    "mongoose": "^8.16.4"
+    "mongoose": "^8.16.4",
+    "multer": "^2.2.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.0"
+    "nodemon": "^3.0.0",
+    "supertest": "^7.1.1"
   }
 }

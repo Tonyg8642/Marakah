@@ -2,49 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marakah.vercel.app/</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://marakah.vercel.app/live</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://marakah.vercel.app/recordings</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://marakah.vercel.app/masjids</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://marakah.vercel.app/restaurants</loc>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://marakah.vercel.app/scholars</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marakah.vercel.app/events</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://marakah.vercel.app/feed</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://marakah.vercel.app/signup</loc>
-    <lastmod>2026-07-15T23:37:42.520Z</lastmod>
+    <lastmod>2026-07-16T23:49:07.256Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

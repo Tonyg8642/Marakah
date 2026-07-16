@@ -1,7 +1,56 @@
 import { StaticRouter } from "react-router";
-import { renderToString } from "react-dom/server";
+import { renderToPipeableStream } from "react-dom/server";
+import { Writable } from "node:stream";
 import App from "./App";
+import AppProviders from "./AppProviders";
+import "./i18n";
 import { buildCanonical, getSeoForPath } from "./seo/seoConfig";
+
+function renderAppToString(url) {
+  return new Promise((resolve, reject) => {
+    let appHtml = "";
+    let didError = false;
+
+    const stream = renderToPipeableStream(
+      <StaticRouter location={url}>
+        <AppProviders>
+          <App />
+        </AppProviders>
+      </StaticRouter>,
+      {
+        onAllReady() {
+          const sink = new Writable({
+            write(chunk, _encoding, callback) {
+              appHtml += chunk.toString();
+              callback();
+            },
+          });
+
+          sink.on("finish", () => {
+            if (didError) {
+              reject(new Error("SSR rendering completed with errors."));
+              return;
+            }
+
+            resolve(appHtml);
+          });
+
+          sink.on("error", (error) => {
+            reject(error);
+          });
+
+          stream.pipe(sink);
+        },
+        onShellError(error) {
+          reject(error);
+        },
+        onError() {
+          didError = true;
+        },
+      },
+    );
+  });
+}
 
 function escapeHtml(value) {
   return String(value || "")
@@ -36,12 +85,8 @@ function buildHeadTags(pathname, siteUrl) {
   ].join("\n    ");
 }
 
-export function render(url, siteUrl) {
-  const appHtml = renderToString(
-    <StaticRouter location={url}>
-      <App />
-    </StaticRouter>,
-  );
+export async function render(url, siteUrl) {
+  const appHtml = await renderAppToString(url);
 
   return {
     appHtml,

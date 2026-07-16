@@ -1,5 +1,14 @@
 const STORAGE_PREFIX = "marakah_profile_v1";
 
+export const COLLECTIONS = {
+  ACTIVITIES: "activities",
+  PHOTOS: "photos",
+  REMINDERS: "reminders",
+  IDENTITY_PREFERENCE: "identityPreference",
+  PROFILE_DETAILS: "profileDetails",
+  PROFILE_AVATAR: "profileAvatar",
+};
+
 function getStorageKey(userKey, collectionName) {
   return `${STORAGE_PREFIX}:${userKey}:${collectionName}`;
 }

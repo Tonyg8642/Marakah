@@ -1,0 +1,8254 @@
+[
+  {
+    "id": "afghan",
+    "name": "Afghan",
+    "category": "country-associated",
+    "countryCode": "af",
+    "flagUrl": "https://flagcdn.com/af.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Afghanistan",
+      "Islamic Republic of Afghanistan",
+      "Afghan",
+      "AF",
+      "Afġānistān"
+    ],
+    "searchTerms": [
+      "Afghanistan",
+      "Islamic Republic of Afghanistan",
+      "Afghan",
+      "AF",
+      "Afġānistān",
+      "004",
+      "Asia",
+      "Southern Asia",
+      "Kabul"
+    ]
+  },
+  {
+    "id": "african-american",
+    "name": "African American",
+    "category": "diaspora",
+    "symbolType": "neutral",
+    "symbol": "AA",
+    "region": "North America",
+    "alternateNames": [
+      "Black American"
+    ],
+    "searchTerms": [
+      "African American",
+      "Black American",
+      "Diaspora"
+    ]
+  },
+  {
+    "id": "afro-caribbean",
+    "name": "Afro-Caribbean",
+    "category": "diaspora",
+    "symbolType": "neutral",
+    "symbol": "AC",
+    "region": "Caribbean",
+    "alternateNames": [],
+    "searchTerms": [
+      "Afro Caribbean",
+      "Caribbean",
+      "Diaspora"
+    ]
+  },
+  {
+    "id": "afro-latino",
+    "name": "Afro-Latino",
+    "category": "diaspora",
+    "symbolType": "neutral",
+    "symbol": "AL",
+    "region": "Latin America",
+    "alternateNames": [
+      "Afro Latina",
+      "Afro Latino"
+    ],
+    "searchTerms": [
+      "Afro-Latino",
+      "Afro Latina",
+      "Diaspora"
+    ]
+  },
+  {
+    "id": "alandish",
+    "name": "Ålandish",
+    "category": "territory-associated",
+    "countryCode": "ax",
+    "flagUrl": "https://flagcdn.com/ax.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Åland Islands",
+      "Ålandish",
+      "AX",
+      "Aaland",
+      "Aland",
+      "Ahvenanmaa"
+    ],
+    "searchTerms": [
+      "Åland Islands",
+      "Ålandish",
+      "AX",
+      "Aaland",
+      "Aland",
+      "Ahvenanmaa",
+      "248",
+      "Europe",
+      "Northern Europe",
+      "Mariehamn"
+    ]
+  },
+  {
+    "id": "albanian",
+    "name": "Albanian",
+    "category": "country-associated",
+    "countryCode": "al",
+    "flagUrl": "https://flagcdn.com/al.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Albania",
+      "Republic of Albania",
+      "Albanian",
+      "AL",
+      "Shqipëri",
+      "Shqipëria",
+      "Shqipnia"
+    ],
+    "searchTerms": [
+      "Albania",
+      "Republic of Albania",
+      "Albanian",
+      "AL",
+      "Shqipëri",
+      "Shqipëria",
+      "Shqipnia",
+      "008",
+      "Europe",
+      "Southeast Europe",
+      "Tirana"
+    ]
+  },
+  {
+    "id": "algerian",
+    "name": "Algerian",
+    "category": "country-associated",
+    "countryCode": "dz",
+    "flagUrl": "https://flagcdn.com/dz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Algeria",
+      "People's Democratic Republic of Algeria",
+      "Algerian",
+      "DZ",
+      "Dzayer",
+      "Algérie"
+    ],
+    "searchTerms": [
+      "Algeria",
+      "People's Democratic Republic of Algeria",
+      "Algerian",
+      "DZ",
+      "Dzayer",
+      "Algérie",
+      "012",
+      "Africa",
+      "Northern Africa",
+      "Algiers"
+    ]
+  },
+  {
+    "id": "amazigh",
+    "name": "Amazigh",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "AMZ",
+    "region": "North Africa",
+    "alternateNames": [
+      "Berber"
+    ],
+    "searchTerms": [
+      "Amazigh",
+      "Berber",
+      "North Africa"
+    ]
+  },
+  {
+    "id": "american",
+    "name": "American",
+    "category": "territory-associated",
+    "countryCode": "mp",
+    "flagUrl": "https://flagcdn.com/mp.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Northern Mariana Islands",
+      "Commonwealth of the Northern Mariana Islands",
+      "American",
+      "MP",
+      "Sankattan Siha Na Islas Mariånas"
+    ],
+    "searchTerms": [
+      "Northern Mariana Islands",
+      "Commonwealth of the Northern Mariana Islands",
+      "American",
+      "MP",
+      "Sankattan Siha Na Islas Mariånas",
+      "580",
+      "Oceania",
+      "Micronesia",
+      "Saipan"
+    ]
+  },
+  {
+    "id": "american-us",
+    "name": "American",
+    "category": "country-associated",
+    "countryCode": "us",
+    "flagUrl": "https://flagcdn.com/us.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "United States",
+      "United States of America",
+      "American",
+      "US",
+      "USA"
+    ],
+    "searchTerms": [
+      "United States",
+      "United States of America",
+      "American",
+      "US",
+      "USA",
+      "840",
+      "Americas",
+      "North America",
+      "Washington D.C."
+    ]
+  },
+  {
+    "id": "american-islander",
+    "name": "American Islander",
+    "category": "territory-associated",
+    "countryCode": "um",
+    "flagUrl": "https://flagcdn.com/um.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "United States Minor Outlying Islands",
+      "American Islander",
+      "UM"
+    ],
+    "searchTerms": [
+      "United States Minor Outlying Islands",
+      "American Islander",
+      "UM",
+      "581",
+      "Americas",
+      "North America"
+    ]
+  },
+  {
+    "id": "american-samoan",
+    "name": "American Samoan",
+    "category": "territory-associated",
+    "countryCode": "as",
+    "flagUrl": "https://flagcdn.com/as.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "American Samoa",
+      "American Samoan",
+      "AS",
+      "Amerika Sāmoa",
+      "Amelika Sāmoa",
+      "Sāmoa Amelika"
+    ],
+    "searchTerms": [
+      "American Samoa",
+      "American Samoan",
+      "AS",
+      "Amerika Sāmoa",
+      "Amelika Sāmoa",
+      "Sāmoa Amelika",
+      "016",
+      "Oceania",
+      "Polynesia",
+      "Pago Pago"
+    ]
+  },
+  {
+    "id": "andorran",
+    "name": "Andorran",
+    "category": "country-associated",
+    "countryCode": "ad",
+    "flagUrl": "https://flagcdn.com/ad.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Andorra",
+      "Principality of Andorra",
+      "Andorran",
+      "AD",
+      "Principat d'Andorra"
+    ],
+    "searchTerms": [
+      "Andorra",
+      "Principality of Andorra",
+      "Andorran",
+      "AD",
+      "Principat d'Andorra",
+      "020",
+      "Europe",
+      "Southern Europe",
+      "Andorra la Vella"
+    ]
+  },
+  {
+    "id": "angolan",
+    "name": "Angolan",
+    "category": "country-associated",
+    "countryCode": "ao",
+    "flagUrl": "https://flagcdn.com/ao.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Angola",
+      "Republic of Angola",
+      "Angolan",
+      "AO",
+      "República de Angola",
+      "ʁɛpublika de an'ɡɔla"
+    ],
+    "searchTerms": [
+      "Angola",
+      "Republic of Angola",
+      "Angolan",
+      "AO",
+      "República de Angola",
+      "ʁɛpublika de an'ɡɔla",
+      "024",
+      "Africa",
+      "Middle Africa",
+      "Luanda"
+    ]
+  },
+  {
+    "id": "anguillian",
+    "name": "Anguillian",
+    "category": "territory-associated",
+    "countryCode": "ai",
+    "flagUrl": "https://flagcdn.com/ai.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Anguilla",
+      "Anguillian",
+      "AI"
+    ],
+    "searchTerms": [
+      "Anguilla",
+      "Anguillian",
+      "AI",
+      "660",
+      "Americas",
+      "Caribbean",
+      "The Valley"
+    ]
+  },
+  {
+    "id": "antarctican",
+    "name": "Antarctican",
+    "category": "territory-associated",
+    "countryCode": "aq",
+    "flagUrl": "https://flagcdn.com/aq.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Antarctic",
+    "alternateNames": [
+      "Antarctica",
+      "Antarctican",
+      "AQ"
+    ],
+    "searchTerms": [
+      "Antarctica",
+      "Antarctican",
+      "AQ",
+      "010",
+      "Antarctic"
+    ]
+  },
+  {
+    "id": "antiguan-barbudan",
+    "name": "Antiguan, Barbudan",
+    "category": "country-associated",
+    "countryCode": "ag",
+    "flagUrl": "https://flagcdn.com/ag.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Antigua and Barbuda",
+      "Antiguan, Barbudan",
+      "AG"
+    ],
+    "searchTerms": [
+      "Antigua and Barbuda",
+      "Antiguan, Barbudan",
+      "AG",
+      "028",
+      "Americas",
+      "Caribbean",
+      "Saint John's"
+    ]
+  },
+  {
+    "id": "arab",
+    "name": "Arab",
+    "category": "cultural",
+    "symbolType": "neutral",
+    "symbol": "AR",
+    "region": "Middle East and North Africa",
+    "alternateNames": [],
+    "searchTerms": [
+      "Arab",
+      "MENA"
+    ]
+  },
+  {
+    "id": "argentine",
+    "name": "Argentine",
+    "category": "country-associated",
+    "countryCode": "ar",
+    "flagUrl": "https://flagcdn.com/ar.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Argentina",
+      "Argentine Republic",
+      "Argentine",
+      "AR",
+      "República Argentina"
+    ],
+    "searchTerms": [
+      "Argentina",
+      "Argentine Republic",
+      "Argentine",
+      "AR",
+      "República Argentina",
+      "032",
+      "Americas",
+      "South America",
+      "Buenos Aires"
+    ]
+  },
+  {
+    "id": "armenian",
+    "name": "Armenian",
+    "category": "country-associated",
+    "countryCode": "am",
+    "flagUrl": "https://flagcdn.com/am.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Armenia",
+      "Republic of Armenia",
+      "Armenian",
+      "AM",
+      "Hayastan",
+      "Հայաստանի Հանրապետություն"
+    ],
+    "searchTerms": [
+      "Armenia",
+      "Republic of Armenia",
+      "Armenian",
+      "AM",
+      "Hayastan",
+      "Հայաստանի Հանրապետություն",
+      "051",
+      "Asia",
+      "Western Asia",
+      "Yerevan"
+    ]
+  },
+  {
+    "id": "armenian-ethnic",
+    "name": "Armenian",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "ARM",
+    "region": "West Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "Armenian"
+    ]
+  },
+  {
+    "id": "aruban",
+    "name": "Aruban",
+    "category": "territory-associated",
+    "countryCode": "aw",
+    "flagUrl": "https://flagcdn.com/aw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Aruba",
+      "Aruban",
+      "AW"
+    ],
+    "searchTerms": [
+      "Aruba",
+      "Aruban",
+      "AW",
+      "533",
+      "Americas",
+      "Caribbean",
+      "Oranjestad"
+    ]
+  },
+  {
+    "id": "assyrian",
+    "name": "Assyrian",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "ASSY",
+    "region": "West Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "Assyrian"
+    ]
+  },
+  {
+    "id": "australian",
+    "name": "Australian",
+    "category": "country-associated",
+    "countryCode": "au",
+    "flagUrl": "https://flagcdn.com/au.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Australia and New Zealand",
+    "alternateNames": [
+      "Australia",
+      "Commonwealth of Australia",
+      "Australian",
+      "AU"
+    ],
+    "searchTerms": [
+      "Australia",
+      "Commonwealth of Australia",
+      "Australian",
+      "AU",
+      "036",
+      "Oceania",
+      "Australia and New Zealand",
+      "Canberra"
+    ]
+  },
+  {
+    "id": "austrian",
+    "name": "Austrian",
+    "category": "country-associated",
+    "countryCode": "at",
+    "flagUrl": "https://flagcdn.com/at.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Europe",
+    "alternateNames": [
+      "Austria",
+      "Republic of Austria",
+      "Austrian",
+      "AT",
+      "Osterreich",
+      "Oesterreich"
+    ],
+    "searchTerms": [
+      "Austria",
+      "Republic of Austria",
+      "Austrian",
+      "AT",
+      "Osterreich",
+      "Oesterreich",
+      "040",
+      "Europe",
+      "Central Europe",
+      "Vienna"
+    ]
+  },
+  {
+    "id": "azerbaijani",
+    "name": "Azerbaijani",
+    "category": "country-associated",
+    "countryCode": "az",
+    "flagUrl": "https://flagcdn.com/az.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Azerbaijan",
+      "Republic of Azerbaijan",
+      "Azerbaijani",
+      "AZ",
+      "Azərbaycan Respublikası"
+    ],
+    "searchTerms": [
+      "Azerbaijan",
+      "Republic of Azerbaijan",
+      "Azerbaijani",
+      "AZ",
+      "Azərbaycan Respublikası",
+      "031",
+      "Asia",
+      "Western Asia",
+      "Baku"
+    ]
+  },
+  {
+    "id": "bahamian",
+    "name": "Bahamian",
+    "category": "country-associated",
+    "countryCode": "bs",
+    "flagUrl": "https://flagcdn.com/bs.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Bahamas",
+      "Commonwealth of the Bahamas",
+      "Bahamian",
+      "BS"
+    ],
+    "searchTerms": [
+      "Bahamas",
+      "Commonwealth of the Bahamas",
+      "Bahamian",
+      "BS",
+      "044",
+      "Americas",
+      "Caribbean",
+      "Nassau"
+    ]
+  },
+  {
+    "id": "bahraini",
+    "name": "Bahraini",
+    "category": "country-associated",
+    "countryCode": "bh",
+    "flagUrl": "https://flagcdn.com/bh.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Bahrain",
+      "Kingdom of Bahrain",
+      "Bahraini",
+      "BH",
+      "Mamlakat al-Baḥrayn"
+    ],
+    "searchTerms": [
+      "Bahrain",
+      "Kingdom of Bahrain",
+      "Bahraini",
+      "BH",
+      "Mamlakat al-Baḥrayn",
+      "048",
+      "Asia",
+      "Western Asia",
+      "Manama"
+    ]
+  },
+  {
+    "id": "bangladeshi",
+    "name": "Bangladeshi",
+    "category": "country-associated",
+    "countryCode": "bd",
+    "flagUrl": "https://flagcdn.com/bd.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Bangladesh",
+      "People's Republic of Bangladesh",
+      "Bangladeshi",
+      "BD",
+      "Gônôprôjatôntri Bangladesh"
+    ],
+    "searchTerms": [
+      "Bangladesh",
+      "People's Republic of Bangladesh",
+      "Bangladeshi",
+      "BD",
+      "Gônôprôjatôntri Bangladesh",
+      "050",
+      "Asia",
+      "Southern Asia",
+      "Dhaka"
+    ]
+  },
+  {
+    "id": "barbadian",
+    "name": "Barbadian",
+    "category": "country-associated",
+    "countryCode": "bb",
+    "flagUrl": "https://flagcdn.com/bb.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Barbados",
+      "Barbadian",
+      "BB"
+    ],
+    "searchTerms": [
+      "Barbados",
+      "Barbadian",
+      "BB",
+      "052",
+      "Americas",
+      "Caribbean",
+      "Bridgetown"
+    ]
+  },
+  {
+    "id": "belarusian",
+    "name": "Belarusian",
+    "category": "country-associated",
+    "countryCode": "by",
+    "flagUrl": "https://flagcdn.com/by.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Europe",
+    "alternateNames": [
+      "Belarus",
+      "Republic of Belarus",
+      "Belarusian",
+      "BY",
+      "Bielaruś",
+      "Белоруссия",
+      "Республика Белоруссия"
+    ],
+    "searchTerms": [
+      "Belarus",
+      "Republic of Belarus",
+      "Belarusian",
+      "BY",
+      "Bielaruś",
+      "Белоруссия",
+      "Республика Белоруссия",
+      "112",
+      "Europe",
+      "Eastern Europe",
+      "Minsk"
+    ]
+  },
+  {
+    "id": "belgian",
+    "name": "Belgian",
+    "category": "country-associated",
+    "countryCode": "be",
+    "flagUrl": "https://flagcdn.com/be.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Belgium",
+      "Kingdom of Belgium",
+      "Belgian",
+      "BE",
+      "België",
+      "Belgie",
+      "Belgien",
+      "Belgique",
+      "Koninkrijk België",
+      "Royaume de Belgique",
+      "Königreich Belgien"
+    ],
+    "searchTerms": [
+      "Belgium",
+      "Kingdom of Belgium",
+      "Belgian",
+      "BE",
+      "België",
+      "Belgie",
+      "Belgien",
+      "Belgique",
+      "Koninkrijk België",
+      "Royaume de Belgique",
+      "Königreich Belgien",
+      "056",
+      "Europe",
+      "Western Europe",
+      "Brussels"
+    ]
+  },
+  {
+    "id": "belizean",
+    "name": "Belizean",
+    "category": "country-associated",
+    "countryCode": "bz",
+    "flagUrl": "https://flagcdn.com/bz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "Belize",
+      "Belizean",
+      "BZ"
+    ],
+    "searchTerms": [
+      "Belize",
+      "Belizean",
+      "BZ",
+      "084",
+      "Americas",
+      "Central America",
+      "Belmopan"
+    ]
+  },
+  {
+    "id": "beninese",
+    "name": "Beninese",
+    "category": "country-associated",
+    "countryCode": "bj",
+    "flagUrl": "https://flagcdn.com/bj.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Benin",
+      "Republic of Benin",
+      "Beninese",
+      "BJ",
+      "République du Bénin"
+    ],
+    "searchTerms": [
+      "Benin",
+      "Republic of Benin",
+      "Beninese",
+      "BJ",
+      "République du Bénin",
+      "204",
+      "Africa",
+      "Western Africa",
+      "Porto-Novo"
+    ]
+  },
+  {
+    "id": "bermudian",
+    "name": "Bermudian",
+    "category": "territory-associated",
+    "countryCode": "bm",
+    "flagUrl": "https://flagcdn.com/bm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "Bermuda",
+      "Bermudian",
+      "BM",
+      "The Islands of Bermuda",
+      "The Bermudas",
+      "Somers Isles"
+    ],
+    "searchTerms": [
+      "Bermuda",
+      "Bermudian",
+      "BM",
+      "The Islands of Bermuda",
+      "The Bermudas",
+      "Somers Isles",
+      "060",
+      "Americas",
+      "North America",
+      "Hamilton"
+    ]
+  },
+  {
+    "id": "bhutanese",
+    "name": "Bhutanese",
+    "category": "country-associated",
+    "countryCode": "bt",
+    "flagUrl": "https://flagcdn.com/bt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Bhutan",
+      "Kingdom of Bhutan",
+      "Bhutanese",
+      "BT"
+    ],
+    "searchTerms": [
+      "Bhutan",
+      "Kingdom of Bhutan",
+      "Bhutanese",
+      "BT",
+      "064",
+      "Asia",
+      "Southern Asia",
+      "Thimphu"
+    ]
+  },
+  {
+    "id": "bolivian",
+    "name": "Bolivian",
+    "category": "country-associated",
+    "countryCode": "bo",
+    "flagUrl": "https://flagcdn.com/bo.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Bolivia",
+      "Plurinational State of Bolivia",
+      "Bolivian",
+      "BO",
+      "Buliwya",
+      "Wuliwya",
+      "Bolivia, Plurinational State of",
+      "Estado Plurinacional de Bolivia",
+      "Buliwya Mamallaqta",
+      "Wuliwya Suyu",
+      "Tetã Volívia"
+    ],
+    "searchTerms": [
+      "Bolivia",
+      "Plurinational State of Bolivia",
+      "Bolivian",
+      "BO",
+      "Buliwya",
+      "Wuliwya",
+      "Bolivia, Plurinational State of",
+      "Estado Plurinacional de Bolivia",
+      "Buliwya Mamallaqta",
+      "Wuliwya Suyu",
+      "Tetã Volívia",
+      "068",
+      "Americas",
+      "South America",
+      "Sucre"
+    ]
+  },
+  {
+    "id": "bosnian-herzegovinian",
+    "name": "Bosnian, Herzegovinian",
+    "category": "country-associated",
+    "countryCode": "ba",
+    "flagUrl": "https://flagcdn.com/ba.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Bosnia and Herzegovina",
+      "Bosnian, Herzegovinian",
+      "BA",
+      "Bosnia-Herzegovina",
+      "Босна и Херцеговина"
+    ],
+    "searchTerms": [
+      "Bosnia and Herzegovina",
+      "Bosnian, Herzegovinian",
+      "BA",
+      "Bosnia-Herzegovina",
+      "Босна и Херцеговина",
+      "070",
+      "Europe",
+      "Southeast Europe",
+      "Sarajevo"
+    ]
+  },
+  {
+    "id": "bouvet-island",
+    "name": "Bouvet Island",
+    "category": "territory-associated",
+    "countryCode": "bv",
+    "flagUrl": "https://flagcdn.com/bv.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Antarctic",
+    "alternateNames": [
+      "Bouvet Island",
+      "BV",
+      "Bouvetøya",
+      "Bouvet-øya"
+    ],
+    "searchTerms": [
+      "Bouvet Island",
+      "BV",
+      "Bouvetøya",
+      "Bouvet-øya",
+      "074",
+      "Antarctic"
+    ]
+  },
+  {
+    "id": "brazilian",
+    "name": "Brazilian",
+    "category": "country-associated",
+    "countryCode": "br",
+    "flagUrl": "https://flagcdn.com/br.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Brazil",
+      "Federative Republic of Brazil",
+      "Brazilian",
+      "BR",
+      "Brasil",
+      "República Federativa do Brasil"
+    ],
+    "searchTerms": [
+      "Brazil",
+      "Federative Republic of Brazil",
+      "Brazilian",
+      "BR",
+      "Brasil",
+      "República Federativa do Brasil",
+      "076",
+      "Americas",
+      "South America",
+      "Brasília"
+    ]
+  },
+  {
+    "id": "british",
+    "name": "British",
+    "category": "country-associated",
+    "countryCode": "gb",
+    "flagUrl": "https://flagcdn.com/gb.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "United Kingdom",
+      "United Kingdom of Great Britain and Northern Ireland",
+      "British",
+      "GB",
+      "UK",
+      "Great Britain"
+    ],
+    "searchTerms": [
+      "United Kingdom",
+      "United Kingdom of Great Britain and Northern Ireland",
+      "British",
+      "GB",
+      "UK",
+      "Great Britain",
+      "826",
+      "Europe",
+      "Northern Europe",
+      "London"
+    ]
+  },
+  {
+    "id": "bruneian",
+    "name": "Bruneian",
+    "category": "country-associated",
+    "countryCode": "bn",
+    "flagUrl": "https://flagcdn.com/bn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Brunei",
+      "Nation of Brunei, Abode of Peace",
+      "Bruneian",
+      "BN",
+      "Brunei Darussalam",
+      "Nation of Brunei",
+      "the Abode of Peace"
+    ],
+    "searchTerms": [
+      "Brunei",
+      "Nation of Brunei, Abode of Peace",
+      "Bruneian",
+      "BN",
+      "Brunei Darussalam",
+      "Nation of Brunei",
+      "the Abode of Peace",
+      "096",
+      "Asia",
+      "South-Eastern Asia",
+      "Bandar Seri Begawan"
+    ]
+  },
+  {
+    "id": "bulgarian",
+    "name": "Bulgarian",
+    "category": "country-associated",
+    "countryCode": "bg",
+    "flagUrl": "https://flagcdn.com/bg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Bulgaria",
+      "Republic of Bulgaria",
+      "Bulgarian",
+      "BG",
+      "Република България"
+    ],
+    "searchTerms": [
+      "Bulgaria",
+      "Republic of Bulgaria",
+      "Bulgarian",
+      "BG",
+      "Република България",
+      "100",
+      "Europe",
+      "Southeast Europe",
+      "Sofia"
+    ]
+  },
+  {
+    "id": "burkinabe",
+    "name": "Burkinabe",
+    "category": "country-associated",
+    "countryCode": "bf",
+    "flagUrl": "https://flagcdn.com/bf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Burkina Faso",
+      "Burkinabe",
+      "BF"
+    ],
+    "searchTerms": [
+      "Burkina Faso",
+      "Burkinabe",
+      "BF",
+      "854",
+      "Africa",
+      "Western Africa",
+      "Ouagadougou"
+    ]
+  },
+  {
+    "id": "burmese",
+    "name": "Burmese",
+    "category": "country-associated",
+    "countryCode": "mm",
+    "flagUrl": "https://flagcdn.com/mm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Myanmar",
+      "Republic of the Union of Myanmar",
+      "Burmese",
+      "MM",
+      "Burma",
+      "Pyidaunzu Thanmăda Myăma Nainngandaw"
+    ],
+    "searchTerms": [
+      "Myanmar",
+      "Republic of the Union of Myanmar",
+      "Burmese",
+      "MM",
+      "Burma",
+      "Pyidaunzu Thanmăda Myăma Nainngandaw",
+      "104",
+      "Asia",
+      "South-Eastern Asia",
+      "Naypyidaw"
+    ]
+  },
+  {
+    "id": "burundian",
+    "name": "Burundian",
+    "category": "country-associated",
+    "countryCode": "bi",
+    "flagUrl": "https://flagcdn.com/bi.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Burundi",
+      "Republic of Burundi",
+      "Burundian",
+      "BI",
+      "Republika y'Uburundi",
+      "République du Burundi"
+    ],
+    "searchTerms": [
+      "Burundi",
+      "Republic of Burundi",
+      "Burundian",
+      "BI",
+      "Republika y'Uburundi",
+      "République du Burundi",
+      "108",
+      "Africa",
+      "Eastern Africa",
+      "Gitega"
+    ]
+  },
+  {
+    "id": "cambodian",
+    "name": "Cambodian",
+    "category": "country-associated",
+    "countryCode": "kh",
+    "flagUrl": "https://flagcdn.com/kh.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Cambodia",
+      "Kingdom of Cambodia",
+      "Cambodian",
+      "KH"
+    ],
+    "searchTerms": [
+      "Cambodia",
+      "Kingdom of Cambodia",
+      "Cambodian",
+      "KH",
+      "116",
+      "Asia",
+      "South-Eastern Asia",
+      "Phnom Penh"
+    ]
+  },
+  {
+    "id": "cameroonian",
+    "name": "Cameroonian",
+    "category": "country-associated",
+    "countryCode": "cm",
+    "flagUrl": "https://flagcdn.com/cm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Cameroon",
+      "Republic of Cameroon",
+      "Cameroonian",
+      "CM",
+      "République du Cameroun"
+    ],
+    "searchTerms": [
+      "Cameroon",
+      "Republic of Cameroon",
+      "Cameroonian",
+      "CM",
+      "République du Cameroun",
+      "120",
+      "Africa",
+      "Middle Africa",
+      "Yaoundé"
+    ]
+  },
+  {
+    "id": "canadian",
+    "name": "Canadian",
+    "category": "country-associated",
+    "countryCode": "ca",
+    "flagUrl": "https://flagcdn.com/ca.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "Canada",
+      "Canadian",
+      "CA"
+    ],
+    "searchTerms": [
+      "Canada",
+      "Canadian",
+      "CA",
+      "124",
+      "Americas",
+      "North America",
+      "Ottawa"
+    ]
+  },
+  {
+    "id": "cape-verdian",
+    "name": "Cape Verdian",
+    "category": "country-associated",
+    "countryCode": "cv",
+    "flagUrl": "https://flagcdn.com/cv.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Cape Verde",
+      "Republic of Cabo Verde",
+      "Cape Verdian",
+      "CV",
+      "República de Cabo Verde"
+    ],
+    "searchTerms": [
+      "Cape Verde",
+      "Republic of Cabo Verde",
+      "Cape Verdian",
+      "CV",
+      "República de Cabo Verde",
+      "132",
+      "Africa",
+      "Western Africa",
+      "Praia"
+    ]
+  },
+  {
+    "id": "caribbean",
+    "name": "Caribbean",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "CAR",
+    "region": "Caribbean",
+    "alternateNames": [],
+    "searchTerms": [
+      "Caribbean"
+    ]
+  },
+  {
+    "id": "caymanian",
+    "name": "Caymanian",
+    "category": "territory-associated",
+    "countryCode": "ky",
+    "flagUrl": "https://flagcdn.com/ky.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Cayman Islands",
+      "Caymanian",
+      "KY"
+    ],
+    "searchTerms": [
+      "Cayman Islands",
+      "Caymanian",
+      "KY",
+      "136",
+      "Americas",
+      "Caribbean",
+      "George Town"
+    ]
+  },
+  {
+    "id": "central-african",
+    "name": "Central African",
+    "category": "country-associated",
+    "countryCode": "cf",
+    "flagUrl": "https://flagcdn.com/cf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Central African Republic",
+      "Central African",
+      "CF",
+      "République centrafricaine"
+    ],
+    "searchTerms": [
+      "Central African Republic",
+      "Central African",
+      "CF",
+      "République centrafricaine",
+      "140",
+      "Africa",
+      "Middle Africa",
+      "Bangui"
+    ]
+  },
+  {
+    "id": "central-asian",
+    "name": "Central Asian",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "CAS",
+    "region": "Central Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "Central Asian"
+    ]
+  },
+  {
+    "id": "chadian",
+    "name": "Chadian",
+    "category": "country-associated",
+    "countryCode": "td",
+    "flagUrl": "https://flagcdn.com/td.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Chad",
+      "Republic of Chad",
+      "Chadian",
+      "TD",
+      "Tchad",
+      "République du Tchad"
+    ],
+    "searchTerms": [
+      "Chad",
+      "Republic of Chad",
+      "Chadian",
+      "TD",
+      "Tchad",
+      "République du Tchad",
+      "148",
+      "Africa",
+      "Middle Africa",
+      "N'Djamena"
+    ]
+  },
+  {
+    "id": "channel-islander",
+    "name": "Channel Islander",
+    "category": "territory-associated",
+    "countryCode": "gg",
+    "flagUrl": "https://flagcdn.com/gg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Guernsey",
+      "Bailiwick of Guernsey",
+      "Channel Islander",
+      "GG",
+      "Bailliage de Guernesey"
+    ],
+    "searchTerms": [
+      "Guernsey",
+      "Bailiwick of Guernsey",
+      "Channel Islander",
+      "GG",
+      "Bailliage de Guernesey",
+      "831",
+      "Europe",
+      "Northern Europe",
+      "St. Peter Port"
+    ]
+  },
+  {
+    "id": "channel-islander-je",
+    "name": "Channel Islander",
+    "category": "territory-associated",
+    "countryCode": "je",
+    "flagUrl": "https://flagcdn.com/je.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Jersey",
+      "Bailiwick of Jersey",
+      "Channel Islander",
+      "JE",
+      "Bailliage de Jersey",
+      "Bailliage dé Jèrri"
+    ],
+    "searchTerms": [
+      "Jersey",
+      "Bailiwick of Jersey",
+      "Channel Islander",
+      "JE",
+      "Bailliage de Jersey",
+      "Bailliage dé Jèrri",
+      "832",
+      "Europe",
+      "Northern Europe",
+      "Saint Helier"
+    ]
+  },
+  {
+    "id": "chilean",
+    "name": "Chilean",
+    "category": "country-associated",
+    "countryCode": "cl",
+    "flagUrl": "https://flagcdn.com/cl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Chile",
+      "Republic of Chile",
+      "Chilean",
+      "CL",
+      "República de Chile"
+    ],
+    "searchTerms": [
+      "Chile",
+      "Republic of Chile",
+      "Chilean",
+      "CL",
+      "República de Chile",
+      "152",
+      "Americas",
+      "South America",
+      "Santiago"
+    ]
+  },
+  {
+    "id": "chinese",
+    "name": "Chinese",
+    "category": "country-associated",
+    "countryCode": "cn",
+    "flagUrl": "https://flagcdn.com/cn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "China",
+      "People's Republic of China",
+      "Chinese",
+      "CN",
+      "Zhōngguó",
+      "Zhongguo",
+      "Zhonghua",
+      "中华人民共和国",
+      "Zhōnghuá Rénmín Gònghéguó"
+    ],
+    "searchTerms": [
+      "China",
+      "People's Republic of China",
+      "Chinese",
+      "CN",
+      "Zhōngguó",
+      "Zhongguo",
+      "Zhonghua",
+      "中华人民共和国",
+      "Zhōnghuá Rénmín Gònghéguó",
+      "156",
+      "Asia",
+      "Eastern Asia",
+      "Beijing"
+    ]
+  },
+  {
+    "id": "christmas-islander",
+    "name": "Christmas Islander",
+    "category": "territory-associated",
+    "countryCode": "cx",
+    "flagUrl": "https://flagcdn.com/cx.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Australia and New Zealand",
+    "alternateNames": [
+      "Christmas Island",
+      "Territory of Christmas Island",
+      "Christmas Islander",
+      "CX"
+    ],
+    "searchTerms": [
+      "Christmas Island",
+      "Territory of Christmas Island",
+      "Christmas Islander",
+      "CX",
+      "162",
+      "Oceania",
+      "Australia and New Zealand",
+      "Flying Fish Cove"
+    ]
+  },
+  {
+    "id": "cocos-islander",
+    "name": "Cocos Islander",
+    "category": "territory-associated",
+    "countryCode": "cc",
+    "flagUrl": "https://flagcdn.com/cc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Australia and New Zealand",
+    "alternateNames": [
+      "Cocos (Keeling) Islands",
+      "Territory of the Cocos (Keeling) Islands",
+      "Cocos Islander",
+      "CC",
+      "Keeling Islands",
+      "Cocos Islands"
+    ],
+    "searchTerms": [
+      "Cocos (Keeling) Islands",
+      "Territory of the Cocos (Keeling) Islands",
+      "Cocos Islander",
+      "CC",
+      "Keeling Islands",
+      "Cocos Islands",
+      "166",
+      "Oceania",
+      "Australia and New Zealand",
+      "West Island"
+    ]
+  },
+  {
+    "id": "colombian",
+    "name": "Colombian",
+    "category": "country-associated",
+    "countryCode": "co",
+    "flagUrl": "https://flagcdn.com/co.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Colombia",
+      "Republic of Colombia",
+      "Colombian",
+      "CO",
+      "República de Colombia"
+    ],
+    "searchTerms": [
+      "Colombia",
+      "Republic of Colombia",
+      "Colombian",
+      "CO",
+      "República de Colombia",
+      "170",
+      "Americas",
+      "South America",
+      "Bogotá"
+    ]
+  },
+  {
+    "id": "comoran",
+    "name": "Comoran",
+    "category": "country-associated",
+    "countryCode": "km",
+    "flagUrl": "https://flagcdn.com/km.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Comoros",
+      "Union of the Comoros",
+      "Comoran",
+      "KM",
+      "Union des Comores",
+      "Udzima wa Komori",
+      "al-Ittiḥād al-Qumurī"
+    ],
+    "searchTerms": [
+      "Comoros",
+      "Union of the Comoros",
+      "Comoran",
+      "KM",
+      "Union des Comores",
+      "Udzima wa Komori",
+      "al-Ittiḥād al-Qumurī",
+      "174",
+      "Africa",
+      "Eastern Africa",
+      "Moroni"
+    ]
+  },
+  {
+    "id": "congolese",
+    "name": "Congolese",
+    "category": "country-associated",
+    "countryCode": "cd",
+    "flagUrl": "https://flagcdn.com/cd.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "DR Congo",
+      "Democratic Republic of the Congo",
+      "Congolese",
+      "CD",
+      "Congo-Kinshasa",
+      "Congo, the Democratic Republic of the",
+      "Democratic Republic of Congo",
+      "DRC"
+    ],
+    "searchTerms": [
+      "DR Congo",
+      "Democratic Republic of the Congo",
+      "Congolese",
+      "CD",
+      "Congo-Kinshasa",
+      "Congo, the Democratic Republic of the",
+      "Democratic Republic of Congo",
+      "DRC",
+      "180",
+      "Africa",
+      "Middle Africa",
+      "Kinshasa"
+    ]
+  },
+  {
+    "id": "congolese-cg",
+    "name": "Congolese",
+    "category": "country-associated",
+    "countryCode": "cg",
+    "flagUrl": "https://flagcdn.com/cg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Republic of the Congo",
+      "Congolese",
+      "CG",
+      "Congo",
+      "Congo-Brazzaville"
+    ],
+    "searchTerms": [
+      "Republic of the Congo",
+      "Congolese",
+      "CG",
+      "Congo",
+      "Congo-Brazzaville",
+      "178",
+      "Africa",
+      "Middle Africa",
+      "Brazzaville"
+    ]
+  },
+  {
+    "id": "cook-islander",
+    "name": "Cook Islander",
+    "category": "territory-associated",
+    "countryCode": "ck",
+    "flagUrl": "https://flagcdn.com/ck.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Cook Islands",
+      "Cook Islander",
+      "CK",
+      "Kūki 'Āirani"
+    ],
+    "searchTerms": [
+      "Cook Islands",
+      "Cook Islander",
+      "CK",
+      "Kūki 'Āirani",
+      "184",
+      "Oceania",
+      "Polynesia",
+      "Avarua"
+    ]
+  },
+  {
+    "id": "costa-rican",
+    "name": "Costa Rican",
+    "category": "country-associated",
+    "countryCode": "cr",
+    "flagUrl": "https://flagcdn.com/cr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "Costa Rica",
+      "Republic of Costa Rica",
+      "Costa Rican",
+      "CR",
+      "República de Costa Rica"
+    ],
+    "searchTerms": [
+      "Costa Rica",
+      "Republic of Costa Rica",
+      "Costa Rican",
+      "CR",
+      "República de Costa Rica",
+      "188",
+      "Americas",
+      "Central America",
+      "San José"
+    ]
+  },
+  {
+    "id": "croatian",
+    "name": "Croatian",
+    "category": "country-associated",
+    "countryCode": "hr",
+    "flagUrl": "https://flagcdn.com/hr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Croatia",
+      "Republic of Croatia",
+      "Croatian",
+      "HR",
+      "Hrvatska",
+      "Republika Hrvatska"
+    ],
+    "searchTerms": [
+      "Croatia",
+      "Republic of Croatia",
+      "Croatian",
+      "HR",
+      "Hrvatska",
+      "Republika Hrvatska",
+      "191",
+      "Europe",
+      "Southeast Europe",
+      "Zagreb"
+    ]
+  },
+  {
+    "id": "cuban",
+    "name": "Cuban",
+    "category": "country-associated",
+    "countryCode": "cu",
+    "flagUrl": "https://flagcdn.com/cu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Cuba",
+      "Republic of Cuba",
+      "Cuban",
+      "CU",
+      "República de Cuba"
+    ],
+    "searchTerms": [
+      "Cuba",
+      "Republic of Cuba",
+      "Cuban",
+      "CU",
+      "República de Cuba",
+      "192",
+      "Americas",
+      "Caribbean",
+      "Havana"
+    ]
+  },
+  {
+    "id": "curacaoan",
+    "name": "Curaçaoan",
+    "category": "territory-associated",
+    "countryCode": "cw",
+    "flagUrl": "https://flagcdn.com/cw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Curaçao",
+      "Country of Curaçao",
+      "Curaçaoan",
+      "CW",
+      "Curacao",
+      "Kòrsou",
+      "Land Curaçao",
+      "Pais Kòrsou"
+    ],
+    "searchTerms": [
+      "Curaçao",
+      "Country of Curaçao",
+      "Curaçaoan",
+      "CW",
+      "Curacao",
+      "Kòrsou",
+      "Land Curaçao",
+      "Pais Kòrsou",
+      "531",
+      "Americas",
+      "Caribbean",
+      "Willemstad"
+    ]
+  },
+  {
+    "id": "cypriot",
+    "name": "Cypriot",
+    "category": "country-associated",
+    "countryCode": "cy",
+    "flagUrl": "https://flagcdn.com/cy.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Cyprus",
+      "Republic of Cyprus",
+      "Cypriot",
+      "CY",
+      "Kýpros",
+      "Kıbrıs",
+      "Κυπριακή Δημοκρατία",
+      "Kıbrıs Cumhuriyeti"
+    ],
+    "searchTerms": [
+      "Cyprus",
+      "Republic of Cyprus",
+      "Cypriot",
+      "CY",
+      "Kýpros",
+      "Kıbrıs",
+      "Κυπριακή Δημοκρατία",
+      "Kıbrıs Cumhuriyeti",
+      "196",
+      "Europe",
+      "Southern Europe",
+      "Nicosia"
+    ]
+  },
+  {
+    "id": "czech",
+    "name": "Czech",
+    "category": "country-associated",
+    "countryCode": "cz",
+    "flagUrl": "https://flagcdn.com/cz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Europe",
+    "alternateNames": [
+      "Czechia",
+      "Czech Republic",
+      "Czech",
+      "CZ",
+      "Česká republika",
+      "Česko"
+    ],
+    "searchTerms": [
+      "Czechia",
+      "Czech Republic",
+      "Czech",
+      "CZ",
+      "Česká republika",
+      "Česko",
+      "203",
+      "Europe",
+      "Central Europe",
+      "Prague"
+    ]
+  },
+  {
+    "id": "danish",
+    "name": "Danish",
+    "category": "country-associated",
+    "countryCode": "dk",
+    "flagUrl": "https://flagcdn.com/dk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Denmark",
+      "Kingdom of Denmark",
+      "Danish",
+      "DK",
+      "Danmark",
+      "Kongeriget Danmark"
+    ],
+    "searchTerms": [
+      "Denmark",
+      "Kingdom of Denmark",
+      "Danish",
+      "DK",
+      "Danmark",
+      "Kongeriget Danmark",
+      "208",
+      "Europe",
+      "Northern Europe",
+      "Copenhagen"
+    ]
+  },
+  {
+    "id": "djibouti",
+    "name": "Djibouti",
+    "category": "country-associated",
+    "countryCode": "dj",
+    "flagUrl": "https://flagcdn.com/dj.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Djibouti",
+      "Republic of Djibouti",
+      "DJ",
+      "Jabuuti",
+      "Gabuuti",
+      "République de Djibouti",
+      "Gabuutih Ummuuno",
+      "Jamhuuriyadda Jabuuti"
+    ],
+    "searchTerms": [
+      "Djibouti",
+      "Republic of Djibouti",
+      "DJ",
+      "Jabuuti",
+      "Gabuuti",
+      "République de Djibouti",
+      "Gabuutih Ummuuno",
+      "Jamhuuriyadda Jabuuti",
+      "262",
+      "Africa",
+      "Eastern Africa"
+    ]
+  },
+  {
+    "id": "dominican",
+    "name": "Dominican",
+    "category": "country-associated",
+    "countryCode": "dm",
+    "flagUrl": "https://flagcdn.com/dm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Dominica",
+      "Commonwealth of Dominica",
+      "Dominican",
+      "DM",
+      "Dominique",
+      "Wai‘tu kubuli"
+    ],
+    "searchTerms": [
+      "Dominica",
+      "Commonwealth of Dominica",
+      "Dominican",
+      "DM",
+      "Dominique",
+      "Wai‘tu kubuli",
+      "212",
+      "Americas",
+      "Caribbean",
+      "Roseau"
+    ]
+  },
+  {
+    "id": "dominican-do",
+    "name": "Dominican",
+    "category": "country-associated",
+    "countryCode": "do",
+    "flagUrl": "https://flagcdn.com/do.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Dominican Republic",
+      "Dominican",
+      "DO"
+    ],
+    "searchTerms": [
+      "Dominican Republic",
+      "Dominican",
+      "DO",
+      "214",
+      "Americas",
+      "Caribbean",
+      "Santo Domingo"
+    ]
+  },
+  {
+    "id": "dutch",
+    "name": "Dutch",
+    "category": "territory-associated",
+    "countryCode": "bq",
+    "flagUrl": "https://flagcdn.com/bq.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Caribbean Netherlands",
+      "Bonaire, Sint Eustatius and Saba",
+      "Dutch",
+      "BES islands",
+      "Bonaire Sint Eustatius and Saba"
+    ],
+    "searchTerms": [
+      "Caribbean Netherlands",
+      "Bonaire, Sint Eustatius and Saba",
+      "Dutch",
+      "BES islands",
+      "Bonaire Sint Eustatius and Saba",
+      "BQ",
+      "535",
+      "Americas",
+      "Caribbean",
+      "Kralendijk",
+      "Oranjestad",
+      "The Bottom"
+    ]
+  },
+  {
+    "id": "dutch-nl",
+    "name": "Dutch",
+    "category": "country-associated",
+    "countryCode": "nl",
+    "flagUrl": "https://flagcdn.com/nl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Netherlands",
+      "Kingdom of the Netherlands",
+      "Dutch",
+      "NL",
+      "Holland",
+      "Nederland",
+      "The Netherlands"
+    ],
+    "searchTerms": [
+      "Netherlands",
+      "Kingdom of the Netherlands",
+      "Dutch",
+      "NL",
+      "Holland",
+      "Nederland",
+      "The Netherlands",
+      "528",
+      "Europe",
+      "Western Europe",
+      "Amsterdam"
+    ]
+  },
+  {
+    "id": "east-asian",
+    "name": "East Asian",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "EAS",
+    "region": "East Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "East Asian"
+    ]
+  },
+  {
+    "id": "east-timorese",
+    "name": "East Timorese",
+    "category": "country-associated",
+    "countryCode": "tl",
+    "flagUrl": "https://flagcdn.com/tl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Timor-Leste",
+      "Democratic Republic of Timor-Leste",
+      "East Timorese",
+      "TL",
+      "East Timor",
+      "Timor",
+      "República Democrática de Timor-Leste",
+      "Repúblika Demokrátika Timór-Leste",
+      "Timór Lorosa'e",
+      "Timor Lorosae"
+    ],
+    "searchTerms": [
+      "Timor-Leste",
+      "Democratic Republic of Timor-Leste",
+      "East Timorese",
+      "TL",
+      "East Timor",
+      "Timor",
+      "República Democrática de Timor-Leste",
+      "Repúblika Demokrátika Timór-Leste",
+      "Timór Lorosa'e",
+      "Timor Lorosae",
+      "626",
+      "Asia",
+      "South-Eastern Asia",
+      "Dili"
+    ]
+  },
+  {
+    "id": "ecuadorean",
+    "name": "Ecuadorean",
+    "category": "country-associated",
+    "countryCode": "ec",
+    "flagUrl": "https://flagcdn.com/ec.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Ecuador",
+      "Republic of Ecuador",
+      "Ecuadorean",
+      "EC",
+      "República del Ecuador"
+    ],
+    "searchTerms": [
+      "Ecuador",
+      "Republic of Ecuador",
+      "Ecuadorean",
+      "EC",
+      "República del Ecuador",
+      "218",
+      "Americas",
+      "South America",
+      "Quito"
+    ]
+  },
+  {
+    "id": "egyptian",
+    "name": "Egyptian",
+    "category": "country-associated",
+    "countryCode": "eg",
+    "flagUrl": "https://flagcdn.com/eg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Egypt",
+      "Arab Republic of Egypt",
+      "Egyptian",
+      "EG"
+    ],
+    "searchTerms": [
+      "Egypt",
+      "Arab Republic of Egypt",
+      "Egyptian",
+      "EG",
+      "818",
+      "Africa",
+      "Northern Africa",
+      "Cairo"
+    ]
+  },
+  {
+    "id": "emirati",
+    "name": "Emirati",
+    "category": "country-associated",
+    "countryCode": "ae",
+    "flagUrl": "https://flagcdn.com/ae.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "United Arab Emirates",
+      "Emirati",
+      "AE",
+      "UAE",
+      "Emirates"
+    ],
+    "searchTerms": [
+      "United Arab Emirates",
+      "Emirati",
+      "AE",
+      "UAE",
+      "Emirates",
+      "784",
+      "Asia",
+      "Western Asia",
+      "Abu Dhabi"
+    ]
+  },
+  {
+    "id": "equatorial-guinean",
+    "name": "Equatorial Guinean",
+    "category": "country-associated",
+    "countryCode": "gq",
+    "flagUrl": "https://flagcdn.com/gq.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Equatorial Guinea",
+      "Republic of Equatorial Guinea",
+      "Equatorial Guinean",
+      "GQ",
+      "República de Guinea Ecuatorial",
+      "République de Guinée équatoriale",
+      "República da Guiné Equatorial"
+    ],
+    "searchTerms": [
+      "Equatorial Guinea",
+      "Republic of Equatorial Guinea",
+      "Equatorial Guinean",
+      "GQ",
+      "República de Guinea Ecuatorial",
+      "République de Guinée équatoriale",
+      "República da Guiné Equatorial",
+      "226",
+      "Africa",
+      "Middle Africa",
+      "Malabo"
+    ]
+  },
+  {
+    "id": "eritrean",
+    "name": "Eritrean",
+    "category": "country-associated",
+    "countryCode": "er",
+    "flagUrl": "https://flagcdn.com/er.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Eritrea",
+      "State of Eritrea",
+      "Eritrean",
+      "ER",
+      "ሃገረ ኤርትራ",
+      "Dawlat Iritriyá",
+      "ʾErtrā",
+      "Iritriyā"
+    ],
+    "searchTerms": [
+      "Eritrea",
+      "State of Eritrea",
+      "Eritrean",
+      "ER",
+      "ሃገረ ኤርትራ",
+      "Dawlat Iritriyá",
+      "ʾErtrā",
+      "Iritriyā",
+      "232",
+      "Africa",
+      "Eastern Africa",
+      "Asmara"
+    ]
+  },
+  {
+    "id": "estonian",
+    "name": "Estonian",
+    "category": "country-associated",
+    "countryCode": "ee",
+    "flagUrl": "https://flagcdn.com/ee.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Estonia",
+      "Republic of Estonia",
+      "Estonian",
+      "EE",
+      "Eesti",
+      "Eesti Vabariik"
+    ],
+    "searchTerms": [
+      "Estonia",
+      "Republic of Estonia",
+      "Estonian",
+      "EE",
+      "Eesti",
+      "Eesti Vabariik",
+      "233",
+      "Europe",
+      "Northern Europe",
+      "Tallinn"
+    ]
+  },
+  {
+    "id": "ethiopian",
+    "name": "Ethiopian",
+    "category": "country-associated",
+    "countryCode": "et",
+    "flagUrl": "https://flagcdn.com/et.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Ethiopia",
+      "Federal Democratic Republic of Ethiopia",
+      "Ethiopian",
+      "ET",
+      "ʾĪtyōṗṗyā",
+      "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ"
+    ],
+    "searchTerms": [
+      "Ethiopia",
+      "Federal Democratic Republic of Ethiopia",
+      "Ethiopian",
+      "ET",
+      "ʾĪtyōṗṗyā",
+      "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ",
+      "231",
+      "Africa",
+      "Eastern Africa",
+      "Addis Ababa"
+    ]
+  },
+  {
+    "id": "european",
+    "name": "European",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "EUR",
+    "region": "Europe",
+    "alternateNames": [],
+    "searchTerms": [
+      "European"
+    ]
+  },
+  {
+    "id": "falkland-islander",
+    "name": "Falkland Islander",
+    "category": "territory-associated",
+    "countryCode": "fk",
+    "flagUrl": "https://flagcdn.com/fk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Falkland Islands",
+      "Falkland Islander",
+      "FK",
+      "Islas Malvinas",
+      "Falkland Islands (Malvinas)"
+    ],
+    "searchTerms": [
+      "Falkland Islands",
+      "Falkland Islander",
+      "FK",
+      "Islas Malvinas",
+      "Falkland Islands (Malvinas)",
+      "238",
+      "Americas",
+      "South America",
+      "Stanley"
+    ]
+  },
+  {
+    "id": "faroese",
+    "name": "Faroese",
+    "category": "territory-associated",
+    "countryCode": "fo",
+    "flagUrl": "https://flagcdn.com/fo.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Faroe Islands",
+      "Faroese",
+      "FO",
+      "Føroyar",
+      "Færøerne",
+      "Faeroe Islands"
+    ],
+    "searchTerms": [
+      "Faroe Islands",
+      "Faroese",
+      "FO",
+      "Føroyar",
+      "Færøerne",
+      "Faeroe Islands",
+      "234",
+      "Europe",
+      "Northern Europe",
+      "Tórshavn"
+    ]
+  },
+  {
+    "id": "fijian",
+    "name": "Fijian",
+    "category": "country-associated",
+    "countryCode": "fj",
+    "flagUrl": "https://flagcdn.com/fj.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Melanesia",
+    "alternateNames": [
+      "Fiji",
+      "Republic of Fiji",
+      "Fijian",
+      "FJ",
+      "Viti",
+      "Matanitu ko Viti",
+      "Fijī Gaṇarājya"
+    ],
+    "searchTerms": [
+      "Fiji",
+      "Republic of Fiji",
+      "Fijian",
+      "FJ",
+      "Viti",
+      "Matanitu ko Viti",
+      "Fijī Gaṇarājya",
+      "242",
+      "Oceania",
+      "Melanesia",
+      "Suva"
+    ]
+  },
+  {
+    "id": "filipino",
+    "name": "Filipino",
+    "category": "country-associated",
+    "countryCode": "ph",
+    "flagUrl": "https://flagcdn.com/ph.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Philippines",
+      "Republic of the Philippines",
+      "Filipino",
+      "PH",
+      "Repúblika ng Pilipinas"
+    ],
+    "searchTerms": [
+      "Philippines",
+      "Republic of the Philippines",
+      "Filipino",
+      "PH",
+      "Repúblika ng Pilipinas",
+      "608",
+      "Asia",
+      "South-Eastern Asia",
+      "Manila"
+    ]
+  },
+  {
+    "id": "finnish",
+    "name": "Finnish",
+    "category": "country-associated",
+    "countryCode": "fi",
+    "flagUrl": "https://flagcdn.com/fi.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Finland",
+      "Republic of Finland",
+      "Finnish",
+      "FI",
+      "Suomi",
+      "Suomen tasavalta",
+      "Republiken Finland"
+    ],
+    "searchTerms": [
+      "Finland",
+      "Republic of Finland",
+      "Finnish",
+      "FI",
+      "Suomi",
+      "Suomen tasavalta",
+      "Republiken Finland",
+      "246",
+      "Europe",
+      "Northern Europe",
+      "Helsinki"
+    ]
+  },
+  {
+    "id": "french",
+    "name": "French",
+    "category": "territory-associated",
+    "countryCode": "tf",
+    "flagUrl": "https://flagcdn.com/tf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Antarctic",
+    "alternateNames": [
+      "French Southern and Antarctic Lands",
+      "Territory of the French Southern and Antarctic Lands",
+      "French",
+      "TF",
+      "French Southern Territories"
+    ],
+    "searchTerms": [
+      "French Southern and Antarctic Lands",
+      "Territory of the French Southern and Antarctic Lands",
+      "French",
+      "TF",
+      "French Southern Territories",
+      "260",
+      "Antarctic",
+      "Port-aux-Français"
+    ]
+  },
+  {
+    "id": "french-fr",
+    "name": "French",
+    "category": "country-associated",
+    "countryCode": "fr",
+    "flagUrl": "https://flagcdn.com/fr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "France",
+      "French Republic",
+      "French",
+      "FR",
+      "République française"
+    ],
+    "searchTerms": [
+      "France",
+      "French Republic",
+      "French",
+      "FR",
+      "République française",
+      "250",
+      "Europe",
+      "Western Europe",
+      "Paris"
+    ]
+  },
+  {
+    "id": "french-polynesian",
+    "name": "French Polynesian",
+    "category": "territory-associated",
+    "countryCode": "pf",
+    "flagUrl": "https://flagcdn.com/pf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "French Polynesia",
+      "French Polynesian",
+      "PF",
+      "Polynésie française",
+      "Pōrīnetia Farāni"
+    ],
+    "searchTerms": [
+      "French Polynesia",
+      "French Polynesian",
+      "PF",
+      "Polynésie française",
+      "Pōrīnetia Farāni",
+      "258",
+      "Oceania",
+      "Polynesia",
+      "Papeetē"
+    ]
+  },
+  {
+    "id": "gabonese",
+    "name": "Gabonese",
+    "category": "country-associated",
+    "countryCode": "ga",
+    "flagUrl": "https://flagcdn.com/ga.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "Gabon",
+      "Gabonese Republic",
+      "Gabonese",
+      "GA",
+      "République Gabonaise"
+    ],
+    "searchTerms": [
+      "Gabon",
+      "Gabonese Republic",
+      "Gabonese",
+      "GA",
+      "République Gabonaise",
+      "266",
+      "Africa",
+      "Middle Africa",
+      "Libreville"
+    ]
+  },
+  {
+    "id": "gambian",
+    "name": "Gambian",
+    "category": "country-associated",
+    "countryCode": "gm",
+    "flagUrl": "https://flagcdn.com/gm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Gambia",
+      "Republic of the Gambia",
+      "Gambian",
+      "GM"
+    ],
+    "searchTerms": [
+      "Gambia",
+      "Republic of the Gambia",
+      "Gambian",
+      "GM",
+      "270",
+      "Africa",
+      "Western Africa",
+      "Banjul"
+    ]
+  },
+  {
+    "id": "georgian",
+    "name": "Georgian",
+    "category": "country-associated",
+    "countryCode": "ge",
+    "flagUrl": "https://flagcdn.com/ge.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Georgia",
+      "Georgian",
+      "GE",
+      "Sakartvelo"
+    ],
+    "searchTerms": [
+      "Georgia",
+      "Georgian",
+      "GE",
+      "Sakartvelo",
+      "268",
+      "Asia",
+      "Western Asia",
+      "Tbilisi"
+    ]
+  },
+  {
+    "id": "german",
+    "name": "German",
+    "category": "country-associated",
+    "countryCode": "de",
+    "flagUrl": "https://flagcdn.com/de.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Germany",
+      "Federal Republic of Germany",
+      "German",
+      "DE",
+      "Bundesrepublik Deutschland"
+    ],
+    "searchTerms": [
+      "Germany",
+      "Federal Republic of Germany",
+      "German",
+      "DE",
+      "Bundesrepublik Deutschland",
+      "276",
+      "Europe",
+      "Western Europe",
+      "Berlin"
+    ]
+  },
+  {
+    "id": "ghanaian",
+    "name": "Ghanaian",
+    "category": "country-associated",
+    "countryCode": "gh",
+    "flagUrl": "https://flagcdn.com/gh.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Ghana",
+      "Republic of Ghana",
+      "Ghanaian",
+      "GH"
+    ],
+    "searchTerms": [
+      "Ghana",
+      "Republic of Ghana",
+      "Ghanaian",
+      "GH",
+      "288",
+      "Africa",
+      "Western Africa",
+      "Accra"
+    ]
+  },
+  {
+    "id": "gibraltar",
+    "name": "Gibraltar",
+    "category": "territory-associated",
+    "countryCode": "gi",
+    "flagUrl": "https://flagcdn.com/gi.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Gibraltar",
+      "GI"
+    ],
+    "searchTerms": [
+      "Gibraltar",
+      "GI",
+      "292",
+      "Europe",
+      "Southern Europe"
+    ]
+  },
+  {
+    "id": "greek",
+    "name": "Greek",
+    "category": "country-associated",
+    "countryCode": "gr",
+    "flagUrl": "https://flagcdn.com/gr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Greece",
+      "Hellenic Republic",
+      "Greek",
+      "GR",
+      "Elláda",
+      "Ελληνική Δημοκρατία"
+    ],
+    "searchTerms": [
+      "Greece",
+      "Hellenic Republic",
+      "Greek",
+      "GR",
+      "Elláda",
+      "Ελληνική Δημοκρατία",
+      "300",
+      "Europe",
+      "Southern Europe",
+      "Athens"
+    ]
+  },
+  {
+    "id": "greenlandic",
+    "name": "Greenlandic",
+    "category": "territory-associated",
+    "countryCode": "gl",
+    "flagUrl": "https://flagcdn.com/gl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "Greenland",
+      "Greenlandic",
+      "GL",
+      "Grønland"
+    ],
+    "searchTerms": [
+      "Greenland",
+      "Greenlandic",
+      "GL",
+      "Grønland",
+      "304",
+      "Americas",
+      "North America",
+      "Nuuk"
+    ]
+  },
+  {
+    "id": "grenadian",
+    "name": "Grenadian",
+    "category": "country-associated",
+    "countryCode": "gd",
+    "flagUrl": "https://flagcdn.com/gd.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Grenada",
+      "Grenadian",
+      "GD"
+    ],
+    "searchTerms": [
+      "Grenada",
+      "Grenadian",
+      "GD",
+      "308",
+      "Americas",
+      "Caribbean",
+      "St. George's"
+    ]
+  },
+  {
+    "id": "guadeloupian",
+    "name": "Guadeloupian",
+    "category": "territory-associated",
+    "countryCode": "gp",
+    "flagUrl": "https://flagcdn.com/gp.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Guadeloupe",
+      "Guadeloupian",
+      "GP",
+      "Gwadloup"
+    ],
+    "searchTerms": [
+      "Guadeloupe",
+      "Guadeloupian",
+      "GP",
+      "Gwadloup",
+      "312",
+      "Americas",
+      "Caribbean",
+      "Basse-Terre"
+    ]
+  },
+  {
+    "id": "guamanian",
+    "name": "Guamanian",
+    "category": "territory-associated",
+    "countryCode": "gu",
+    "flagUrl": "https://flagcdn.com/gu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Guam",
+      "Guamanian",
+      "GU",
+      "Guåhån"
+    ],
+    "searchTerms": [
+      "Guam",
+      "Guamanian",
+      "GU",
+      "Guåhån",
+      "316",
+      "Oceania",
+      "Micronesia",
+      "Hagåtña"
+    ]
+  },
+  {
+    "id": "guatemalan",
+    "name": "Guatemalan",
+    "category": "country-associated",
+    "countryCode": "gt",
+    "flagUrl": "https://flagcdn.com/gt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "Guatemala",
+      "Republic of Guatemala",
+      "Guatemalan",
+      "GT"
+    ],
+    "searchTerms": [
+      "Guatemala",
+      "Republic of Guatemala",
+      "Guatemalan",
+      "GT",
+      "320",
+      "Americas",
+      "Central America",
+      "Guatemala City"
+    ]
+  },
+  {
+    "id": "guianan",
+    "name": "Guianan",
+    "category": "territory-associated",
+    "countryCode": "gf",
+    "flagUrl": "https://flagcdn.com/gf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "French Guiana",
+      "Guiana",
+      "Guianan",
+      "GF",
+      "Guyane"
+    ],
+    "searchTerms": [
+      "French Guiana",
+      "Guiana",
+      "Guianan",
+      "GF",
+      "Guyane",
+      "254",
+      "Americas",
+      "South America",
+      "Cayenne"
+    ]
+  },
+  {
+    "id": "guinea-bissauan",
+    "name": "Guinea-Bissauan",
+    "category": "country-associated",
+    "countryCode": "gw",
+    "flagUrl": "https://flagcdn.com/gw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Guinea-Bissau",
+      "Republic of Guinea-Bissau",
+      "Guinea-Bissauan",
+      "GW",
+      "República da Guiné-Bissau"
+    ],
+    "searchTerms": [
+      "Guinea-Bissau",
+      "Republic of Guinea-Bissau",
+      "Guinea-Bissauan",
+      "GW",
+      "República da Guiné-Bissau",
+      "624",
+      "Africa",
+      "Western Africa",
+      "Bissau"
+    ]
+  },
+  {
+    "id": "guinean",
+    "name": "Guinean",
+    "category": "country-associated",
+    "countryCode": "gn",
+    "flagUrl": "https://flagcdn.com/gn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Guinea",
+      "Republic of Guinea",
+      "Guinean",
+      "GN",
+      "République de Guinée"
+    ],
+    "searchTerms": [
+      "Guinea",
+      "Republic of Guinea",
+      "Guinean",
+      "GN",
+      "République de Guinée",
+      "324",
+      "Africa",
+      "Western Africa",
+      "Conakry"
+    ]
+  },
+  {
+    "id": "guyanese",
+    "name": "Guyanese",
+    "category": "country-associated",
+    "countryCode": "gy",
+    "flagUrl": "https://flagcdn.com/gy.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Guyana",
+      "Co-operative Republic of Guyana",
+      "Guyanese",
+      "GY"
+    ],
+    "searchTerms": [
+      "Guyana",
+      "Co-operative Republic of Guyana",
+      "Guyanese",
+      "GY",
+      "328",
+      "Americas",
+      "South America",
+      "Georgetown"
+    ]
+  },
+  {
+    "id": "haitian",
+    "name": "Haitian",
+    "category": "country-associated",
+    "countryCode": "ht",
+    "flagUrl": "https://flagcdn.com/ht.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Haiti",
+      "Republic of Haiti",
+      "Haitian",
+      "HT",
+      "République d'Haïti",
+      "Repiblik Ayiti"
+    ],
+    "searchTerms": [
+      "Haiti",
+      "Republic of Haiti",
+      "Haitian",
+      "HT",
+      "République d'Haïti",
+      "Repiblik Ayiti",
+      "332",
+      "Americas",
+      "Caribbean",
+      "Port-au-Prince"
+    ]
+  },
+  {
+    "id": "heard-and-mcdonald-islander",
+    "name": "Heard and McDonald Islander",
+    "category": "territory-associated",
+    "countryCode": "hm",
+    "flagUrl": "https://flagcdn.com/hm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Antarctic",
+    "alternateNames": [
+      "Heard Island and McDonald Islands",
+      "Heard and McDonald Islander",
+      "HM"
+    ],
+    "searchTerms": [
+      "Heard Island and McDonald Islands",
+      "Heard and McDonald Islander",
+      "HM",
+      "334",
+      "Antarctic"
+    ]
+  },
+  {
+    "id": "hispanic",
+    "name": "Hispanic",
+    "category": "umbrella",
+    "symbolType": "neutral",
+    "symbol": "HSP",
+    "region": "Global",
+    "alternateNames": [],
+    "searchTerms": [
+      "Hispanic"
+    ]
+  },
+  {
+    "id": "honduran",
+    "name": "Honduran",
+    "category": "country-associated",
+    "countryCode": "hn",
+    "flagUrl": "https://flagcdn.com/hn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "Honduras",
+      "Republic of Honduras",
+      "Honduran",
+      "HN",
+      "República de Honduras"
+    ],
+    "searchTerms": [
+      "Honduras",
+      "Republic of Honduras",
+      "Honduran",
+      "HN",
+      "República de Honduras",
+      "340",
+      "Americas",
+      "Central America",
+      "Tegucigalpa"
+    ]
+  },
+  {
+    "id": "hong-konger",
+    "name": "Hong Konger",
+    "category": "territory-associated",
+    "countryCode": "hk",
+    "flagUrl": "https://flagcdn.com/hk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "Hong Kong",
+      "Hong Kong Special Administrative Region of the People's Republic of China",
+      "Hong Konger",
+      "HK"
+    ],
+    "searchTerms": [
+      "Hong Kong",
+      "Hong Kong Special Administrative Region of the People's Republic of China",
+      "Hong Konger",
+      "HK",
+      "344",
+      "Asia",
+      "Eastern Asia",
+      "City of Victoria"
+    ]
+  },
+  {
+    "id": "hungarian",
+    "name": "Hungarian",
+    "category": "country-associated",
+    "countryCode": "hu",
+    "flagUrl": "https://flagcdn.com/hu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Europe",
+    "alternateNames": [
+      "Hungary",
+      "Hungarian",
+      "HU"
+    ],
+    "searchTerms": [
+      "Hungary",
+      "Hungarian",
+      "HU",
+      "348",
+      "Europe",
+      "Central Europe",
+      "Budapest"
+    ]
+  },
+  {
+    "id": "i-kiribati",
+    "name": "I-Kiribati",
+    "category": "country-associated",
+    "countryCode": "ki",
+    "flagUrl": "https://flagcdn.com/ki.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Kiribati",
+      "Independent and Sovereign Republic of Kiribati",
+      "I-Kiribati",
+      "KI",
+      "Republic of Kiribati",
+      "Ribaberiki Kiribati"
+    ],
+    "searchTerms": [
+      "Kiribati",
+      "Independent and Sovereign Republic of Kiribati",
+      "I-Kiribati",
+      "KI",
+      "Republic of Kiribati",
+      "Ribaberiki Kiribati",
+      "296",
+      "Oceania",
+      "Micronesia",
+      "South Tarawa"
+    ]
+  },
+  {
+    "id": "icelander",
+    "name": "Icelander",
+    "category": "country-associated",
+    "countryCode": "is",
+    "flagUrl": "https://flagcdn.com/is.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Iceland",
+      "Icelander",
+      "IS",
+      "Island",
+      "Republic of Iceland",
+      "Lýðveldið Ísland"
+    ],
+    "searchTerms": [
+      "Iceland",
+      "Icelander",
+      "IS",
+      "Island",
+      "Republic of Iceland",
+      "Lýðveldið Ísland",
+      "352",
+      "Europe",
+      "Northern Europe",
+      "Reykjavik"
+    ]
+  },
+  {
+    "id": "indian",
+    "name": "Indian",
+    "category": "country-associated",
+    "countryCode": "in",
+    "flagUrl": "https://flagcdn.com/in.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "India",
+      "Republic of India",
+      "Indian",
+      "IN",
+      "Bhārat",
+      "Bharat Ganrajya",
+      "இந்தியா"
+    ],
+    "searchTerms": [
+      "India",
+      "Republic of India",
+      "Indian",
+      "IN",
+      "Bhārat",
+      "Bharat Ganrajya",
+      "இந்தியா",
+      "356",
+      "Asia",
+      "Southern Asia",
+      "New Delhi"
+    ]
+  },
+  {
+    "id": "indian-io",
+    "name": "Indian",
+    "category": "territory-associated",
+    "countryCode": "io",
+    "flagUrl": "https://flagcdn.com/io.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "British Indian Ocean Territory",
+      "Indian",
+      "IO"
+    ],
+    "searchTerms": [
+      "British Indian Ocean Territory",
+      "Indian",
+      "IO",
+      "086",
+      "Africa",
+      "Eastern Africa",
+      "Diego Garcia"
+    ]
+  },
+  {
+    "id": "indigenous",
+    "name": "Indigenous",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "INDG",
+    "region": "Global",
+    "alternateNames": [
+      "Indigenous Peoples"
+    ],
+    "searchTerms": [
+      "Indigenous",
+      "First Peoples"
+    ]
+  },
+  {
+    "id": "indigenous-alaska-native",
+    "name": "Alaska Native",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "AKN",
+    "region": "Arctic North America",
+    "country": "United States (Alaska)",
+    "communityName": "Alaska Native Peoples",
+    "alternateNames": [
+      "Alaskan Native"
+    ],
+    "searchTerms": [
+      "Alaska Native",
+      "Alaskan Native",
+      "Alaska Native Peoples",
+      "Arctic",
+      "North America",
+      "United States",
+      "Alaska"
+    ]
+  },
+  {
+    "id": "indigenous-aleut-unangax",
+    "name": "Aleut / Unangax",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "AUA",
+    "region": "Aleutian and Bering Regions",
+    "country": "United States, Russia",
+    "communityName": "Unangax",
+    "alternateNames": [
+      "Unangan",
+      "Aleut"
+    ],
+    "searchTerms": [
+      "Aleut",
+      "Unangax",
+      "Unangan",
+      "Unangas",
+      "Aleutian",
+      "Bering Sea",
+      "Alaska",
+      "Russia"
+    ]
+  },
+  {
+    "id": "indigenous-inupiat",
+    "name": "Inupiat",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "INU",
+    "region": "Arctic North America",
+    "country": "United States (Alaska)",
+    "communityName": "Inupiat",
+    "alternateNames": [
+      "Inupiaq"
+    ],
+    "searchTerms": [
+      "Inupiat",
+      "Inupiaq",
+      "Arctic",
+      "North Slope",
+      "Alaska",
+      "United States"
+    ]
+  },
+  {
+    "id": "indigenous-yupik",
+    "name": "Yupik",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "YUP",
+    "region": "Arctic and Subarctic",
+    "country": "United States, Russia",
+    "communityName": "Yupik Peoples",
+    "alternateNames": [
+      "Yupik Eskimo"
+    ],
+    "searchTerms": [
+      "Yupik",
+      "Central Yupik",
+      "Siberian Yupik",
+      "Alaska",
+      "Chukotka",
+      "Arctic",
+      "Subarctic"
+    ]
+  },
+  {
+    "id": "indigenous-tlingit",
+    "name": "Tlingit",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "TLG",
+    "region": "Northwest Coast",
+    "country": "United States, Canada",
+    "communityName": "Tlingit Nation",
+    "alternateNames": [],
+    "searchTerms": [
+      "Tlingit",
+      "Lingit",
+      "Northwest Coast",
+      "Alaska",
+      "British Columbia",
+      "First Nations"
+    ]
+  },
+  {
+    "id": "indigenous-haida",
+    "name": "Haida",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "HDA",
+    "region": "Northwest Coast",
+    "country": "Canada, United States",
+    "communityName": "Haida Nation",
+    "alternateNames": [],
+    "searchTerms": [
+      "Haida",
+      "Haida Nation",
+      "Haida Gwaii",
+      "Alaska",
+      "British Columbia",
+      "Northwest Coast"
+    ]
+  },
+  {
+    "id": "indigenous-athabaskan",
+    "name": "Athabaskan",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "ATH",
+    "region": "Subarctic North America",
+    "country": "United States, Canada",
+    "communityName": "Athabaskan Peoples",
+    "alternateNames": [
+      "Dene"
+    ],
+    "searchTerms": [
+      "Athabaskan",
+      "Athabascan",
+      "Dene",
+      "Subarctic",
+      "Alaska",
+      "Yukon",
+      "Northwest Territories"
+    ]
+  },
+  {
+    "id": "indigenous-navajo-dine",
+    "name": "Navajo / Dine",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "DIN",
+    "region": "Southwestern North America",
+    "country": "United States",
+    "communityName": "Navajo Nation",
+    "alternateNames": [
+      "Dine",
+      "Dineh"
+    ],
+    "searchTerms": [
+      "Navajo",
+      "Dine",
+      "Dineh",
+      "Navajo Nation",
+      "Southwest",
+      "Arizona",
+      "New Mexico",
+      "Utah"
+    ]
+  },
+  {
+    "id": "indigenous-cherokee",
+    "name": "Cherokee",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "CHK",
+    "region": "Southeastern North America",
+    "country": "United States",
+    "communityName": "Cherokee Nation",
+    "alternateNames": [
+      "Aniyvwiya"
+    ],
+    "searchTerms": [
+      "Cherokee",
+      "Cherokee Nation",
+      "United Keetoowah Band",
+      "Eastern Band Cherokee",
+      "Aniyvwiya",
+      "Oklahoma",
+      "North Carolina"
+    ]
+  },
+  {
+    "id": "indigenous-choctaw",
+    "name": "Choctaw",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "CHO",
+    "region": "Southeastern North America",
+    "country": "United States",
+    "communityName": "Choctaw Nation",
+    "alternateNames": [
+      "Chahta"
+    ],
+    "searchTerms": [
+      "Choctaw",
+      "Chahta",
+      "Choctaw Nation",
+      "Mississippi Band of Choctaw Indians",
+      "Oklahoma",
+      "Mississippi"
+    ]
+  },
+  {
+    "id": "indigenous-chickasaw",
+    "name": "Chickasaw",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "CKS",
+    "region": "Southeastern North America",
+    "country": "United States",
+    "communityName": "Chickasaw Nation",
+    "alternateNames": [],
+    "searchTerms": [
+      "Chickasaw",
+      "Chickasaw Nation",
+      "Oklahoma",
+      "Southeast"
+    ]
+  },
+  {
+    "id": "indigenous-lakota",
+    "name": "Lakota",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "LAK",
+    "region": "Great Plains",
+    "country": "United States",
+    "communityName": "Lakota Nation",
+    "alternateNames": [
+      "Teton Sioux"
+    ],
+    "searchTerms": [
+      "Lakota",
+      "Teton Sioux",
+      "Oceti Sakowin",
+      "Great Plains",
+      "South Dakota",
+      "North Dakota"
+    ]
+  },
+  {
+    "id": "indigenous-dakota",
+    "name": "Dakota",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "DAK",
+    "region": "Great Plains",
+    "country": "United States, Canada",
+    "communityName": "Dakota Peoples",
+    "alternateNames": [
+      "Santee",
+      "Yankton",
+      "Nakota"
+    ],
+    "searchTerms": [
+      "Dakota",
+      "Santee",
+      "Yankton",
+      "Nakota",
+      "Sioux",
+      "Great Plains",
+      "Manitoba",
+      "Minnesota"
+    ]
+  },
+  {
+    "id": "indigenous-ojibwe-anishinaabe",
+    "name": "Ojibwe / Anishinaabe",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "ANI",
+    "region": "Great Lakes",
+    "country": "Canada, United States",
+    "communityName": "Anishinaabe Nations",
+    "alternateNames": [
+      "Ojibwa",
+      "Chippewa",
+      "Anishinabe"
+    ],
+    "searchTerms": [
+      "Ojibwe",
+      "Ojibwa",
+      "Chippewa",
+      "Anishinaabe",
+      "Anishinabe",
+      "Great Lakes",
+      "First Nations"
+    ]
+  },
+  {
+    "id": "indigenous-cree",
+    "name": "Cree",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "CRE",
+    "region": "Subarctic and Plains",
+    "country": "Canada",
+    "communityName": "Cree Nations",
+    "alternateNames": [
+      "Nehiyaw"
+    ],
+    "searchTerms": [
+      "Cree",
+      "Nehiyaw",
+      "Plains Cree",
+      "Woodland Cree",
+      "First Nations",
+      "Canada",
+      "Subarctic"
+    ]
+  },
+  {
+    "id": "indigenous-first-nations-canada",
+    "name": "First Nations (Canada)",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "FN",
+    "region": "North America",
+    "country": "Canada",
+    "communityName": "First Nations",
+    "alternateNames": [
+      "First Nation"
+    ],
+    "searchTerms": [
+      "First Nations",
+      "First Nation",
+      "Canada",
+      "Indigenous Canada"
+    ]
+  },
+  {
+    "id": "indigenous-inuit",
+    "name": "Inuit",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "INU",
+    "region": "Arctic",
+    "country": "Canada, United States, Greenland",
+    "communityName": "Inuit Peoples",
+    "alternateNames": [
+      "Inuk"
+    ],
+    "searchTerms": [
+      "Inuit",
+      "Inuk",
+      "Inuvialuit",
+      "Nunavut",
+      "Nunavik",
+      "Greenland",
+      "Arctic"
+    ]
+  },
+  {
+    "id": "indigenous-metis",
+    "name": "Metis",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "MET",
+    "region": "North America",
+    "country": "Canada",
+    "communityName": "Metis Nation",
+    "alternateNames": [
+      "Métis"
+    ],
+    "searchTerms": [
+      "Metis",
+      "Métis",
+      "Metis Nation",
+      "Red River",
+      "Canada",
+      "Prairies"
+    ]
+  },
+  {
+    "id": "indigenous-kanaka-maoli",
+    "name": "Native Hawaiian (Kanaka Maoli)",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "KMA",
+    "region": "Polynesia",
+    "country": "United States (Hawaii)",
+    "communityName": "Kanaka Maoli",
+    "alternateNames": [
+      "Kanaka Maoli",
+      "Native Hawaiian"
+    ],
+    "searchTerms": [
+      "Native Hawaiian",
+      "Kanaka Maoli",
+      "Hawaii",
+      "Polynesia",
+      "Pacific Indigenous",
+      "Kamaaina"
+    ]
+  },
+  {
+    "id": "indigenous-maori",
+    "name": "Maori",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "MAO",
+    "region": "Aotearoa / Polynesia",
+    "country": "New Zealand",
+    "communityName": "Iwi and Hapu",
+    "alternateNames": [
+      "Māori",
+      "Tangata Whenua"
+    ],
+    "searchTerms": [
+      "Maori",
+      "Māori",
+      "Tangata Whenua",
+      "Aotearoa",
+      "Iwi",
+      "Hapu",
+      "New Zealand"
+    ]
+  },
+  {
+    "id": "indigenous-samoan-people",
+    "name": "Samoan (Indigenous)",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "SAM",
+    "region": "Polynesia",
+    "country": "Samoa, American Samoa",
+    "communityName": "Tagata Samoa",
+    "alternateNames": [
+      "Tagata Samoa"
+    ],
+    "searchTerms": [
+      "Samoan Indigenous",
+      "Tagata Samoa",
+      "Polynesia",
+      "Samoa",
+      "American Samoa",
+      "Pacific"
+    ]
+  },
+  {
+    "id": "indigenous-aboriginal-australian",
+    "name": "Aboriginal Australian",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "ABA",
+    "region": "Australia",
+    "country": "Australia",
+    "communityName": "Aboriginal and Torres Strait Islander Peoples",
+    "alternateNames": [
+      "Aboriginal peoples of Australia"
+    ],
+    "searchTerms": [
+      "Aboriginal Australian",
+      "Aboriginal peoples of Australia",
+      "Australia Indigenous",
+      "First Peoples Australia"
+    ]
+  },
+  {
+    "id": "indigenous-torres-strait-islander",
+    "name": "Torres Strait Islander",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "TSI",
+    "region": "Australia and Melanesia",
+    "country": "Australia",
+    "communityName": "Torres Strait Islander Peoples",
+    "alternateNames": [],
+    "searchTerms": [
+      "Torres Strait Islander",
+      "Torres Strait",
+      "Australia Indigenous",
+      "Meriam"
+    ]
+  },
+  {
+    "id": "indigenous-sami",
+    "name": "Sami",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "SAMI",
+    "region": "Sápmi (Northern Europe)",
+    "country": "Norway, Sweden, Finland, Russia",
+    "communityName": "Sami People",
+    "alternateNames": [
+      "Saami",
+      "Sámi"
+    ],
+    "searchTerms": [
+      "Sami",
+      "Saami",
+      "Sámi",
+      "Sápmi",
+      "Northern Europe",
+      "Arctic Europe",
+      "Norway",
+      "Sweden",
+      "Finland",
+      "Kola Peninsula"
+    ]
+  },
+  {
+    "id": "indigenous-ainu",
+    "name": "Ainu",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "AIN",
+    "region": "Northern Japan",
+    "country": "Japan",
+    "communityName": "Ainu People",
+    "alternateNames": [
+      "Aynu"
+    ],
+    "searchTerms": [
+      "Ainu",
+      "Aynu",
+      "Hokkaido",
+      "Indigenous Japan",
+      "Japan Indigenous"
+    ]
+  },
+  {
+    "id": "indigenous-mapuche",
+    "name": "Mapuche",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "MAP",
+    "region": "Southern Cone",
+    "country": "Chile, Argentina",
+    "communityName": "Mapuche Nation",
+    "alternateNames": [],
+    "searchTerms": [
+      "Mapuche",
+      "Wallmapu",
+      "Chile Indigenous",
+      "Argentina Indigenous",
+      "Araucanian"
+    ]
+  },
+  {
+    "id": "indigenous-quechua",
+    "name": "Quechua",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "QUE",
+    "region": "Andes",
+    "country": "Peru, Bolivia, Ecuador",
+    "communityName": "Quechua Peoples",
+    "alternateNames": [
+      "Runa"
+    ],
+    "searchTerms": [
+      "Quechua",
+      "Runa",
+      "Andes",
+      "Peru Indigenous",
+      "Bolivia Indigenous",
+      "Ecuador Indigenous"
+    ]
+  },
+  {
+    "id": "indigenous-aymara",
+    "name": "Aymara",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "AYM",
+    "region": "Andes",
+    "country": "Bolivia, Peru, Chile",
+    "communityName": "Aymara Nation",
+    "alternateNames": [],
+    "searchTerms": [
+      "Aymara",
+      "Andes",
+      "Bolivia Indigenous",
+      "Peru Indigenous",
+      "Chile Indigenous",
+      "Altiplano"
+    ]
+  },
+  {
+    "id": "indigenous-maya",
+    "name": "Maya",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "MAY",
+    "region": "Mesoamerica",
+    "country": "Mexico, Guatemala, Belize, Honduras",
+    "communityName": "Maya Peoples",
+    "alternateNames": [
+      "Mayan"
+    ],
+    "searchTerms": [
+      "Maya",
+      "Mayan",
+      "Yucatec Maya",
+      "Kiche",
+      "Mesoamerica",
+      "Guatemala Indigenous",
+      "Mexico Indigenous"
+    ]
+  },
+  {
+    "id": "indigenous-zapotec",
+    "name": "Zapotec",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "ZAP",
+    "region": "Mesoamerica",
+    "country": "Mexico",
+    "communityName": "Zapotec Peoples",
+    "alternateNames": [
+      "Binniza"
+    ],
+    "searchTerms": [
+      "Zapotec",
+      "Binniza",
+      "Oaxaca",
+      "Mexico Indigenous",
+      "Mesoamerica"
+    ]
+  },
+  {
+    "id": "indigenous-mixtec",
+    "name": "Mixtec",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "MIX",
+    "region": "Mesoamerica",
+    "country": "Mexico",
+    "communityName": "Mixtec Peoples",
+    "alternateNames": [
+      "Nuu Savi"
+    ],
+    "searchTerms": [
+      "Mixtec",
+      "Nuu Savi",
+      "Oaxaca",
+      "Mexico Indigenous",
+      "Mesoamerica"
+    ]
+  },
+  {
+    "id": "indigenous-guarani",
+    "name": "Guarani",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "GUA",
+    "region": "South America",
+    "country": "Paraguay, Bolivia, Brazil, Argentina",
+    "communityName": "Guarani Peoples",
+    "alternateNames": [
+      "Ava Guarani"
+    ],
+    "searchTerms": [
+      "Guarani",
+      "Ava Guarani",
+      "South America Indigenous",
+      "Paraguay Indigenous",
+      "Bolivia Indigenous",
+      "Brazil Indigenous"
+    ]
+  },
+  {
+    "id": "indigenous-san-khoisan",
+    "name": "San / Khoisan",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "SAN",
+    "region": "Southern Africa",
+    "country": "Botswana, Namibia, South Africa, Angola",
+    "communityName": "San and Khoikhoi Communities",
+    "alternateNames": [
+      "Khoisan",
+      "Bushmen"
+    ],
+    "searchTerms": [
+      "San",
+      "Khoisan",
+      "Khoikhoi",
+      "Bushmen",
+      "Southern Africa Indigenous",
+      "Kalahari"
+    ]
+  },
+  {
+    "id": "indigenous-pacific",
+    "name": "Pacific Indigenous",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "PAC",
+    "region": "Oceania",
+    "country": "Pacific Islands",
+    "communityName": "Pacific Indigenous Peoples",
+    "alternateNames": [
+      "Indigenous Pacific Peoples"
+    ],
+    "searchTerms": [
+      "Pacific Indigenous",
+      "Pacific Indigenous Peoples",
+      "Oceania Indigenous",
+      "Polynesia Indigenous",
+      "Melanesia Indigenous",
+      "Micronesia Indigenous"
+    ]
+  },
+  {
+    "id": "indigenous-amazonian",
+    "name": "Amazonian Indigenous",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "AMZ",
+    "region": "Amazon Basin",
+    "country": "Brazil, Peru, Colombia, Ecuador, Bolivia, Venezuela",
+    "communityName": "Amazon Basin Indigenous Communities",
+    "alternateNames": [
+      "Amazon Indigenous"
+    ],
+    "searchTerms": [
+      "Amazonian Indigenous",
+      "Amazon Indigenous",
+      "Amazon Basin",
+      "South America Indigenous",
+      "Yanomami",
+      "Ashaninka",
+      "Tikuna"
+    ]
+  },
+  {
+    "id": "indonesian",
+    "name": "Indonesian",
+    "category": "country-associated",
+    "countryCode": "id",
+    "flagUrl": "https://flagcdn.com/id.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Indonesia",
+      "Republic of Indonesia",
+      "Indonesian",
+      "ID",
+      "Republik Indonesia"
+    ],
+    "searchTerms": [
+      "Indonesia",
+      "Republic of Indonesia",
+      "Indonesian",
+      "ID",
+      "Republik Indonesia",
+      "360",
+      "Asia",
+      "South-Eastern Asia",
+      "Jakarta"
+    ]
+  },
+  {
+    "id": "iranian",
+    "name": "Iranian",
+    "category": "country-associated",
+    "countryCode": "ir",
+    "flagUrl": "https://flagcdn.com/ir.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Iran",
+      "Islamic Republic of Iran",
+      "Iranian",
+      "IR",
+      "Iran, Islamic Republic of",
+      "Jomhuri-ye Eslāmi-ye Irān"
+    ],
+    "searchTerms": [
+      "Iran",
+      "Islamic Republic of Iran",
+      "Iranian",
+      "IR",
+      "Iran, Islamic Republic of",
+      "Jomhuri-ye Eslāmi-ye Irān",
+      "364",
+      "Asia",
+      "Southern Asia",
+      "Tehran"
+    ]
+  },
+  {
+    "id": "iraqi",
+    "name": "Iraqi",
+    "category": "country-associated",
+    "countryCode": "iq",
+    "flagUrl": "https://flagcdn.com/iq.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Iraq",
+      "Republic of Iraq",
+      "Iraqi",
+      "IQ",
+      "Jumhūriyyat al-‘Irāq"
+    ],
+    "searchTerms": [
+      "Iraq",
+      "Republic of Iraq",
+      "Iraqi",
+      "IQ",
+      "Jumhūriyyat al-‘Irāq",
+      "368",
+      "Asia",
+      "Western Asia",
+      "Baghdad"
+    ]
+  },
+  {
+    "id": "irish",
+    "name": "Irish",
+    "category": "country-associated",
+    "countryCode": "ie",
+    "flagUrl": "https://flagcdn.com/ie.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Ireland",
+      "Republic of Ireland",
+      "Irish",
+      "IE",
+      "Éire",
+      "Poblacht na hÉireann"
+    ],
+    "searchTerms": [
+      "Ireland",
+      "Republic of Ireland",
+      "Irish",
+      "IE",
+      "Éire",
+      "Poblacht na hÉireann",
+      "372",
+      "Europe",
+      "Northern Europe",
+      "Dublin"
+    ]
+  },
+  {
+    "id": "israeli",
+    "name": "Israeli",
+    "category": "country-associated",
+    "countryCode": "il",
+    "flagUrl": "https://flagcdn.com/il.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Israel",
+      "State of Israel",
+      "Israeli",
+      "IL",
+      "Medīnat Yisrā'el"
+    ],
+    "searchTerms": [
+      "Israel",
+      "State of Israel",
+      "Israeli",
+      "IL",
+      "Medīnat Yisrā'el",
+      "376",
+      "Asia",
+      "Western Asia",
+      "Jerusalem"
+    ]
+  },
+  {
+    "id": "italian",
+    "name": "Italian",
+    "category": "country-associated",
+    "countryCode": "it",
+    "flagUrl": "https://flagcdn.com/it.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Italy",
+      "Italian Republic",
+      "Italian",
+      "IT",
+      "Repubblica italiana"
+    ],
+    "searchTerms": [
+      "Italy",
+      "Italian Republic",
+      "Italian",
+      "IT",
+      "Repubblica italiana",
+      "380",
+      "Europe",
+      "Southern Europe",
+      "Rome"
+    ]
+  },
+  {
+    "id": "ivorian",
+    "name": "Ivorian",
+    "category": "country-associated",
+    "countryCode": "ci",
+    "flagUrl": "https://flagcdn.com/ci.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Ivory Coast",
+      "Republic of Côte d'Ivoire",
+      "Ivorian",
+      "CI",
+      "Côte d'Ivoire",
+      "Cote d'Ivoire",
+      "République de Côte d'Ivoire"
+    ],
+    "searchTerms": [
+      "Ivory Coast",
+      "Republic of Côte d'Ivoire",
+      "Ivorian",
+      "CI",
+      "Côte d'Ivoire",
+      "Cote d'Ivoire",
+      "République de Côte d'Ivoire",
+      "384",
+      "Africa",
+      "Western Africa",
+      "Yamoussoukro"
+    ]
+  },
+  {
+    "id": "jamaican",
+    "name": "Jamaican",
+    "category": "country-associated",
+    "countryCode": "jm",
+    "flagUrl": "https://flagcdn.com/jm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Jamaica",
+      "Jamaican",
+      "JM"
+    ],
+    "searchTerms": [
+      "Jamaica",
+      "Jamaican",
+      "JM",
+      "388",
+      "Americas",
+      "Caribbean",
+      "Kingston"
+    ]
+  },
+  {
+    "id": "japanese",
+    "name": "Japanese",
+    "category": "country-associated",
+    "countryCode": "jp",
+    "flagUrl": "https://flagcdn.com/jp.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "Japan",
+      "Japanese",
+      "JP",
+      "Nippon",
+      "Nihon"
+    ],
+    "searchTerms": [
+      "Japan",
+      "Japanese",
+      "JP",
+      "Nippon",
+      "Nihon",
+      "392",
+      "Asia",
+      "Eastern Asia",
+      "Tokyo"
+    ]
+  },
+  {
+    "id": "jewish",
+    "name": "Jewish",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "JW",
+    "region": "Global",
+    "alternateNames": [],
+    "searchTerms": [
+      "Jewish"
+    ]
+  },
+  {
+    "id": "jordanian",
+    "name": "Jordanian",
+    "category": "country-associated",
+    "countryCode": "jo",
+    "flagUrl": "https://flagcdn.com/jo.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Jordan",
+      "Hashemite Kingdom of Jordan",
+      "Jordanian",
+      "JO",
+      "al-Mamlakah al-Urdunīyah al-Hāshimīyah"
+    ],
+    "searchTerms": [
+      "Jordan",
+      "Hashemite Kingdom of Jordan",
+      "Jordanian",
+      "JO",
+      "al-Mamlakah al-Urdunīyah al-Hāshimīyah",
+      "400",
+      "Asia",
+      "Western Asia",
+      "Amman"
+    ]
+  },
+  {
+    "id": "kazakhstani",
+    "name": "Kazakhstani",
+    "category": "country-associated",
+    "countryCode": "kz",
+    "flagUrl": "https://flagcdn.com/kz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Asia",
+    "alternateNames": [
+      "Kazakhstan",
+      "Republic of Kazakhstan",
+      "Kazakhstani",
+      "KZ",
+      "Qazaqstan",
+      "Казахстан",
+      "Қазақстан Республикасы",
+      "Qazaqstan Respublïkası",
+      "Республика Казахстан",
+      "Respublika Kazakhstan"
+    ],
+    "searchTerms": [
+      "Kazakhstan",
+      "Republic of Kazakhstan",
+      "Kazakhstani",
+      "KZ",
+      "Qazaqstan",
+      "Казахстан",
+      "Қазақстан Республикасы",
+      "Qazaqstan Respublïkası",
+      "Республика Казахстан",
+      "Respublika Kazakhstan",
+      "398",
+      "Asia",
+      "Central Asia",
+      "Astana"
+    ]
+  },
+  {
+    "id": "kenyan",
+    "name": "Kenyan",
+    "category": "country-associated",
+    "countryCode": "ke",
+    "flagUrl": "https://flagcdn.com/ke.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Kenya",
+      "Republic of Kenya",
+      "Kenyan",
+      "KE",
+      "Jamhuri ya Kenya"
+    ],
+    "searchTerms": [
+      "Kenya",
+      "Republic of Kenya",
+      "Kenyan",
+      "KE",
+      "Jamhuri ya Kenya",
+      "404",
+      "Africa",
+      "Eastern Africa",
+      "Nairobi"
+    ]
+  },
+  {
+    "id": "kirghiz",
+    "name": "Kirghiz",
+    "category": "country-associated",
+    "countryCode": "kg",
+    "flagUrl": "https://flagcdn.com/kg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Asia",
+    "alternateNames": [
+      "Kyrgyzstan",
+      "Kyrgyz Republic",
+      "Kirghiz",
+      "KG",
+      "Киргизия",
+      "Кыргыз Республикасы",
+      "Kyrgyz Respublikasy"
+    ],
+    "searchTerms": [
+      "Kyrgyzstan",
+      "Kyrgyz Republic",
+      "Kirghiz",
+      "KG",
+      "Киргизия",
+      "Кыргыз Республикасы",
+      "Kyrgyz Respublikasy",
+      "417",
+      "Asia",
+      "Central Asia",
+      "Bishkek"
+    ]
+  },
+  {
+    "id": "kittitian-or-nevisian",
+    "name": "Kittitian or Nevisian",
+    "category": "country-associated",
+    "countryCode": "kn",
+    "flagUrl": "https://flagcdn.com/kn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Saint Kitts and Nevis",
+      "Federation of Saint Christopher and Nevis",
+      "Kittitian or Nevisian",
+      "KN"
+    ],
+    "searchTerms": [
+      "Saint Kitts and Nevis",
+      "Federation of Saint Christopher and Nevis",
+      "Kittitian or Nevisian",
+      "KN",
+      "659",
+      "Americas",
+      "Caribbean",
+      "Basseterre"
+    ]
+  },
+  {
+    "id": "kosovar",
+    "name": "Kosovar",
+    "category": "country-associated",
+    "countryCode": "xk",
+    "flagUrl": "https://flagcdn.com/xk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Kosovo",
+      "Republic of Kosovo",
+      "Kosovar",
+      "XK",
+      "Република Косово"
+    ],
+    "searchTerms": [
+      "Kosovo",
+      "Republic of Kosovo",
+      "Kosovar",
+      "XK",
+      "Република Косово",
+      "Europe",
+      "Southeast Europe",
+      "Pristina"
+    ]
+  },
+  {
+    "id": "kurdish",
+    "name": "Kurdish",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "KU",
+    "region": "West Asia",
+    "alternateNames": [
+      "Kurd"
+    ],
+    "searchTerms": [
+      "Kurdish",
+      "Kurd",
+      "Kurdistan"
+    ]
+  },
+  {
+    "id": "kuwaiti",
+    "name": "Kuwaiti",
+    "category": "country-associated",
+    "countryCode": "kw",
+    "flagUrl": "https://flagcdn.com/kw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Kuwait",
+      "State of Kuwait",
+      "Kuwaiti",
+      "KW",
+      "Dawlat al-Kuwait"
+    ],
+    "searchTerms": [
+      "Kuwait",
+      "State of Kuwait",
+      "Kuwaiti",
+      "KW",
+      "Dawlat al-Kuwait",
+      "414",
+      "Asia",
+      "Western Asia",
+      "Kuwait City"
+    ]
+  },
+  {
+    "id": "laotian",
+    "name": "Laotian",
+    "category": "country-associated",
+    "countryCode": "la",
+    "flagUrl": "https://flagcdn.com/la.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Laos",
+      "Lao People's Democratic Republic",
+      "Laotian",
+      "LA",
+      "Lao",
+      "Sathalanalat Paxathipatai Paxaxon Lao"
+    ],
+    "searchTerms": [
+      "Laos",
+      "Lao People's Democratic Republic",
+      "Laotian",
+      "LA",
+      "Lao",
+      "Sathalanalat Paxathipatai Paxaxon Lao",
+      "418",
+      "Asia",
+      "South-Eastern Asia",
+      "Vientiane"
+    ]
+  },
+  {
+    "id": "latina",
+    "name": "Latina",
+    "category": "umbrella",
+    "symbolType": "neutral",
+    "symbol": "LAT",
+    "region": "Global",
+    "alternateNames": [],
+    "searchTerms": [
+      "Latina"
+    ]
+  },
+  {
+    "id": "latino",
+    "name": "Latino",
+    "category": "umbrella",
+    "symbolType": "neutral",
+    "symbol": "LAT",
+    "region": "Global",
+    "alternateNames": [],
+    "searchTerms": [
+      "Latino"
+    ]
+  },
+  {
+    "id": "latvian",
+    "name": "Latvian",
+    "category": "country-associated",
+    "countryCode": "lv",
+    "flagUrl": "https://flagcdn.com/lv.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Latvia",
+      "Republic of Latvia",
+      "Latvian",
+      "LV",
+      "Latvijas Republika"
+    ],
+    "searchTerms": [
+      "Latvia",
+      "Republic of Latvia",
+      "Latvian",
+      "LV",
+      "Latvijas Republika",
+      "428",
+      "Europe",
+      "Northern Europe",
+      "Riga"
+    ]
+  },
+  {
+    "id": "lebanese",
+    "name": "Lebanese",
+    "category": "country-associated",
+    "countryCode": "lb",
+    "flagUrl": "https://flagcdn.com/lb.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Lebanon",
+      "Lebanese Republic",
+      "Lebanese",
+      "LB",
+      "Al-Jumhūrīyah Al-Libnānīyah"
+    ],
+    "searchTerms": [
+      "Lebanon",
+      "Lebanese Republic",
+      "Lebanese",
+      "LB",
+      "Al-Jumhūrīyah Al-Libnānīyah",
+      "422",
+      "Asia",
+      "Western Asia",
+      "Beirut"
+    ]
+  },
+  {
+    "id": "liberian",
+    "name": "Liberian",
+    "category": "country-associated",
+    "countryCode": "lr",
+    "flagUrl": "https://flagcdn.com/lr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Liberia",
+      "Republic of Liberia",
+      "Liberian",
+      "LR"
+    ],
+    "searchTerms": [
+      "Liberia",
+      "Republic of Liberia",
+      "Liberian",
+      "LR",
+      "430",
+      "Africa",
+      "Western Africa",
+      "Monrovia"
+    ]
+  },
+  {
+    "id": "libyan",
+    "name": "Libyan",
+    "category": "country-associated",
+    "countryCode": "ly",
+    "flagUrl": "https://flagcdn.com/ly.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Libya",
+      "State of Libya",
+      "Libyan",
+      "LY",
+      "Dawlat Libya"
+    ],
+    "searchTerms": [
+      "Libya",
+      "State of Libya",
+      "Libyan",
+      "LY",
+      "Dawlat Libya",
+      "434",
+      "Africa",
+      "Northern Africa",
+      "Tripoli"
+    ]
+  },
+  {
+    "id": "liechtensteiner",
+    "name": "Liechtensteiner",
+    "category": "country-associated",
+    "countryCode": "li",
+    "flagUrl": "https://flagcdn.com/li.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Liechtenstein",
+      "Principality of Liechtenstein",
+      "Liechtensteiner",
+      "LI",
+      "Fürstentum Liechtenstein"
+    ],
+    "searchTerms": [
+      "Liechtenstein",
+      "Principality of Liechtenstein",
+      "Liechtensteiner",
+      "LI",
+      "Fürstentum Liechtenstein",
+      "438",
+      "Europe",
+      "Western Europe",
+      "Vaduz"
+    ]
+  },
+  {
+    "id": "lithuanian",
+    "name": "Lithuanian",
+    "category": "country-associated",
+    "countryCode": "lt",
+    "flagUrl": "https://flagcdn.com/lt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Lithuania",
+      "Republic of Lithuania",
+      "Lithuanian",
+      "LT",
+      "Lietuvos Respublika"
+    ],
+    "searchTerms": [
+      "Lithuania",
+      "Republic of Lithuania",
+      "Lithuanian",
+      "LT",
+      "Lietuvos Respublika",
+      "440",
+      "Europe",
+      "Northern Europe",
+      "Vilnius"
+    ]
+  },
+  {
+    "id": "luxembourger",
+    "name": "Luxembourger",
+    "category": "country-associated",
+    "countryCode": "lu",
+    "flagUrl": "https://flagcdn.com/lu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Luxembourg",
+      "Grand Duchy of Luxembourg",
+      "Luxembourger",
+      "LU",
+      "Grand-Duché de Luxembourg",
+      "Großherzogtum Luxemburg",
+      "Groussherzogtum Lëtzebuerg"
+    ],
+    "searchTerms": [
+      "Luxembourg",
+      "Grand Duchy of Luxembourg",
+      "Luxembourger",
+      "LU",
+      "Grand-Duché de Luxembourg",
+      "Großherzogtum Luxemburg",
+      "Groussherzogtum Lëtzebuerg",
+      "442",
+      "Europe",
+      "Western Europe"
+    ]
+  },
+  {
+    "id": "macanese",
+    "name": "Macanese",
+    "category": "territory-associated",
+    "countryCode": "mo",
+    "flagUrl": "https://flagcdn.com/mo.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "Macau",
+      "Macao Special Administrative Region of the People's Republic of China",
+      "Macanese",
+      "MO",
+      "澳门",
+      "Macao",
+      "中華人民共和國澳門特別行政區",
+      "Região Administrativa Especial de Macau da República Popular da China"
+    ],
+    "searchTerms": [
+      "Macau",
+      "Macao Special Administrative Region of the People's Republic of China",
+      "Macanese",
+      "MO",
+      "澳门",
+      "Macao",
+      "中華人民共和國澳門特別行政區",
+      "Região Administrativa Especial de Macau da República Popular da China",
+      "446",
+      "Asia",
+      "Eastern Asia"
+    ]
+  },
+  {
+    "id": "macedonian",
+    "name": "Macedonian",
+    "category": "country-associated",
+    "countryCode": "mk",
+    "flagUrl": "https://flagcdn.com/mk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "North Macedonia",
+      "Republic of North Macedonia",
+      "Macedonian",
+      "MK",
+      "The former Yugoslav Republic of Macedonia",
+      "Macedonia, The Former Yugoslav Republic of",
+      "Република Северна Македонија",
+      "Macedonia"
+    ],
+    "searchTerms": [
+      "North Macedonia",
+      "Republic of North Macedonia",
+      "Macedonian",
+      "MK",
+      "The former Yugoslav Republic of Macedonia",
+      "Macedonia, The Former Yugoslav Republic of",
+      "Република Северна Македонија",
+      "Macedonia",
+      "807",
+      "Europe",
+      "Southeast Europe",
+      "Skopje"
+    ]
+  },
+  {
+    "id": "mahoran",
+    "name": "Mahoran",
+    "category": "territory-associated",
+    "countryCode": "yt",
+    "flagUrl": "https://flagcdn.com/yt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Mayotte",
+      "Department of Mayotte",
+      "Mahoran",
+      "YT",
+      "Département de Mayotte"
+    ],
+    "searchTerms": [
+      "Mayotte",
+      "Department of Mayotte",
+      "Mahoran",
+      "YT",
+      "Département de Mayotte",
+      "175",
+      "Africa",
+      "Eastern Africa",
+      "Mamoudzou"
+    ]
+  },
+  {
+    "id": "malagasy",
+    "name": "Malagasy",
+    "category": "country-associated",
+    "countryCode": "mg",
+    "flagUrl": "https://flagcdn.com/mg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Madagascar",
+      "Republic of Madagascar",
+      "Malagasy",
+      "MG",
+      "Repoblikan'i Madagasikara",
+      "République de Madagascar"
+    ],
+    "searchTerms": [
+      "Madagascar",
+      "Republic of Madagascar",
+      "Malagasy",
+      "MG",
+      "Repoblikan'i Madagasikara",
+      "République de Madagascar",
+      "450",
+      "Africa",
+      "Eastern Africa",
+      "Antananarivo"
+    ]
+  },
+  {
+    "id": "malawian",
+    "name": "Malawian",
+    "category": "country-associated",
+    "countryCode": "mw",
+    "flagUrl": "https://flagcdn.com/mw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Malawi",
+      "Republic of Malawi",
+      "Malawian",
+      "MW"
+    ],
+    "searchTerms": [
+      "Malawi",
+      "Republic of Malawi",
+      "Malawian",
+      "MW",
+      "454",
+      "Africa",
+      "Eastern Africa",
+      "Lilongwe"
+    ]
+  },
+  {
+    "id": "malaysian",
+    "name": "Malaysian",
+    "category": "country-associated",
+    "countryCode": "my",
+    "flagUrl": "https://flagcdn.com/my.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Malaysia",
+      "Malaysian",
+      "MY"
+    ],
+    "searchTerms": [
+      "Malaysia",
+      "Malaysian",
+      "MY",
+      "458",
+      "Asia",
+      "South-Eastern Asia",
+      "Kuala Lumpur"
+    ]
+  },
+  {
+    "id": "maldivan",
+    "name": "Maldivan",
+    "category": "country-associated",
+    "countryCode": "mv",
+    "flagUrl": "https://flagcdn.com/mv.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Maldives",
+      "Republic of the Maldives",
+      "Maldivan",
+      "MV",
+      "Maldive Islands",
+      "Dhivehi Raajjeyge Jumhooriyya"
+    ],
+    "searchTerms": [
+      "Maldives",
+      "Republic of the Maldives",
+      "Maldivan",
+      "MV",
+      "Maldive Islands",
+      "Dhivehi Raajjeyge Jumhooriyya",
+      "462",
+      "Asia",
+      "Southern Asia",
+      "Malé"
+    ]
+  },
+  {
+    "id": "malian",
+    "name": "Malian",
+    "category": "country-associated",
+    "countryCode": "ml",
+    "flagUrl": "https://flagcdn.com/ml.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Mali",
+      "Republic of Mali",
+      "Malian",
+      "ML",
+      "République du Mali"
+    ],
+    "searchTerms": [
+      "Mali",
+      "Republic of Mali",
+      "Malian",
+      "ML",
+      "République du Mali",
+      "466",
+      "Africa",
+      "Western Africa",
+      "Bamako"
+    ]
+  },
+  {
+    "id": "maltese",
+    "name": "Maltese",
+    "category": "country-associated",
+    "countryCode": "mt",
+    "flagUrl": "https://flagcdn.com/mt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Malta",
+      "Republic of Malta",
+      "Maltese",
+      "MT",
+      "Repubblika ta' Malta"
+    ],
+    "searchTerms": [
+      "Malta",
+      "Republic of Malta",
+      "Maltese",
+      "MT",
+      "Repubblika ta' Malta",
+      "470",
+      "Europe",
+      "Southern Europe",
+      "Valletta"
+    ]
+  },
+  {
+    "id": "manx",
+    "name": "Manx",
+    "category": "territory-associated",
+    "countryCode": "im",
+    "flagUrl": "https://flagcdn.com/im.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Isle of Man",
+      "Manx",
+      "IM",
+      "Ellan Vannin",
+      "Mann",
+      "Mannin"
+    ],
+    "searchTerms": [
+      "Isle of Man",
+      "Manx",
+      "IM",
+      "Ellan Vannin",
+      "Mann",
+      "Mannin",
+      "833",
+      "Europe",
+      "Northern Europe",
+      "Douglas"
+    ]
+  },
+  {
+    "id": "marshallese",
+    "name": "Marshallese",
+    "category": "country-associated",
+    "countryCode": "mh",
+    "flagUrl": "https://flagcdn.com/mh.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Marshall Islands",
+      "Republic of the Marshall Islands",
+      "Marshallese",
+      "MH",
+      "Aolepān Aorōkin M̧ajeļ"
+    ],
+    "searchTerms": [
+      "Marshall Islands",
+      "Republic of the Marshall Islands",
+      "Marshallese",
+      "MH",
+      "Aolepān Aorōkin M̧ajeļ",
+      "584",
+      "Oceania",
+      "Micronesia",
+      "Majuro"
+    ]
+  },
+  {
+    "id": "martinican",
+    "name": "Martinican",
+    "category": "territory-associated",
+    "countryCode": "mq",
+    "flagUrl": "https://flagcdn.com/mq.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Martinique",
+      "Martinican",
+      "MQ"
+    ],
+    "searchTerms": [
+      "Martinique",
+      "Martinican",
+      "MQ",
+      "474",
+      "Americas",
+      "Caribbean",
+      "Fort-de-France"
+    ]
+  },
+  {
+    "id": "mauritanian",
+    "name": "Mauritanian",
+    "category": "country-associated",
+    "countryCode": "mr",
+    "flagUrl": "https://flagcdn.com/mr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Mauritania",
+      "Islamic Republic of Mauritania",
+      "Mauritanian",
+      "MR",
+      "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah"
+    ],
+    "searchTerms": [
+      "Mauritania",
+      "Islamic Republic of Mauritania",
+      "Mauritanian",
+      "MR",
+      "al-Jumhūriyyah al-ʾIslāmiyyah al-Mūrītāniyyah",
+      "478",
+      "Africa",
+      "Western Africa",
+      "Nouakchott"
+    ]
+  },
+  {
+    "id": "mauritian",
+    "name": "Mauritian",
+    "category": "country-associated",
+    "countryCode": "mu",
+    "flagUrl": "https://flagcdn.com/mu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Mauritius",
+      "Republic of Mauritius",
+      "Mauritian",
+      "MU",
+      "République de Maurice"
+    ],
+    "searchTerms": [
+      "Mauritius",
+      "Republic of Mauritius",
+      "Mauritian",
+      "MU",
+      "République de Maurice",
+      "480",
+      "Africa",
+      "Eastern Africa",
+      "Port Louis"
+    ]
+  },
+  {
+    "id": "mexican",
+    "name": "Mexican",
+    "category": "country-associated",
+    "countryCode": "mx",
+    "flagUrl": "https://flagcdn.com/mx.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "Mexico",
+      "United Mexican States",
+      "Mexican",
+      "MX",
+      "Mexicanos",
+      "Estados Unidos Mexicanos"
+    ],
+    "searchTerms": [
+      "Mexico",
+      "United Mexican States",
+      "Mexican",
+      "MX",
+      "Mexicanos",
+      "Estados Unidos Mexicanos",
+      "484",
+      "Americas",
+      "North America",
+      "Mexico City"
+    ]
+  },
+  {
+    "id": "micronesian",
+    "name": "Micronesian",
+    "category": "country-associated",
+    "countryCode": "fm",
+    "flagUrl": "https://flagcdn.com/fm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Micronesia",
+      "Federated States of Micronesia",
+      "Micronesian",
+      "FM",
+      "Micronesia, Federated States of"
+    ],
+    "searchTerms": [
+      "Micronesia",
+      "Federated States of Micronesia",
+      "Micronesian",
+      "FM",
+      "Micronesia, Federated States of",
+      "583",
+      "Oceania",
+      "Palikir"
+    ]
+  },
+  {
+    "id": "middle-eastern",
+    "name": "Middle Eastern",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "ME",
+    "region": "Middle East",
+    "alternateNames": [],
+    "searchTerms": [
+      "Middle Eastern",
+      "Middle East"
+    ]
+  },
+  {
+    "id": "mixed",
+    "name": "Mixed or Multicultural",
+    "category": "mixed",
+    "symbolType": "neutral",
+    "symbol": "MIX",
+    "region": "Global",
+    "alternateNames": [
+      "Multicultural"
+    ],
+    "searchTerms": [
+      "Mixed",
+      "Multicultural"
+    ]
+  },
+  {
+    "id": "moldovan",
+    "name": "Moldovan",
+    "category": "country-associated",
+    "countryCode": "md",
+    "flagUrl": "https://flagcdn.com/md.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Europe",
+    "alternateNames": [
+      "Moldova",
+      "Republic of Moldova",
+      "Moldovan",
+      "MD",
+      "Moldova, Republic of",
+      "Republica Moldova"
+    ],
+    "searchTerms": [
+      "Moldova",
+      "Republic of Moldova",
+      "Moldovan",
+      "MD",
+      "Moldova, Republic of",
+      "Republica Moldova",
+      "498",
+      "Europe",
+      "Eastern Europe",
+      "Chișinău"
+    ]
+  },
+  {
+    "id": "monegasque",
+    "name": "Monegasque",
+    "category": "country-associated",
+    "countryCode": "mc",
+    "flagUrl": "https://flagcdn.com/mc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Monaco",
+      "Principality of Monaco",
+      "Monegasque",
+      "MC",
+      "Principauté de Monaco"
+    ],
+    "searchTerms": [
+      "Monaco",
+      "Principality of Monaco",
+      "Monegasque",
+      "MC",
+      "Principauté de Monaco",
+      "492",
+      "Europe",
+      "Western Europe"
+    ]
+  },
+  {
+    "id": "mongolian",
+    "name": "Mongolian",
+    "category": "country-associated",
+    "countryCode": "mn",
+    "flagUrl": "https://flagcdn.com/mn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "Mongolia",
+      "Mongolian",
+      "MN"
+    ],
+    "searchTerms": [
+      "Mongolia",
+      "Mongolian",
+      "MN",
+      "496",
+      "Asia",
+      "Eastern Asia",
+      "Ulan Bator"
+    ]
+  },
+  {
+    "id": "montenegrin",
+    "name": "Montenegrin",
+    "category": "country-associated",
+    "countryCode": "me",
+    "flagUrl": "https://flagcdn.com/me.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Montenegro",
+      "Montenegrin",
+      "ME",
+      "Crna Gora"
+    ],
+    "searchTerms": [
+      "Montenegro",
+      "Montenegrin",
+      "ME",
+      "Crna Gora",
+      "499",
+      "Europe",
+      "Southeast Europe",
+      "Podgorica"
+    ]
+  },
+  {
+    "id": "montserratian",
+    "name": "Montserratian",
+    "category": "territory-associated",
+    "countryCode": "ms",
+    "flagUrl": "https://flagcdn.com/ms.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Montserrat",
+      "Montserratian",
+      "MS"
+    ],
+    "searchTerms": [
+      "Montserrat",
+      "Montserratian",
+      "MS",
+      "500",
+      "Americas",
+      "Caribbean",
+      "Plymouth"
+    ]
+  },
+  {
+    "id": "moroccan",
+    "name": "Moroccan",
+    "category": "country-associated",
+    "countryCode": "ma",
+    "flagUrl": "https://flagcdn.com/ma.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Morocco",
+      "Kingdom of Morocco",
+      "Moroccan",
+      "MA",
+      "Al-Mamlakah al-Maġribiyah"
+    ],
+    "searchTerms": [
+      "Morocco",
+      "Kingdom of Morocco",
+      "Moroccan",
+      "MA",
+      "Al-Mamlakah al-Maġribiyah",
+      "504",
+      "Africa",
+      "Northern Africa",
+      "Rabat"
+    ]
+  },
+  {
+    "id": "mosotho",
+    "name": "Mosotho",
+    "category": "country-associated",
+    "countryCode": "ls",
+    "flagUrl": "https://flagcdn.com/ls.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Africa",
+    "alternateNames": [
+      "Lesotho",
+      "Kingdom of Lesotho",
+      "Mosotho",
+      "LS",
+      "Muso oa Lesotho"
+    ],
+    "searchTerms": [
+      "Lesotho",
+      "Kingdom of Lesotho",
+      "Mosotho",
+      "LS",
+      "Muso oa Lesotho",
+      "426",
+      "Africa",
+      "Southern Africa",
+      "Maseru"
+    ]
+  },
+  {
+    "id": "motswana",
+    "name": "Motswana",
+    "category": "country-associated",
+    "countryCode": "bw",
+    "flagUrl": "https://flagcdn.com/bw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Africa",
+    "alternateNames": [
+      "Botswana",
+      "Republic of Botswana",
+      "Motswana",
+      "BW",
+      "Lefatshe la Botswana"
+    ],
+    "searchTerms": [
+      "Botswana",
+      "Republic of Botswana",
+      "Motswana",
+      "BW",
+      "Lefatshe la Botswana",
+      "072",
+      "Africa",
+      "Southern Africa",
+      "Gaborone"
+    ]
+  },
+  {
+    "id": "mozambican",
+    "name": "Mozambican",
+    "category": "country-associated",
+    "countryCode": "mz",
+    "flagUrl": "https://flagcdn.com/mz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Mozambique",
+      "Republic of Mozambique",
+      "Mozambican",
+      "MZ",
+      "República de Moçambique"
+    ],
+    "searchTerms": [
+      "Mozambique",
+      "Republic of Mozambique",
+      "Mozambican",
+      "MZ",
+      "República de Moçambique",
+      "508",
+      "Africa",
+      "Eastern Africa",
+      "Maputo"
+    ]
+  },
+  {
+    "id": "namibian",
+    "name": "Namibian",
+    "category": "country-associated",
+    "countryCode": "na",
+    "flagUrl": "https://flagcdn.com/na.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Africa",
+    "alternateNames": [
+      "Namibia",
+      "Republic of Namibia",
+      "Namibian",
+      "NA",
+      "Namibië"
+    ],
+    "searchTerms": [
+      "Namibia",
+      "Republic of Namibia",
+      "Namibian",
+      "NA",
+      "Namibië",
+      "516",
+      "Africa",
+      "Southern Africa",
+      "Windhoek"
+    ]
+  },
+  {
+    "id": "native-american",
+    "name": "Native American",
+    "category": "indigenous",
+    "symbolType": "neutral",
+    "symbol": "NA",
+    "region": "North America",
+    "alternateNames": [
+      "American Indian",
+      "First Nations"
+    ],
+    "searchTerms": [
+      "Native American",
+      "American Indian",
+      "First Nations"
+    ]
+  },
+  {
+    "id": "nauruan",
+    "name": "Nauruan",
+    "category": "country-associated",
+    "countryCode": "nr",
+    "flagUrl": "https://flagcdn.com/nr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Nauru",
+      "Republic of Nauru",
+      "Nauruan",
+      "NR",
+      "Naoero",
+      "Pleasant Island",
+      "Ripublik Naoero"
+    ],
+    "searchTerms": [
+      "Nauru",
+      "Republic of Nauru",
+      "Nauruan",
+      "NR",
+      "Naoero",
+      "Pleasant Island",
+      "Ripublik Naoero",
+      "520",
+      "Oceania",
+      "Micronesia",
+      "Yaren"
+    ]
+  },
+  {
+    "id": "nepalese",
+    "name": "Nepalese",
+    "category": "country-associated",
+    "countryCode": "np",
+    "flagUrl": "https://flagcdn.com/np.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Nepal",
+      "Federal Democratic Republic of Nepal",
+      "Nepalese",
+      "NP",
+      "Loktāntrik Ganatantra Nepāl"
+    ],
+    "searchTerms": [
+      "Nepal",
+      "Federal Democratic Republic of Nepal",
+      "Nepalese",
+      "NP",
+      "Loktāntrik Ganatantra Nepāl",
+      "524",
+      "Asia",
+      "Southern Asia",
+      "Kathmandu"
+    ]
+  },
+  {
+    "id": "new-caledonian",
+    "name": "New Caledonian",
+    "category": "territory-associated",
+    "countryCode": "nc",
+    "flagUrl": "https://flagcdn.com/nc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Melanesia",
+    "alternateNames": [
+      "New Caledonia",
+      "New Caledonian",
+      "NC"
+    ],
+    "searchTerms": [
+      "New Caledonia",
+      "New Caledonian",
+      "NC",
+      "540",
+      "Oceania",
+      "Melanesia",
+      "Nouméa"
+    ]
+  },
+  {
+    "id": "new-zealander",
+    "name": "New Zealander",
+    "category": "country-associated",
+    "countryCode": "nz",
+    "flagUrl": "https://flagcdn.com/nz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Australia and New Zealand",
+    "alternateNames": [
+      "New Zealand",
+      "New Zealander",
+      "NZ",
+      "Aotearoa"
+    ],
+    "searchTerms": [
+      "New Zealand",
+      "New Zealander",
+      "NZ",
+      "Aotearoa",
+      "554",
+      "Oceania",
+      "Australia and New Zealand",
+      "Wellington"
+    ]
+  },
+  {
+    "id": "ni-vanuatu",
+    "name": "Ni-Vanuatu",
+    "category": "country-associated",
+    "countryCode": "vu",
+    "flagUrl": "https://flagcdn.com/vu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Melanesia",
+    "alternateNames": [
+      "Vanuatu",
+      "Republic of Vanuatu",
+      "Ni-Vanuatu",
+      "VU",
+      "Ripablik blong Vanuatu",
+      "République de Vanuatu"
+    ],
+    "searchTerms": [
+      "Vanuatu",
+      "Republic of Vanuatu",
+      "Ni-Vanuatu",
+      "VU",
+      "Ripablik blong Vanuatu",
+      "République de Vanuatu",
+      "548",
+      "Oceania",
+      "Melanesia",
+      "Port Vila"
+    ]
+  },
+  {
+    "id": "nicaraguan",
+    "name": "Nicaraguan",
+    "category": "country-associated",
+    "countryCode": "ni",
+    "flagUrl": "https://flagcdn.com/ni.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "Nicaragua",
+      "Republic of Nicaragua",
+      "Nicaraguan",
+      "NI",
+      "República de Nicaragua"
+    ],
+    "searchTerms": [
+      "Nicaragua",
+      "Republic of Nicaragua",
+      "Nicaraguan",
+      "NI",
+      "República de Nicaragua",
+      "558",
+      "Americas",
+      "Central America",
+      "Managua"
+    ]
+  },
+  {
+    "id": "nigerian",
+    "name": "Nigerian",
+    "category": "country-associated",
+    "countryCode": "ng",
+    "flagUrl": "https://flagcdn.com/ng.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Nigeria",
+      "Federal Republic of Nigeria",
+      "Nigerian",
+      "NG",
+      "Nijeriya",
+      "Naíjíríà"
+    ],
+    "searchTerms": [
+      "Nigeria",
+      "Federal Republic of Nigeria",
+      "Nigerian",
+      "NG",
+      "Nijeriya",
+      "Naíjíríà",
+      "566",
+      "Africa",
+      "Western Africa",
+      "Abuja"
+    ]
+  },
+  {
+    "id": "nigerien",
+    "name": "Nigerien",
+    "category": "country-associated",
+    "countryCode": "ne",
+    "flagUrl": "https://flagcdn.com/ne.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Niger",
+      "Republic of Niger",
+      "Nigerien",
+      "NE",
+      "Nijar"
+    ],
+    "searchTerms": [
+      "Niger",
+      "Republic of Niger",
+      "Nigerien",
+      "NE",
+      "Nijar",
+      "562",
+      "Africa",
+      "Western Africa",
+      "Niamey"
+    ]
+  },
+  {
+    "id": "niuean",
+    "name": "Niuean",
+    "category": "territory-associated",
+    "countryCode": "nu",
+    "flagUrl": "https://flagcdn.com/nu.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Niue",
+      "Niuean",
+      "NU"
+    ],
+    "searchTerms": [
+      "Niue",
+      "Niuean",
+      "NU",
+      "570",
+      "Oceania",
+      "Polynesia",
+      "Alofi"
+    ]
+  },
+  {
+    "id": "norfolk-islander",
+    "name": "Norfolk Islander",
+    "category": "territory-associated",
+    "countryCode": "nf",
+    "flagUrl": "https://flagcdn.com/nf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Australia and New Zealand",
+    "alternateNames": [
+      "Norfolk Island",
+      "Territory of Norfolk Island",
+      "Norfolk Islander",
+      "NF",
+      "Teratri of Norf'k Ailen"
+    ],
+    "searchTerms": [
+      "Norfolk Island",
+      "Territory of Norfolk Island",
+      "Norfolk Islander",
+      "NF",
+      "Teratri of Norf'k Ailen",
+      "574",
+      "Oceania",
+      "Australia and New Zealand",
+      "Kingston"
+    ]
+  },
+  {
+    "id": "north-african",
+    "name": "North African",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "NAF",
+    "region": "North Africa",
+    "alternateNames": [],
+    "searchTerms": [
+      "North African"
+    ]
+  },
+  {
+    "id": "north-korean",
+    "name": "North Korean",
+    "category": "country-associated",
+    "countryCode": "kp",
+    "flagUrl": "https://flagcdn.com/kp.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "North Korea",
+      "Democratic People's Republic of Korea",
+      "North Korean",
+      "KP",
+      "DPRK",
+      "조선민주주의인민공화국",
+      "Chosŏn Minjujuŭi Inmin Konghwaguk",
+      "Korea, Democratic People's Republic of",
+      "북한",
+      "북조선"
+    ],
+    "searchTerms": [
+      "North Korea",
+      "Democratic People's Republic of Korea",
+      "North Korean",
+      "KP",
+      "DPRK",
+      "조선민주주의인민공화국",
+      "Chosŏn Minjujuŭi Inmin Konghwaguk",
+      "Korea, Democratic People's Republic of",
+      "북한",
+      "북조선",
+      "408",
+      "Asia",
+      "Eastern Asia",
+      "Pyongyang"
+    ]
+  },
+  {
+    "id": "norwegian",
+    "name": "Norwegian",
+    "category": "country-associated",
+    "countryCode": "no",
+    "flagUrl": "https://flagcdn.com/no.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Norway",
+      "Kingdom of Norway",
+      "Norwegian",
+      "NO",
+      "Norge",
+      "Noreg",
+      "Kongeriket Norge",
+      "Kongeriket Noreg"
+    ],
+    "searchTerms": [
+      "Norway",
+      "Kingdom of Norway",
+      "Norwegian",
+      "NO",
+      "Norge",
+      "Noreg",
+      "Kongeriket Norge",
+      "Kongeriket Noreg",
+      "578",
+      "Europe",
+      "Northern Europe",
+      "Oslo"
+    ]
+  },
+  {
+    "id": "norwegian-sj",
+    "name": "Norwegian",
+    "category": "territory-associated",
+    "countryCode": "sj",
+    "flagUrl": "https://flagcdn.com/sj.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Svalbard and Jan Mayen",
+      "Svalbard og Jan Mayen",
+      "Norwegian",
+      "SJ",
+      "Svalbard and Jan Mayen Islands"
+    ],
+    "searchTerms": [
+      "Svalbard and Jan Mayen",
+      "Svalbard og Jan Mayen",
+      "Norwegian",
+      "SJ",
+      "Svalbard and Jan Mayen Islands",
+      "744",
+      "Europe",
+      "Northern Europe",
+      "Longyearbyen"
+    ]
+  },
+  {
+    "id": "omani",
+    "name": "Omani",
+    "category": "country-associated",
+    "countryCode": "om",
+    "flagUrl": "https://flagcdn.com/om.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Oman",
+      "Sultanate of Oman",
+      "Omani",
+      "OM",
+      "Salṭanat ʻUmān"
+    ],
+    "searchTerms": [
+      "Oman",
+      "Sultanate of Oman",
+      "Omani",
+      "OM",
+      "Salṭanat ʻUmān",
+      "512",
+      "Asia",
+      "Western Asia",
+      "Muscat"
+    ]
+  },
+  {
+    "id": "other-identity",
+    "name": "Other identity",
+    "category": "custom",
+    "symbolType": "text",
+    "symbol": "OTHER",
+    "region": "Global",
+    "alternateNames": [],
+    "searchTerms": [
+      "Other"
+    ]
+  },
+  {
+    "id": "pacific-islander",
+    "name": "Pacific Islander",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "PI",
+    "region": "Oceania",
+    "alternateNames": [],
+    "searchTerms": [
+      "Pacific Islander"
+    ]
+  },
+  {
+    "id": "pakistani",
+    "name": "Pakistani",
+    "category": "country-associated",
+    "countryCode": "pk",
+    "flagUrl": "https://flagcdn.com/pk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Pakistan",
+      "Islamic Republic of Pakistan",
+      "Pakistani",
+      "PK",
+      "Pākistān",
+      "Islāmī Jumhūriya'eh Pākistān"
+    ],
+    "searchTerms": [
+      "Pakistan",
+      "Islamic Republic of Pakistan",
+      "Pakistani",
+      "PK",
+      "Pākistān",
+      "Islāmī Jumhūriya'eh Pākistān",
+      "586",
+      "Asia",
+      "Southern Asia",
+      "Islamabad"
+    ]
+  },
+  {
+    "id": "palauan",
+    "name": "Palauan",
+    "category": "country-associated",
+    "countryCode": "pw",
+    "flagUrl": "https://flagcdn.com/pw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Micronesia",
+    "alternateNames": [
+      "Palau",
+      "Republic of Palau",
+      "Palauan",
+      "PW",
+      "Beluu er a Belau"
+    ],
+    "searchTerms": [
+      "Palau",
+      "Republic of Palau",
+      "Palauan",
+      "PW",
+      "Beluu er a Belau",
+      "585",
+      "Oceania",
+      "Micronesia",
+      "Ngerulmud"
+    ]
+  },
+  {
+    "id": "palestinian",
+    "name": "Palestinian",
+    "category": "territory-associated",
+    "countryCode": "ps",
+    "flagUrl": "https://flagcdn.com/ps.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Palestine",
+      "State of Palestine",
+      "Palestinian",
+      "PS",
+      "Palestine, State of",
+      "Dawlat Filasṭin"
+    ],
+    "searchTerms": [
+      "Palestine",
+      "State of Palestine",
+      "Palestinian",
+      "PS",
+      "Palestine, State of",
+      "Dawlat Filasṭin",
+      "275",
+      "Asia",
+      "Western Asia",
+      "Ramallah"
+    ]
+  },
+  {
+    "id": "panamanian",
+    "name": "Panamanian",
+    "category": "country-associated",
+    "countryCode": "pa",
+    "flagUrl": "https://flagcdn.com/pa.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "Panama",
+      "Republic of Panama",
+      "Panamanian",
+      "PA",
+      "República de Panamá"
+    ],
+    "searchTerms": [
+      "Panama",
+      "Republic of Panama",
+      "Panamanian",
+      "PA",
+      "República de Panamá",
+      "591",
+      "Americas",
+      "Central America",
+      "Panama City"
+    ]
+  },
+  {
+    "id": "papua-new-guinean",
+    "name": "Papua New Guinean",
+    "category": "country-associated",
+    "countryCode": "pg",
+    "flagUrl": "https://flagcdn.com/pg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Melanesia",
+    "alternateNames": [
+      "Papua New Guinea",
+      "Independent State of Papua New Guinea",
+      "Papua New Guinean",
+      "PG",
+      "Independen Stet bilong Papua Niugini"
+    ],
+    "searchTerms": [
+      "Papua New Guinea",
+      "Independent State of Papua New Guinea",
+      "Papua New Guinean",
+      "PG",
+      "Independen Stet bilong Papua Niugini",
+      "598",
+      "Oceania",
+      "Melanesia",
+      "Port Moresby"
+    ]
+  },
+  {
+    "id": "paraguayan",
+    "name": "Paraguayan",
+    "category": "country-associated",
+    "countryCode": "py",
+    "flagUrl": "https://flagcdn.com/py.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Paraguay",
+      "Republic of Paraguay",
+      "Paraguayan",
+      "PY",
+      "República del Paraguay",
+      "Tetã Paraguái"
+    ],
+    "searchTerms": [
+      "Paraguay",
+      "Republic of Paraguay",
+      "Paraguayan",
+      "PY",
+      "República del Paraguay",
+      "Tetã Paraguái",
+      "600",
+      "Americas",
+      "South America",
+      "Asunción"
+    ]
+  },
+  {
+    "id": "persian",
+    "name": "Persian",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "PRS",
+    "region": "West Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "Persian"
+    ]
+  },
+  {
+    "id": "peruvian",
+    "name": "Peruvian",
+    "category": "country-associated",
+    "countryCode": "pe",
+    "flagUrl": "https://flagcdn.com/pe.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Peru",
+      "Republic of Peru",
+      "Peruvian",
+      "PE",
+      "República del Perú"
+    ],
+    "searchTerms": [
+      "Peru",
+      "Republic of Peru",
+      "Peruvian",
+      "PE",
+      "República del Perú",
+      "604",
+      "Americas",
+      "South America",
+      "Lima"
+    ]
+  },
+  {
+    "id": "pitcairn-islander",
+    "name": "Pitcairn Islander",
+    "category": "territory-associated",
+    "countryCode": "pn",
+    "flagUrl": "https://flagcdn.com/pn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Pitcairn Islands",
+      "Pitcairn Group of Islands",
+      "Pitcairn Islander",
+      "PN",
+      "Pitcairn",
+      "Pitcairn Henderson Ducie and Oeno Islands"
+    ],
+    "searchTerms": [
+      "Pitcairn Islands",
+      "Pitcairn Group of Islands",
+      "Pitcairn Islander",
+      "PN",
+      "Pitcairn",
+      "Pitcairn Henderson Ducie and Oeno Islands",
+      "612",
+      "Oceania",
+      "Polynesia",
+      "Adamstown"
+    ]
+  },
+  {
+    "id": "polish",
+    "name": "Polish",
+    "category": "country-associated",
+    "countryCode": "pl",
+    "flagUrl": "https://flagcdn.com/pl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Europe",
+    "alternateNames": [
+      "Poland",
+      "Republic of Poland",
+      "Polish",
+      "PL",
+      "Rzeczpospolita Polska"
+    ],
+    "searchTerms": [
+      "Poland",
+      "Republic of Poland",
+      "Polish",
+      "PL",
+      "Rzeczpospolita Polska",
+      "616",
+      "Europe",
+      "Central Europe",
+      "Warsaw"
+    ]
+  },
+  {
+    "id": "portuguese",
+    "name": "Portuguese",
+    "category": "country-associated",
+    "countryCode": "pt",
+    "flagUrl": "https://flagcdn.com/pt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Portugal",
+      "Portuguese Republic",
+      "Portuguese",
+      "PT",
+      "Portuguesa",
+      "República Portuguesa"
+    ],
+    "searchTerms": [
+      "Portugal",
+      "Portuguese Republic",
+      "Portuguese",
+      "PT",
+      "Portuguesa",
+      "República Portuguesa",
+      "620",
+      "Europe",
+      "Southern Europe",
+      "Lisbon"
+    ]
+  },
+  {
+    "id": "prefer-not-to-say",
+    "name": "Prefer not to say",
+    "category": "privacy",
+    "symbolType": "text",
+    "symbol": "PNS",
+    "region": "Global",
+    "alternateNames": [],
+    "searchTerms": [
+      "Prefer not to say"
+    ]
+  },
+  {
+    "id": "puerto-rican",
+    "name": "Puerto Rican",
+    "category": "territory-associated",
+    "countryCode": "pr",
+    "flagUrl": "https://flagcdn.com/pr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Puerto Rico",
+      "Commonwealth of Puerto Rico",
+      "Puerto Rican",
+      "PR",
+      "Estado Libre Asociado de Puerto Rico"
+    ],
+    "searchTerms": [
+      "Puerto Rico",
+      "Commonwealth of Puerto Rico",
+      "Puerto Rican",
+      "PR",
+      "Estado Libre Asociado de Puerto Rico",
+      "630",
+      "Americas",
+      "Caribbean",
+      "San Juan"
+    ]
+  },
+  {
+    "id": "qatari",
+    "name": "Qatari",
+    "category": "country-associated",
+    "countryCode": "qa",
+    "flagUrl": "https://flagcdn.com/qa.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Qatar",
+      "State of Qatar",
+      "Qatari",
+      "QA",
+      "Dawlat Qaṭar"
+    ],
+    "searchTerms": [
+      "Qatar",
+      "State of Qatar",
+      "Qatari",
+      "QA",
+      "Dawlat Qaṭar",
+      "634",
+      "Asia",
+      "Western Asia",
+      "Doha"
+    ]
+  },
+  {
+    "id": "reunionese",
+    "name": "Réunionese",
+    "category": "territory-associated",
+    "countryCode": "re",
+    "flagUrl": "https://flagcdn.com/re.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Réunion",
+      "Réunion Island",
+      "Réunionese",
+      "RE",
+      "Reunion"
+    ],
+    "searchTerms": [
+      "Réunion",
+      "Réunion Island",
+      "Réunionese",
+      "RE",
+      "Reunion",
+      "638",
+      "Africa",
+      "Eastern Africa",
+      "Saint-Denis"
+    ]
+  },
+  {
+    "id": "romani",
+    "name": "Romani",
+    "category": "ethnic",
+    "symbolType": "neutral",
+    "symbol": "ROM",
+    "region": "Europe",
+    "alternateNames": [
+      "Roma"
+    ],
+    "searchTerms": [
+      "Romani",
+      "Roma"
+    ]
+  },
+  {
+    "id": "romanian",
+    "name": "Romanian",
+    "category": "country-associated",
+    "countryCode": "ro",
+    "flagUrl": "https://flagcdn.com/ro.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Romania",
+      "Romanian",
+      "RO",
+      "Rumania",
+      "Roumania",
+      "România"
+    ],
+    "searchTerms": [
+      "Romania",
+      "Romanian",
+      "RO",
+      "Rumania",
+      "Roumania",
+      "România",
+      "642",
+      "Europe",
+      "Southeast Europe",
+      "Bucharest"
+    ]
+  },
+  {
+    "id": "russian",
+    "name": "Russian",
+    "category": "country-associated",
+    "countryCode": "ru",
+    "flagUrl": "https://flagcdn.com/ru.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Europe",
+    "alternateNames": [
+      "Russia",
+      "Russian Federation",
+      "Russian",
+      "RU",
+      "Российская Федерация"
+    ],
+    "searchTerms": [
+      "Russia",
+      "Russian Federation",
+      "Russian",
+      "RU",
+      "Российская Федерация",
+      "643",
+      "Europe",
+      "Eastern Europe",
+      "Moscow"
+    ]
+  },
+  {
+    "id": "rwandan",
+    "name": "Rwandan",
+    "category": "country-associated",
+    "countryCode": "rw",
+    "flagUrl": "https://flagcdn.com/rw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Rwanda",
+      "Republic of Rwanda",
+      "Rwandan",
+      "RW",
+      "Repubulika y'u Rwanda",
+      "République du Rwanda"
+    ],
+    "searchTerms": [
+      "Rwanda",
+      "Republic of Rwanda",
+      "Rwandan",
+      "RW",
+      "Repubulika y'u Rwanda",
+      "République du Rwanda",
+      "646",
+      "Africa",
+      "Eastern Africa",
+      "Kigali"
+    ]
+  },
+  {
+    "id": "sahrawi",
+    "name": "Sahrawi",
+    "category": "territory-associated",
+    "countryCode": "eh",
+    "flagUrl": "https://flagcdn.com/eh.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Western Sahara",
+      "Sahrawi Arab Democratic Republic",
+      "Sahrawi",
+      "EH",
+      "Taneẓroft Tutrimt"
+    ],
+    "searchTerms": [
+      "Western Sahara",
+      "Sahrawi Arab Democratic Republic",
+      "Sahrawi",
+      "EH",
+      "Taneẓroft Tutrimt",
+      "732",
+      "Africa",
+      "Northern Africa",
+      "El Aaiún"
+    ]
+  },
+  {
+    "id": "saint-barthelemy-islander",
+    "name": "Saint Barthélemy Islander",
+    "category": "territory-associated",
+    "countryCode": "bl",
+    "flagUrl": "https://flagcdn.com/bl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Saint Barthélemy",
+      "Collectivity of Saint Barthélemy",
+      "Saint Barthélemy Islander",
+      "BL",
+      "St. Barthelemy",
+      "Collectivité de Saint-Barthélemy"
+    ],
+    "searchTerms": [
+      "Saint Barthélemy",
+      "Collectivity of Saint Barthélemy",
+      "Saint Barthélemy Islander",
+      "BL",
+      "St. Barthelemy",
+      "Collectivité de Saint-Barthélemy",
+      "652",
+      "Americas",
+      "Caribbean",
+      "Gustavia"
+    ]
+  },
+  {
+    "id": "saint-helenian",
+    "name": "Saint Helenian",
+    "category": "territory-associated",
+    "countryCode": "sh",
+    "flagUrl": "https://flagcdn.com/sh.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Saint Helena, Ascension and Tristan da Cunha",
+      "Saint Helenian",
+      "Saint Helena",
+      "St. Helena, Ascension and Tristan da Cunha"
+    ],
+    "searchTerms": [
+      "Saint Helena, Ascension and Tristan da Cunha",
+      "Saint Helenian",
+      "Saint Helena",
+      "St. Helena, Ascension and Tristan da Cunha",
+      "SH",
+      "654",
+      "Africa",
+      "Western Africa",
+      "Jamestown"
+    ]
+  },
+  {
+    "id": "saint-lucian",
+    "name": "Saint Lucian",
+    "category": "country-associated",
+    "countryCode": "lc",
+    "flagUrl": "https://flagcdn.com/lc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Saint Lucia",
+      "Saint Lucian",
+      "LC"
+    ],
+    "searchTerms": [
+      "Saint Lucia",
+      "Saint Lucian",
+      "LC",
+      "662",
+      "Americas",
+      "Caribbean",
+      "Castries"
+    ]
+  },
+  {
+    "id": "saint-martin-islander",
+    "name": "Saint Martin Islander",
+    "category": "territory-associated",
+    "countryCode": "mf",
+    "flagUrl": "https://flagcdn.com/mf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Saint Martin",
+      "Saint Martin Islander",
+      "MF",
+      "Collectivity of Saint Martin",
+      "Collectivité de Saint-Martin",
+      "Saint Martin (French part)"
+    ],
+    "searchTerms": [
+      "Saint Martin",
+      "Saint Martin Islander",
+      "MF",
+      "Collectivity of Saint Martin",
+      "Collectivité de Saint-Martin",
+      "Saint Martin (French part)",
+      "663",
+      "Americas",
+      "Caribbean",
+      "Marigot"
+    ]
+  },
+  {
+    "id": "saint-vincentian",
+    "name": "Saint Vincentian",
+    "category": "country-associated",
+    "countryCode": "vc",
+    "flagUrl": "https://flagcdn.com/vc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Saint Vincent and the Grenadines",
+      "Saint Vincentian",
+      "VC"
+    ],
+    "searchTerms": [
+      "Saint Vincent and the Grenadines",
+      "Saint Vincentian",
+      "VC",
+      "670",
+      "Americas",
+      "Caribbean",
+      "Kingstown"
+    ]
+  },
+  {
+    "id": "saint-pierrais-miquelonnais",
+    "name": "Saint-Pierrais, Miquelonnais",
+    "category": "territory-associated",
+    "countryCode": "pm",
+    "flagUrl": "https://flagcdn.com/pm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "North America",
+    "alternateNames": [
+      "Saint Pierre and Miquelon",
+      "Saint-Pierrais, Miquelonnais",
+      "PM",
+      "Collectivité territoriale de Saint-Pierre-et-Miquelon"
+    ],
+    "searchTerms": [
+      "Saint Pierre and Miquelon",
+      "Saint-Pierrais, Miquelonnais",
+      "PM",
+      "Collectivité territoriale de Saint-Pierre-et-Miquelon",
+      "666",
+      "Americas",
+      "North America",
+      "Saint-Pierre"
+    ]
+  },
+  {
+    "id": "salvadoran",
+    "name": "Salvadoran",
+    "category": "country-associated",
+    "countryCode": "sv",
+    "flagUrl": "https://flagcdn.com/sv.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central America",
+    "alternateNames": [
+      "El Salvador",
+      "Republic of El Salvador",
+      "Salvadoran",
+      "SV",
+      "República de El Salvador"
+    ],
+    "searchTerms": [
+      "El Salvador",
+      "Republic of El Salvador",
+      "Salvadoran",
+      "SV",
+      "República de El Salvador",
+      "222",
+      "Americas",
+      "Central America",
+      "San Salvador"
+    ]
+  },
+  {
+    "id": "sammarinese",
+    "name": "Sammarinese",
+    "category": "country-associated",
+    "countryCode": "sm",
+    "flagUrl": "https://flagcdn.com/sm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "San Marino",
+      "Most Serene Republic of San Marino",
+      "Sammarinese",
+      "SM",
+      "Republic of San Marino",
+      "Repubblica di San Marino"
+    ],
+    "searchTerms": [
+      "San Marino",
+      "Most Serene Republic of San Marino",
+      "Sammarinese",
+      "SM",
+      "Republic of San Marino",
+      "Repubblica di San Marino",
+      "674",
+      "Europe",
+      "Southern Europe",
+      "City of San Marino"
+    ]
+  },
+  {
+    "id": "samoan",
+    "name": "Samoan",
+    "category": "country-associated",
+    "countryCode": "ws",
+    "flagUrl": "https://flagcdn.com/ws.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Samoa",
+      "Independent State of Samoa",
+      "Samoan",
+      "WS",
+      "Malo Saʻoloto Tutoʻatasi o Sāmoa"
+    ],
+    "searchTerms": [
+      "Samoa",
+      "Independent State of Samoa",
+      "Samoan",
+      "WS",
+      "Malo Saʻoloto Tutoʻatasi o Sāmoa",
+      "882",
+      "Oceania",
+      "Polynesia",
+      "Apia"
+    ]
+  },
+  {
+    "id": "sao-tomean",
+    "name": "Sao Tomean",
+    "category": "country-associated",
+    "countryCode": "st",
+    "flagUrl": "https://flagcdn.com/st.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "São Tomé and Príncipe",
+      "Democratic Republic of São Tomé and Príncipe",
+      "Sao Tomean",
+      "ST",
+      "Sao Tome and Principe",
+      "República Democrática de São Tomé e Príncipe"
+    ],
+    "searchTerms": [
+      "São Tomé and Príncipe",
+      "Democratic Republic of São Tomé and Príncipe",
+      "Sao Tomean",
+      "ST",
+      "Sao Tome and Principe",
+      "República Democrática de São Tomé e Príncipe",
+      "678",
+      "Africa",
+      "Middle Africa",
+      "São Tomé"
+    ]
+  },
+  {
+    "id": "saudi-arabian",
+    "name": "Saudi Arabian",
+    "category": "country-associated",
+    "countryCode": "sa",
+    "flagUrl": "https://flagcdn.com/sa.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Saudi Arabia",
+      "Kingdom of Saudi Arabia",
+      "Saudi Arabian",
+      "Saudi",
+      "SA",
+      "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah"
+    ],
+    "searchTerms": [
+      "Saudi Arabia",
+      "Kingdom of Saudi Arabia",
+      "Saudi Arabian",
+      "Saudi",
+      "SA",
+      "Al-Mamlakah al-‘Arabiyyah as-Su‘ūdiyyah",
+      "682",
+      "Asia",
+      "Western Asia",
+      "Riyadh"
+    ]
+  },
+  {
+    "id": "senegalese",
+    "name": "Senegalese",
+    "category": "country-associated",
+    "countryCode": "sn",
+    "flagUrl": "https://flagcdn.com/sn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Senegal",
+      "Republic of Senegal",
+      "Senegalese",
+      "SN",
+      "République du Sénégal"
+    ],
+    "searchTerms": [
+      "Senegal",
+      "Republic of Senegal",
+      "Senegalese",
+      "SN",
+      "République du Sénégal",
+      "686",
+      "Africa",
+      "Western Africa",
+      "Dakar"
+    ]
+  },
+  {
+    "id": "serbian",
+    "name": "Serbian",
+    "category": "country-associated",
+    "countryCode": "rs",
+    "flagUrl": "https://flagcdn.com/rs.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southeast Europe",
+    "alternateNames": [
+      "Serbia",
+      "Republic of Serbia",
+      "Serbian",
+      "RS",
+      "Srbija",
+      "Republika Srbija",
+      "Србија",
+      "Република Србија"
+    ],
+    "searchTerms": [
+      "Serbia",
+      "Republic of Serbia",
+      "Serbian",
+      "RS",
+      "Srbija",
+      "Republika Srbija",
+      "Србија",
+      "Република Србија",
+      "688",
+      "Europe",
+      "Southeast Europe",
+      "Belgrade"
+    ]
+  },
+  {
+    "id": "seychellois",
+    "name": "Seychellois",
+    "category": "country-associated",
+    "countryCode": "sc",
+    "flagUrl": "https://flagcdn.com/sc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Seychelles",
+      "Republic of Seychelles",
+      "Seychellois",
+      "SC",
+      "Repiblik Sesel",
+      "République des Seychelles"
+    ],
+    "searchTerms": [
+      "Seychelles",
+      "Republic of Seychelles",
+      "Seychellois",
+      "SC",
+      "Repiblik Sesel",
+      "République des Seychelles",
+      "690",
+      "Africa",
+      "Eastern Africa",
+      "Victoria"
+    ]
+  },
+  {
+    "id": "sierra-leonean",
+    "name": "Sierra Leonean",
+    "category": "country-associated",
+    "countryCode": "sl",
+    "flagUrl": "https://flagcdn.com/sl.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Sierra Leone",
+      "Republic of Sierra Leone",
+      "Sierra Leonean",
+      "SL"
+    ],
+    "searchTerms": [
+      "Sierra Leone",
+      "Republic of Sierra Leone",
+      "Sierra Leonean",
+      "SL",
+      "694",
+      "Africa",
+      "Western Africa",
+      "Freetown"
+    ]
+  },
+  {
+    "id": "singaporean",
+    "name": "Singaporean",
+    "category": "country-associated",
+    "countryCode": "sg",
+    "flagUrl": "https://flagcdn.com/sg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Singapore",
+      "Republic of Singapore",
+      "Singaporean",
+      "SG",
+      "Singapura",
+      "Republik Singapura",
+      "新加坡共和国"
+    ],
+    "searchTerms": [
+      "Singapore",
+      "Republic of Singapore",
+      "Singaporean",
+      "SG",
+      "Singapura",
+      "Republik Singapura",
+      "新加坡共和国",
+      "702",
+      "Asia",
+      "South-Eastern Asia"
+    ]
+  },
+  {
+    "id": "slovak",
+    "name": "Slovak",
+    "category": "country-associated",
+    "countryCode": "sk",
+    "flagUrl": "https://flagcdn.com/sk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Europe",
+    "alternateNames": [
+      "Slovakia",
+      "Slovak Republic",
+      "Slovak",
+      "SK",
+      "Slovenská republika"
+    ],
+    "searchTerms": [
+      "Slovakia",
+      "Slovak Republic",
+      "Slovak",
+      "SK",
+      "Slovenská republika",
+      "703",
+      "Europe",
+      "Central Europe",
+      "Bratislava"
+    ]
+  },
+  {
+    "id": "slovene",
+    "name": "Slovene",
+    "category": "country-associated",
+    "countryCode": "si",
+    "flagUrl": "https://flagcdn.com/si.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Europe",
+    "alternateNames": [
+      "Slovenia",
+      "Republic of Slovenia",
+      "Slovene",
+      "SI",
+      "Republika Slovenija"
+    ],
+    "searchTerms": [
+      "Slovenia",
+      "Republic of Slovenia",
+      "Slovene",
+      "SI",
+      "Republika Slovenija",
+      "705",
+      "Europe",
+      "Central Europe",
+      "Ljubljana"
+    ]
+  },
+  {
+    "id": "solomon-islander",
+    "name": "Solomon Islander",
+    "category": "country-associated",
+    "countryCode": "sb",
+    "flagUrl": "https://flagcdn.com/sb.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Melanesia",
+    "alternateNames": [
+      "Solomon Islands",
+      "Solomon Islander",
+      "SB"
+    ],
+    "searchTerms": [
+      "Solomon Islands",
+      "Solomon Islander",
+      "SB",
+      "090",
+      "Oceania",
+      "Melanesia",
+      "Honiara"
+    ]
+  },
+  {
+    "id": "somali",
+    "name": "Somali",
+    "category": "country-associated",
+    "countryCode": "so",
+    "flagUrl": "https://flagcdn.com/so.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Somalia",
+      "Federal Republic of Somalia",
+      "Somali",
+      "SO",
+      "aṣ-Ṣūmāl",
+      "Jamhuuriyadda Federaalka Soomaaliya",
+      "Jumhūriyyat aṣ-Ṣūmāl al-Fiderāliyya"
+    ],
+    "searchTerms": [
+      "Somalia",
+      "Federal Republic of Somalia",
+      "Somali",
+      "SO",
+      "aṣ-Ṣūmāl",
+      "Jamhuuriyadda Federaalka Soomaaliya",
+      "Jumhūriyyat aṣ-Ṣūmāl al-Fiderāliyya",
+      "706",
+      "Africa",
+      "Eastern Africa",
+      "Mogadishu"
+    ]
+  },
+  {
+    "id": "south-african",
+    "name": "South African",
+    "category": "country-associated",
+    "countryCode": "za",
+    "flagUrl": "https://flagcdn.com/za.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Africa",
+    "alternateNames": [
+      "South Africa",
+      "Republic of South Africa",
+      "South African",
+      "ZA",
+      "RSA",
+      "Suid-Afrika"
+    ],
+    "searchTerms": [
+      "South Africa",
+      "Republic of South Africa",
+      "South African",
+      "ZA",
+      "RSA",
+      "Suid-Afrika",
+      "710",
+      "Africa",
+      "Southern Africa",
+      "Pretoria",
+      "Bloemfontein",
+      "Cape Town"
+    ]
+  },
+  {
+    "id": "south-asian",
+    "name": "South Asian",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "SAS",
+    "region": "South Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "South Asian"
+    ]
+  },
+  {
+    "id": "south-georgian-south-sandwich-islander",
+    "name": "South Georgian South Sandwich Islander",
+    "category": "territory-associated",
+    "countryCode": "gs",
+    "flagUrl": "https://flagcdn.com/gs.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Antarctic",
+    "alternateNames": [
+      "South Georgia",
+      "South Georgia and the South Sandwich Islands",
+      "South Georgian South Sandwich Islander",
+      "GS"
+    ],
+    "searchTerms": [
+      "South Georgia",
+      "South Georgia and the South Sandwich Islands",
+      "South Georgian South Sandwich Islander",
+      "GS",
+      "239",
+      "Antarctic",
+      "King Edward Point"
+    ]
+  },
+  {
+    "id": "south-korean",
+    "name": "South Korean",
+    "category": "country-associated",
+    "countryCode": "kr",
+    "flagUrl": "https://flagcdn.com/kr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "South Korea",
+      "Republic of Korea",
+      "South Korean",
+      "KR",
+      "Korea, Republic of",
+      "남한",
+      "남조선"
+    ],
+    "searchTerms": [
+      "South Korea",
+      "Republic of Korea",
+      "South Korean",
+      "KR",
+      "Korea, Republic of",
+      "남한",
+      "남조선",
+      "410",
+      "Asia",
+      "Eastern Asia",
+      "Seoul"
+    ]
+  },
+  {
+    "id": "south-sudanese",
+    "name": "South Sudanese",
+    "category": "country-associated",
+    "countryCode": "ss",
+    "flagUrl": "https://flagcdn.com/ss.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Middle Africa",
+    "alternateNames": [
+      "South Sudan",
+      "Republic of South Sudan",
+      "South Sudanese",
+      "SS"
+    ],
+    "searchTerms": [
+      "South Sudan",
+      "Republic of South Sudan",
+      "South Sudanese",
+      "SS",
+      "728",
+      "Africa",
+      "Middle Africa",
+      "Juba"
+    ]
+  },
+  {
+    "id": "southeast-asian",
+    "name": "Southeast Asian",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "SEA",
+    "region": "Southeast Asia",
+    "alternateNames": [],
+    "searchTerms": [
+      "Southeast Asian"
+    ]
+  },
+  {
+    "id": "spanish",
+    "name": "Spanish",
+    "category": "country-associated",
+    "countryCode": "es",
+    "flagUrl": "https://flagcdn.com/es.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Spain",
+      "Kingdom of Spain",
+      "Spanish",
+      "ES",
+      "Reino de España"
+    ],
+    "searchTerms": [
+      "Spain",
+      "Kingdom of Spain",
+      "Spanish",
+      "ES",
+      "Reino de España",
+      "724",
+      "Europe",
+      "Southern Europe",
+      "Madrid"
+    ]
+  },
+  {
+    "id": "sri-lankan",
+    "name": "Sri Lankan",
+    "category": "country-associated",
+    "countryCode": "lk",
+    "flagUrl": "https://flagcdn.com/lk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Asia",
+    "alternateNames": [
+      "Sri Lanka",
+      "Democratic Socialist Republic of Sri Lanka",
+      "Sri Lankan",
+      "LK",
+      "ilaṅkai"
+    ],
+    "searchTerms": [
+      "Sri Lanka",
+      "Democratic Socialist Republic of Sri Lanka",
+      "Sri Lankan",
+      "LK",
+      "ilaṅkai",
+      "144",
+      "Asia",
+      "Southern Asia",
+      "Colombo"
+    ]
+  },
+  {
+    "id": "st-maartener",
+    "name": "St. Maartener",
+    "category": "territory-associated",
+    "countryCode": "sx",
+    "flagUrl": "https://flagcdn.com/sx.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Sint Maarten",
+      "St. Maartener",
+      "SX",
+      "Sint Maarten (Dutch part)"
+    ],
+    "searchTerms": [
+      "Sint Maarten",
+      "St. Maartener",
+      "SX",
+      "Sint Maarten (Dutch part)",
+      "534",
+      "Americas",
+      "Caribbean",
+      "Philipsburg"
+    ]
+  },
+  {
+    "id": "sub-saharan-african",
+    "name": "Sub-Saharan African",
+    "category": "regional",
+    "symbolType": "neutral",
+    "symbol": "SSA",
+    "region": "Sub-Saharan Africa",
+    "alternateNames": [],
+    "searchTerms": [
+      "Sub-Saharan African"
+    ]
+  },
+  {
+    "id": "sudanese",
+    "name": "Sudanese",
+    "category": "country-associated",
+    "countryCode": "sd",
+    "flagUrl": "https://flagcdn.com/sd.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Sudan",
+      "Republic of the Sudan",
+      "Sudanese",
+      "SD",
+      "Jumhūrīyat as-Sūdān"
+    ],
+    "searchTerms": [
+      "Sudan",
+      "Republic of the Sudan",
+      "Sudanese",
+      "SD",
+      "Jumhūrīyat as-Sūdān",
+      "729",
+      "Africa",
+      "Northern Africa",
+      "Khartoum"
+    ]
+  },
+  {
+    "id": "surinamer",
+    "name": "Surinamer",
+    "category": "country-associated",
+    "countryCode": "sr",
+    "flagUrl": "https://flagcdn.com/sr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Suriname",
+      "Republic of Suriname",
+      "Surinamer",
+      "SR",
+      "Sarnam",
+      "Sranangron",
+      "Republiek Suriname"
+    ],
+    "searchTerms": [
+      "Suriname",
+      "Republic of Suriname",
+      "Surinamer",
+      "SR",
+      "Sarnam",
+      "Sranangron",
+      "Republiek Suriname",
+      "740",
+      "Americas",
+      "South America",
+      "Paramaribo"
+    ]
+  },
+  {
+    "id": "swazi",
+    "name": "Swazi",
+    "category": "country-associated",
+    "countryCode": "sz",
+    "flagUrl": "https://flagcdn.com/sz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Africa",
+    "alternateNames": [
+      "Eswatini",
+      "Kingdom of Eswatini",
+      "Swazi",
+      "SZ",
+      "Swaziland",
+      "weSwatini",
+      "Swatini",
+      "Ngwane",
+      "Umbuso weSwatini"
+    ],
+    "searchTerms": [
+      "Eswatini",
+      "Kingdom of Eswatini",
+      "Swazi",
+      "SZ",
+      "Swaziland",
+      "weSwatini",
+      "Swatini",
+      "Ngwane",
+      "Umbuso weSwatini",
+      "748",
+      "Africa",
+      "Southern Africa",
+      "Lobamba"
+    ]
+  },
+  {
+    "id": "swedish",
+    "name": "Swedish",
+    "category": "country-associated",
+    "countryCode": "se",
+    "flagUrl": "https://flagcdn.com/se.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Europe",
+    "alternateNames": [
+      "Sweden",
+      "Kingdom of Sweden",
+      "Swedish",
+      "SE",
+      "Konungariket Sverige"
+    ],
+    "searchTerms": [
+      "Sweden",
+      "Kingdom of Sweden",
+      "Swedish",
+      "SE",
+      "Konungariket Sverige",
+      "752",
+      "Europe",
+      "Northern Europe",
+      "Stockholm"
+    ]
+  },
+  {
+    "id": "swiss",
+    "name": "Swiss",
+    "category": "country-associated",
+    "countryCode": "ch",
+    "flagUrl": "https://flagcdn.com/ch.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Europe",
+    "alternateNames": [
+      "Switzerland",
+      "Swiss Confederation",
+      "Swiss",
+      "CH",
+      "Schweiz",
+      "Suisse",
+      "Svizzera",
+      "Svizra"
+    ],
+    "searchTerms": [
+      "Switzerland",
+      "Swiss Confederation",
+      "Swiss",
+      "CH",
+      "Schweiz",
+      "Suisse",
+      "Svizzera",
+      "Svizra",
+      "756",
+      "Europe",
+      "Western Europe",
+      "Bern"
+    ]
+  },
+  {
+    "id": "syrian",
+    "name": "Syrian",
+    "category": "country-associated",
+    "countryCode": "sy",
+    "flagUrl": "https://flagcdn.com/sy.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Syria",
+      "Syrian Arab Republic",
+      "Syrian",
+      "SY",
+      "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah"
+    ],
+    "searchTerms": [
+      "Syria",
+      "Syrian Arab Republic",
+      "Syrian",
+      "SY",
+      "Al-Jumhūrīyah Al-ʻArabīyah As-Sūrīyah",
+      "760",
+      "Asia",
+      "Western Asia",
+      "Damascus"
+    ]
+  },
+  {
+    "id": "tadzhik",
+    "name": "Tadzhik",
+    "category": "country-associated",
+    "countryCode": "tj",
+    "flagUrl": "https://flagcdn.com/tj.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Asia",
+    "alternateNames": [
+      "Tajikistan",
+      "Republic of Tajikistan",
+      "Tadzhik",
+      "TJ",
+      "Toçikiston",
+      "Ҷумҳурии Тоҷикистон",
+      "Çumhuriyi Toçikiston"
+    ],
+    "searchTerms": [
+      "Tajikistan",
+      "Republic of Tajikistan",
+      "Tadzhik",
+      "TJ",
+      "Toçikiston",
+      "Ҷумҳурии Тоҷикистон",
+      "Çumhuriyi Toçikiston",
+      "762",
+      "Asia",
+      "Central Asia",
+      "Dushanbe"
+    ]
+  },
+  {
+    "id": "taiwanese",
+    "name": "Taiwanese",
+    "category": "territory-associated",
+    "countryCode": "tw",
+    "flagUrl": "https://flagcdn.com/tw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Asia",
+    "alternateNames": [
+      "Taiwan",
+      "Republic of China (Taiwan)",
+      "Taiwanese",
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei"
+    ],
+    "searchTerms": [
+      "Taiwan",
+      "Republic of China (Taiwan)",
+      "Taiwanese",
+      "TW",
+      "Táiwān",
+      "Republic of China",
+      "中華民國",
+      "Zhōnghuá Mínguó",
+      "Chinese Taipei",
+      "158",
+      "Asia",
+      "Eastern Asia",
+      "Taipei"
+    ]
+  },
+  {
+    "id": "tanzanian",
+    "name": "Tanzanian",
+    "category": "country-associated",
+    "countryCode": "tz",
+    "flagUrl": "https://flagcdn.com/tz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Tanzania",
+      "United Republic of Tanzania",
+      "Tanzanian",
+      "TZ",
+      "Tanzania, United Republic of",
+      "Jamhuri ya Muungano wa Tanzania"
+    ],
+    "searchTerms": [
+      "Tanzania",
+      "United Republic of Tanzania",
+      "Tanzanian",
+      "TZ",
+      "Tanzania, United Republic of",
+      "Jamhuri ya Muungano wa Tanzania",
+      "834",
+      "Africa",
+      "Eastern Africa",
+      "Dodoma"
+    ]
+  },
+  {
+    "id": "thai",
+    "name": "Thai",
+    "category": "country-associated",
+    "countryCode": "th",
+    "flagUrl": "https://flagcdn.com/th.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Thailand",
+      "Kingdom of Thailand",
+      "Thai",
+      "TH",
+      "Prathet",
+      "ราชอาณาจักรไทย",
+      "Ratcha Anachak Thai"
+    ],
+    "searchTerms": [
+      "Thailand",
+      "Kingdom of Thailand",
+      "Thai",
+      "TH",
+      "Prathet",
+      "ราชอาณาจักรไทย",
+      "Ratcha Anachak Thai",
+      "764",
+      "Asia",
+      "South-Eastern Asia",
+      "Bangkok"
+    ]
+  },
+  {
+    "id": "togolese",
+    "name": "Togolese",
+    "category": "country-associated",
+    "countryCode": "tg",
+    "flagUrl": "https://flagcdn.com/tg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Africa",
+    "alternateNames": [
+      "Togo",
+      "Togolese Republic",
+      "Togolese",
+      "TG",
+      "République Togolaise"
+    ],
+    "searchTerms": [
+      "Togo",
+      "Togolese Republic",
+      "Togolese",
+      "TG",
+      "République Togolaise",
+      "768",
+      "Africa",
+      "Western Africa",
+      "Lomé"
+    ]
+  },
+  {
+    "id": "tokelauan",
+    "name": "Tokelauan",
+    "category": "territory-associated",
+    "countryCode": "tk",
+    "flagUrl": "https://flagcdn.com/tk.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Tokelau",
+      "Tokelauan",
+      "TK"
+    ],
+    "searchTerms": [
+      "Tokelau",
+      "Tokelauan",
+      "TK",
+      "772",
+      "Oceania",
+      "Polynesia",
+      "Fakaofo"
+    ]
+  },
+  {
+    "id": "tongan",
+    "name": "Tongan",
+    "category": "country-associated",
+    "countryCode": "to",
+    "flagUrl": "https://flagcdn.com/to.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Tonga",
+      "Kingdom of Tonga",
+      "Tongan",
+      "TO"
+    ],
+    "searchTerms": [
+      "Tonga",
+      "Kingdom of Tonga",
+      "Tongan",
+      "TO",
+      "776",
+      "Oceania",
+      "Polynesia",
+      "Nuku'alofa"
+    ]
+  },
+  {
+    "id": "trinidadian",
+    "name": "Trinidadian",
+    "category": "country-associated",
+    "countryCode": "tt",
+    "flagUrl": "https://flagcdn.com/tt.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Trinidad and Tobago",
+      "Republic of Trinidad and Tobago",
+      "Trinidadian",
+      "TT"
+    ],
+    "searchTerms": [
+      "Trinidad and Tobago",
+      "Republic of Trinidad and Tobago",
+      "Trinidadian",
+      "TT",
+      "780",
+      "Americas",
+      "Caribbean",
+      "Port of Spain"
+    ]
+  },
+  {
+    "id": "tunisian",
+    "name": "Tunisian",
+    "category": "country-associated",
+    "countryCode": "tn",
+    "flagUrl": "https://flagcdn.com/tn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Northern Africa",
+    "alternateNames": [
+      "Tunisia",
+      "Tunisian Republic",
+      "Tunisian",
+      "TN",
+      "Republic of Tunisia",
+      "al-Jumhūriyyah at-Tūnisiyyah"
+    ],
+    "searchTerms": [
+      "Tunisia",
+      "Tunisian Republic",
+      "Tunisian",
+      "TN",
+      "Republic of Tunisia",
+      "al-Jumhūriyyah at-Tūnisiyyah",
+      "788",
+      "Africa",
+      "Northern Africa",
+      "Tunis"
+    ]
+  },
+  {
+    "id": "turkish",
+    "name": "Turkish",
+    "category": "country-associated",
+    "countryCode": "tr",
+    "flagUrl": "https://flagcdn.com/tr.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Türkiye",
+      "Republic of Türkiye",
+      "Turkish",
+      "TR",
+      "Turkiye",
+      "Republic of Turkey",
+      "Türkiye Cumhuriyeti"
+    ],
+    "searchTerms": [
+      "Türkiye",
+      "Republic of Türkiye",
+      "Turkish",
+      "TR",
+      "Turkiye",
+      "Republic of Turkey",
+      "Türkiye Cumhuriyeti",
+      "792",
+      "Asia",
+      "Western Asia",
+      "Ankara"
+    ]
+  },
+  {
+    "id": "turkmen",
+    "name": "Turkmen",
+    "category": "country-associated",
+    "countryCode": "tm",
+    "flagUrl": "https://flagcdn.com/tm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Asia",
+    "alternateNames": [
+      "Turkmenistan",
+      "Turkmen",
+      "TM"
+    ],
+    "searchTerms": [
+      "Turkmenistan",
+      "Turkmen",
+      "TM",
+      "795",
+      "Asia",
+      "Central Asia",
+      "Ashgabat"
+    ]
+  },
+  {
+    "id": "turks-and-caicos-islander",
+    "name": "Turks and Caicos Islander",
+    "category": "territory-associated",
+    "countryCode": "tc",
+    "flagUrl": "https://flagcdn.com/tc.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "Turks and Caicos Islands",
+      "Turks and Caicos Islander",
+      "TC"
+    ],
+    "searchTerms": [
+      "Turks and Caicos Islands",
+      "Turks and Caicos Islander",
+      "TC",
+      "796",
+      "Americas",
+      "Caribbean",
+      "Cockburn Town"
+    ]
+  },
+  {
+    "id": "tuvaluan",
+    "name": "Tuvaluan",
+    "category": "country-associated",
+    "countryCode": "tv",
+    "flagUrl": "https://flagcdn.com/tv.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Tuvalu",
+      "Tuvaluan",
+      "TV"
+    ],
+    "searchTerms": [
+      "Tuvalu",
+      "Tuvaluan",
+      "TV",
+      "798",
+      "Oceania",
+      "Polynesia",
+      "Funafuti"
+    ]
+  },
+  {
+    "id": "ugandan",
+    "name": "Ugandan",
+    "category": "country-associated",
+    "countryCode": "ug",
+    "flagUrl": "https://flagcdn.com/ug.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Uganda",
+      "Republic of Uganda",
+      "Ugandan",
+      "UG",
+      "Jamhuri ya Uganda"
+    ],
+    "searchTerms": [
+      "Uganda",
+      "Republic of Uganda",
+      "Ugandan",
+      "UG",
+      "Jamhuri ya Uganda",
+      "800",
+      "Africa",
+      "Eastern Africa",
+      "Kampala"
+    ]
+  },
+  {
+    "id": "ukrainian",
+    "name": "Ukrainian",
+    "category": "country-associated",
+    "countryCode": "ua",
+    "flagUrl": "https://flagcdn.com/ua.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Europe",
+    "alternateNames": [
+      "Ukraine",
+      "Ukrainian",
+      "UA",
+      "Ukrayina"
+    ],
+    "searchTerms": [
+      "Ukraine",
+      "Ukrainian",
+      "UA",
+      "Ukrayina",
+      "804",
+      "Europe",
+      "Eastern Europe",
+      "Kyiv"
+    ]
+  },
+  {
+    "id": "uruguayan",
+    "name": "Uruguayan",
+    "category": "country-associated",
+    "countryCode": "uy",
+    "flagUrl": "https://flagcdn.com/uy.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Uruguay",
+      "Oriental Republic of Uruguay",
+      "Uruguayan",
+      "UY",
+      "República Oriental del Uruguay"
+    ],
+    "searchTerms": [
+      "Uruguay",
+      "Oriental Republic of Uruguay",
+      "Uruguayan",
+      "UY",
+      "República Oriental del Uruguay",
+      "858",
+      "Americas",
+      "South America",
+      "Montevideo"
+    ]
+  },
+  {
+    "id": "uzbekistani",
+    "name": "Uzbekistani",
+    "category": "country-associated",
+    "countryCode": "uz",
+    "flagUrl": "https://flagcdn.com/uz.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Central Asia",
+    "alternateNames": [
+      "Uzbekistan",
+      "Republic of Uzbekistan",
+      "Uzbekistani",
+      "UZ",
+      "O‘zbekiston Respublikasi",
+      "Ўзбекистон Республикаси"
+    ],
+    "searchTerms": [
+      "Uzbekistan",
+      "Republic of Uzbekistan",
+      "Uzbekistani",
+      "UZ",
+      "O‘zbekiston Respublikasi",
+      "Ўзбекистон Республикаси",
+      "860",
+      "Asia",
+      "Central Asia",
+      "Tashkent"
+    ]
+  },
+  {
+    "id": "vatican",
+    "name": "Vatican",
+    "category": "country-associated",
+    "countryCode": "va",
+    "flagUrl": "https://flagcdn.com/va.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Southern Europe",
+    "alternateNames": [
+      "Vatican City",
+      "Vatican City State",
+      "Vatican",
+      "VA",
+      "Holy See (Vatican City State)",
+      "Stato della Città del Vaticano"
+    ],
+    "searchTerms": [
+      "Vatican City",
+      "Vatican City State",
+      "Vatican",
+      "VA",
+      "Holy See (Vatican City State)",
+      "Stato della Città del Vaticano",
+      "336",
+      "Europe",
+      "Southern Europe"
+    ]
+  },
+  {
+    "id": "venezuelan",
+    "name": "Venezuelan",
+    "category": "country-associated",
+    "countryCode": "ve",
+    "flagUrl": "https://flagcdn.com/ve.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South America",
+    "alternateNames": [
+      "Venezuela",
+      "Bolivarian Republic of Venezuela",
+      "Venezuelan",
+      "VE",
+      "Venezuela, Bolivarian Republic of",
+      "República Bolivariana de Venezuela"
+    ],
+    "searchTerms": [
+      "Venezuela",
+      "Bolivarian Republic of Venezuela",
+      "Venezuelan",
+      "VE",
+      "Venezuela, Bolivarian Republic of",
+      "República Bolivariana de Venezuela",
+      "862",
+      "Americas",
+      "South America",
+      "Caracas"
+    ]
+  },
+  {
+    "id": "vietnamese",
+    "name": "Vietnamese",
+    "category": "country-associated",
+    "countryCode": "vn",
+    "flagUrl": "https://flagcdn.com/vn.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "South-Eastern Asia",
+    "alternateNames": [
+      "Vietnam",
+      "Socialist Republic of Vietnam",
+      "Vietnamese",
+      "VN",
+      "Cộng hòa Xã hội chủ nghĩa Việt Nam",
+      "Viet Nam"
+    ],
+    "searchTerms": [
+      "Vietnam",
+      "Socialist Republic of Vietnam",
+      "Vietnamese",
+      "VN",
+      "Cộng hòa Xã hội chủ nghĩa Việt Nam",
+      "Viet Nam",
+      "704",
+      "Asia",
+      "South-Eastern Asia",
+      "Hanoi"
+    ]
+  },
+  {
+    "id": "virgin-islander",
+    "name": "Virgin Islander",
+    "category": "territory-associated",
+    "countryCode": "vg",
+    "flagUrl": "https://flagcdn.com/vg.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "British Virgin Islands",
+      "Virgin Islands",
+      "Virgin Islander",
+      "VG",
+      "Virgin Islands, British"
+    ],
+    "searchTerms": [
+      "British Virgin Islands",
+      "Virgin Islands",
+      "Virgin Islander",
+      "VG",
+      "Virgin Islands, British",
+      "092",
+      "Americas",
+      "Caribbean",
+      "Road Town"
+    ]
+  },
+  {
+    "id": "virgin-islander-vi",
+    "name": "Virgin Islander",
+    "category": "territory-associated",
+    "countryCode": "vi",
+    "flagUrl": "https://flagcdn.com/vi.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Caribbean",
+    "alternateNames": [
+      "United States Virgin Islands",
+      "Virgin Islands of the United States",
+      "Virgin Islander",
+      "VI",
+      "Virgin Islands, U.S."
+    ],
+    "searchTerms": [
+      "United States Virgin Islands",
+      "Virgin Islands of the United States",
+      "Virgin Islander",
+      "VI",
+      "Virgin Islands, U.S.",
+      "850",
+      "Americas",
+      "Caribbean",
+      "Charlotte Amalie"
+    ]
+  },
+  {
+    "id": "wallis-and-futuna-islander",
+    "name": "Wallis and Futuna Islander",
+    "category": "territory-associated",
+    "countryCode": "wf",
+    "flagUrl": "https://flagcdn.com/wf.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Polynesia",
+    "alternateNames": [
+      "Wallis and Futuna",
+      "Territory of the Wallis and Futuna Islands",
+      "Wallis and Futuna Islander",
+      "WF",
+      "Territoire des îles Wallis et Futuna"
+    ],
+    "searchTerms": [
+      "Wallis and Futuna",
+      "Territory of the Wallis and Futuna Islands",
+      "Wallis and Futuna Islander",
+      "WF",
+      "Territoire des îles Wallis et Futuna",
+      "876",
+      "Oceania",
+      "Polynesia",
+      "Mata-Utu"
+    ]
+  },
+  {
+    "id": "yemeni",
+    "name": "Yemeni",
+    "category": "country-associated",
+    "countryCode": "ye",
+    "flagUrl": "https://flagcdn.com/ye.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Western Asia",
+    "alternateNames": [
+      "Yemen",
+      "Republic of Yemen",
+      "Yemeni",
+      "YE",
+      "Yemeni Republic",
+      "al-Jumhūriyyah al-Yamaniyyah"
+    ],
+    "searchTerms": [
+      "Yemen",
+      "Republic of Yemen",
+      "Yemeni",
+      "YE",
+      "Yemeni Republic",
+      "al-Jumhūriyyah al-Yamaniyyah",
+      "887",
+      "Asia",
+      "Western Asia",
+      "Sana'a"
+    ]
+  },
+  {
+    "id": "zambian",
+    "name": "Zambian",
+    "category": "country-associated",
+    "countryCode": "zm",
+    "flagUrl": "https://flagcdn.com/zm.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Zambia",
+      "Republic of Zambia",
+      "Zambian",
+      "ZM"
+    ],
+    "searchTerms": [
+      "Zambia",
+      "Republic of Zambia",
+      "Zambian",
+      "ZM",
+      "894",
+      "Africa",
+      "Eastern Africa",
+      "Lusaka"
+    ]
+  },
+  {
+    "id": "zimbabwean",
+    "name": "Zimbabwean",
+    "category": "country-associated",
+    "countryCode": "zw",
+    "flagUrl": "https://flagcdn.com/zw.svg",
+    "symbolType": "flag",
+    "symbol": null,
+    "region": "Eastern Africa",
+    "alternateNames": [
+      "Zimbabwe",
+      "Republic of Zimbabwe",
+      "Zimbabwean",
+      "ZW"
+    ],
+    "searchTerms": [
+      "Zimbabwe",
+      "Republic of Zimbabwe",
+      "Zimbabwean",
+      "ZW",
+      "716",
+      "Africa",
+      "Eastern Africa",
+      "Harare"
+    ]
+  }
+]

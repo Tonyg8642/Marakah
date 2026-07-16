@@ -14,3 +14,6 @@ build/
 
 # Logs
 npm-debug.log*
+
+# Runtime uploads
+Backend/uploads/

@@ -49,6 +49,18 @@ export const ROUTE_SEO = {
     changefreq: "daily",
     priority: "0.95",
   },
+  "/restaurants": {
+    titleKey: "seo.restaurantsTitle",
+    descriptionKey: "seo.restaurantsDescription",
+    title: "Halal Restaurants | Marakah",
+    description:
+      "Search nearby halal and zabiha-friendly restaurants by city or location.",
+    keywords:
+      "halal restaurant, zabiha, halal food near me, muslim friendly dining",
+    index: true,
+    changefreq: "daily",
+    priority: "0.9",
+  },
   "/scholars": {
     titleKey: "seo.scholarsTitle",
     descriptionKey: "seo.scholarsDescription",

@@ -50,15 +50,17 @@ export function applyDocumentLanguage(language) {
   document.documentElement.dir = isRtlLanguage(language) ? "rtl" : "ltr";
 }
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: detectInitialLanguage(),
-  fallbackLng: DEFAULT_LANGUAGE,
-  interpolation: {
-    escapeValue: false,
-  },
-  returnNull: false,
-});
+if (!i18n.isInitialized) {
+  i18n.use(initReactI18next).init({
+    resources,
+    lng: detectInitialLanguage(),
+    fallbackLng: DEFAULT_LANGUAGE,
+    interpolation: {
+      escapeValue: false,
+    },
+    returnNull: false,
+  });
+}
 
 applyDocumentLanguage(i18n.language);
 

@@ -30,4 +30,5 @@ export function clearSession() {
 
   window.localStorage.removeItem(SIGNED_IN_KEY);
   window.localStorage.removeItem(NAME_KEY);
+  window.localStorage.removeItem(EMAIL_KEY);
 }

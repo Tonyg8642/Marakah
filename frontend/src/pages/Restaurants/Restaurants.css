@@ -1,0 +1,274 @@
+.restaurant-search-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.restaurant-ethnic-row {
+  margin-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.restaurant-ethnic-label {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.restaurant-ethnic-row select {
+  width: min(320px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.restaurant-ethnic-search {
+  width: min(320px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.restaurant-ethnic-chips {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.restaurant-ethnic-chip {
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-soft);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.restaurant-ethnic-chip-flag {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+.restaurant-ethnic-chip-badge {
+  min-width: 26px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  color: var(--text-soft);
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.restaurant-ethnic-chip--active {
+  background: #eaf3df;
+  color: #486233;
+  border-color: #d6dfc9;
+}
+
+.restaurant-search-row input,
+.restaurant-search-row select {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.restaurant-helper-text {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.restaurant-nearest-card {
+  margin-top: 12px;
+  border: 1px solid #d6dfc9;
+  background: #f8fbf4;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.restaurant-nearest-card h3 {
+  margin: 0;
+  color: #486233;
+}
+
+.restaurant-nearest-pill {
+  margin-top: 8px;
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #eaf3df;
+  color: #486233;
+  border: 1px solid #d6dfc9;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.restaurant-result-card {
+  overflow: hidden;
+}
+
+.restaurant-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.restaurant-image--placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--surface-muted);
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.restaurant-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.restaurant-title-row h3 {
+  margin: 0;
+}
+
+.restaurant-halal-sign {
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border: 1px solid transparent;
+  letter-spacing: 0.02em;
+}
+
+.restaurant-halal-sign--halal {
+  background: #d9f2e4;
+  color: #0f6b45;
+  border-color: #b9e6cf;
+}
+
+.restaurant-halal-sign--zabiha {
+  background: #ffeecf;
+  color: #7a4a00;
+  border-color: #f9d99b;
+}
+
+.restaurant-map-link {
+  text-decoration: none;
+}
+
+.restaurant-pagination-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.restaurant-page-label {
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.restaurant-menu-source-message {
+  margin: 2px 0 0;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+.restaurant-history-panel {
+  margin-top: 2px;
+}
+
+.restaurant-history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.restaurant-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.restaurant-history-copy {
+  display: grid;
+  gap: 3px;
+}
+
+.restaurant-history-copy span {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 720px) {
+  .restaurant-ethnic-row select {
+    width: 100%;
+  }
+
+  .restaurant-search-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-search-row input,
+  .restaurant-search-row select,
+  .restaurant-search-row button {
+    width: 100%;
+  }
+
+  .restaurant-pagination-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: stretch;
+    width: 100%;
+  }
+
+  .restaurant-page-label {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .restaurant-history-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .restaurant-history-head {
+    align-items: stretch;
+  }
+}

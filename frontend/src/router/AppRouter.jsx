@@ -1,41 +1,57 @@
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home/Home";
-import Live from "../pages/Live/Live";
-import Recordings from "../pages/Recordings/Recordings";
-import Masjids from "../pages/Masjids/Masjids";
-import Scholars from "../pages/Scholars/Scholars";
-import Events from "../pages/Events/Events";
-import Feed from "../pages/Feed/Feed";
-import Profile from "../pages/Profile/Profile";
-import Login from "../pages/Auth/Login";
-import Signup from "../pages/Auth/Signup";
-import PlatformAdmin from "../pages/Admin/PlatformAdmin/PlatformAdmin";
-import MasjidDashboard from "../pages/Admin/MasjidDashboard/MasjidDashboard";
 import ProtectedRoute from "./ProtectedRoute";
+
+const Home = lazy(() => import("../pages/Home/Home"));
+const Live = lazy(() => import("../pages/Live/Live"));
+const Recordings = lazy(() => import("../pages/Recordings/Recordings"));
+const Masjids = lazy(() => import("../pages/Masjids/Masjids"));
+const Restaurants = lazy(() => import("../pages/Restaurants/Restaurants"));
+const Scholars = lazy(() => import("../pages/Scholars/Scholars"));
+const Events = lazy(() => import("../pages/Events/Events"));
+const Feed = lazy(() => import("../pages/Feed/Feed"));
+const Profile = lazy(() => import("../pages/Profile/Profile"));
+const Login = lazy(() => import("../pages/Auth/Login"));
+const Signup = lazy(() => import("../pages/Auth/Signup"));
+const PlatformAdmin = lazy(
+  () => import("../pages/Admin/PlatformAdmin/PlatformAdmin"),
+);
+const MasjidDashboard = lazy(
+  () => import("../pages/Admin/MasjidDashboard/MasjidDashboard"),
+);
 
 export default function AppRouter() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/live" element={<Live />} />
-        <Route path="/recordings" element={<Recordings />} />
-        <Route path="/masjids" element={<Masjids />} />
-        <Route path="/scholars" element={<Scholars />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/feed" element={<Feed />} />
-        <Route element={<ProtectedRoute />}>
-          <Route path="/profile" element={<Profile />} />
+    <Suspense
+      fallback={
+        <div className="page" role="status">
+          Loading...
+        </div>
+      }
+    >
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/live" element={<Live />} />
+          <Route path="/recordings" element={<Recordings />} />
+          <Route path="/masjids" element={<Masjids />} />
+          <Route path="/restaurants" element={<Restaurants />} />
+          <Route path="/scholars" element={<Scholars />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/feed" element={<Feed />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
         </Route>
-      </Route>
 
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route element={<ProtectedRoute />}>
-        <Route path="/platform-admin" element={<PlatformAdmin />} />
-        <Route path="/masjid-dashboard" element={<MasjidDashboard />} />
-      </Route>
-    </Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/platform-admin" element={<PlatformAdmin />} />
+          <Route path="/masjid-dashboard" element={<MasjidDashboard />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }

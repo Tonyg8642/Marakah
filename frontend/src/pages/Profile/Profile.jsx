@@ -5,9 +5,20 @@ import ActivityCard from "./components/ActivityCard";
 import PhotoCard from "./components/PhotoCard";
 import ProfileStatCard from "./components/ProfileStatCard";
 import ReminderCard from "./components/ReminderCard";
+import CombinedIdentityBadge from "../../components/Identity/CombinedIdentityBadge";
 import { useLanguagePreference } from "../../contexts/LanguageContext";
-import { fetchProfileStats } from "./profileApi";
 import {
+  fetchIdentityPreference,
+  saveIdentityPreference,
+} from "../../services/identityPreferenceApi";
+import {
+  fetchProfileImage,
+  fetchProfileStats,
+  removeProfileImage,
+  uploadProfileImage,
+} from "./profileApi";
+import {
+  COLLECTIONS,
   createProfileUserKey,
   readCollection,
   readStoredObject,
@@ -16,12 +27,12 @@ import {
   writeStoredObject,
 } from "./profileStorage";
 import {
-  HERITAGE_OPTION_IDS,
-  PALESTINIAN_SUPPORT_ID,
+  IDENTITY_OPTION_IDS,
+  OTHER_IDENTITY_ID,
+  PREFER_NOT_TO_SAY_ID,
   PROFILE_FLAG_OPTIONS_BY_ID,
-  PROFILE_SELECTION_MODES,
   PROFILE_SPLIT_DIRECTIONS,
-} from "./profileFlagConfig";
+} from "./countryFlagConfig";
 import {
   getDefaultIdentityDraft,
   getDefaultProfileIdentityPreference,
@@ -39,15 +50,6 @@ const STATS_STATUS = {
   SUCCESS: "success",
   EMPTY: "empty",
   ERROR: "error",
-};
-
-const COLLECTIONS = {
-  ACTIVITIES: "activities",
-  PHOTOS: "photos",
-  REMINDERS: "reminders",
-  IDENTITY_PREFERENCE: "identityPreference",
-  PROFILE_DETAILS: "profileDetails",
-  PROFILE_AVATAR: "profileAvatar",
 };
 
 const SAVED_EVENTS_KEY = "marakah_saved_events_v1";
@@ -73,14 +75,25 @@ const EVENTS_CATALOG = {
 };
 
 const MAX_PHOTO_BYTES = 5 * 1024 * 1024;
-const ALLOWED_IMAGE_TYPES = new Set([
-  "image/jpeg",
-  "image/png",
-  "image/webp",
-  "image/gif",
-  "image/heic",
-  "image/heif",
-]);
+const ALLOWED_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
+
+function getIdentityShortLabel(option) {
+  if (option?.badgeText) {
+    return option.badgeText;
+  }
+
+  const label = String(option?.displayName || "ID").trim();
+  if (!label) {
+    return "ID";
+  }
+
+  const parts = label.split(/\s+/).filter(Boolean);
+  if (parts.length === 1) {
+    return parts[0].slice(0, 3).toUpperCase();
+  }
+
+  return `${parts[0][0] || ""}${parts[1][0] || ""}`.toUpperCase();
+}
 
 function makeId(prefix) {
   if (typeof crypto !== "undefined" && crypto.randomUUID) {
@@ -163,25 +176,32 @@ function sanitizeProfileAvatar(rawValue) {
   }
 
   const imageDataUrl = String(rawValue.imageDataUrl || "").trim();
+  const imageUrl = String(rawValue.imageUrl || "").trim();
   const fileType = String(rawValue.fileType || "").trim();
   const fileName = String(rawValue.fileName || "").trim();
   const fileSizeBytes = Number(rawValue.fileSizeBytes) || 0;
-
-  if (!imageDataUrl.startsWith("data:image/")) {
-    return null;
-  }
+  const storageProvider = String(rawValue.storageProvider || "").trim();
+  const storagePath = String(rawValue.storagePath || "").trim();
 
   if (!fileType.startsWith("image/")) {
     return null;
   }
 
+  const hasDataUrl = imageDataUrl.startsWith("data:image/");
+  const hasRemoteUrl =
+    imageUrl.startsWith("http://") || imageUrl.startsWith("https://");
+  if (!hasDataUrl && !hasRemoteUrl) {
+    return null;
+  }
+
   return {
-    imageDataUrl,
+    imageDataUrl: hasDataUrl ? imageDataUrl : "",
+    imageUrl: hasRemoteUrl ? imageUrl : "",
     fileType,
     fileName,
     fileSizeBytes,
-    storageProvider: "temporary-localstorage",
-    storagePath: "",
+    storageProvider: storageProvider || "temporary-localstorage",
+    storagePath,
     updatedAt: String(rawValue.updatedAt || "") || new Date().toISOString(),
   };
 }
@@ -263,7 +283,7 @@ function readFileAsDataUrl(file) {
   });
 }
 
-function FlagBackground({ preference, className }) {
+function FlagBackground({ preference, className, failedImageIds }) {
   const { preference: safePreference, layers } =
     getFlagLayersFromPreference(preference);
 
@@ -278,28 +298,43 @@ function FlagBackground({ preference, className }) {
   return (
     <div className={className} aria-hidden="true">
       {layers.map((option, index) => {
+        const imageFailed = failedImageIds?.has(option.id);
         const style = isVertical
           ? {
-              "--profile-flag-image": `url(${option.assetPath})`,
+              "--profile-flag-image": imageFailed
+                ? "none"
+                : `url(${option.assetPath})`,
               "--profile-flag-width": `${portion}%`,
               "--profile-flag-left": `${portion * index}%`,
               "--profile-flag-height": "100%",
               "--profile-flag-top": "0%",
+              "--profile-flag-wave-delay": `${index * -0.6}s`,
+              "--profile-flag-wave-speed": `${13 + index * 1.4}s`,
             }
           : {
-              "--profile-flag-image": `url(${option.assetPath})`,
+              "--profile-flag-image": imageFailed
+                ? "none"
+                : `url(${option.assetPath})`,
               "--profile-flag-width": "100%",
               "--profile-flag-left": "0%",
               "--profile-flag-height": `${portion}%`,
               "--profile-flag-top": `${portion * index}%`,
+              "--profile-flag-wave-delay": `${index * -0.6}s`,
+              "--profile-flag-wave-speed": `${13 + index * 1.4}s`,
             };
 
         return (
           <span
             key={`${option.id}-${index}`}
-            className="profile-flag-layer"
+            className={`profile-flag-layer${imageFailed ? " profile-flag-layer--fallback" : ""}`}
             style={style}
-          />
+          >
+            {imageFailed ? (
+              <span className="profile-flag-fallback-text" aria-hidden="true">
+                {getIdentityShortLabel(option)}
+              </span>
+            ) : null}
+          </span>
         );
       })}
       <span className="profile-flag-overlay" />
@@ -337,6 +372,11 @@ export default function Profile() {
   const [identityDraft, setIdentityDraft] = useState(getDefaultIdentityDraft);
   const [identityError, setIdentityError] = useState("");
   const [identityNotice, setIdentityNotice] = useState("");
+  const [identitySearchQuery, setIdentitySearchQuery] = useState("");
+  const [isIdentityListExpanded, setIsIdentityListExpanded] = useState(true);
+  const [failedIdentityImageIds, setFailedIdentityImageIds] = useState(
+    () => new Set(),
+  );
   const [savedEventIds, setSavedEventIds] = useState([]);
   const [profileDetails, setProfileDetails] = useState(() =>
     getDefaultProfileDetails("Guest"),
@@ -347,8 +387,16 @@ export default function Profile() {
   const [isEditingProfileDetails, setIsEditingProfileDetails] = useState(false);
   const [profileAvatar, setProfileAvatar] = useState(null);
   const [profileAvatarError, setProfileAvatarError] = useState("");
+  const [profileAvatarNotice, setProfileAvatarNotice] = useState("");
+  const [isProfileAvatarUploading, setIsProfileAvatarUploading] =
+    useState(false);
+  const [avatarPreviewUrl, setAvatarPreviewUrl] = useState("");
+  const [didAvatarImageFail, setDidAvatarImageFail] = useState(false);
   const photoFileInputRef = useRef(null);
   const avatarFileInputRef = useRef(null);
+  const identityListTriggerRef = useRef(null);
+  const firstIdentityCheckboxRef = useRef(null);
+  const otherIdentityInputRef = useRef(null);
 
   const userName = useMemo(
     () =>
@@ -362,6 +410,8 @@ export default function Profile() {
   );
 
   useEffect(() => {
+    let isMounted = true;
+
     setIsCollectionsReady(false);
     setActivities(readCollection(profileUserKey, COLLECTIONS.ACTIVITIES));
     setPhotos(readCollection(profileUserKey, COLLECTIONS.PHOTOS));
@@ -393,6 +443,43 @@ export default function Profile() {
     setProfileAvatarError("");
     setSavedEventIds(readSavedEventIds());
     setIsCollectionsReady(true);
+
+    (async () => {
+      const remoteIdentity = await fetchIdentityPreference(userName);
+      if (isMounted && remoteIdentity) {
+        const mergedPreference = sanitizeProfileIdentityPreference({
+          ...safeIdentityPreference,
+          selectedIdentityIds: remoteIdentity.ethnicityIds,
+          customEthnicities: remoteIdentity.customEthnicities,
+          preferNotToSay: remoteIdentity.preferNotToSay,
+        });
+
+        setSavedIdentityPreference(mergedPreference);
+        setIdentityDraft(getIdentityDraftFromPreference(mergedPreference));
+        writeStoredObject(
+          profileUserKey,
+          COLLECTIONS.IDENTITY_PREFERENCE,
+          mergedPreference,
+        );
+      }
+
+      const remoteProfileImage = await fetchProfileImage(userName);
+      if (!isMounted || !remoteProfileImage) {
+        return;
+      }
+
+      const safeRemoteAvatar = sanitizeProfileAvatar(remoteProfileImage);
+      if (!safeRemoteAvatar) {
+        return;
+      }
+
+      setProfileAvatar(safeRemoteAvatar);
+      setDidAvatarImageFail(false);
+    })();
+
+    return () => {
+      isMounted = false;
+    };
   }, [profileUserKey, userName]);
 
   useEffect(() => {
@@ -580,20 +667,94 @@ export default function Profile() {
     [identityPreviewPreference, savedIdentityPreference],
   );
 
-  const heritageOptions = useMemo(
+  const identityOptions = useMemo(
     () =>
-      HERITAGE_OPTION_IDS.map((id) => PROFILE_FLAG_OPTIONS_BY_ID[id]).filter(
+      IDENTITY_OPTION_IDS.map((id) => PROFILE_FLAG_OPTIONS_BY_ID[id]).filter(
         Boolean,
       ),
     [],
   );
 
-  const secondaryHeritageOptions = useMemo(
+  const normalizedIdentitySearchQuery = useMemo(
+    () => identitySearchQuery.trim().toLowerCase(),
+    [identitySearchQuery],
+  );
+
+  const sortedIdentityOptions = useMemo(
     () =>
-      heritageOptions.filter(
-        (option) => option.id !== identityDraft.primarySelection,
+      [...identityOptions].sort((a, b) =>
+        String(a.displayName || "").localeCompare(String(b.displayName || "")),
       ),
-    [heritageOptions, identityDraft.primarySelection],
+    [identityOptions],
+  );
+
+  const filteredIdentityOptions = useMemo(() => {
+    if (!normalizedIdentitySearchQuery) {
+      return sortedIdentityOptions;
+    }
+
+    const withSearchMetadata = sortedIdentityOptions
+      .map((option) => {
+        const searchableValues = [
+          option.displayName,
+          option.region,
+          option.country,
+          option.communityName,
+          ...(option.alternateNames || []),
+          ...(option.searchTerms || []),
+        ]
+          .filter(Boolean)
+          .map((value) => String(value).toLowerCase());
+
+        const startsWithMatch = searchableValues.some((value) =>
+          value.startsWith(normalizedIdentitySearchQuery),
+        );
+        const includesMatch = searchableValues.some((value) =>
+          value.includes(normalizedIdentitySearchQuery),
+        );
+
+        return {
+          option,
+          startsWithMatch,
+          includesMatch,
+        };
+      })
+      .filter((entry) => entry.includesMatch);
+
+    return withSearchMetadata
+      .sort((a, b) => {
+        if (a.startsWithMatch !== b.startsWithMatch) {
+          return a.startsWithMatch ? -1 : 1;
+        }
+
+        return String(a.option.displayName || "").localeCompare(
+          String(b.option.displayName || ""),
+        );
+      })
+      .map((entry) => entry.option);
+  }, [normalizedIdentitySearchQuery, sortedIdentityOptions]);
+
+  const hasExactIdentityMatch = useMemo(() => {
+    if (!normalizedIdentitySearchQuery) {
+      return false;
+    }
+
+    return sortedIdentityOptions.some((option) => {
+      const values = [
+        option.displayName,
+        ...(option.alternateNames || []),
+        option.country,
+      ]
+        .filter(Boolean)
+        .map((value) => String(value).trim().toLowerCase());
+
+      return values.includes(normalizedIdentitySearchQuery);
+    });
+  }, [normalizedIdentitySearchQuery, sortedIdentityOptions]);
+
+  const identityValidationMessageKey = useMemo(
+    () => validateIdentityDraft(identityDraft),
+    [identityDraft],
   );
 
   useEffect(() => {
@@ -605,8 +766,30 @@ export default function Profile() {
       if (photoPreviewUrl) {
         URL.revokeObjectURL(photoPreviewUrl);
       }
+
+      if (avatarPreviewUrl) {
+        URL.revokeObjectURL(avatarPreviewUrl);
+      }
     };
-  }, [photoPreviewUrl]);
+  }, [avatarPreviewUrl, photoPreviewUrl]);
+
+  useEffect(() => {
+    if (isIdentityListExpanded) {
+      firstIdentityCheckboxRef.current?.focus();
+    }
+  }, [isIdentityListExpanded]);
+
+  useEffect(() => {
+    if (!identityDraft.selectedIdentityIds?.includes(OTHER_IDENTITY_ID)) {
+      return;
+    }
+
+    otherIdentityInputRef.current?.focus();
+  }, [identityDraft.selectedIdentityIds]);
+
+  useEffect(() => {
+    setDidAvatarImageFail(false);
+  }, [avatarPreviewUrl, profileAvatar?.imageDataUrl, profileAvatar?.imageUrl]);
 
   function clearHiddenPhotoInput() {
     if (photoFileInputRef.current) {
@@ -618,6 +801,13 @@ export default function Profile() {
     if (avatarFileInputRef.current) {
       avatarFileInputRef.current.value = "";
     }
+  }
+
+  function clearAvatarPreviewUrl() {
+    if (avatarPreviewUrl) {
+      URL.revokeObjectURL(avatarPreviewUrl);
+    }
+    setAvatarPreviewUrl("");
   }
 
   function resetPhotoSelection() {
@@ -765,6 +955,10 @@ export default function Profile() {
       return;
     }
 
+    setProfileAvatarError("");
+    setProfileAvatarNotice("");
+    setDidAvatarImageFail(false);
+
     if (!file.type || !file.type.startsWith("image/")) {
       setProfileAvatarError(t("profile.validation.onlyImages"));
       clearHiddenAvatarInput();
@@ -783,18 +977,69 @@ export default function Profile() {
       return;
     }
 
+    clearAvatarPreviewUrl();
+    setAvatarPreviewUrl(URL.createObjectURL(file));
+
     try {
-      const imageDataUrl = await readFileAsDataUrl(file);
-      setProfileAvatar({
-        imageDataUrl,
-        fileName: file.name,
-        fileType: file.type,
-        fileSizeBytes: file.size,
-        storageProvider: "temporary-localstorage",
-        storagePath: "",
-        updatedAt: new Date().toISOString(),
-      });
-      setProfileAvatarError("");
+      setIsProfileAvatarUploading(true);
+      setProfileAvatarNotice(
+        t("profile.details.uploadingAvatar", {
+          defaultValue: "Uploading...",
+        }),
+      );
+      const uploadedAvatar = await uploadProfileImage(userName, file);
+      const safeAvatar = sanitizeProfileAvatar(uploadedAvatar);
+
+      if (!safeAvatar) {
+        throw new Error(
+          t("profile.errors.saveImage", {
+            defaultValue: "Could not save this image.",
+          }),
+        );
+      }
+
+      setProfileAvatar(safeAvatar);
+      setProfileAvatarNotice(
+        t("profile.details.avatarSaved", {
+          defaultValue: "Profile photo saved.",
+        }),
+      );
+      clearAvatarPreviewUrl();
+    } catch (error) {
+      clearAvatarPreviewUrl();
+      setProfileAvatarError(
+        error.message ||
+          t("profile.errors.saveImage", {
+            defaultValue: "Could not save this image.",
+          }),
+      );
+    } finally {
+      setIsProfileAvatarUploading(false);
+      clearHiddenAvatarInput();
+    }
+  }
+
+  async function handleRemoveProfileAvatar() {
+    setProfileAvatarError("");
+    setProfileAvatarNotice("");
+    try {
+      const removed = await removeProfileImage(userName);
+      if (!removed) {
+        throw new Error(
+          t("profile.errors.saveImage", {
+            defaultValue: "Could not save this image.",
+          }),
+        );
+      }
+
+      clearAvatarPreviewUrl();
+      setProfileAvatar(null);
+      setDidAvatarImageFail(false);
+      setProfileAvatarNotice(
+        t("profile.details.avatarRemoved", {
+          defaultValue: "Profile photo removed.",
+        }),
+      );
     } catch (error) {
       setProfileAvatarError(
         error.message ||
@@ -807,10 +1052,35 @@ export default function Profile() {
     }
   }
 
-  function handleRemoveProfileAvatar() {
-    setProfileAvatar(null);
-    setProfileAvatarError("");
-    clearHiddenAvatarInput();
+  function handleClearIdentitySearch() {
+    setIdentitySearchQuery("");
+  }
+
+  function handleUseSearchAsCustomIdentity() {
+    const cleaned = String(identitySearchQuery || "")
+      .trim()
+      .replace(/\s+/g, " ");
+    if (!cleaned) {
+      return;
+    }
+
+    setIdentityDraft((current) => {
+      const existingIds = Array.isArray(current.selectedIdentityIds)
+        ? current.selectedIdentityIds
+        : [];
+      const withOtherIdentity = existingIds.includes(OTHER_IDENTITY_ID)
+        ? existingIds
+        : [...existingIds, OTHER_IDENTITY_ID];
+
+      return {
+        ...current,
+        selectedIdentityIds: withOtherIdentity,
+        customInput: cleaned,
+      };
+    });
+    setIdentityNotice("");
+    setIdentityError("");
+    setIsIdentityListExpanded(true);
   }
 
   function handleStartEditingProfileDetails() {
@@ -1037,142 +1307,170 @@ export default function Profile() {
     await changeLanguage(nextLanguage);
   }
 
-  function handleSelectionModeChange(event) {
-    const nextMode = event.target.value;
-
+  function handleToggleIdentity(nextIdentityId) {
     setIdentityError("");
     setIdentityNotice("");
-
     setIdentityDraft((current) => {
-      const nextDraft = {
-        ...current,
-        selectionMode: nextMode,
-      };
+      const existing = Array.isArray(current.selectedIdentityIds)
+        ? current.selectedIdentityIds
+        : [];
 
-      if (nextMode === PROFILE_SELECTION_MODES.NONE) {
+      if (nextIdentityId === PREFER_NOT_TO_SAY_ID) {
+        if (existing.includes(PREFER_NOT_TO_SAY_ID)) {
+          return {
+            ...current,
+            selectedIdentityIds: [],
+            preferNotToSay: false,
+          };
+        }
+
         return {
-          ...nextDraft,
-          primarySelection: "",
-          secondarySelection: "",
-          includePalestinianSupport: false,
-          supportOnLeft: false,
+          ...current,
+          selectedIdentityIds: [PREFER_NOT_TO_SAY_ID],
+          preferNotToSay: true,
         };
       }
 
-      if (nextMode === PROFILE_SELECTION_MODES.SUPPORT_FLAG) {
+      if (existing.includes(nextIdentityId)) {
         return {
-          ...nextDraft,
-          primarySelection: PALESTINIAN_SUPPORT_ID,
-          secondarySelection: "",
-          includePalestinianSupport: false,
-          supportOnLeft: false,
+          ...current,
+          selectedIdentityIds: existing.filter((id) => id !== nextIdentityId),
+          preferNotToSay: false,
         };
       }
-
-      if (nextMode === PROFILE_SELECTION_MODES.ONE_HERITAGE) {
-        const primaryHeritage = HERITAGE_OPTION_IDS.includes(
-          current.primarySelection,
-        )
-          ? current.primarySelection
-          : "";
-
-        return {
-          ...nextDraft,
-          primarySelection: primaryHeritage,
-          secondarySelection: "",
-          includePalestinianSupport: false,
-          supportOnLeft: false,
-        };
-      }
-
-      const primaryHeritage = HERITAGE_OPTION_IDS.includes(
-        current.primarySelection,
-      )
-        ? current.primarySelection
-        : "";
-      const secondaryHeritage =
-        HERITAGE_OPTION_IDS.includes(current.secondarySelection) &&
-        current.secondarySelection !== primaryHeritage
-          ? current.secondarySelection
-          : "";
 
       return {
-        ...nextDraft,
-        primarySelection: primaryHeritage,
-        secondarySelection: secondaryHeritage,
-        includePalestinianSupport: false,
-        supportOnLeft: false,
+        ...current,
+        selectedIdentityIds: [
+          ...existing.filter((id) => id !== PREFER_NOT_TO_SAY_ID),
+          nextIdentityId,
+        ],
+        preferNotToSay: false,
       };
     });
   }
 
-  function handlePrimaryHeritageChange(event) {
-    const value = event.target.value;
-    setIdentityError("");
-    setIdentityNotice("");
-
-    setIdentityDraft((current) => {
-      const nextDraft = {
-        ...current,
-        primarySelection: value,
-      };
-
-      if (
-        current.selectionMode === PROFILE_SELECTION_MODES.TWO_HERITAGES &&
-        current.secondarySelection === value
-      ) {
-        nextDraft.secondarySelection = "";
+  function handleIdentityOptionImageError(optionId) {
+    setFailedIdentityImageIds((current) => {
+      if (current.has(optionId)) {
+        return current;
       }
 
-      return nextDraft;
+      const next = new Set(current);
+      next.add(optionId);
+      return next;
     });
   }
 
-  function handleSecondaryHeritageChange(event) {
-    const value = event.target.value;
+  function handleIdentityListToggle() {
+    setIsIdentityListExpanded((current) => !current);
+  }
+
+  function closeIdentityList() {
+    setIsIdentityListExpanded(false);
+    identityListTriggerRef.current?.focus();
+  }
+
+  function handleOtherIdentityTextChange(event) {
     setIdentityError("");
     setIdentityNotice("");
     setIdentityDraft((current) => ({
       ...current,
-      secondarySelection: value,
+      customInput: event.target.value,
     }));
   }
 
-  function handleTogglePalestinianSupport(event) {
-    const checked = event.target.checked;
+  function handleAddCustomIdentity() {
+    const cleaned = String(identityDraft.customInput || "")
+      .trim()
+      .replace(/\s+/g, " ");
+    if (!cleaned) {
+      return;
+    }
 
+    setIdentityError("");
+    setIdentityNotice("");
+    setIdentityDraft((current) => {
+      const existing = Array.isArray(current.customEthnicities)
+        ? current.customEthnicities
+        : [];
+      if (
+        existing.some((value) => value.toLowerCase() === cleaned.toLowerCase())
+      ) {
+        return {
+          ...current,
+          customInput: "",
+        };
+      }
+
+      return {
+        ...current,
+        customEthnicities: [...existing, cleaned],
+        customInput: "",
+      };
+    });
+  }
+
+  function handleRemoveCustomIdentity(value) {
     setIdentityError("");
     setIdentityNotice("");
     setIdentityDraft((current) => ({
       ...current,
-      includePalestinianSupport: checked,
-      supportOnLeft: checked ? current.supportOnLeft : false,
+      customEthnicities: (current.customEthnicities || []).filter(
+        (item) => item !== value,
+      ),
     }));
+  }
+
+  function handleMoveSelectedIdentity(index, direction) {
+    setIdentityError("");
+    setIdentityNotice("");
+    setIdentityDraft((current) => {
+      const existing = Array.isArray(current.selectedIdentityIds)
+        ? current.selectedIdentityIds
+        : [];
+      const nextIndex = direction === "up" ? index - 1 : index + 1;
+      if (nextIndex < 0 || nextIndex >= existing.length) {
+        return current;
+      }
+
+      const next = [...existing];
+      const [entry] = next.splice(index, 1);
+      next.splice(nextIndex, 0, entry);
+      return {
+        ...current,
+        selectedIdentityIds: next,
+      };
+    });
   }
 
   function handleSwapFlagOrder() {
     setIdentityError("");
     setIdentityNotice("");
     setIdentityDraft((current) => {
-      if (current.selectionMode === PROFILE_SELECTION_MODES.TWO_HERITAGES) {
-        return {
-          ...current,
-          primarySelection: current.secondarySelection,
-          secondarySelection: current.primarySelection,
-        };
+      const ids = Array.isArray(current.selectedIdentityIds)
+        ? current.selectedIdentityIds
+        : [];
+      const flagIds = ids.filter((id) => {
+        const option = PROFILE_FLAG_OPTIONS_BY_ID[id];
+        return option?.visualType === "flag";
+      });
+      if (flagIds.length < 2) {
+        return current;
       }
 
-      if (
-        current.selectionMode === PROFILE_SELECTION_MODES.ONE_HERITAGE &&
-        current.includePalestinianSupport
-      ) {
-        return {
-          ...current,
-          supportOnLeft: !current.supportOnLeft,
-        };
-      }
+      const first = flagIds[0];
+      const second = flagIds[1];
+      const firstIndex = ids.indexOf(first);
+      const secondIndex = ids.indexOf(second);
+      const nextIds = [...ids];
+      nextIds[firstIndex] = second;
+      nextIds[secondIndex] = first;
 
-      return current;
+      return {
+        ...current,
+        selectedIdentityIds: nextIds,
+      };
     });
   }
 
@@ -1192,6 +1490,13 @@ export default function Profile() {
       COLLECTIONS.IDENTITY_PREFERENCE,
       nextPreference,
     );
+
+    void saveIdentityPreference(userName, {
+      ethnicityIds: nextPreference.selectedIdentityIds,
+      customEthnicities: nextPreference.customEthnicities,
+      preferNotToSay: nextPreference.preferNotToSay,
+    });
+
     setSavedIdentityPreference(nextPreference);
     setIdentityDraft(getIdentityDraftFromPreference(nextPreference));
     setIdentityError("");
@@ -1216,23 +1521,35 @@ export default function Profile() {
   const hasTwoFlagsInDraft = previewFlagState.layers.length === 2;
 
   const heritageIdentityLabel = useMemo(() => {
-    if (!heroFlagState.layers.length) {
+    if (!heroFlagState.selectedOptions.length) {
       return t("profile.details.noIdentity");
     }
 
-    return heroFlagState.layers
+    return heroFlagState.selectedOptions
       .map((option) =>
         t(option.displayNameKey, {
           defaultValue: option.displayName,
         }),
       )
       .join(" + ");
-  }, [heroFlagState.layers, t]);
+  }, [heroFlagState.selectedOptions, t]);
 
   const profileAvatarInitial = useMemo(
     () => profileDetails.displayName?.trim().charAt(0).toUpperCase() || "M",
     [profileDetails.displayName],
   );
+
+  const profileAvatarImageSource =
+    avatarPreviewUrl ||
+    profileAvatar?.imageUrl ||
+    profileAvatar?.imageDataUrl ||
+    "";
+
+  const profileAvatarActionLabel = profileAvatarImageSource
+    ? t("profile.details.replaceProfileImage", {
+        defaultValue: "Replace Image",
+      })
+    : t("profile.actions.uploadImage");
 
   const savedEvents = useMemo(
     () =>
@@ -1254,18 +1571,71 @@ export default function Profile() {
       })
     : "";
 
+  const selectedIdentityCount = identityDraft.selectedIdentityIds?.length || 0;
+  const selectedIdentityOptions = useMemo(
+    () =>
+      (identityDraft.selectedIdentityIds || [])
+        .map((id) => PROFILE_FLAG_OPTIONS_BY_ID[id])
+        .filter(Boolean),
+    [identityDraft.selectedIdentityIds],
+  );
+
+  useEffect(() => {
+    const selectedFlagOptions = selectedIdentityOptions.filter(
+      (option) => option?.visualType === "flag",
+    );
+
+    const allOptions = [
+      ...heroFlagState.layers,
+      ...previewFlagState.layers,
+      ...selectedFlagOptions,
+    ];
+    const nextCandidates = allOptions.filter(
+      (option) =>
+        option?.id &&
+        option?.assetPath &&
+        option?.visualType === "flag" &&
+        !failedIdentityImageIds.has(option.id),
+    );
+
+    if (!nextCandidates.length) {
+      return;
+    }
+
+    nextCandidates.forEach((option) => {
+      const image = new Image();
+      image.onload = () => {
+        image.onload = null;
+        image.onerror = null;
+      };
+      image.onerror = () => {
+        handleIdentityOptionImageError(option.id);
+        image.onload = null;
+        image.onerror = null;
+      };
+      image.src = option.assetPath;
+    });
+  }, [
+    failedIdentityImageIds,
+    heroFlagState.layers,
+    previewFlagState.layers,
+    selectedIdentityOptions,
+  ]);
+
   return (
-    <main className="page">
+    <main className="page profile-page">
       <section className="surface-panel profile-social-header">
-        <div
-          className="profile-banner"
-          role="img"
-          aria-label={heritageIdentityLabel}
-        >
+        <div className="profile-banner">
           <FlagBackground
             preference={heroFlagState.preference}
             className="profile-flag-background profile-flag-background--banner"
+            failedImageIds={failedIdentityImageIds}
           />
+          {heroFlagState.extraFlagCount > 0 ? (
+            <span className="profile-flag-count-badge profile-flag-count-badge--banner">
+              +{heroFlagState.extraFlagCount}
+            </span>
+          ) : null}
           <div className="profile-banner-content">
             <p className="eyebrow">{t("profile.eyebrow")}</p>
             <p className="profile-banner-subtitle">{t("profile.subtitle")}</p>
@@ -1292,41 +1662,88 @@ export default function Profile() {
             <input
               ref={avatarFileInputRef}
               type="file"
-              accept="image/*"
+              accept="image/jpeg,image/png,image/webp"
               onChange={handleProfileAvatarChange}
+              aria-label={t("profile.details.avatarFileInputLabel", {
+                defaultValue: "Choose a profile photo",
+              })}
               hidden
             />
-            <div className="profile-avatar-wrap">
-              {profileAvatar?.imageDataUrl ? (
+            <button
+              type="button"
+              className="profile-avatar-wrap"
+              onClick={handleProfileAvatarUploadClick}
+              aria-label={profileAvatarActionLabel}
+              disabled={isProfileAvatarUploading}
+            >
+              <FlagBackground
+                preference={heroFlagState.preference}
+                className="profile-flag-background profile-flag-background--avatar"
+                failedImageIds={failedIdentityImageIds}
+              />
+              {heroFlagState.extraFlagCount > 0 ? (
+                <span className="profile-flag-count-badge profile-flag-count-badge--avatar">
+                  +{heroFlagState.extraFlagCount}
+                </span>
+              ) : null}
+              {profileAvatarImageSource && !didAvatarImageFail ? (
                 <img
-                  src={profileAvatar.imageDataUrl}
+                  src={profileAvatarImageSource}
                   alt={t("profile.details.avatarAlt")}
                   className="profile-avatar-image"
+                  onError={() => setDidAvatarImageFail(true)}
                 />
               ) : (
                 <span className="profile-avatar-fallback" aria-hidden="true">
                   {profileAvatarInitial}
                 </span>
               )}
-            </div>
+            </button>
             <div className="profile-avatar-actions">
               <button
                 type="button"
                 className="btn-secondary"
                 onClick={handleProfileAvatarUploadClick}
+                disabled={isProfileAvatarUploading}
+                aria-label={profileAvatarActionLabel}
               >
-                {t("profile.actions.uploadImage")}
+                {isProfileAvatarUploading
+                  ? t("profile.details.uploadingAvatar", {
+                      defaultValue: "Uploading...",
+                    })
+                  : profileAvatarActionLabel}
               </button>
-              {profileAvatar ? (
+              {profileAvatarImageSource ? (
                 <button
                   type="button"
                   className="btn-secondary"
                   onClick={handleRemoveProfileAvatar}
+                  disabled={isProfileAvatarUploading}
+                  aria-label={t("profile.details.removeProfileImage", {
+                    defaultValue: "Remove Image",
+                  })}
                 >
                   {t("profile.details.removeProfileImage")}
                 </button>
               ) : null}
             </div>
+            <p className="profile-avatar-note">
+              {t("profile.details.avatarUploadHint", {
+                defaultValue:
+                  "Tap your avatar or use Upload Image to set a profile photo.",
+              })}
+            </p>
+            {isProfileAvatarUploading ? (
+              <p
+                className="profile-identity-note"
+                role="status"
+                aria-live="polite"
+              >
+                {t("profile.details.uploadingAvatar", {
+                  defaultValue: "Uploading...",
+                })}
+              </p>
+            ) : null}
           </div>
 
           <div className="profile-primary-meta">
@@ -1354,6 +1771,16 @@ export default function Profile() {
             </p>
           </div>
         </div>
+
+        {profileAvatarNotice ? (
+          <p
+            className="profile-identity-success"
+            role="status"
+            aria-live="polite"
+          >
+            {profileAvatarNotice}
+          </p>
+        ) : null}
 
         {profileAvatarError ? (
           <p className="profile-form-error" role="alert">
@@ -1451,101 +1878,277 @@ export default function Profile() {
         <p className="profile-subtitle">{t("profile.identity.description")}</p>
 
         <div className="profile-identity-grid">
-          <label htmlFor="profile-selection-mode">
-            {t("profile.identity.labels.selectionType")}
+          <CombinedIdentityBadge
+            selectedOptions={selectedIdentityOptions}
+            className="profile-combined-identity-badge"
+            wave
+            ariaLabel={t("profile.identity.previewAria", {
+              defaultValue: "Selected identities",
+              flags: selectedIdentityOptions
+                .map((option) => option.displayName)
+                .join(", "),
+            })}
+          />
+
+          <label htmlFor="profile-identity-search">
+            {t("profile.identity.labels.search", {
+              defaultValue: "Search identities",
+            })}
           </label>
-          <select
-            id="profile-selection-mode"
-            value={identityDraft.selectionMode}
-            onChange={handleSelectionModeChange}
+          <div className="profile-identity-search-wrap">
+            <input
+              id="profile-identity-search"
+              type="search"
+              value={identitySearchQuery}
+              onChange={(event) => setIdentitySearchQuery(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === "Escape" && identitySearchQuery) {
+                  event.preventDefault();
+                  handleClearIdentitySearch();
+                }
+              }}
+              placeholder={t("profile.identity.searchPlaceholder", {
+                defaultValue: "Search countries, regions, and identities",
+              })}
+              aria-describedby="profile-identity-result-count"
+            />
+            {identitySearchQuery ? (
+              <button
+                type="button"
+                className="btn-secondary profile-identity-search-clear"
+                onClick={handleClearIdentitySearch}
+              >
+                {t("profile.identity.actions.clearSearch", {
+                  defaultValue: "Clear",
+                })}
+              </button>
+            ) : null}
+          </div>
+
+          <p
+            id="profile-identity-result-count"
+            className="profile-identity-note"
+            role="status"
+            aria-live="polite"
           >
-            <option value={PROFILE_SELECTION_MODES.NONE}>
-              {t("profile.identity.selectionType.none")}
-            </option>
-            <option value={PROFILE_SELECTION_MODES.ONE_HERITAGE}>
-              {t("profile.identity.selectionType.oneHeritage")}
-            </option>
-            <option value={PROFILE_SELECTION_MODES.TWO_HERITAGES}>
-              {t("profile.identity.selectionType.twoHeritages")}
-            </option>
-            <option value={PROFILE_SELECTION_MODES.SUPPORT_FLAG}>
-              {t("profile.identity.selectionType.supportFlag")}
-            </option>
-          </select>
+            {t("profile.identity.matchCount", {
+              defaultValue: "{{count}} matching identities",
+              count: filteredIdentityOptions.length,
+            })}
+          </p>
 
-          {identityDraft.selectionMode ===
-            PROFILE_SELECTION_MODES.ONE_HERITAGE ||
-          identityDraft.selectionMode ===
-            PROFILE_SELECTION_MODES.TWO_HERITAGES ? (
-            <>
-              <label htmlFor="profile-primary-heritage">
-                {t("profile.identity.labels.firstHeritage")}
-              </label>
-              <select
-                id="profile-primary-heritage"
-                value={identityDraft.primarySelection}
-                onChange={handlePrimaryHeritageChange}
-              >
-                <option value="">
-                  {t("profile.identity.selectPlaceholder")}
-                </option>
-                {heritageOptions.map((option) => (
-                  <option key={option.id} value={option.id}>
-                    {t(option.displayNameKey, {
-                      defaultValue: option.displayName,
-                    })}
-                  </option>
-                ))}
-              </select>
-            </>
-          ) : null}
-
-          {identityDraft.selectionMode ===
-          PROFILE_SELECTION_MODES.TWO_HERITAGES ? (
-            <>
-              <label htmlFor="profile-secondary-heritage">
-                {t("profile.identity.labels.secondHeritage")}
-              </label>
-              <select
-                id="profile-secondary-heritage"
-                value={identityDraft.secondarySelection}
-                onChange={handleSecondaryHeritageChange}
-              >
-                <option value="">
-                  {t("profile.identity.selectPlaceholder")}
-                </option>
-                {secondaryHeritageOptions.map((option) => (
-                  <option key={option.id} value={option.id}>
-                    {t(option.displayNameKey, {
-                      defaultValue: option.displayName,
-                    })}
-                  </option>
-                ))}
-              </select>
-            </>
-          ) : null}
-
-          {identityDraft.selectionMode ===
-          PROFILE_SELECTION_MODES.ONE_HERITAGE ? (
-            <label
-              className="profile-checkbox-row"
-              htmlFor="profile-support-toggle"
+          {!hasExactIdentityMatch && normalizedIdentitySearchQuery ? (
+            <button
+              type="button"
+              className="btn-secondary profile-add-custom-from-search"
+              onClick={handleUseSearchAsCustomIdentity}
             >
-              <input
-                id="profile-support-toggle"
-                type="checkbox"
-                checked={identityDraft.includePalestinianSupport}
-                onChange={handleTogglePalestinianSupport}
-              />
-              {t("profile.identity.labels.palestinianSupport")}
-            </label>
+              {t("profile.identity.actions.addCustomFromSearch", {
+                defaultValue: "Add another identity",
+              })}
+            </button>
           ) : null}
 
-          {identityDraft.selectionMode ===
-          PROFILE_SELECTION_MODES.SUPPORT_FLAG ? (
-            <p className="profile-identity-note">
-              {t("profile.identity.supportOnlyDescription")}
-            </p>
+          <button
+            ref={identityListTriggerRef}
+            type="button"
+            className="btn-secondary profile-identity-list-toggle"
+            onClick={handleIdentityListToggle}
+            aria-expanded={isIdentityListExpanded}
+            aria-controls="profile-identity-options"
+          >
+            {isIdentityListExpanded
+              ? t("profile.identity.actions.hideList", {
+                  defaultValue: "Hide identity list",
+                })
+              : t("profile.identity.actions.showList", {
+                  defaultValue: "Show identity list",
+                })}
+          </button>
+
+          <div
+            id="profile-identity-options"
+            className="profile-identity-options"
+            aria-label="Identity options"
+            hidden={!isIdentityListExpanded}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") {
+                closeIdentityList();
+              }
+            }}
+          >
+            {filteredIdentityOptions.map((option) => {
+              const isChecked = identityDraft.selectedIdentityIds?.includes(
+                option.id,
+              );
+              const imageFailed = failedIdentityImageIds.has(option.id);
+              return (
+                <label key={option.id} className="profile-identity-option-row">
+                  <input
+                    ref={
+                      firstIdentityCheckboxRef.current
+                        ? undefined
+                        : firstIdentityCheckboxRef
+                    }
+                    type="checkbox"
+                    checked={Boolean(isChecked)}
+                    onChange={() => handleToggleIdentity(option.id)}
+                    aria-checked={Boolean(isChecked)}
+                  />
+                  {option.visualType === "flag" &&
+                  option.assetPath &&
+                  !imageFailed ? (
+                    <img
+                      className="profile-identity-option-flag"
+                      src={option.assetPath}
+                      alt={t(option.accessibilityLabelKey, {
+                        defaultValue: option.accessibilityLabel,
+                      })}
+                      loading="lazy"
+                      decoding="async"
+                      onError={() => handleIdentityOptionImageError(option.id)}
+                    />
+                  ) : (
+                    <span
+                      className="profile-identity-option-badge"
+                      aria-hidden="true"
+                    >
+                      {option.badgeText || "ID"}
+                    </span>
+                  )}
+                  <span>
+                    {t(option.displayNameKey, {
+                      defaultValue: option.displayName,
+                    })}
+                  </span>
+                </label>
+              );
+            })}
+
+            {filteredIdentityOptions.length === 0 ? (
+              <div className="profile-identity-no-results" role="status">
+                <p>
+                  {t("profile.identity.noMatches", {
+                    defaultValue: "No identities found.",
+                  })}
+                </p>
+              </div>
+            ) : null}
+          </div>
+
+          {selectedIdentityOptions.length ? (
+            <div
+              className="profile-selected-identities"
+              aria-label="Selected identities"
+            >
+              {selectedIdentityOptions.map((option, index) => (
+                <div
+                  key={`selected-${option.id}`}
+                  className="profile-selected-identity-row"
+                >
+                  <span>
+                    {t(option.displayNameKey, {
+                      defaultValue: option.displayName,
+                    })}
+                  </span>
+                  <div className="profile-selected-identity-actions">
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => handleMoveSelectedIdentity(index, "up")}
+                      disabled={index === 0}
+                    >
+                      {t("profile.identity.actions.moveUp", {
+                        defaultValue: "Up",
+                      })}
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => handleMoveSelectedIdentity(index, "down")}
+                      disabled={index === selectedIdentityOptions.length - 1}
+                    >
+                      {t("profile.identity.actions.moveDown", {
+                        defaultValue: "Down",
+                      })}
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => handleToggleIdentity(option.id)}
+                    >
+                      {t("profile.identity.actions.removeItem", {
+                        defaultValue: "Remove",
+                      })}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : null}
+
+          <p className="profile-identity-note" role="status" aria-live="polite">
+            {t("profile.identity.selectionCount", {
+              defaultValue: "{{count}} selected",
+              count: selectedIdentityCount,
+            })}
+          </p>
+
+          <p className="profile-identity-note" id="profile-identity-save-help">
+            {identityValidationMessageKey
+              ? t(identityValidationMessageKey)
+              : t("profile.identity.notExhaustive", {
+                  defaultValue:
+                    "Comprehensive and extensible worldwide identity catalog with custom identity support. Use Other identity to add your tribe, nation, or community.",
+                })}
+          </p>
+
+          {identityDraft.selectedIdentityIds?.includes(OTHER_IDENTITY_ID) ? (
+            <label htmlFor="profile-other-identity-input">
+              {t("profile.identity.labels.otherIdentity", {
+                defaultValue: "Other identity (optional)",
+              })}
+              <div className="profile-custom-identity-entry">
+                <input
+                  ref={otherIdentityInputRef}
+                  id="profile-other-identity-input"
+                  type="text"
+                  value={identityDraft.customInput || ""}
+                  onChange={handleOtherIdentityTextChange}
+                  placeholder={t("profile.identity.otherIdentityPlaceholder", {
+                    defaultValue: "Describe your identity",
+                  })}
+                />
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={handleAddCustomIdentity}
+                >
+                  {t("profile.identity.actions.addCustom", {
+                    defaultValue: "Add",
+                  })}
+                </button>
+              </div>
+
+              {(identityDraft.customEthnicities || []).length ? (
+                <div className="profile-custom-identity-list">
+                  {(identityDraft.customEthnicities || []).map((value) => (
+                    <div key={value} className="profile-custom-identity-row">
+                      <span>{value}</span>
+                      <button
+                        type="button"
+                        className="btn-secondary"
+                        onClick={() => handleRemoveCustomIdentity(value)}
+                      >
+                        {t("profile.identity.actions.removeItem", {
+                          defaultValue: "Remove",
+                        })}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </label>
           ) : null}
 
           {hasTwoFlagsInDraft ? (
@@ -1563,9 +2166,9 @@ export default function Profile() {
           className="profile-identity-preview"
           role="img"
           aria-label={
-            previewFlagState.layers.length
+            previewFlagState.selectedOptions.length
               ? t("profile.identity.previewAria", {
-                  flags: previewFlagState.layers
+                  flags: previewFlagState.selectedOptions
                     .map((option) =>
                       t(option.accessibilityLabelKey, {
                         defaultValue: option.accessibilityLabel,
@@ -1579,14 +2182,20 @@ export default function Profile() {
           <FlagBackground
             preference={previewFlagState.preference}
             className="profile-flag-background profile-flag-background--preview"
+            failedImageIds={failedIdentityImageIds}
           />
+          {previewFlagState.extraFlagCount > 0 ? (
+            <span className="profile-flag-count-badge profile-flag-count-badge--preview">
+              +{previewFlagState.extraFlagCount}
+            </span>
+          ) : null}
           <div className="profile-identity-preview-content">
             <p className="profile-identity-preview-title">
               {t("profile.identity.previewTitle")}
             </p>
             <p>
-              {previewFlagState.layers.length
-                ? previewFlagState.layers
+              {previewFlagState.selectedOptions.length
+                ? previewFlagState.selectedOptions
                     .map((option) =>
                       t(option.displayNameKey, {
                         defaultValue: option.displayName,
@@ -1595,7 +2204,17 @@ export default function Profile() {
                     .join(" + ")
                 : t("profile.identity.previewEmpty")}
             </p>
+            {identityDraft.selectedIdentityIds?.includes(OTHER_IDENTITY_ID) &&
+            (identityDraft.customEthnicities || []).length ? (
+              <p>{identityDraft.customEthnicities.join(", ")}</p>
+            ) : null}
             {previewOrderText ? <p>{previewOrderText}</p> : null}
+            <p>
+              {t("profile.identity.selectionCount", {
+                defaultValue: "{{count}} selected",
+                count: selectedIdentityCount,
+              })}
+            </p>
           </div>
         </div>
 
@@ -1616,6 +2235,15 @@ export default function Profile() {
             type="button"
             className="btn-primary"
             onClick={handleSaveIdentityPreference}
+            disabled={
+              Boolean(identityValidationMessageKey) ||
+              !hasUnsavedIdentityChanges
+            }
+            aria-disabled={
+              Boolean(identityValidationMessageKey) ||
+              !hasUnsavedIdentityChanges
+            }
+            aria-describedby="profile-identity-save-help"
           >
             {t("profile.identity.actions.save")}
           </button>
@@ -1639,7 +2267,6 @@ export default function Profile() {
 
       <section
         className="profile-stats-grid"
-        role="list"
         aria-label={t("profile.aria.stats")}
       >
         {statCards.map((card) => (

@@ -1,13 +1,12 @@
 import {
-  HERITAGE_OPTION_IDS,
-  PALESTINE_SUPPORT_SELECTION,
-  PALESTINIAN_SUPPORT_ID,
+  FLAG_BASED_IDENTITY_IDS,
+  IDENTITY_OPTIONS_BY_ID,
+  OTHER_IDENTITY_ID,
+  PREFER_NOT_TO_SAY_ID,
   PROFILE_FLAG_OPTIONS_BY_ID,
   PROFILE_IDENTITY_SELECTION_TYPES,
-  PROFILE_SELECTION_MODES,
   PROFILE_SPLIT_DIRECTIONS,
-  SUPPORT_OPTION_IDS,
-} from "./profileFlagConfig";
+} from "./countryFlagConfig";
 
 const ALLOWED_SELECTION_TYPES = new Set(
   Object.values(PROFILE_IDENTITY_SELECTION_TYPES),
@@ -15,8 +14,8 @@ const ALLOWED_SELECTION_TYPES = new Set(
 const ALLOWED_SPLIT_DIRECTIONS = new Set(
   Object.values(PROFILE_SPLIT_DIRECTIONS),
 );
-const ALLOWED_HERITAGE_IDS = new Set(HERITAGE_OPTION_IDS);
-const ALLOWED_SUPPORT_IDS = new Set(SUPPORT_OPTION_IDS);
+const ALLOWED_IDENTITY_IDS = new Set(Object.keys(IDENTITY_OPTIONS_BY_ID));
+const ALLOWED_FLAG_IDS = new Set(FLAG_BASED_IDENTITY_IDS);
 
 function isPlainObject(value) {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -32,20 +31,51 @@ function getSplitDirection(value) {
     : PROFILE_SPLIT_DIRECTIONS.VERTICAL;
 }
 
-function getHeritageId(value) {
-  return ALLOWED_HERITAGE_IDS.has(value) ? value : null;
+function normalizeIdentityIds(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  const deduped = [];
+  for (const id of value) {
+    const normalizedId = normalizeString(id);
+    if (!ALLOWED_IDENTITY_IDS.has(normalizedId)) {
+      continue;
+    }
+    if (!deduped.includes(normalizedId)) {
+      deduped.push(normalizedId);
+    }
+  }
+
+  return deduped;
 }
 
-function getSupportId(value) {
-  return ALLOWED_SUPPORT_IDS.has(value) ? value : null;
+function normalizeCustomEthnicities(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  const deduped = [];
+  for (const item of value) {
+    const cleaned = normalizeString(item).replace(/\s+/g, " ");
+    if (!cleaned) {
+      continue;
+    }
+
+    if (!deduped.some((existing) => existing.toLowerCase() === cleaned.toLowerCase())) {
+      deduped.push(cleaned);
+    }
+  }
+
+  return deduped;
 }
 
 function basePreference(splitDirection = PROFILE_SPLIT_DIRECTIONS.VERTICAL) {
   return {
-    selectionType: PROFILE_IDENTITY_SELECTION_TYPES.NONE,
-    primarySelection: null,
-    secondarySelection: null,
-    supportSelection: null,
+    selectionType: PROFILE_IDENTITY_SELECTION_TYPES.MULTI_IDENTITY,
+    selectedIdentityIds: [],
+    customEthnicities: [],
+    preferNotToSay: false,
     splitDirection: getSplitDirection(splitDirection),
   };
 }
@@ -60,199 +90,88 @@ export function sanitizeProfileIdentityPreference(rawValue) {
   }
 
   const selectionType = normalizeString(rawValue.selectionType);
-  const primarySelection = normalizeString(rawValue.primarySelection);
-  const secondarySelection = normalizeString(rawValue.secondarySelection);
-  const supportSelection = normalizeString(rawValue.supportSelection);
   const splitDirection = getSplitDirection(
     normalizeString(rawValue.splitDirection),
   );
 
-  if (!ALLOWED_SELECTION_TYPES.has(selectionType)) {
-    return basePreference(splitDirection);
+  let selectedIdentityIds = normalizeIdentityIds(rawValue.selectedIdentityIds);
+  let customEthnicities = normalizeCustomEthnicities(rawValue.customEthnicities);
+  const legacyOtherText = normalizeString(rawValue.otherIdentityText);
+  const preferNotToSay = Boolean(rawValue.preferNotToSay);
+
+  if (legacyOtherText && !customEthnicities.length) {
+    customEthnicities = [legacyOtherText];
+  }
+
+  if (!selectedIdentityIds.length) {
+    selectedIdentityIds = normalizeIdentityIds([
+      rawValue.primarySelection,
+      rawValue.secondarySelection,
+    ]);
   }
 
   if (selectionType === PROFILE_IDENTITY_SELECTION_TYPES.NONE) {
-    return basePreference(splitDirection);
+    selectedIdentityIds = [];
   }
 
-  if (selectionType === PROFILE_IDENTITY_SELECTION_TYPES.SINGLE_HERITAGE) {
-    const primaryHeritage = getHeritageId(primarySelection);
-    if (!primaryHeritage) {
-      return basePreference(splitDirection);
-    }
-
-    return {
-      selectionType,
-      primarySelection: primaryHeritage,
-      secondarySelection: null,
-      supportSelection: null,
-      splitDirection,
-    };
+  if (preferNotToSay || selectedIdentityIds.includes(PREFER_NOT_TO_SAY_ID)) {
+    selectedIdentityIds = [PREFER_NOT_TO_SAY_ID];
+    customEthnicities = [];
   }
 
-  if (selectionType === PROFILE_IDENTITY_SELECTION_TYPES.DUAL_HERITAGE) {
-    const firstHeritage = getHeritageId(primarySelection);
-    const secondHeritage = getHeritageId(secondarySelection);
-    if (!firstHeritage || !secondHeritage || firstHeritage === secondHeritage) {
-      return basePreference(splitDirection);
-    }
-
-    return {
-      selectionType,
-      primarySelection: firstHeritage,
-      secondarySelection: secondHeritage,
-      supportSelection: null,
-      splitDirection,
-    };
+  if (!selectedIdentityIds.includes(OTHER_IDENTITY_ID)) {
+    customEthnicities = [];
   }
 
-  if (selectionType === PROFILE_IDENTITY_SELECTION_TYPES.SUPPORT) {
-    const supportId = getSupportId(primarySelection) || PALESTINIAN_SUPPORT_ID;
-
-    if (supportId !== PALESTINIAN_SUPPORT_ID) {
-      return basePreference(splitDirection);
-    }
-
-    return {
-      selectionType,
-      primarySelection: supportId,
-      secondarySelection: null,
-      supportSelection: PALESTINE_SUPPORT_SELECTION,
-      splitDirection,
-    };
-  }
-
-  if (selectionType === PROFILE_IDENTITY_SELECTION_TYPES.HERITAGE_AND_SUPPORT) {
-    const firstValue =
-      getHeritageId(primarySelection) || getSupportId(primarySelection);
-    const secondValue =
-      getHeritageId(secondarySelection) || getSupportId(secondarySelection);
-
-    if (!firstValue || !secondValue || firstValue === secondValue) {
-      return basePreference(splitDirection);
-    }
-
-    const pair = new Set([firstValue, secondValue]);
-    if (!pair.has(PALESTINIAN_SUPPORT_ID)) {
-      return basePreference(splitDirection);
-    }
-
-    const heritageId =
-      firstValue === PALESTINIAN_SUPPORT_ID ? secondValue : firstValue;
-    if (!ALLOWED_HERITAGE_IDS.has(heritageId)) {
-      return basePreference(splitDirection);
-    }
-
-    return {
-      selectionType,
-      primarySelection: firstValue,
-      secondarySelection: secondValue,
-      supportSelection:
-        supportSelection === PALESTINE_SUPPORT_SELECTION
-          ? supportSelection
-          : PALESTINE_SUPPORT_SELECTION,
-      splitDirection,
-    };
-  }
-
-  return basePreference(splitDirection);
+  return {
+    selectionType: ALLOWED_SELECTION_TYPES.has(selectionType)
+      ? selectionType
+      : PROFILE_IDENTITY_SELECTION_TYPES.MULTI_IDENTITY,
+    selectedIdentityIds,
+    customEthnicities,
+    preferNotToSay: selectedIdentityIds.includes(PREFER_NOT_TO_SAY_ID),
+    splitDirection,
+  };
 }
 
 export function getFlagLayersFromPreference(rawValue) {
   const preference = sanitizeProfileIdentityPreference(rawValue);
-  const layers = [];
+  const selectedOptions = preference.selectedIdentityIds
+    .map((id) => PROFILE_FLAG_OPTIONS_BY_ID[id])
+    .filter(Boolean);
 
-  if (preference.primarySelection) {
-    const option = PROFILE_FLAG_OPTIONS_BY_ID[preference.primarySelection];
-    if (option) {
-      layers.push(option);
-    }
-  }
+  const flagOptions = selectedOptions.filter(
+    (option) =>
+      option.visualType === "flag" && typeof option.assetPath === "string",
+  );
 
-  if (preference.secondarySelection && layers.length < 2) {
-    const option = PROFILE_FLAG_OPTIONS_BY_ID[preference.secondarySelection];
-    if (option) {
-      layers.push(option);
-    }
-  }
+  const layers = flagOptions.slice(0, 2);
+  const extraFlagCount = Math.max(0, flagOptions.length - layers.length);
 
   return {
     preference,
     layers,
+    extraFlagCount,
+    selectedOptions,
   };
 }
 
 export function getSelectionModeForPreference(rawValue) {
   const preference = sanitizeProfileIdentityPreference(rawValue);
-
-  if (preference.selectionType === PROFILE_IDENTITY_SELECTION_TYPES.NONE) {
-    return PROFILE_SELECTION_MODES.NONE;
-  }
-
-  if (
-    preference.selectionType ===
-    PROFILE_IDENTITY_SELECTION_TYPES.SINGLE_HERITAGE
-  ) {
-    return PROFILE_SELECTION_MODES.ONE_HERITAGE;
-  }
-
-  if (
-    preference.selectionType === PROFILE_IDENTITY_SELECTION_TYPES.DUAL_HERITAGE
-  ) {
-    return PROFILE_SELECTION_MODES.TWO_HERITAGES;
-  }
-
-  if (preference.selectionType === PROFILE_IDENTITY_SELECTION_TYPES.SUPPORT) {
-    return PROFILE_SELECTION_MODES.SUPPORT_FLAG;
-  }
-
-  return PROFILE_SELECTION_MODES.ONE_HERITAGE;
+  return preference.selectedIdentityIds.length ? "multi" : "none";
 }
 
 export function getIdentityDraftFromPreference(rawValue) {
   const preference = sanitizeProfileIdentityPreference(rawValue);
-  const selectionMode = getSelectionModeForPreference(preference);
 
-  const draft = {
-    selectionMode,
-    primarySelection: "",
-    secondarySelection: "",
-    includePalestinianSupport: false,
-    supportOnLeft: false,
+  return {
+    selectedIdentityIds: [...preference.selectedIdentityIds],
+    customEthnicities: [...preference.customEthnicities],
+    preferNotToSay: preference.preferNotToSay,
     splitDirection: preference.splitDirection,
+    searchQuery: "",
+    customInput: "",
   };
-
-  if (selectionMode === PROFILE_SELECTION_MODES.ONE_HERITAGE) {
-    if (
-      preference.selectionType ===
-      PROFILE_IDENTITY_SELECTION_TYPES.HERITAGE_AND_SUPPORT
-    ) {
-      const supportOnLeft =
-        preference.primarySelection === PALESTINIAN_SUPPORT_ID;
-      draft.includePalestinianSupport = true;
-      draft.supportOnLeft = supportOnLeft;
-      draft.primarySelection = supportOnLeft
-        ? String(preference.secondarySelection || "")
-        : String(preference.primarySelection || "");
-      return draft;
-    }
-
-    draft.primarySelection = String(preference.primarySelection || "");
-    return draft;
-  }
-
-  if (selectionMode === PROFILE_SELECTION_MODES.TWO_HERITAGES) {
-    draft.primarySelection = String(preference.primarySelection || "");
-    draft.secondarySelection = String(preference.secondarySelection || "");
-    return draft;
-  }
-
-  if (selectionMode === PROFILE_SELECTION_MODES.SUPPORT_FLAG) {
-    draft.primarySelection = PALESTINIAN_SUPPORT_ID;
-    return draft;
-  }
-
-  return draft;
 }
 
 export function getDefaultIdentityDraft() {
@@ -264,55 +183,20 @@ export function validateIdentityDraft(rawDraft) {
     return "profile.identity.validation.invalidSelection";
   }
 
-  const selectionMode = normalizeString(rawDraft.selectionMode);
-  const primary = normalizeString(rawDraft.primarySelection);
-  const secondary = normalizeString(rawDraft.secondarySelection);
-  const includePalestinianSupport = Boolean(rawDraft.includePalestinianSupport);
+  const selectedIdentityIds = normalizeIdentityIds(rawDraft.selectedIdentityIds);
+  const customEthnicities = normalizeCustomEthnicities(rawDraft.customEthnicities);
+  const preferNotToSay = Boolean(rawDraft.preferNotToSay);
+  const hasPreferNot = selectedIdentityIds.includes(PREFER_NOT_TO_SAY_ID);
 
-  if (selectionMode === PROFILE_SELECTION_MODES.NONE) {
-    return "";
+  if ((preferNotToSay || hasPreferNot) && selectedIdentityIds.length > 1) {
+    return "profile.identity.validation.invalidSelection";
   }
 
-  if (selectionMode === PROFILE_SELECTION_MODES.SUPPORT_FLAG) {
-    return "";
+  if (selectedIdentityIds.includes(OTHER_IDENTITY_ID) && !customEthnicities.length) {
+    return "profile.identity.validation.customRequired";
   }
 
-  if (selectionMode === PROFILE_SELECTION_MODES.ONE_HERITAGE) {
-    if (!getHeritageId(primary)) {
-      return "profile.identity.validation.primaryRequired";
-    }
-
-    if (
-      includePalestinianSupport &&
-      secondary &&
-      secondary !== PALESTINIAN_SUPPORT_ID
-    ) {
-      return "profile.identity.validation.invalidSelection";
-    }
-
-    return "";
-  }
-
-  if (selectionMode === PROFILE_SELECTION_MODES.TWO_HERITAGES) {
-    const firstHeritage = getHeritageId(primary);
-    const secondHeritage = getHeritageId(secondary);
-
-    if (!firstHeritage) {
-      return "profile.identity.validation.primaryRequired";
-    }
-
-    if (!secondHeritage) {
-      return "profile.identity.validation.secondaryRequired";
-    }
-
-    if (firstHeritage === secondHeritage) {
-      return "profile.identity.validation.mustDiffer";
-    }
-
-    return "";
-  }
-
-  return "profile.identity.validation.invalidSelection";
+  return "";
 }
 
 export function getPreferenceFromIdentityDraft(rawDraft) {
@@ -320,74 +204,37 @@ export function getPreferenceFromIdentityDraft(rawDraft) {
     return getDefaultProfileIdentityPreference();
   }
 
-  const selectionMode = normalizeString(rawDraft.selectionMode);
-  const primary = normalizeString(rawDraft.primarySelection);
-  const secondary = normalizeString(rawDraft.secondarySelection);
-  const includePalestinianSupport = Boolean(rawDraft.includePalestinianSupport);
-  const supportOnLeft = Boolean(rawDraft.supportOnLeft);
+  let selectedIdentityIds = normalizeIdentityIds(rawDraft.selectedIdentityIds);
+  let customEthnicities = normalizeCustomEthnicities(rawDraft.customEthnicities);
+  const preferNotToSay = Boolean(rawDraft.preferNotToSay);
   const splitDirection = getSplitDirection(
     normalizeString(rawDraft.splitDirection),
   );
 
-  if (selectionMode === PROFILE_SELECTION_MODES.NONE) {
-    return basePreference(splitDirection);
+  if (preferNotToSay || selectedIdentityIds.includes(PREFER_NOT_TO_SAY_ID)) {
+    selectedIdentityIds = [PREFER_NOT_TO_SAY_ID];
+    customEthnicities = [];
   }
 
-  if (selectionMode === PROFILE_SELECTION_MODES.SUPPORT_FLAG) {
-    return {
-      selectionType: PROFILE_IDENTITY_SELECTION_TYPES.SUPPORT,
-      primarySelection: PALESTINIAN_SUPPORT_ID,
-      secondarySelection: null,
-      supportSelection: PALESTINE_SUPPORT_SELECTION,
-      splitDirection,
-    };
+  if (!selectedIdentityIds.includes(OTHER_IDENTITY_ID)) {
+    customEthnicities = [];
   }
 
-  if (selectionMode === PROFILE_SELECTION_MODES.ONE_HERITAGE) {
-    const primaryHeritage = getHeritageId(primary);
-    if (!primaryHeritage) {
-      return basePreference(splitDirection);
-    }
-
-    if (!includePalestinianSupport) {
-      return {
-        selectionType: PROFILE_IDENTITY_SELECTION_TYPES.SINGLE_HERITAGE,
-        primarySelection: primaryHeritage,
-        secondarySelection: null,
-        supportSelection: null,
-        splitDirection,
-      };
-    }
-
-    return {
-      selectionType: PROFILE_IDENTITY_SELECTION_TYPES.HERITAGE_AND_SUPPORT,
-      primarySelection: supportOnLeft
-        ? PALESTINIAN_SUPPORT_ID
-        : primaryHeritage,
-      secondarySelection: supportOnLeft
-        ? primaryHeritage
-        : PALESTINIAN_SUPPORT_ID,
-      supportSelection: PALESTINE_SUPPORT_SELECTION,
-      splitDirection,
-    };
+  const flagIds = selectedIdentityIds.filter((id) => ALLOWED_FLAG_IDS.has(id));
+  let selectionType = PROFILE_IDENTITY_SELECTION_TYPES.MULTI_IDENTITY;
+  if (!selectedIdentityIds.length) {
+    selectionType = PROFILE_IDENTITY_SELECTION_TYPES.NONE;
+  } else if (flagIds.length === 1 && selectedIdentityIds.length === 1) {
+    selectionType = PROFILE_IDENTITY_SELECTION_TYPES.SINGLE_HERITAGE;
+  } else if (flagIds.length >= 2 && selectedIdentityIds.length <= 2) {
+    selectionType = PROFILE_IDENTITY_SELECTION_TYPES.DUAL_HERITAGE;
   }
 
-  if (selectionMode === PROFILE_SELECTION_MODES.TWO_HERITAGES) {
-    const firstHeritage = getHeritageId(primary);
-    const secondHeritage = getHeritageId(secondary);
-
-    if (!firstHeritage || !secondHeritage || firstHeritage === secondHeritage) {
-      return basePreference(splitDirection);
-    }
-
-    return {
-      selectionType: PROFILE_IDENTITY_SELECTION_TYPES.DUAL_HERITAGE,
-      primarySelection: firstHeritage,
-      secondarySelection: secondHeritage,
-      supportSelection: null,
-      splitDirection,
-    };
-  }
-
-  return basePreference(splitDirection);
+  return {
+    selectionType,
+    selectedIdentityIds,
+    customEthnicities,
+    preferNotToSay: selectedIdentityIds.includes(PREFER_NOT_TO_SAY_ID),
+    splitDirection,
+  };
 }

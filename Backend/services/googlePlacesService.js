@@ -3,13 +3,16 @@ const axios = require("axios");
 const GOOGLE_PLACES_TEXT_SEARCH_URL =
   "https://places.googleapis.com/v1/places:searchText";
 const GOOGLE_PLACES_PHOTO_BASE_URL = "https://places.googleapis.com/v1";
+const GOOGLE_PLACE_DETAILS_BASE_URL = "https://places.googleapis.com/v1/places";
 const BACKEND_PUBLIC_BASE_URL = (
   process.env.BACKEND_PUBLIC_BASE_URL || "http://localhost:3001"
 ).replace(/\/$/, "");
 const PLACES_FIELD_MASK =
   "places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.location,places.photos";
 const PLACES_CACHE_TTL_MS = 15 * 60 * 1000;
+const PLACE_DETAILS_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 const placesCache = new Map();
+const placeDetailsCache = new Map();
 
 function getPhotoUrl(photoName) {
   if (!photoName) {
@@ -178,7 +181,150 @@ async function searchMasjidsFromGoogle({
   return value;
 }
 
+async function searchPlacesFromGoogle({
+  apiKey,
+  city,
+  query,
+  defaultQuery,
+  userLocation,
+  limit = 20,
+  languageCode = "en",
+}) {
+  if (!apiKey) {
+    throw new Error("GOOGLE_MAPS_API_KEY is missing.");
+  }
+
+  const baseQuery = String(query || "").trim() || defaultQuery;
+  const searchText = city
+    ? `${baseQuery} in ${city}`
+    : `${baseQuery} in United States`;
+  const cacheKey = JSON.stringify({
+    mode: city ? "city-text" : "nationwide-text",
+    searchText,
+    location: userLocation
+      ? [
+          Number(userLocation.lat).toFixed(3),
+          Number(userLocation.lng).toFixed(3),
+        ]
+      : null,
+    limit,
+    languageCode,
+  });
+
+  const now = Date.now();
+  const cached = placesCache.get(cacheKey);
+  if (cached && cached.expiresAt > now) {
+    return cached.value;
+  }
+
+  let places = [];
+
+  try {
+    const textBody = {
+      textQuery: searchText,
+      maxResultCount: Math.max(1, limit),
+      regionCode: "US",
+      languageCode,
+    };
+
+    if (userLocation) {
+      textBody.locationBias = {
+        circle: {
+          center: {
+            latitude: userLocation.lat,
+            longitude: userLocation.lng,
+          },
+          radius: 50000,
+        },
+      };
+    }
+
+    const response = await axios.post(
+      GOOGLE_PLACES_TEXT_SEARCH_URL,
+      textBody,
+      getPlacesRequestConfig(apiKey),
+    );
+    places = Array.isArray(response.data?.places) ? response.data.places : [];
+  } catch (error) {
+    const status = error.response?.data?.error?.status;
+    const message = error.response?.data?.error?.message;
+    if (status || message) {
+      throw new Error(
+        `${status || "PLACES_API_ERROR"}: ${message || "Places API request failed."}`,
+      );
+    }
+    throw error;
+  }
+
+  const value = places
+    .slice(0, Math.max(1, limit))
+    .map((place) => toPlaceShape(place));
+
+  placesCache.set(cacheKey, {
+    value,
+    expiresAt: now + PLACES_CACHE_TTL_MS,
+  });
+
+  return value;
+}
+
+async function searchHalalRestaurantsFromGoogle({
+  apiKey,
+  city,
+  query,
+  userLocation,
+  limit = 20,
+  languageCode = "en",
+}) {
+  return searchPlacesFromGoogle({
+    apiKey,
+    city,
+    query,
+    defaultQuery: "halal restaurant",
+    userLocation,
+    limit,
+    languageCode,
+  });
+}
+
+async function fetchPlaceDetailsById({ apiKey, placeId }) {
+  if (!apiKey) {
+    throw new Error("GOOGLE_MAPS_API_KEY is missing.");
+  }
+
+  const safePlaceId = String(placeId || "").trim();
+  if (!safePlaceId) {
+    return null;
+  }
+
+  const now = Date.now();
+  const cached = placeDetailsCache.get(safePlaceId);
+  if (cached && cached.expiresAt > now) {
+    return cached.value;
+  }
+
+  const url = `${GOOGLE_PLACE_DETAILS_BASE_URL}/${encodeURIComponent(safePlaceId)}`;
+  const response = await axios.get(url, {
+    headers: {
+      "X-Goog-Api-Key": apiKey,
+      "X-Goog-FieldMask":
+        "id,displayName,websiteUri,googleMapsUri,formattedAddress,internationalPhoneNumber",
+    },
+  });
+
+  const place = response.data || null;
+
+  placeDetailsCache.set(safePlaceId, {
+    value: place,
+    expiresAt: now + PLACE_DETAILS_CACHE_TTL_MS,
+  });
+
+  return place;
+}
+
 module.exports = {
+  fetchPlaceDetailsById,
   fetchPhotoMedia,
+  searchHalalRestaurantsFromGoogle,
   searchMasjidsFromGoogle,
 };
