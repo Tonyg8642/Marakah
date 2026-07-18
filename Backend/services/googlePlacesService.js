@@ -8,7 +8,7 @@ const BACKEND_PUBLIC_BASE_URL = (
   process.env.BACKEND_PUBLIC_BASE_URL || "http://localhost:3001"
 ).replace(/\/$/, "");
 const PLACES_FIELD_MASK =
-  "places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.location,places.photos";
+  "places.id,places.displayName,places.formattedAddress,places.rating,places.userRatingCount,places.location,places.photos,places.primaryType,places.types,places.editorialSummary";
 const PLACES_CACHE_TTL_MS = 15 * 60 * 1000;
 const PLACE_DETAILS_CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 const placesCache = new Map();
@@ -61,6 +61,9 @@ function toPlaceShape(place) {
     rating: place.rating || null,
     userRatingsTotal: place.userRatingCount || 0,
     imageUrl: getPhotoUrl(place.photos?.[0]?.name),
+    primaryType: place.primaryType || "",
+    types: Array.isArray(place.types) ? place.types : [],
+    editorialSummary: place.editorialSummary?.text || "",
     location: {
       lat: place.location?.latitude,
       lng: place.location?.longitude,
@@ -308,7 +311,7 @@ async function fetchPlaceDetailsById({ apiKey, placeId }) {
     headers: {
       "X-Goog-Api-Key": apiKey,
       "X-Goog-FieldMask":
-        "id,displayName,websiteUri,googleMapsUri,formattedAddress,internationalPhoneNumber",
+        "id,displayName,websiteUri,googleMapsUri,formattedAddress,internationalPhoneNumber,editorialSummary",
     },
   });
 

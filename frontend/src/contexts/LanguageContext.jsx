@@ -13,17 +13,36 @@ import {
   SIGNED_IN_KEY,
   USER_EMAIL_KEY,
   USER_NAME_KEY,
-  normalizeLanguage,
+  normalizeLanguageTag,
 } from "../i18n/constants";
+import { resolveInterfaceLanguage } from "../i18n/interfaceLanguageResolver";
+import { loadLocaleResources } from "../i18n";
 import {
   fetchPreferredLanguage,
   savePreferredLanguage,
 } from "../services/languagePreferenceApi";
+import {
+  fetchLanguageCatalog,
+  getFallbackLanguageCatalog,
+} from "../services/languageCatalogApi";
 
 const LanguageContext = createContext({
   language: DEFAULT_LANGUAGE,
+  preferredLanguageTag: DEFAULT_LANGUAGE,
+  resolvedInterfaceTag: DEFAULT_LANGUAGE,
+  interfaceResolution: {
+    requestedTag: DEFAULT_LANGUAGE,
+    interfaceTag: DEFAULT_LANGUAGE,
+    direction: "ltr",
+    exactInterfaceSupported: true,
+    fallbackChain: [DEFAULT_LANGUAGE],
+  },
   changeLanguage: async () => false,
   isSaving: false,
+  languageCatalog: [],
+  selectableLanguages: [],
+  isCatalogLoading: true,
+  isLanguageReady: true,
 });
 
 function getSignedInIdentifier() {
@@ -44,38 +63,114 @@ function getSignedInIdentifier() {
 }
 
 export function LanguageProvider({ children }) {
+  const [languageCatalog, setLanguageCatalog] = useState(() =>
+    getFallbackLanguageCatalog(),
+  );
+  const [isCatalogLoading, setIsCatalogLoading] = useState(true);
   const [language, setLanguage] = useState(
-    () => normalizeLanguage(i18n.language) || DEFAULT_LANGUAGE,
+    () =>
+      normalizeLanguageTag(
+        typeof window !== "undefined"
+          ? window.localStorage.getItem(LANGUAGE_STORAGE_KEY)
+          : i18n.language,
+      ) || DEFAULT_LANGUAGE,
+  );
+  const [resolvedInterfaceTag, setResolvedInterfaceTag] = useState(
+    () => normalizeLanguageTag(i18n.language) || DEFAULT_LANGUAGE,
+  );
+  const [interfaceResolution, setInterfaceResolution] = useState(() =>
+    resolveInterfaceLanguage(language, getFallbackLanguageCatalog()),
   );
   const [isSaving, setIsSaving] = useState(false);
+  const [isLanguageReady, setIsLanguageReady] = useState(() => {
+    if (typeof window === "undefined") {
+      return true;
+    }
+
+    return window.localStorage.getItem(SIGNED_IN_KEY) !== "true";
+  });
 
   useEffect(() => {
-    const handleLanguageChanged = (nextLanguage) => {
-      const safe = normalizeLanguage(nextLanguage) || DEFAULT_LANGUAGE;
-      setLanguage(safe);
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem(LANGUAGE_STORAGE_KEY, safe);
-      }
-    };
+    let cancelled = false;
 
-    i18n.on("languageChanged", handleLanguageChanged);
+    async function loadCatalog() {
+      const nextCatalog = await fetchLanguageCatalog();
+      if (cancelled) {
+        return;
+      }
+
+      setLanguageCatalog(
+        Array.isArray(nextCatalog) && nextCatalog.length
+          ? nextCatalog
+          : getFallbackLanguageCatalog(),
+      );
+      setIsCatalogLoading(false);
+    }
+
+    loadCatalog();
+
     return () => {
-      i18n.off("languageChanged", handleLanguageChanged);
+      cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    const resolution = resolveInterfaceLanguage(language, languageCatalog);
+    setInterfaceResolution(resolution);
+    setResolvedInterfaceTag(resolution.interfaceTag);
+  }, [language, languageCatalog]);
+
+  const applyPreferredLanguage = useCallback(
+    async (nextLanguage, shouldPersistRemote = true) => {
+      const safeLanguage =
+        normalizeLanguageTag(nextLanguage) || DEFAULT_LANGUAGE;
+      const resolution = resolveInterfaceLanguage(
+        safeLanguage,
+        languageCatalog,
+      );
+      setLanguage(safeLanguage);
+      setInterfaceResolution(resolution);
+      setResolvedInterfaceTag(resolution.interfaceTag);
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(LANGUAGE_STORAGE_KEY, safeLanguage);
+      }
+
+      await loadLocaleResources(resolution.interfaceTag);
+      await i18n.changeLanguage(resolution.interfaceTag);
+      if (shouldPersistRemote) {
+        const identifier = getSignedInIdentifier();
+        if (identifier) {
+          const match = languageCatalog.find(
+            (entry) => normalizeLanguageTag(entry?.tag) === safeLanguage,
+          );
+          await savePreferredLanguage(identifier, safeLanguage, match?.id);
+        }
+      }
+
+      return true;
+    },
+    [languageCatalog],
+  );
 
   useEffect(() => {
     let cancelled = false;
 
     async function loadRemotePreference() {
-      const identifier = getSignedInIdentifier();
-      if (!identifier) {
-        return;
-      }
+      setIsLanguageReady(false);
+      try {
+        const identifier = getSignedInIdentifier();
+        if (!identifier) {
+          return;
+        }
 
-      const remoteLanguage = await fetchPreferredLanguage(identifier);
-      if (!cancelled && remoteLanguage && remoteLanguage !== i18n.language) {
-        await i18n.changeLanguage(remoteLanguage);
+        const remoteLanguage = await fetchPreferredLanguage(identifier);
+        if (!cancelled && remoteLanguage) {
+          await applyPreferredLanguage(remoteLanguage, false);
+        }
+      } finally {
+        if (!cancelled) {
+          setIsLanguageReady(true);
+        }
       }
     }
 
@@ -84,27 +179,55 @@ export function LanguageProvider({ children }) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [applyPreferredLanguage]);
 
-  const changeLanguage = useCallback(async (nextLanguage) => {
-    const safeLanguage = normalizeLanguage(nextLanguage) || DEFAULT_LANGUAGE;
-    setIsSaving(true);
+  const changeLanguage = useCallback(
+    async (nextLanguage) => {
+      setIsSaving(true);
 
-    try {
-      await i18n.changeLanguage(safeLanguage);
-      const identifier = getSignedInIdentifier();
-      if (identifier) {
-        await savePreferredLanguage(identifier, safeLanguage);
+      try {
+        return await applyPreferredLanguage(nextLanguage, true);
+      } finally {
+        setIsSaving(false);
       }
-      return true;
-    } finally {
-      setIsSaving(false);
-    }
-  }, []);
+    },
+    [applyPreferredLanguage],
+  );
+
+  const selectableLanguages = useMemo(
+    () =>
+      languageCatalog
+        .filter((entry) => entry?.active && entry?.selectable)
+        .sort((a, b) =>
+          String(a.name || "").localeCompare(String(b.name || "")),
+        ),
+    [languageCatalog],
+  );
 
   const value = useMemo(
-    () => ({ language, changeLanguage, isSaving }),
-    [language, changeLanguage, isSaving],
+    () => ({
+      language,
+      preferredLanguageTag: language,
+      resolvedInterfaceTag,
+      interfaceResolution,
+      changeLanguage,
+      isSaving,
+      languageCatalog,
+      selectableLanguages,
+      isCatalogLoading,
+      isLanguageReady,
+    }),
+    [
+      language,
+      resolvedInterfaceTag,
+      interfaceResolution,
+      changeLanguage,
+      isSaving,
+      languageCatalog,
+      selectableLanguages,
+      isCatalogLoading,
+      isLanguageReady,
+    ],
   );
 
   return (

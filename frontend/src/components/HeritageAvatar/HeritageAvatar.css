@@ -1,0 +1,49 @@
+.heritage-avatar {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.heritage-avatar--small {
+  gap: 6px;
+}
+
+.heritage-avatar__visual {
+  pointer-events: none;
+}
+
+.heritage-avatar__neutral-list {
+  position: absolute;
+  align-self: start;
+  justify-self: end;
+  display: inline-flex;
+  gap: 4px;
+  transform: translate(-8px, 8px);
+  z-index: 6;
+}
+
+.heritage-avatar__neutral-badge {
+  min-width: 22px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  background: rgba(14, 45, 36, 0.78);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+.heritage-avatar__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.heritage-avatar--display .heritage-avatar__controls {
+  display: none;
+}

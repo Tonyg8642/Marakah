@@ -10,6 +10,11 @@ const Masjids = lazy(() => import("../pages/Masjids/Masjids"));
 const Restaurants = lazy(() => import("../pages/Restaurants/Restaurants"));
 const Scholars = lazy(() => import("../pages/Scholars/Scholars"));
 const Events = lazy(() => import("../pages/Events/Events"));
+const QuranPage = lazy(() => import("../pages/Quran/QuranPage"));
+const QuranLearning = lazy(() => import("../pages/Quran/QuranLearning"));
+const QuranTransliterationPage = lazy(
+  () => import("../pages/QuranTransliteration/QuranTransliterationPage"),
+);
 const Feed = lazy(() => import("../pages/Feed/Feed"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
 const Login = lazy(() => import("../pages/Auth/Login"));
@@ -41,6 +46,12 @@ export default function AppRouter() {
           <Route path="/events" element={<Events />} />
           <Route path="/feed" element={<Feed />} />
           <Route element={<ProtectedRoute />}>
+            <Route path="/quran" element={<QuranPage />} />
+            <Route path="/arabic-for-beginners" element={<QuranLearning />} />
+            <Route
+              path="/quran-transliteration"
+              element={<QuranTransliterationPage />}
+            />
             <Route path="/profile" element={<Profile />} />
           </Route>
         </Route>

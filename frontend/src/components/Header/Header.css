@@ -17,6 +17,12 @@
   gap: 12px;
 }
 
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .header__logo {
   font-family: "Fraunces", "Georgia", serif;
   font-size: 1.45rem;
@@ -24,10 +30,40 @@
   color: var(--brand-strong);
 }
 
+.header__menu-button {
+  width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__menu-icon {
+  width: 18px;
+  height: 14px;
+  display: grid;
+  gap: 3px;
+}
+
+.header__menu-icon span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+}
+
 .header__nav {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
+}
+
+.header__nav .translation-toolbar {
+  min-width: 0;
 }
 
 .header__link {
@@ -62,7 +98,8 @@
 
 .header__link:hover,
 .header__signup:hover,
-.header__logout:hover {
+.header__logout:hover,
+.header__menu-button:hover {
   filter: brightness(0.98);
 }
 
@@ -79,6 +116,12 @@
     width: 100%;
     justify-content: flex-end;
     flex-wrap: wrap;
+  }
+
+  .header__nav .translation-toolbar {
+    order: 2;
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 

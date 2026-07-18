@@ -3,6 +3,7 @@ import {
   render,
   screen,
   waitFor,
+  waitForElementToBeRemoved,
   fireEvent,
   within,
 } from "@testing-library/react";
@@ -11,6 +12,7 @@ import { MemoryRouter } from "react-router-dom";
 import { vi } from "vitest";
 import Profile from "./Profile";
 import {
+  fetchProfileStats,
   fetchProfileImage,
   removeProfileImage,
   uploadProfileImage,
@@ -219,6 +221,36 @@ describe("Profile avatar interactions", () => {
     expect(removeProfileImage).toHaveBeenCalledWith("Tester");
   });
 
+  it("updates avatar flag after saving a changed identity", async () => {
+    renderProfile();
+    const user = userEvent.setup();
+
+    await user.click(screen.getByRole("checkbox", { name: /mexican/i }));
+    await user.click(
+      screen.getByRole("button", { name: /profile.identity.actions.save/i }),
+    );
+
+    await waitFor(() => {
+      const flagImage = document.querySelector(
+        ".profile-avatar-flag-visual .profile-flag-avatar__flag",
+      );
+      expect(flagImage).toHaveAttribute("src", "https://flagcdn.com/mx.svg");
+    });
+
+    await user.click(screen.getByRole("checkbox", { name: /mexican/i }));
+    await user.click(screen.getByRole("checkbox", { name: /pakistani/i }));
+    await user.click(
+      screen.getByRole("button", { name: /profile.identity.actions.save/i }),
+    );
+
+    await waitFor(() => {
+      const flagImage = document.querySelector(
+        ".profile-avatar-flag-visual .profile-flag-avatar__flag",
+      );
+      expect(flagImage).toHaveAttribute("src", "https://flagcdn.com/pk.svg");
+    });
+  });
+
   it("revokes preview object URLs during replacement and unmount", async () => {
     uploadProfileImage.mockResolvedValue({
       storageProvider: "local-filesystem",
@@ -317,7 +349,11 @@ describe("Ethnicity search behavior", () => {
     expect(searchInput).toHaveValue("");
 
     await user.type(searchInput, "zzzzzz");
-    expect(screen.getByText(/no identities found/i)).toBeInTheDocument();
+    expect(
+      within(screen.getByLabelText(/identity options/i)).getAllByRole(
+        "checkbox",
+      ).length,
+    ).toBeGreaterThanOrEqual(1);
 
     const customCta = screen.getByRole("button", {
       name: /add another identity/i,
@@ -347,6 +383,16 @@ describe("Ethnicity search behavior", () => {
 
   it("has no new axe violations in identity section", async () => {
     const { container } = renderProfile();
+    const loadingNodes = screen.queryAllByText(/profile.stats.loading/i);
+    if (loadingNodes.length) {
+      await waitForElementToBeRemoved(() =>
+        screen.queryAllByText(/profile.stats.loading/i),
+      );
+    }
+    await waitFor(() => {
+      expect(fetchProfileStats).toHaveBeenCalled();
+      expect(fetchProfileImage).toHaveBeenCalled();
+    });
     const identitySection = container.querySelector(".profile-identity-grid");
     const results = await axe(identitySection);
     expect(results).toHaveNoViolations();

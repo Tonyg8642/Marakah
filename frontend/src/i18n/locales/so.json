@@ -2,6 +2,11 @@
   "language": {
     "label": "Luqad",
     "description": "Dooro luqadda aad doorbideyso",
+    "onboardingQuestion": "Waa maxay luqaddaada ama lahjadaada aad doorbideyso?",
+    "searchLabel": "Raadi luqado iyo lahjado",
+    "searchPlaceholder": "Raadi luqado iyo lahjado",
+    "searchCount": "{{count}} natiijo",
+    "appLoading": "Waxaa la soo dejinayaa luqadda aad doorbiday...",
     "save": "Kaydi luqadda",
     "saved": "Doorashada luqadda waa la cusboonaysiiyey.",
     "failed": "Luqadda lama kaydin karin.",
@@ -20,55 +25,63 @@
     "live": "Toos",
     "recordings": "Duubis",
     "masjids": "Masaajid",
+    "restaurants": "Makhaayado",
     "feed": "Feed",
-    "profile": "Profile",
+    "profile": "Profile-ka",
     "events": "Dhacdooyin",
     "login": "Soo Gal",
     "signup": "Isdiiwaangeli",
-    "logout": "Ka Bax"
+    "logout": "Ka Bax",
+    "homepageAria": "Bogga hore ee Marakah",
+    "headerNavigationAria": "Hagitaanka madaxa bogga",
+    "primaryNavigationAria": "Hagitaanka ugu weyn"
   },
   "search": {
-    "label": "Search reminders, events, and scholars",
-    "placeholder": "Search reminders, events, scholars"
+    "label": "Raadi xusuusinno, dhacdooyin, iyo culimo",
+    "placeholder": "Raadi xusuusinno, dhacdooyin, culimo"
   },
   "home": {
-    "heroTitle": "Ku soo dhawoow Marakah",
-    "heroText": "Xooji iimaankaaga adigoo adeegsanaya xasuusin, muxaadarooyin, iyo aqoon Islaami ah oo faa'iido leh.",
-    "explore": "Baadh",
-    "welcome": "Welcome {{name}}",
-    "todayReminders": "Xasuusinta Maanta",
-    "readMore": "Read More",
-    "readLess": "Read Less",
+    "heroTitle": "Ku soo dhowow Marakah",
+    "heroRegionAria": "Ku soo dhowow Marakah",
+    "heroText": "Ku xooji iimaankaaga xusuusinno, muxaadarooyin, iyo aqoon Islaami ah oo faa'iido leh.",
+    "explore": "Sahami",
+    "exploreEventsAria": "Sahami dhacdooyinka",
+    "userWelcome": "Ku soo dhowow {{name}}",
+    "welcome": "Ku soo dhowow {{name}}",
+    "welcomeAria": "Ku soo dhowow isticmaalaha",
+    "todayReminders": "Xusuusinta Maanta",
+    "readMore": "Sii Akhri",
+    "readLess": "Qari",
     "reminders": {
       "remember": {
-        "title": "Remember Allah",
-        "text": "Verily, in the remembrance of Allah do hearts find rest.",
-        "reason": "Regular remembrance keeps the heart calm, strengthens trust in Allah, and helps you respond with wisdom during stress."
+        "title": "Xusuuso Allah",
+        "text": "Runtii quluubtu waxay ku xasilloon tahay xuska Allah.",
+        "reason": "Xus joogto ah wuxuu dejinayaa qalbiga, wuxuu xoojiyaa tawakkulka, wuxuuna kaa caawiyaa inaad xasillooni ku jawaabto marka culays jiro."
       },
       "salah": {
-        "title": "Protect Your Salah",
-        "text": "Prayer is your daily connection with Allah.",
-        "reason": "Salah builds discipline, keeps your day anchored around worship, and protects you from drifting into harmful habits."
+        "title": "Ilaali Salaaddaada",
+        "text": "Salaaddu waa xiriirkaaga maalinlaha ah ee Allah.",
+        "reason": "Salaaddu waxay dhistaa nidaam, waxay maalintaada ku xidhaa cibaado, waxayna kaa ilaalisaa caadooyin waxyeello leh."
       },
       "gratitude": {
-        "title": "Practice Gratitude",
-        "text": "Thank Allah for every blessing, big or small.",
-        "reason": "Gratitude shifts focus from what is missing to what Allah has provided, which increases contentment and spiritual strength."
+        "title": "Ku Dhaqan Mahadnaq",
+        "text": "Allah uga mahadnaq nimco kasta, mid yar iyo mid weyn.",
+        "reason": "Mahadnaqu wuxuu ka wareejiyaa dareenka wax kaa maqan una jeediyaa waxa Allah ku siiyay, taasoo kordhisa qanacsanaanta iyo adkaynta ruuxiga ah."
       },
       "charity": {
-        "title": "Give Charity",
-        "text": "Every act of kindness is rewarded.",
-        "reason": "Charity purifies wealth, supports people in need, and grows mercy in your heart while earning reward from Allah."
+        "title": "Sadaqo Bixi",
+        "text": "Ficil kasta oo samafal ah ajar ayuu leeyahay.",
+        "reason": "Sadaqadu waxay daahirisaa maalka, waxayna taageertaa dadka baahan, waxayna qalbigaaga ku kobcisaa naxariis adigoo ajar ka helaya Allah."
       },
       "patience": {
-        "title": "Have Patience",
-        "text": "Allah is with those who are patient.",
-        "reason": "Patience helps you stay principled through tests, avoid regretful reactions, and remain hopeful in Allah's plan."
+        "title": "Samir Yeelo",
+        "text": "Allah wuxuu la jiraa kuwa samra.",
+        "reason": "Samirku wuxuu kaa caawiyaa inaad qiyamkaaga ku adkaysato imtixaannada, kana fogaato falcelin aad ka qoomamayso, adigoo rajo ku haya qorshaha Allah."
       },
       "quran": {
-        "title": "Read the Qur'an",
-        "text": "Spend a few minutes reading and reflecting today.",
-        "reason": "Reading Qur'an gives guidance, heals spiritual emptiness, and keeps your decisions aligned with truth and purpose."
+        "title": "Akhri Qur'aanka",
+        "text": "Maanta waqti yar ku bixi akhris iyo tafakkur.",
+        "reason": "Akhriska Qur'aanku wuxuu bixiyaa hanuun, wuxuu daweeyaa madhnaanta ruuxiga ah, wuxuuna go'aannadaada ku hogaamiyaa xaq iyo ujeeddo."
       }
     }
   },
@@ -115,7 +128,7 @@
   "auth": {
     "welcomeBack": "Ku soo laabo",
     "createAccount": "Samee Koonto",
-    "joinCommunity": "Join the Marakah community in minutes.",
+    "joinCommunity": "Ku biir bulshada Marakah daqiiqado gudahood.",
     "email": "Iimayl",
     "username": "Magaca isticmaale",
     "password": "Furaha sirta",
@@ -123,7 +136,7 @@
     "login": "Soo Gal",
     "signup": "Isdiiwaangeli",
     "mobileFlow": "On phone, sign in with fingerprint or facial recognition, or use username and password.",
-    "desktopFlow": "Sign in to continue your learning journey.",
+    "desktopFlow": "Soo gal si aad u sii waddo safarkaaga barasho.",
     "useBiometric": "Use Fingerprint / Facial Recognition",
     "authenticating": "Authenticating...",
     "biometricUnsupported": "Biometric sign-in is not supported on this device/browser.",
@@ -131,13 +144,30 @@
     "biometricSuccess": "Biometric sign-in successful.",
     "biometricFailed": "Biometric sign-in was cancelled or failed. Please try again.",
     "mobileInstruction": "On phone, sign in with fingerprint or facial recognition, or use username and password.",
-    "symbolsAria": "Islamic symbols",
+    "symbolsAria": "Astaamo Islaami ah",
     "placeholders": {
       "email": "you@example.com",
-      "username": "your user name",
+      "username": "magacaaga isticmaalaha",
       "password": "Create password",
       "name": "Your full name"
     }
+  },
+  "translation": {
+    "buttonLabel": "Turjun",
+    "buttonAria": "U turjun boggan luqad kale",
+    "dialogQuestion": "Luqaddee ayaad rabtaa in boggan lagu turjumo?",
+    "dialogQuestionEnglish": "What language would you like this page translated into?",
+    "recentLanguages": "Luqadihii dhowaan",
+    "cancel": "Jooji",
+    "translate": "Turjun",
+    "translatedInto": "Waxaa loo turjumay {{language}}",
+    "activeTarget": "Luqadda tarjumaadda hadda: {{language}}",
+    "showTranslation": "Muuji tarjumaadda",
+    "hideTranslation": "Qari tarjumaadda",
+    "changeLanguage": "Beddel luqadda",
+    "loading": "Waxaa socda tarjumaad...",
+    "errorMessage": "Hadda lama turjumi karo qoraalkan.",
+    "originalLabel": "Asal ({{language}})"
   },
   "masjids": {
     "eyebrow": "Community",

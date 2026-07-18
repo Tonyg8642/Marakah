@@ -1,0 +1,242 @@
+.quran-learning {
+  --quran-surface: #ffffff;
+  --quran-surface-muted: #f4f6f2;
+  --quran-border: #d8ddd6;
+  --quran-text: #101414;
+  --quran-text-soft: #546160;
+  --quran-accent: #0d5b46;
+  --quran-highlight: #ffeeb8;
+  color: var(--quran-text);
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+}
+
+.quran-learning--dark {
+  --quran-surface: #141a1a;
+  --quran-surface-muted: #1b2323;
+  --quran-border: #2e3a3a;
+  --quran-text: #f2f7f7;
+  --quran-text-soft: #b8c3c2;
+  --quran-accent: #8fd9bf;
+  --quran-highlight: #3f3723;
+}
+
+.quran-learning__hero,
+.quran-learning__controls,
+.quran-learning__warning,
+.quran-learning__error {
+  background: var(--quran-surface);
+  border: 1px solid var(--quran-border);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.quran-learning__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--quran-accent);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.quran-learning__hero h1 {
+  margin: 6px 0 0;
+}
+
+.quran-learning__theme-toggle {
+  margin-top: 12px;
+}
+
+.quran-learning__guide-list {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+  color: var(--quran-text-soft);
+}
+
+.quran-learning__controls {
+  display: grid;
+  gap: 12px;
+}
+
+.quran-learning__search {
+  display: grid;
+  gap: 6px;
+}
+
+.quran-learning__search input {
+  min-height: 42px;
+  border: 1px solid var(--quran-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--quran-text);
+  background: var(--quran-surface);
+}
+
+.quran-learning__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.quran-learning__toggles label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.quran-learning__content {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) 1fr;
+  gap: 16px;
+}
+
+.quran-learning__surah-list {
+  background: var(--quran-surface);
+  border: 1px solid var(--quran-border);
+  border-radius: 14px;
+  padding: 12px;
+  max-height: 76vh;
+  overflow: auto;
+  display: grid;
+  gap: 8px;
+  align-self: start;
+}
+
+.quran-learning__surah-item {
+  border: 1px solid var(--quran-border);
+  background: var(--quran-surface-muted);
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px;
+  display: grid;
+  gap: 2px;
+  color: inherit;
+}
+
+.quran-learning__surah-item.is-active {
+  border-color: var(--quran-accent);
+}
+
+.quran-learning__lesson {
+  display: grid;
+  gap: 14px;
+}
+
+.ayah-card {
+  background: var(--quran-surface);
+  border: 1px solid var(--quran-border);
+  border-radius: 14px;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.ayah-card.is-active {
+  border-color: var(--quran-accent);
+}
+
+.ayah-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.ayah-card__header h2,
+.ayah-card__pronunciation h3,
+.ayah-card__words h3,
+.ayah-card__translation h3 {
+  margin: 0;
+}
+
+.ayah-card__arabic {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  justify-content: flex-start;
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  line-height: 1.9;
+  font-family:
+    "Noto Naskh Arabic", "Noto Sans Arabic", "Scheherazade New", serif;
+}
+
+.ayah-word {
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 8px;
+  padding: 2px 6px;
+  font: inherit;
+  color: inherit;
+}
+
+.ayah-word.is-highlighted,
+.word-card.is-highlighted {
+  background: var(--quran-highlight);
+  border-color: var(--quran-accent);
+}
+
+.ayah-card__pronunciation p {
+  margin: 6px 0 0;
+  font-size: 1.1rem;
+  color: var(--quran-text);
+}
+
+.word-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.word-card {
+  border: 1px solid var(--quran-border);
+  border-radius: 12px;
+  background: var(--quran-surface-muted);
+  padding: 10px;
+  text-align: left;
+  display: grid;
+  gap: 4px;
+  color: inherit;
+}
+
+.word-card__arabic {
+  font-family:
+    "Noto Naskh Arabic", "Noto Sans Arabic", "Scheherazade New", serif;
+  font-size: 1.25rem;
+}
+
+.word-card__pronunciation {
+  font-size: 1.04rem;
+  font-weight: 700;
+}
+
+.word-card__meaning {
+  color: var(--quran-text-soft);
+}
+
+.ayah-card__translation p {
+  margin: 6px 0 0;
+}
+
+.quran-learning__warning h2,
+.quran-learning__warning p,
+.quran-learning__error {
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .quran-learning__content {
+    grid-template-columns: 1fr;
+  }
+
+  .quran-learning__surah-list {
+    max-height: 38vh;
+  }
+}

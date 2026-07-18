@@ -1,0 +1,454 @@
+[
+  {
+    "id": "all-halal",
+    "name": "All Halal",
+    "category": "halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal restaurant",
+      "zabiha halal restaurant",
+      "halal food near me"
+    ]
+  },
+  {
+    "id": "arab",
+    "name": "Arab",
+    "category": "muslim-cuisine",
+    "region": "Middle East and North Africa",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal arab restaurant",
+      "halal middle eastern restaurant",
+      "zabiha arab food"
+    ]
+  },
+  {
+    "id": "desi",
+    "name": "Desi",
+    "category": "desi",
+    "region": "South Asia",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal desi restaurant",
+      "zabiha desi food",
+      "halal south asian restaurant"
+    ]
+  },
+  {
+    "id": "pakistani",
+    "name": "Pakistani",
+    "category": "desi",
+    "region": "South Asia",
+    "countryCode": "pk",
+    "requiresHalalEvidence": true,
+    "searchTerms": [
+      "halal Pakistani restaurant",
+      "Pakistani halal food",
+      "zabiha Pakistani restaurant"
+    ]
+  },
+  {
+    "id": "indian-halal",
+    "name": "Indian Halal",
+    "category": "desi",
+    "region": "South Asia",
+    "countryCode": "in",
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Indian restaurant",
+      "zabiha Indian food",
+      "Indian halal restaurant"
+    ]
+  },
+  {
+    "id": "bangladeshi",
+    "name": "Bangladeshi",
+    "category": "desi",
+    "region": "South Asia",
+    "countryCode": "bd",
+    "requiresHalalEvidence": true,
+    "searchTerms": [
+      "halal Bangladeshi restaurant",
+      "Bangladeshi halal food",
+      "zabiha Bangladeshi"
+    ]
+  },
+  {
+    "id": "afghan",
+    "name": "Afghan",
+    "category": "desi",
+    "region": "South and Central Asia",
+    "countryCode": "af",
+    "requiresHalalEvidence": true,
+    "searchTerms": [
+      "halal Afghan restaurant",
+      "Afghan halal food",
+      "zabiha Afghan food"
+    ]
+  },
+  {
+    "id": "persian",
+    "name": "Persian",
+    "category": "muslim-cuisine",
+    "region": "Iran and Persian diaspora",
+    "countryCode": "ir",
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Persian restaurant",
+      "halal Iranian restaurant",
+      "zabiha Persian food"
+    ]
+  },
+  {
+    "id": "turkish",
+    "name": "Turkish",
+    "category": "muslim-cuisine",
+    "region": "Anatolia",
+    "countryCode": "tr",
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Turkish restaurant",
+      "Turkish halal food",
+      "zabiha Turkish"
+    ]
+  },
+  {
+    "id": "kurdish",
+    "name": "Kurdish",
+    "category": "muslim-cuisine",
+    "region": "Middle East",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Kurdish restaurant",
+      "Kurdish halal food",
+      "zabiha Kurdish"
+    ]
+  },
+  {
+    "id": "african-halal",
+    "name": "African",
+    "category": "muslim-cuisine",
+    "region": "Africa",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal African restaurant",
+      "African halal food",
+      "halal African cuisine"
+    ]
+  },
+  {
+    "id": "north-african",
+    "name": "North African",
+    "category": "muslim-cuisine",
+    "region": "North Africa",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal North African restaurant",
+      "Maghrebi halal food",
+      "halal Moroccan Algerian Tunisian"
+    ]
+  },
+  {
+    "id": "east-african",
+    "name": "East African",
+    "category": "muslim-cuisine",
+    "region": "East Africa and Horn",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal East African restaurant",
+      "Somali Ethiopian Eritrean halal",
+      "halal Horn of Africa food"
+    ]
+  },
+  {
+    "id": "west-african",
+    "name": "West African",
+    "category": "muslim-cuisine",
+    "region": "West Africa",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal West African restaurant",
+      "halal Senegalese Nigerian food",
+      "West African halal cuisine"
+    ]
+  },
+  {
+    "id": "southeast-asian-halal",
+    "name": "Southeast Asian",
+    "category": "muslim-cuisine",
+    "region": "Southeast Asia",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Southeast Asian restaurant",
+      "halal Indonesian Malaysian Thai",
+      "Southeast Asian halal food"
+    ]
+  },
+  {
+    "id": "indonesian",
+    "name": "Indonesian",
+    "category": "muslim-cuisine",
+    "region": "Southeast Asia",
+    "countryCode": "id",
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Indonesian restaurant",
+      "Indonesian halal food",
+      "zabiha Indonesian"
+    ]
+  },
+  {
+    "id": "malaysian",
+    "name": "Malaysian",
+    "category": "muslim-cuisine",
+    "region": "Southeast Asia",
+    "countryCode": "my",
+    "requiresHalalEvidence": true,
+    "searchTerms": [
+      "halal Malaysian restaurant",
+      "Malaysian halal food",
+      "halal nasi lemak restaurant"
+    ]
+  },
+  {
+    "id": "central-asian",
+    "name": "Central Asian",
+    "category": "muslim-cuisine",
+    "region": "Central Asia",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Central Asian restaurant",
+      "halal Uzbek Kazakh Kyrgyz food",
+      "Central Asian halal cuisine"
+    ]
+  },
+  {
+    "id": "mediterranean-halal",
+    "name": "Mediterranean",
+    "category": "muslim-cuisine",
+    "region": "Mediterranean",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Mediterranean restaurant",
+      "Mediterranean halal food",
+      "zabiha Mediterranean"
+    ]
+  },
+  {
+    "id": "halal-mexican",
+    "name": "Halal Mexican",
+    "category": "global-halal",
+    "region": "Latin America",
+    "countryCode": "mx",
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Mexican restaurant",
+      "halal tacos",
+      "halal birria",
+      "halal burritos",
+      "zabiha Mexican food",
+      "Muslim-owned Mexican restaurant"
+    ]
+  },
+  {
+    "id": "halal-american",
+    "name": "Halal American",
+    "category": "global-halal",
+    "region": "North America",
+    "countryCode": "us",
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal American restaurant",
+      "halal comfort food",
+      "Muslim-owned American restaurant"
+    ]
+  },
+  {
+    "id": "halal-korean",
+    "name": "Halal Korean",
+    "category": "global-halal",
+    "region": "East Asia",
+    "countryCode": "kr",
+    "requiresHalalEvidence": true,
+    "searchTerms": [
+      "halal Korean restaurant",
+      "Korean halal food",
+      "halal Korean BBQ"
+    ]
+  },
+  {
+    "id": "halal-chinese",
+    "name": "Halal Chinese",
+    "category": "global-halal",
+    "region": "East Asia",
+    "countryCode": "cn",
+    "requiresHalalEvidence": true,
+    "searchTerms": [
+      "halal Chinese restaurant",
+      "Chinese halal food",
+      "zabiha Chinese restaurant"
+    ]
+  },
+  {
+    "id": "halal-japanese",
+    "name": "Halal Japanese",
+    "category": "global-halal",
+    "region": "East Asia",
+    "countryCode": "jp",
+    "requiresHalalEvidence": true,
+    "searchTerms": ["halal Japanese restaurant", "halal ramen", "halal sushi"]
+  },
+  {
+    "id": "halal-caribbean",
+    "name": "Halal Caribbean",
+    "category": "global-halal",
+    "region": "Caribbean",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal Caribbean restaurant",
+      "halal Jamaican food",
+      "Muslim-owned Caribbean restaurant"
+    ]
+  },
+  {
+    "id": "halal-east-asian",
+    "name": "Halal East Asian",
+    "category": "global-halal",
+    "region": "East Asia",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal East Asian restaurant",
+      "halal Korean Chinese Japanese",
+      "East Asian halal food"
+    ]
+  },
+  {
+    "id": "halal-fast-food",
+    "name": "Halal Fast Food",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal fast food",
+      "zabiha fast food",
+      "halal quick service restaurant"
+    ]
+  },
+  {
+    "id": "halal-burgers",
+    "name": "Halal Burgers",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": ["halal burgers", "zabiha burger", "halal smash burger"]
+  },
+  {
+    "id": "halal-chicken",
+    "name": "Halal Chicken",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal chicken restaurant",
+      "zabiha chicken",
+      "halal fried chicken"
+    ]
+  },
+  {
+    "id": "halal-steak",
+    "name": "Halal Steak",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": ["halal steakhouse", "zabiha steak", "halal grilled steak"]
+  },
+  {
+    "id": "halal-seafood",
+    "name": "Halal Seafood",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal seafood restaurant",
+      "halal fish restaurant",
+      "halal seafood grill"
+    ]
+  },
+  {
+    "id": "halal-desserts",
+    "name": "Halal Desserts",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": ["halal dessert shop", "halal sweets", "halal ice cream"]
+  },
+  {
+    "id": "halal-bakeries",
+    "name": "Halal Bakeries",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": ["halal bakery", "halal pastry shop", "halal bread bakery"]
+  },
+  {
+    "id": "other-halal-cuisines",
+    "name": "Other Halal Cuisines",
+    "category": "global-halal",
+    "region": "global",
+    "countryCode": null,
+    "requiresHalalEvidence": true,
+    "isTopLevel": true,
+    "searchTerms": [
+      "halal restaurant",
+      "zabiha food",
+      "Muslim-owned restaurant"
+    ]
+  }
+]

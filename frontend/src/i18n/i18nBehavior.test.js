@@ -1,4 +1,4 @@
-import i18n from "./index";
+import i18n, { loadLocaleResources } from "./index";
 
 describe("i18n behavior", () => {
   afterEach(async () => {
@@ -6,6 +6,7 @@ describe("i18n behavior", () => {
   });
 
   it("supports language switching", async () => {
+    await loadLocaleResources("es");
     await i18n.changeLanguage("es");
     expect(i18n.language).toBe("es");
     expect(i18n.t("auth.createAccount")).toBe("Crear cuenta");

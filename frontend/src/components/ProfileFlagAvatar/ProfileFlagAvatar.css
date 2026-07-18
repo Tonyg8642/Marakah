@@ -1,0 +1,292 @@
+.profile-flag-avatar {
+  --pfa-container-width: 220px;
+  --pfa-container-height: 180px;
+  --pfa-flag-width: 210px;
+  --pfa-flag-height: 125px;
+  --pfa-avatar-size: 115px;
+  --pfa-wave-depth: 2.1deg;
+  --pfa-wave-skew: 0.8deg;
+  --pfa-wave-lift: 1.2px;
+  --pfa-wave-stretch: 0.008;
+  --pfa-wave-duration: 10.2s;
+  width: var(--pfa-container-width);
+  height: var(--pfa-container-height);
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.profile-flag-avatar__flag-shell {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.profile-flag-avatar__flag-wrapper {
+  width: var(--pfa-flag-width);
+  height: var(--pfa-flag-height);
+  border-radius: clamp(10px, 3vw, 14px);
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #d9e3df 0%, #edf2ef 100%);
+  border: 1px solid rgba(22, 56, 47, 0.14);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.profile-flag-avatar__flag-fallback,
+.profile-flag-avatar__flag {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-flag-avatar__flag {
+  object-fit: cover;
+  filter: saturate(1.06) contrast(1.02);
+}
+
+.profile-flag-avatar__slot {
+  position: absolute;
+  overflow: hidden;
+  border: 0;
+}
+
+.profile-flag-avatar__slot .profile-flag-avatar__flag {
+  position: absolute;
+  inset: 0;
+}
+
+.profile-flag-avatar__slot--single .profile-flag-avatar__flag,
+.profile-flag-avatar__slot--stack-left .profile-flag-avatar__flag,
+.profile-flag-avatar__slot--stack-middle .profile-flag-avatar__flag {
+  object-position: center;
+}
+
+.profile-flag-avatar__slot--split-left .profile-flag-avatar__flag {
+  object-position: 42% 50%;
+}
+
+.profile-flag-avatar__slot--split-right .profile-flag-avatar__flag {
+  object-position: 58% 50%;
+}
+
+.profile-flag-avatar__slot--stack-stripe .profile-flag-avatar__flag {
+  object-position: center;
+  filter: saturate(1.05) contrast(1.01) brightness(0.98);
+}
+
+.profile-flag-avatar__flag-fallback {
+  background:
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(255, 255, 255, 0.34),
+      transparent 56%
+    ),
+    linear-gradient(122deg, #dbe7e2 0%, #ebf2ef 54%, #d8e2de 100%);
+  opacity: 1;
+}
+
+.profile-flag-avatar--has-flag .profile-flag-avatar__flag-fallback {
+  opacity: 0;
+}
+
+.profile-flag-avatar__flag-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.19) 27%,
+    rgba(0, 0, 0, 0.1) 58%,
+    rgba(255, 255, 255, 0.14) 86%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  mix-blend-mode: soft-light;
+  background-size: 172% 100%;
+  background-position: -36% 50%;
+  pointer-events: none;
+}
+
+.profile-flag-avatar__overlay {
+  position: absolute;
+  width: var(--pfa-flag-width);
+  height: var(--pfa-flag-height);
+  border-radius: clamp(10px, 3vw, 14px);
+  background:
+    radial-gradient(
+      circle at 20% 22%,
+      rgba(255, 255, 255, 0.24),
+      transparent 56%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(0, 0, 0, 0.08) 56%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.profile-flag-avatar__photo-shell {
+  width: var(--pfa-avatar-size);
+  height: var(--pfa-avatar-size);
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  background: #eff4f1;
+  border: clamp(2px, 0.32vw, 4px) solid #fff;
+  box-shadow:
+    0 11px 22px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(12, 43, 34, 0.12);
+}
+
+.profile-flag-avatar__photo,
+.profile-flag-avatar__initial {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-flag-avatar__photo {
+  object-fit: cover;
+}
+
+.profile-flag-avatar__initial {
+  display: grid;
+  place-items: center;
+  font-size: clamp(0.95rem, calc(var(--pfa-avatar-size) * 0.34), 2rem);
+  font-weight: 800;
+  color: #1b5443;
+  background: linear-gradient(145deg, #f4f8f6 0%, #dce9e3 100%);
+}
+
+@keyframes profileFlagWave {
+  0% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * -0.4))
+      skewY(calc(var(--pfa-wave-skew) * -0.45))
+      translateY(calc(var(--pfa-wave-lift) * -0.7))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.2));
+  }
+
+  15% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * 0.3))
+      skewY(calc(var(--pfa-wave-skew) * 0.25))
+      translateY(calc(var(--pfa-wave-lift) * 0.26))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.46));
+  }
+
+  30% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * 0.62))
+      skewY(calc(var(--pfa-wave-skew) * 0.42))
+      translateY(calc(var(--pfa-wave-lift) * 0.76))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.72));
+  }
+
+  45% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * 0.1))
+      skewY(calc(var(--pfa-wave-skew) * -0.18))
+      translateY(calc(var(--pfa-wave-lift) * -0.12))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.5));
+  }
+
+  60% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * -0.55))
+      skewY(calc(var(--pfa-wave-skew) * -0.4))
+      translateY(calc(var(--pfa-wave-lift) * -0.52))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.14));
+  }
+
+  75% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * -0.74))
+      skewY(calc(var(--pfa-wave-skew) * -0.45))
+      translateY(calc(var(--pfa-wave-lift) * -0.16))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.08));
+  }
+
+  90% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * -0.08))
+      skewY(calc(var(--pfa-wave-skew) * 0.11))
+      translateY(calc(var(--pfa-wave-lift) * 0.12))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.34));
+  }
+
+  100% {
+    transform: perspective(980px) rotateY(calc(var(--pfa-wave-depth) * -0.4))
+      skewY(calc(var(--pfa-wave-skew) * -0.45))
+      translateY(calc(var(--pfa-wave-lift) * -0.7))
+      scaleX(calc(1 + var(--pfa-wave-stretch) * 0.2));
+  }
+}
+
+@keyframes profileFlagRipple {
+  0% {
+    background-position: -42% 50%;
+    opacity: 0.38;
+  }
+
+  50% {
+    background-position: 112% 50%;
+    opacity: 0.52;
+  }
+
+  100% {
+    background-position: 152% 50%;
+    opacity: 0.38;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .profile-flag-avatar__flag-wrapper {
+    animation: profileFlagWave var(--pfa-wave-duration) ease-in-out infinite;
+  }
+
+  .profile-flag-avatar__flag-wrapper::after {
+    animation: profileFlagRipple calc(var(--pfa-wave-duration) * 1.12)
+      ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-flag-avatar__flag-wrapper,
+  .profile-flag-avatar__flag-wrapper::after {
+    animation: none;
+    transform: none;
+  }
+}
+
+.profile-flag-avatar--static .profile-flag-avatar__flag-wrapper,
+.profile-flag-avatar--static .profile-flag-avatar__flag-wrapper::after {
+  animation: none !important;
+  transform: none !important;
+}
+
+@media (max-width: 640px) {
+  .profile-flag-avatar--profile {
+    --pfa-container-width: min(200px, 100%);
+    --pfa-container-height: 164px;
+    --pfa-flag-width: 192px;
+    --pfa-flag-height: 116px;
+    --pfa-avatar-size: 104px;
+  }
+}
+
+.profile-flag-avatar--blend .profile-flag-avatar__slot--stack-left,
+.profile-flag-avatar--blend .profile-flag-avatar__slot--stack-middle {
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.profile-flag-avatar--blend .profile-flag-avatar__slot--stack-stripe {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}

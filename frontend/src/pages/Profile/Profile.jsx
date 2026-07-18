@@ -6,6 +6,7 @@ import PhotoCard from "./components/PhotoCard";
 import ProfileStatCard from "./components/ProfileStatCard";
 import ReminderCard from "./components/ReminderCard";
 import CombinedIdentityBadge from "../../components/Identity/CombinedIdentityBadge";
+import HeritageAvatar from "../../components/HeritageAvatar/HeritageAvatar";
 import { useLanguagePreference } from "../../contexts/LanguageContext";
 import {
   fetchIdentityPreference,
@@ -42,6 +43,10 @@ import {
   sanitizeProfileIdentityPreference,
   validateIdentityDraft,
 } from "./profileIdentityPreference";
+import {
+  getLanguageSupportSummary,
+  rankLanguageCatalog,
+} from "../../utils/languageCatalogSearch";
 import "./Profile.css";
 
 const NAME_KEY = "marakah_user_name";
@@ -344,7 +349,14 @@ function FlagBackground({ preference, className, failedImageIds }) {
 
 export default function Profile() {
   const { t } = useTranslation();
-  const { language, changeLanguage, isSaving } = useLanguagePreference();
+  const {
+    language,
+    resolvedInterfaceTag,
+    interfaceResolution,
+    changeLanguage,
+    isSaving,
+    selectableLanguages,
+  } = useLanguagePreference();
   const [statsStatus, setStatsStatus] = useState(STATS_STATUS.LOADING);
   const [stats, setStats] = useState(null);
   const [statsError, setStatsError] = useState("");
@@ -366,6 +378,7 @@ export default function Profile() {
   const [isSavingPhoto, setIsSavingPhoto] = useState(false);
   const [reminderForm, setReminderForm] = useState(getDefaultReminderForm);
   const [selectedLanguage, setSelectedLanguage] = useState(language);
+  const [languageSearchQuery, setLanguageSearchQuery] = useState("");
   const [savedIdentityPreference, setSavedIdentityPreference] = useState(
     getDefaultProfileIdentityPreference,
   );
@@ -391,9 +404,9 @@ export default function Profile() {
   const [isProfileAvatarUploading, setIsProfileAvatarUploading] =
     useState(false);
   const [avatarPreviewUrl, setAvatarPreviewUrl] = useState("");
-  const [didAvatarImageFail, setDidAvatarImageFail] = useState(false);
   const photoFileInputRef = useRef(null);
   const avatarFileInputRef = useRef(null);
+  const languageSelectRef = useRef(null);
   const identityListTriggerRef = useRef(null);
   const firstIdentityCheckboxRef = useRef(null);
   const otherIdentityInputRef = useRef(null);
@@ -474,7 +487,6 @@ export default function Profile() {
       }
 
       setProfileAvatar(safeRemoteAvatar);
-      setDidAvatarImageFail(false);
     })();
 
     return () => {
@@ -688,6 +700,27 @@ export default function Profile() {
     [identityOptions],
   );
 
+  const hasExactIdentityMatch = useMemo(() => {
+    if (!normalizedIdentitySearchQuery) {
+      return false;
+    }
+
+    return sortedIdentityOptions.some((option) => {
+      const values = [
+        option.displayName,
+        option.country,
+        option.region,
+        option.communityName,
+        ...(option.alternateNames || []),
+        ...(option.searchTerms || []),
+      ]
+        .filter(Boolean)
+        .map((value) => String(value).trim().toLowerCase());
+
+      return values.includes(normalizedIdentitySearchQuery);
+    });
+  }, [normalizedIdentitySearchQuery, sortedIdentityOptions]);
+
   const filteredIdentityOptions = useMemo(() => {
     if (!normalizedIdentitySearchQuery) {
       return sortedIdentityOptions;
@@ -721,7 +754,7 @@ export default function Profile() {
       })
       .filter((entry) => entry.includesMatch);
 
-    return withSearchMetadata
+    const rankedMatches = withSearchMetadata
       .sort((a, b) => {
         if (a.startsWithMatch !== b.startsWithMatch) {
           return a.startsWithMatch ? -1 : 1;
@@ -732,25 +765,41 @@ export default function Profile() {
         );
       })
       .map((entry) => entry.option);
-  }, [normalizedIdentitySearchQuery, sortedIdentityOptions]);
 
-  const hasExactIdentityMatch = useMemo(() => {
-    if (!normalizedIdentitySearchQuery) {
-      return false;
+    const selectedSet = new Set(identityDraft.selectedIdentityIds || []);
+    const mergedOptions = [];
+    const seen = new Set();
+
+    for (const option of rankedMatches) {
+      if (seen.has(option.id)) {
+        continue;
+      }
+      seen.add(option.id);
+      mergedOptions.push(option);
     }
 
-    return sortedIdentityOptions.some((option) => {
-      const values = [
-        option.displayName,
-        ...(option.alternateNames || []),
-        option.country,
-      ]
-        .filter(Boolean)
-        .map((value) => String(value).trim().toLowerCase());
+    for (const option of sortedIdentityOptions) {
+      if (!selectedSet.has(option.id) || seen.has(option.id)) {
+        continue;
+      }
+      seen.add(option.id);
+      mergedOptions.push(option);
+    }
 
-      return values.includes(normalizedIdentitySearchQuery);
-    });
-  }, [normalizedIdentitySearchQuery, sortedIdentityOptions]);
+    if (!hasExactIdentityMatch && !seen.has(OTHER_IDENTITY_ID)) {
+      const otherOption = PROFILE_FLAG_OPTIONS_BY_ID[OTHER_IDENTITY_ID];
+      if (otherOption) {
+        mergedOptions.push(otherOption);
+      }
+    }
+
+    return mergedOptions;
+  }, [
+    hasExactIdentityMatch,
+    identityDraft.selectedIdentityIds,
+    normalizedIdentitySearchQuery,
+    sortedIdentityOptions,
+  ]);
 
   const identityValidationMessageKey = useMemo(
     () => validateIdentityDraft(identityDraft),
@@ -786,10 +835,6 @@ export default function Profile() {
 
     otherIdentityInputRef.current?.focus();
   }, [identityDraft.selectedIdentityIds]);
-
-  useEffect(() => {
-    setDidAvatarImageFail(false);
-  }, [avatarPreviewUrl, profileAvatar?.imageDataUrl, profileAvatar?.imageUrl]);
 
   function clearHiddenPhotoInput() {
     if (photoFileInputRef.current) {
@@ -957,7 +1002,6 @@ export default function Profile() {
 
     setProfileAvatarError("");
     setProfileAvatarNotice("");
-    setDidAvatarImageFail(false);
 
     if (!file.type || !file.type.startsWith("image/")) {
       setProfileAvatarError(t("profile.validation.onlyImages"));
@@ -1034,7 +1078,6 @@ export default function Profile() {
 
       clearAvatarPreviewUrl();
       setProfileAvatar(null);
-      setDidAvatarImageFail(false);
       setProfileAvatarNotice(
         t("profile.details.avatarRemoved", {
           defaultValue: "Profile photo removed.",
@@ -1307,6 +1350,10 @@ export default function Profile() {
     await changeLanguage(nextLanguage);
   }
 
+  function handleEditLanguageFocus() {
+    languageSelectRef.current?.focus();
+  }
+
   function handleToggleIdentity(nextIdentityId) {
     setIdentityError("");
     setIdentityNotice("");
@@ -1534,11 +1581,6 @@ export default function Profile() {
       .join(" + ");
   }, [heroFlagState.selectedOptions, t]);
 
-  const profileAvatarInitial = useMemo(
-    () => profileDetails.displayName?.trim().charAt(0).toUpperCase() || "M",
-    [profileDetails.displayName],
-  );
-
   const profileAvatarImageSource =
     avatarPreviewUrl ||
     profileAvatar?.imageUrl ||
@@ -1572,6 +1614,45 @@ export default function Profile() {
     : "";
 
   const selectedIdentityCount = identityDraft.selectedIdentityIds?.length || 0;
+  const languageOptions = useMemo(
+    () =>
+      Array.isArray(selectableLanguages) && selectableLanguages.length
+        ? selectableLanguages
+        : [
+            {
+              id: "english",
+              tag: "en",
+              name: "English",
+              nativeName: "English",
+              direction: "ltr",
+              classification: "language",
+              region: "Global",
+              interfaceStatus: "full",
+              translationStatus: "provider-supported",
+              exactDialectSupported: true,
+            },
+          ],
+    [selectableLanguages],
+  );
+
+  const filteredLanguageOptions = useMemo(
+    () =>
+      rankLanguageCatalog(
+        languageOptions,
+        languageSearchQuery,
+        selectedLanguage,
+      ),
+    [languageOptions, languageSearchQuery, selectedLanguage],
+  );
+
+  const selectedLanguageEntry = useMemo(
+    () =>
+      languageOptions.find((entry) => entry.tag === selectedLanguage) ||
+      filteredLanguageOptions[0] ||
+      null,
+    [filteredLanguageOptions, languageOptions, selectedLanguage],
+  );
+
   const selectedIdentityOptions = useMemo(
     () =>
       (identityDraft.selectedIdentityIds || [])
@@ -1626,34 +1707,137 @@ export default function Profile() {
     <main className="page profile-page">
       <section className="surface-panel profile-social-header">
         <div className="profile-banner">
-          <FlagBackground
-            preference={heroFlagState.preference}
-            className="profile-flag-background profile-flag-background--banner"
-            failedImageIds={failedIdentityImageIds}
-          />
-          {heroFlagState.extraFlagCount > 0 ? (
-            <span className="profile-flag-count-badge profile-flag-count-badge--banner">
-              +{heroFlagState.extraFlagCount}
-            </span>
-          ) : null}
           <div className="profile-banner-content">
             <p className="eyebrow">{t("profile.eyebrow")}</p>
             <p className="profile-banner-subtitle">{t("profile.subtitle")}</p>
             <label htmlFor="profile-language-preference">
               {t("language.description")}
             </label>
+            <label htmlFor="profile-language-search">
+              {t("language.searchLabel", {
+                defaultValue: "Search languages and dialects",
+              })}
+            </label>
+            <div className="language-search-wrap">
+              <span className="language-search-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <line
+                    x1="16.65"
+                    y1="16.65"
+                    x2="21"
+                    y2="21"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+              <input
+                id="profile-language-search"
+                type="search"
+                value={languageSearchQuery}
+                onChange={(event) => setLanguageSearchQuery(event.target.value)}
+                placeholder={t("language.searchPlaceholder", {
+                  defaultValue: "Search languages and dialects",
+                })}
+                autoComplete="off"
+              />
+            </div>
+            <p className="language-search-count" aria-live="polite">
+              {t("language.searchCount", {
+                defaultValue: "{{count}} results",
+                count: filteredLanguageOptions.length,
+              })}
+            </p>
             <select
+              ref={languageSelectRef}
               id="profile-language-preference"
               value={selectedLanguage}
               onChange={handleLanguageChange}
               disabled={isSaving}
             >
-              {["en", "ar", "fa", "ur", "so", "es"].map((option) => (
-                <option key={option} value={option}>
-                  {t(`language.options.${option}`)}
+              {filteredLanguageOptions.map((option) => (
+                <option key={option.id || option.tag} value={option.tag}>
+                  {[
+                    option.name,
+                    option.nativeName,
+                    getLanguageSupportSummary(option),
+                  ]
+                    .filter(Boolean)
+                    .join(" - ")}
                 </option>
               ))}
             </select>
+            {selectedLanguageEntry ? (
+              <p className="language-search-meta" aria-live="polite">
+                {getLanguageSupportSummary(selectedLanguageEntry)}
+              </p>
+            ) : null}
+            {selectedLanguageEntry ? (
+              <p
+                className="profile-meta-line profile-meta-muted"
+                aria-live="polite"
+              >
+                {t("profile.details.preferredLanguageSummary", {
+                  defaultValue:
+                    "Preferred language: {{name}} | Native: {{nativeName}} | Code: {{code}} | Direction: {{direction}}",
+                  name: selectedLanguageEntry.name,
+                  nativeName:
+                    selectedLanguageEntry.nativeName ||
+                    selectedLanguageEntry.name,
+                  code: selectedLanguageEntry.tag,
+                  direction:
+                    selectedLanguageEntry.direction === "rtl" ? "RTL" : "LTR",
+                })}
+              </p>
+            ) : null}
+            {selectedLanguageEntry ? (
+              <p
+                className="profile-meta-line profile-meta-muted"
+                aria-live="polite"
+              >
+                {t("profile.details.interfaceResolutionSummary", {
+                  defaultValue:
+                    "Current interface: {{interfaceTag}} | Exact support: {{exact}} | Fallback chain: {{chain}}",
+                  interfaceTag: resolvedInterfaceTag,
+                  exact: interfaceResolution?.exactInterfaceSupported
+                    ? "yes"
+                    : "no",
+                  chain: (interfaceResolution?.fallbackChain || []).join(
+                    " -> ",
+                  ),
+                })}
+              </p>
+            ) : null}
+            {selectedLanguageEntry?.exactDialectSupported === false ? (
+              <p
+                className="profile-meta-line profile-meta-muted"
+                role="status"
+                aria-live="polite"
+              >
+                {t("language.fallbackNotice", {
+                  defaultValue:
+                    "Current interface may use a parent language fallback while keeping your exact dialect preference saved.",
+                })}
+              </p>
+            ) : null}
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={handleEditLanguageFocus}
+            >
+              {t("profile.details.editLanguage", {
+                defaultValue: "Edit Language",
+              })}
+            </button>
           </div>
         </div>
 
@@ -1676,28 +1860,16 @@ export default function Profile() {
               aria-label={profileAvatarActionLabel}
               disabled={isProfileAvatarUploading}
             >
-              <FlagBackground
-                preference={heroFlagState.preference}
-                className="profile-flag-background profile-flag-background--avatar"
-                failedImageIds={failedIdentityImageIds}
+              <HeritageAvatar
+                profileImageUrl={profileAvatarImageSource}
+                userName={profileDetails.displayName}
+                avatarAlt={t("profile.details.avatarAlt")}
+                identities={heroFlagState.selectedOptions}
+                size="large"
+                animated
+                editable={false}
+                className="profile-avatar-flag-visual"
               />
-              {heroFlagState.extraFlagCount > 0 ? (
-                <span className="profile-flag-count-badge profile-flag-count-badge--avatar">
-                  +{heroFlagState.extraFlagCount}
-                </span>
-              ) : null}
-              {profileAvatarImageSource && !didAvatarImageFail ? (
-                <img
-                  src={profileAvatarImageSource}
-                  alt={t("profile.details.avatarAlt")}
-                  className="profile-avatar-image"
-                  onError={() => setDidAvatarImageFail(true)}
-                />
-              ) : (
-                <span className="profile-avatar-fallback" aria-hidden="true">
-                  {profileAvatarInitial}
-                </span>
-              )}
             </button>
             <div className="profile-avatar-actions">
               <button
@@ -1756,6 +1928,17 @@ export default function Profile() {
             <p className="profile-meta-line">
               <strong>{t("profile.details.identityLabel")}:</strong>{" "}
               {heritageIdentityLabel}
+            </p>
+            <p className="profile-meta-line">
+              <strong>
+                {t("profile.details.preferredLanguageLabel", {
+                  defaultValue: "Preferred language or dialect",
+                })}
+                :
+              </strong>{" "}
+              {selectedLanguageEntry
+                ? `${selectedLanguageEntry.name}${selectedLanguageEntry.nativeName && selectedLanguageEntry.nativeName !== selectedLanguageEntry.name ? ` (${selectedLanguageEntry.nativeName})` : ""}`
+                : selectedLanguage}
             </p>
             {profileDetails.bio ? (
               <p className="profile-meta-line">{profileDetails.bio}</p>

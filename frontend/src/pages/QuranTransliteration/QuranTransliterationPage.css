@@ -1,0 +1,212 @@
+.quran-transliteration-page {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.quran-transliteration-controls {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.quran-transliteration-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.quran-transliteration-sheet {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 40px 48px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.quran-transliteration-title {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.quran-transliteration-subtitle {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+
+.quran-transliteration-bismillah {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0 0 18px;
+  text-align: center;
+}
+
+.quran-transliteration-list {
+  margin: 0;
+  padding-left: 28px;
+}
+
+.quran-transliteration-ayah {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin-bottom: 3px;
+}
+
+.transliteration-line {
+  display: grid;
+  gap: 2px;
+}
+
+.transliteration-line__arabic {
+  font-family: "Amiri Quran", "Noto Naskh Arabic", serif;
+  font-size: 1.65rem;
+  line-height: 2;
+  text-align: right;
+  margin-top: 12px;
+}
+
+.transliteration-line__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+}
+
+.transliteration-line__number {
+  min-width: 1.6rem;
+}
+
+.transliteration-line__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 2px 0;
+}
+
+.transliteration-line__meaning {
+  margin: 4px 0 10px 28px;
+  font-family: Inter, "Noto Sans", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.8;
+}
+
+.quran-word-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.quran-word-group {
+  min-width: 120px;
+  max-width: 210px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  background: #fff;
+  display: grid;
+  gap: 4px;
+}
+
+.quran-word-group.is-highlighted {
+  border-color: var(--brand);
+  background: var(--brand-ink);
+}
+
+.quran-word-group__arabic {
+  font-family: "Amiri Quran", "Noto Naskh Arabic", serif;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.quran-word-group__pronunciation {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.quran-word-group__meaning {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+.quran-word-groups__full-meaning {
+  width: 100%;
+  margin: 0;
+  font-family: Inter, "Noto Sans", sans-serif;
+  font-size: 0.92rem;
+}
+
+.quran-transliteration-error {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.quran-transliteration-pager {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.quran-transliteration-pager p {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .quran-transliteration-sheet {
+    background: #1e2224;
+    border-color: #333a3e;
+  }
+
+  .quran-word-group {
+    background: #212629;
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+@media (max-width: 600px) {
+  .quran-transliteration-sheet {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .quran-transliteration-ayah {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .quran-transliteration-pager {
+    grid-template-columns: 1fr;
+  }
+}

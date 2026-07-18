@@ -18,7 +18,10 @@ body {
   margin: 0;
   background: radial-gradient(circle at top right, #e6efe8 0%, var(--bg) 46%);
   color: var(--text);
-  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-family:
+    Inter, "Noto Sans", "Noto Sans Arabic", "Noto Sans Devanagari",
+    "Noto Sans Ethiopic", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR",
+    "Manrope", "Segoe UI", sans-serif;
   overflow-x: hidden;
 }
 

@@ -72,6 +72,84 @@ export const RESTAURANT_FILTER_IDENTITY_IDS = IDENTITY_OPTIONS.filter(
   (option) => option.supportsRestaurantFilter,
 ).map((option) => option.id);
 
+export const RESTAURANT_CUISINE_FILTERS = [
+  {
+    id: "arab-all",
+    displayName: "All Arab ethnicities",
+    displayNameKey: "restaurants.cuisines.arabAll",
+    visualType: "badge",
+    badgeText: "AR",
+    accessibilityLabel: "All Arab ethnicities cuisine",
+    searchQuery: "arab",
+    identityIds: [
+      "arab",
+      "algerian",
+      "bahraini",
+      "egyptian",
+      "emirati",
+      "iraqi",
+      "jordanian",
+      "kuwaiti",
+      "lebanese",
+      "libyan",
+      "mauritanian",
+      "moroccan",
+      "omani",
+      "palestinian",
+      "qatari",
+      "saudi-arabian",
+      "somali",
+      "sudanese",
+      "syrian",
+      "tunisian",
+      "yemeni",
+      "north-african",
+      "middle-eastern",
+    ],
+  },
+  {
+    id: "desi",
+    displayName: "Desi",
+    displayNameKey: "restaurants.cuisines.desi",
+    visualType: "badge",
+    badgeText: "DS",
+    accessibilityLabel: "Desi cuisine",
+    searchQuery: "desi",
+    identityIds: [
+      "south-asian",
+      "pakistani",
+      "indian",
+      "bangladeshi",
+      "afghan",
+      "sri-lankan",
+    ],
+  },
+  {
+    id: "indonesian",
+    displayName: "Indonesian",
+    displayNameKey: "restaurants.cuisines.indonesian",
+    visualType: "badge",
+    badgeText: "ID",
+    accessibilityLabel: "Indonesian cuisine",
+    searchQuery: "indonesian",
+    identityIds: ["indonesian"],
+  },
+  {
+    id: "other-halal",
+    displayName: "Other halal spots",
+    displayNameKey: "restaurants.cuisines.otherHalal",
+    visualType: "badge",
+    badgeText: "HL",
+    accessibilityLabel: "Other halal spots",
+    searchQuery: "",
+    identityIds: [],
+  },
+];
+
+export const RESTAURANT_CUISINE_FILTERS_BY_ID = Object.fromEntries(
+  RESTAURANT_CUISINE_FILTERS.map((option) => [option.id, option]),
+);
+
 export const PROFILE_FLAG_OPTIONS = IDENTITY_OPTIONS;
 export const PROFILE_FLAG_OPTIONS_BY_ID = IDENTITY_OPTIONS_BY_ID;
 export const HERITAGE_OPTION_IDS = IDENTITY_OPTION_IDS;

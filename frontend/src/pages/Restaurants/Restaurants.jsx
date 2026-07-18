@@ -1,15 +1,20 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocaleFormat } from "../../hooks/useLocaleFormat";
-import {
-  RESTAURANT_FILTER_IDENTITY_IDS,
-  PROFILE_FLAG_OPTIONS_BY_ID,
-} from "../Profile/countryFlagConfig";
 import "./Restaurants.css";
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
 const RESTAURANT_HISTORY_KEY = "marakah_restaurant_visit_history_v1";
+const HALAL_STATUS_LABELS = {
+  "verified-halal": "Verified Halal",
+  "halal-listed": "Halal Listed",
+  "halal-claimed": "Halal Claimed",
+  "halal-not-verified": "Halal Not Verified",
+};
+const DEFAULT_HALAL_STATUS = "verified-halal,halal-listed,halal-claimed";
+const ALL_HALAL_STATUS =
+  "verified-halal,halal-listed,halal-claimed,halal-not-verified";
 
 function readRestaurantHistory() {
   try {
@@ -33,24 +38,78 @@ function readRestaurantHistory() {
   }
 }
 
+function toLower(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
+}
+
+function compareNameMatch(a, b, query) {
+  const aName = String(a?.name || "").toLowerCase();
+  const bName = String(b?.name || "").toLowerCase();
+  const aStarts = aName.startsWith(query);
+  const bStarts = bName.startsWith(query);
+
+  if (aStarts !== bStarts) {
+    return aStarts ? -1 : 1;
+  }
+
+  const aContains = aName.includes(query);
+  const bContains = bName.includes(query);
+  if (aContains !== bContains) {
+    return aContains ? -1 : 1;
+  }
+
+  return aName.localeCompare(bName);
+}
+
+function getEvidenceSourceLabel(source) {
+  const normalized = String(source || "")
+    .trim()
+    .toLowerCase();
+  if (!normalized) {
+    return "Source unavailable";
+  }
+
+  if (normalized === "official-website") {
+    return "Official website";
+  }
+  if (normalized === "trusted-provider") {
+    return "Trusted provider";
+  }
+  if (normalized === "manual-verification") {
+    return "Manual verification";
+  }
+  if (normalized === "owner-verified") {
+    return "Owner verified";
+  }
+  if (normalized === "listing-name-address") {
+    return "Listing text";
+  }
+
+  return normalized.replace(/-/g, " ");
+}
+
 export default function Restaurants() {
   const { t, i18n } = useTranslation();
   const { formatNumber, formatInteger } = useLocaleFormat();
   const [city, setCity] = useState("");
-  const [query, setQuery] = useState("");
-  const [ethnicityId, setEthnicityId] = useState("");
-  const [ethnicitySearchQuery, setEthnicitySearchQuery] = useState("");
+  const [nameQuery, setNameQuery] = useState("");
+  const [cuisineId, setCuisineId] = useState("all-halal");
+  const [cuisineSearchQuery, setCuisineSearchQuery] = useState("");
   const [radiusFilter, setRadiusFilter] = useState("25");
   const [userLocation, setUserLocation] = useState(null);
+  const [showUnverified, setShowUnverified] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [detailsWarning, setDetailsWarning] = useState("");
+  const [disclaimer, setDisclaimer] = useState("");
   const [restaurants, setRestaurants] = useState([]);
   const [visitHistory, setVisitHistory] = useState([]);
   const [status, setStatus] = useState(
-    t("restaurants.status.searchHint", {
-      defaultValue: "Enter a city or use your location, then search.",
-    }),
+    "Enter a city or use your location, then search halal restaurants.",
   );
+  const [cuisines, setCuisines] = useState([]);
+  const [areCuisinesExpanded, setAreCuisinesExpanded] = useState(false);
   const [page, setPage] = useState(1);
   const [pageInfo, setPageInfo] = useState({
     totalPages: 1,
@@ -59,29 +118,64 @@ export default function Restaurants() {
   });
   const [hasAutoLocated, setHasAutoLocated] = useState(false);
 
-  const ethnicityOptions = useMemo(
-    () =>
-      RESTAURANT_FILTER_IDENTITY_IDS.map(
-        (id) => PROFILE_FLAG_OPTIONS_BY_ID[id],
-      ).filter(Boolean),
-    [],
-  );
-
-  const selectedEthnicityOption = useMemo(
-    () => ethnicityOptions.find((option) => option.id === ethnicityId) || null,
-    [ethnicityId, ethnicityOptions],
-  );
-
-  const filteredEthnicityOptions = useMemo(() => {
-    const normalized = ethnicitySearchQuery.trim().toLowerCase();
+  const filteredCuisines = useMemo(() => {
+    const normalized = toLower(cuisineSearchQuery);
     if (!normalized) {
-      return ethnicityOptions;
+      return cuisines;
     }
 
-    return ethnicityOptions.filter((option) =>
-      option.displayName.toLowerCase().includes(normalized),
-    );
-  }, [ethnicityOptions, ethnicitySearchQuery]);
+    return cuisines.filter((item) => {
+      const values = [item.name, item.region, item.category]
+        .filter(Boolean)
+        .map((value) => String(value).toLowerCase());
+      return values.some((value) => value.includes(normalized));
+    });
+  }, [cuisineSearchQuery, cuisines]);
+
+  const topLevelCuisines = useMemo(
+    () => filteredCuisines.filter((item) => item.isTopLevel),
+    [filteredCuisines],
+  );
+
+  const groupedCuisines = useMemo(() => {
+    const groups = new Map();
+    for (const cuisine of filteredCuisines.filter((item) => !item.isTopLevel)) {
+      const category = cuisine.category || "other";
+      const current = groups.get(category) || [];
+      current.push(cuisine);
+      groups.set(category, current);
+    }
+
+    return [...groups.entries()].map(([category, values]) => ({
+      category,
+      values,
+    }));
+  }, [filteredCuisines]);
+
+  const selectedCuisine = useMemo(
+    () => cuisines.find((item) => item.id === cuisineId) || null,
+    [cuisineId, cuisines],
+  );
+
+  const visibleRestaurants = useMemo(() => {
+    const normalized = toLower(nameQuery);
+    if (!normalized) {
+      return restaurants;
+    }
+
+    return [...restaurants]
+      .filter((restaurant) =>
+        String(restaurant?.name || "")
+          .toLowerCase()
+          .includes(normalized),
+      )
+      .sort((a, b) => compareNameMatch(a, b, normalized));
+  }, [nameQuery, restaurants]);
+
+  const nearestRestaurant = useMemo(
+    () => visibleRestaurants[0] || null,
+    [visibleRestaurants],
+  );
 
   useEffect(() => {
     setVisitHistory(readRestaurantHistory());
@@ -91,57 +185,145 @@ export default function Restaurants() {
     localStorage.setItem(RESTAURANT_HISTORY_KEY, JSON.stringify(visitHistory));
   }, [visitHistory]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const response = await fetch(
+          `${API_BASE_URL}/api/restaurants/cuisines`,
+        );
+        const payload = await response.json();
+
+        if (!response.ok || !payload.success) {
+          throw new Error(payload.message || "Could not load halal cuisines.");
+        }
+
+        const items = Array.isArray(payload.cuisines) ? payload.cuisines : [];
+        if (!cancelled) {
+          setCuisines(items);
+          if (items.some((item) => item.id === "all-halal")) {
+            setCuisineId("all-halal");
+          }
+        }
+      } catch {
+        if (!cancelled) {
+          setStatus("Could not load halal cuisine categories.");
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (hasAutoLocated || userLocation) {
+      return;
+    }
+
+    if (!navigator.geolocation) {
+      return;
+    }
+
+    setHasAutoLocated(true);
+    requestCurrentLocation();
+  }, [hasAutoLocated, userLocation]);
+
+  function getHalalBadgeLabel(statusValue) {
+    return HALAL_STATUS_LABELS[String(statusValue || "").trim()] || "Halal";
+  }
+
+  function getHalalBadgeClass(statusValue) {
+    const normalized = String(statusValue || "").trim();
+    if (!normalized) {
+      return "restaurant-halal-status--claimed";
+    }
+
+    return `restaurant-halal-status--${normalized}`;
+  }
+
+  function saveRestaurantVisit(restaurant, action = "menu") {
+    if (!restaurant?.placeId && !restaurant?.id) {
+      return;
+    }
+
+    const entry = {
+      placeId: restaurant.placeId || restaurant.id,
+      name: restaurant.name || "Restaurant",
+      address: restaurant.address || restaurant.city || "",
+      websiteUrl: restaurant.websiteUrl || null,
+      googleMapsUrl: restaurant.googleMapsUrl || null,
+      menuUrl: restaurant.menuUrl || null,
+      menuSource: restaurant.menuSource || null,
+      action,
+      visitedAt: new Date().toISOString(),
+    };
+
+    setVisitHistory((current) => {
+      const deduped = current.filter((item) => item.placeId !== entry.placeId);
+      return [entry, ...deduped].slice(0, 20);
+    });
+  }
+
+  function getHistoryDestination(entry) {
+    return entry.menuUrl || entry.googleMapsUrl || null;
+  }
+
+  function getMenuButtonLabel(restaurant) {
+    if (!restaurant?.menuUrl) {
+      return "Menu unavailable";
+    }
+
+    if (restaurant.menuSource === "official-website") {
+      return "View Official Website";
+    }
+
+    return "View on Google Maps";
+  }
+
   async function runSearch(
     nextPage = 1,
     locationOverride = null,
-    ethnicOverrideId = null,
+    nextCuisineId,
+    showUnverifiedOverride,
   ) {
     const activeLocation = locationOverride || userLocation;
-    const queryText = query.trim();
-    const activeEthnicityId =
-      typeof ethnicOverrideId === "string" ? ethnicOverrideId : ethnicityId;
-    const activeEthnicity = ethnicityOptions.find(
-      (option) => option.id === activeEthnicityId,
-    );
-    const normalizedEthnicText = (activeEthnicity?.displayName || "").trim();
-
-    const composedQuery = normalizedEthnicText
-      ? queryText
-        ? `halal ${normalizedEthnicText} restaurant ${queryText}`
-        : `halal ${normalizedEthnicText} restaurant`
-      : queryText;
+    const activeCuisineId =
+      typeof nextCuisineId === "string" ? nextCuisineId : cuisineId;
+    const activeShowUnverified =
+      typeof showUnverifiedOverride === "boolean"
+        ? showUnverifiedOverride
+        : showUnverified;
 
     if (!city.trim() && !activeLocation) {
-      requestCurrentLocation(normalizedEthnicText);
+      requestCurrentLocation(activeCuisineId);
       return;
     }
 
     try {
       setIsLoading(true);
       setDetailsWarning("");
-      setStatus(
-        t("restaurants.status.searching", {
-          defaultValue:
-            "Searching nearest halal restaurants and loading menu sources...",
-        }),
-      );
+      setStatus("Searching halal-first results...");
 
       const params = new URLSearchParams({
         city: city.trim(),
-        query: composedQuery,
-        maxDistanceMiles: radiusFilter,
+        cuisine: activeCuisineId || "all-halal",
+        query: nameQuery.trim(),
+        radius: radiusFilter,
         page: String(nextPage),
         pageSize: String(pageInfo.pageSize),
         language: i18n.language,
+        halalOnly: activeShowUnverified ? "false" : "true",
+        halalStatus: activeShowUnverified
+          ? ALL_HALAL_STATUS
+          : DEFAULT_HALAL_STATUS,
       });
 
-      if (normalizedEthnicText) {
-        params.set("ethnicity", normalizedEthnicText);
-      }
-
       if (activeLocation) {
-        params.set("userLat", String(activeLocation.lat));
-        params.set("userLng", String(activeLocation.lng));
+        params.set("lat", String(activeLocation.lat));
+        params.set("lng", String(activeLocation.lng));
       }
 
       const response = await fetch(
@@ -163,141 +345,34 @@ export default function Restaurants() {
         totalCount: payload.pagination?.totalCount || rows.length,
         pageSize: payload.pagination?.pageSize || pageInfo.pageSize,
       });
+      setDisclaimer(payload.disclaimer || "");
 
       if (rows.length > 0) {
-        if ((payload.details?.errors || 0) > 0) {
-          setDetailsWarning(
-            t("restaurants.detailsPartialError", {
-              defaultValue:
-                "Some restaurant details were unavailable. Menu links may be missing for some results.",
-            }),
-          );
-        }
-
         setStatus(
-          t("restaurants.status.results", {
-            defaultValue: "Found {{count}} halal restaurants.",
-            count: formatInteger(payload.pagination?.totalCount || rows.length),
-          }),
+          `Found ${formatInteger(payload.pagination?.totalCount || rows.length)} halal restaurants.`,
         );
       } else {
+        const cuisineName =
+          selectedCuisine?.name ||
+          (activeCuisineId === "all-halal" ? "All Halal" : "selected cuisine");
         setStatus(
-          t("restaurants.status.noResults", {
-            defaultValue: "No halal restaurants found for that search.",
-          }),
+          `No verified or listed halal ${cuisineName} restaurants were found within ${radiusFilter} miles. Try increasing your radius.`,
         );
       }
     } catch (error) {
-      setStatus(
-        error.message ||
-          t("restaurants.status.searchFailed", {
-            defaultValue: "Could not search restaurants.",
-          }),
-      );
+      setStatus(error.message || "Could not search restaurants.");
     } finally {
       setIsLoading(false);
     }
   }
 
-  useEffect(() => {
-    if (hasAutoLocated || userLocation) {
-      return;
-    }
-
+  function requestCurrentLocation(nextCuisineId = null) {
     if (!navigator.geolocation) {
+      setStatus("Location is unavailable on this browser.");
       return;
     }
 
-    setHasAutoLocated(true);
-    requestCurrentLocation();
-  }, [hasAutoLocated, userLocation]);
-
-  function getMenuButtonLabel(restaurant) {
-    if (!restaurant?.menuUrl) {
-      return t("restaurants.menuUnavailable", {
-        defaultValue: "Menu unavailable",
-      });
-    }
-
-    if (restaurant.menuSource === "official-website") {
-      return t("restaurants.viewOfficialWebsite", {
-        defaultValue: "View Official Website",
-      });
-    }
-
-    return t("restaurants.viewOnGoogleMaps", {
-      defaultValue: "View on Google Maps",
-    });
-  }
-
-  function getMenuSourceMessage(restaurant) {
-    if (!restaurant?.menuUrl) {
-      return t("restaurants.menuUnavailable", {
-        defaultValue: "Menu unavailable",
-      });
-    }
-
-    if (restaurant.menuSource === "official-website") {
-      return t("restaurants.menuSourceOfficial", {
-        defaultValue:
-          "Menu and ordering information are provided by the restaurant's official website.",
-      });
-    }
-
-    return t("restaurants.menuSourceGoogleMaps", {
-      defaultValue:
-        "An official website was not available. Check Google Maps for menu information.",
-    });
-  }
-
-  function saveRestaurantVisit(restaurant, action = "menu") {
-    if (!restaurant?.placeId) {
-      return;
-    }
-
-    const entry = {
-      placeId: restaurant.placeId,
-      name: restaurant.name || "Restaurant",
-      address: restaurant.address || restaurant.city || "",
-      websiteUrl: restaurant.websiteUrl || null,
-      googleMapsUrl: restaurant.googleMapsUrl || null,
-      menuUrl: restaurant.menuUrl || null,
-      menuSource: restaurant.menuSource || null,
-      action,
-      visitedAt: new Date().toISOString(),
-    };
-
-    setVisitHistory((current) => {
-      const deduped = current.filter(
-        (item) => item.placeId !== restaurant.placeId,
-      );
-      return [entry, ...deduped].slice(0, 20);
-    });
-  }
-
-  function getHistoryDestination(entry) {
-    return entry.menuUrl || entry.googleMapsUrl || null;
-  }
-
-  function handleClearHistory() {
-    setVisitHistory([]);
-  }
-
-  function requestCurrentLocation(ethnicOverride = null) {
-    if (!navigator.geolocation) {
-      setStatus(
-        t("restaurants.status.locationUnavailable", {
-          defaultValue: "Location is unavailable on this browser.",
-        }),
-      );
-      return;
-    }
-
-    setStatus(
-      t("restaurants.status.findingLocation", {
-        defaultValue: "Finding your location...",
-      }),
-    );
+    setStatus("Finding your location...");
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -307,14 +382,10 @@ export default function Restaurants() {
         };
 
         setUserLocation(nextLocation);
-        runSearch(1, nextLocation, ethnicOverride);
+        runSearch(1, nextLocation, nextCuisineId);
       },
       () => {
-        setStatus(
-          t("restaurants.status.locationFailed", {
-            defaultValue: "Could not determine your location.",
-          }),
-        );
+        setStatus("Could not determine your location.");
       },
     );
   }
@@ -330,33 +401,12 @@ export default function Restaurants() {
       return;
     }
 
-    setStatus(
-      t("restaurants.status.findingLocation", {
-        defaultValue: "Finding your location...",
-      }),
-    );
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const nextLocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-
-        setUserLocation(nextLocation);
-        runSearch(1, nextLocation);
-      },
-      () => {
-        // If location is blocked, still run city-based search.
-        runSearch(1);
-      },
-    );
+    requestCurrentLocation();
   }
 
-  function handleEthnicityTabClick(nextEthnicity) {
-    setEthnicityId(nextEthnicity);
-    setQuery("");
-    runSearch(1, null, nextEthnicity);
+  function handleCuisineClick(nextCuisineId) {
+    setCuisineId(nextCuisineId);
+    runSearch(1, null, nextCuisineId);
   }
 
   function handleNextPage() {
@@ -375,111 +425,111 @@ export default function Restaurants() {
     runSearch(page - 1);
   }
 
-  const nearestRestaurant = useMemo(
-    () => restaurants[0] || null,
-    [restaurants],
-  );
-
   return (
     <main className="page">
       <section className="page-hero">
-        <p className="eyebrow">
-          {t("restaurants.eyebrow", { defaultValue: "Dining" })}
+        <p className="eyebrow">Dining</p>
+        <h1>What do we feel like eating right now?</h1>
+        <p className="restaurant-subtitle">
+          Explore halal food from around the world.
         </p>
-        <h1>
-          {t("restaurants.title", {
-            defaultValue: "Find Nearby Halal Restaurants",
-          })}
-        </h1>
+        <p className="restaurant-halal-only-badge" role="status">
+          Only halal and Muslim cuisine results are shown.
+        </p>
+
+        <div className="restaurant-search-name-wrap">
+          <label htmlFor="restaurant-name-search">
+            Search halal restaurants by name
+          </label>
+          <input
+            id="restaurant-name-search"
+            type="search"
+            value={nameQuery}
+            onChange={(event) => setNameQuery(event.target.value)}
+            placeholder="Search halal restaurants by name"
+            aria-label="Search halal restaurants by name"
+          />
+        </div>
 
         <div className="restaurant-ethnic-row">
           <label
-            htmlFor="restaurant-ethnic-filter"
+            htmlFor="restaurant-cuisine-search"
             className="restaurant-ethnic-label"
           >
-            {t("restaurants.ethnicLabel", {
-              defaultValue: "Search Specific Ethnic Cuisine",
-            })}
+            Search halal cuisines
           </label>
           <input
+            id="restaurant-cuisine-search"
             type="search"
-            value={ethnicitySearchQuery}
-            onChange={(event) => setEthnicitySearchQuery(event.target.value)}
-            placeholder={t("restaurants.ethnicitySearchPlaceholder", {
-              defaultValue: "Search identities",
-            })}
-            aria-label={t("restaurants.ethnicitySearchPlaceholder", {
-              defaultValue: "Search identities",
-            })}
+            value={cuisineSearchQuery}
+            onChange={(event) => setCuisineSearchQuery(event.target.value)}
+            placeholder="Search halal cuisines"
+            aria-label="Search halal cuisines"
             className="restaurant-ethnic-search"
           />
-          <select
-            id="restaurant-ethnic-filter"
-            value={ethnicityId}
-            onChange={(event) => handleEthnicityTabClick(event.target.value)}
-            aria-label={t("restaurants.ethnicLabel", {
-              defaultValue: "Search Specific Ethnic Cuisine",
-            })}
-          >
-            <option value="">
-              {t("restaurants.allHalalCuisines", {
-                defaultValue: "All halal cuisines",
-              })}
-            </option>
-            {filteredEthnicityOptions.map((option) => (
-              <option key={option.id} value={option.id}>
-                {t(option.displayNameKey, {
-                  defaultValue: option.displayName,
-                })}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div
           className="restaurant-ethnic-chips"
-          aria-label="Ethnic cuisine quick filters"
+          aria-label="Top halal cuisine categories"
         >
-          <button
-            type="button"
-            className={`restaurant-ethnic-chip${ethnicityId === "" ? " restaurant-ethnic-chip--active" : ""}`}
-            onClick={() => handleEthnicityTabClick("")}
-          >
-            {t("restaurants.allHalalCuisines", {
-              defaultValue: "All halal cuisines",
-            })}
-          </button>
-          {filteredEthnicityOptions.map((option) => (
+          {topLevelCuisines.map((option) => (
             <button
-              key={`ethnic-${option.id}`}
+              key={option.id}
               type="button"
-              className={`restaurant-ethnic-chip${ethnicityId === option.id ? " restaurant-ethnic-chip--active" : ""}`}
-              onClick={() => handleEthnicityTabClick(option.id)}
+              className={`restaurant-ethnic-chip${cuisineId === option.id ? " restaurant-ethnic-chip--active" : ""}`}
+              onClick={() => handleCuisineClick(option.id)}
+              aria-pressed={cuisineId === option.id}
             >
-              {option.visualType === "flag" && option.assetPath ? (
-                <img
-                  className="restaurant-ethnic-chip-flag"
-                  src={option.assetPath}
-                  alt={t(option.accessibilityLabelKey, {
-                    defaultValue: option.accessibilityLabel,
-                  })}
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : (
-                <span
-                  className="restaurant-ethnic-chip-badge"
-                  aria-hidden="true"
-                >
-                  {option.badgeText || "ID"}
-                </span>
-              )}
-              <span>
-                {t(option.displayNameKey, {
-                  defaultValue: option.displayName,
-                })}
+              <span className="restaurant-ethnic-chip-badge" aria-hidden="true">
+                {(option.countryCode || option.name || "HL")
+                  .slice(0, 2)
+                  .toUpperCase()}
               </span>
+              <span>{option.name}</span>
             </button>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="btn-secondary restaurant-cuisine-group-toggle"
+          aria-expanded={areCuisinesExpanded}
+          aria-controls="restaurant-cuisine-groups"
+          onClick={() => setAreCuisinesExpanded((value) => !value)}
+        >
+          {areCuisinesExpanded ? "Hide cuisine groups" : "Show cuisine groups"}
+        </button>
+
+        <div id="restaurant-cuisine-groups" hidden={!areCuisinesExpanded}>
+          {groupedCuisines.map((group) => (
+            <section key={group.category} className="restaurant-cuisine-group">
+              <h2>{group.category.replace(/-/g, " ")}</h2>
+              <div
+                className="restaurant-ethnic-chips"
+                aria-label={`${group.category} cuisines`}
+              >
+                {group.values.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    className={`restaurant-ethnic-chip${cuisineId === option.id ? " restaurant-ethnic-chip--active" : ""}`}
+                    onClick={() => handleCuisineClick(option.id)}
+                    aria-pressed={cuisineId === option.id}
+                  >
+                    <span
+                      className="restaurant-ethnic-chip-badge"
+                      aria-hidden="true"
+                    >
+                      {(option.countryCode || option.name || "HL")
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </span>
+                    <span>{option.name}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
           ))}
         </div>
 
@@ -488,30 +538,13 @@ export default function Restaurants() {
             type="search"
             value={city}
             onChange={(event) => setCity(event.target.value)}
-            placeholder={t("restaurants.cityPlaceholder", {
-              defaultValue: "City, state, or ZIP",
-            })}
-            aria-label={t("restaurants.cityPlaceholder", {
-              defaultValue: "City, state, or ZIP",
-            })}
-          />
-          <input
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={t("restaurants.queryPlaceholder", {
-              defaultValue: "Cuisine or keyword (optional)",
-            })}
-            aria-label={t("restaurants.queryPlaceholder", {
-              defaultValue: "Cuisine or keyword (optional)",
-            })}
+            placeholder="City, state, or ZIP"
+            aria-label="City, state, or ZIP"
           />
           <select
             value={radiusFilter}
             onChange={(event) => setRadiusFilter(event.target.value)}
-            aria-label={t("restaurants.distanceFilter", {
-              defaultValue: "Distance filter",
-            })}
+            aria-label="Distance filter"
           >
             <option value="10">10 miles</option>
             <option value="25">25 miles</option>
@@ -524,199 +557,227 @@ export default function Restaurants() {
             onClick={handleSearchClick}
             disabled={isLoading}
           >
-            {isLoading
-              ? t("restaurants.searching", { defaultValue: "Searching..." })
-              : t("restaurants.search", { defaultValue: "Search" })}
+            {isLoading ? "Searching..." : "Search"}
           </button>
           <button
             type="button"
             className="btn-secondary"
-            onClick={requestCurrentLocation}
+            onClick={() => requestCurrentLocation(cuisineId)}
           >
-            {t("restaurants.useLocation", { defaultValue: "Use My Location" })}
+            Use My Location
           </button>
         </div>
 
-        <p className="restaurant-helper-text">{status}</p>
+        <label className="restaurant-unverified-toggle">
+          <input
+            type="checkbox"
+            checked={showUnverified}
+            onChange={(event) => {
+              const next = event.target.checked;
+              setShowUnverified(next);
+              runSearch(1, null, cuisineId, next);
+            }}
+          />
+          <span>Show unverified possibilities</span>
+        </label>
+
+        <p className="restaurant-helper-text" role="status" aria-live="polite">
+          {status}
+        </p>
         {detailsWarning ? (
           <p className="restaurant-helper-text">{detailsWarning}</p>
         ) : null}
-        {selectedEthnicityOption ? (
+        {selectedCuisine ? (
           <p className="restaurant-helper-text">
-            {t("restaurants.ethnicActive", {
-              defaultValue: "Ethnic cuisine filter: {{ethnicity}}",
-              ethnicity: t(selectedEthnicityOption.displayNameKey, {
-                defaultValue: selectedEthnicityOption.displayName,
-              }),
-            })}
+            Selected halal cuisine: <strong>{selectedCuisine.name}</strong>
           </p>
         ) : null}
-        <p className="restaurant-helper-text">
-          {t("restaurants.distanceLine", {
-            defaultValue: "Distance filter: {{distance}}.",
-            distance:
-              radiusFilter === "nationwide"
-                ? t("restaurants.distanceNationwide", {
-                    defaultValue: "Nationwide",
-                  })
-                : t("restaurants.distanceMiles", {
-                    defaultValue: "{{miles}} miles",
-                    miles: formatInteger(radiusFilter),
-                  }),
-          })}
-        </p>
+        {disclaimer ? (
+          <p className="restaurant-helper-text restaurant-halal-disclaimer">
+            {disclaimer}
+          </p>
+        ) : (
+          <p className="restaurant-helper-text restaurant-halal-disclaimer">
+            Halal status can change. Please confirm directly with the
+            restaurant.
+          </p>
+        )}
 
         {pageInfo.totalCount > 0 ? (
-          <p className="restaurant-helper-text">
-            {t("restaurants.resultCount", {
-              defaultValue:
-                "Results: {{count}} total | Page {{page}} of {{totalPages}}",
-              count: formatInteger(pageInfo.totalCount),
-              page: formatInteger(page),
-              totalPages: formatInteger(pageInfo.totalPages),
-            })}
+          <p
+            className="restaurant-helper-text"
+            role="status"
+            aria-live="polite"
+          >
+            Results: {formatInteger(pageInfo.totalCount)} total | Page{" "}
+            {formatInteger(page)} of {formatInteger(pageInfo.totalPages)}
           </p>
         ) : null}
 
         {nearestRestaurant ? (
           <article className="restaurant-nearest-card">
-            <p className="restaurant-nearest-pill">
-              {t("restaurants.nearest", { defaultValue: "Nearest Halal" })}
-            </p>
+            <p className="restaurant-nearest-pill">Nearest Halal</p>
             <h3>{nearestRestaurant.name}</h3>
             <p>{nearestRestaurant.address || nearestRestaurant.city}</p>
             <p>
-              {typeof nearestRestaurant.distanceMiles === "number"
-                ? t("restaurants.distanceAway", {
-                    defaultValue: "{{miles}} mi away",
-                    miles: formatNumber(nearestRestaurant.distanceMiles),
-                  })
-                : t("restaurants.distanceUnknown", {
-                    defaultValue: "Use location to calculate distance",
-                  })}
+              {typeof nearestRestaurant.distance === "number"
+                ? `${formatNumber(nearestRestaurant.distance)} mi away`
+                : "Use location to calculate distance"}
             </p>
             <p>
               {nearestRestaurant.drivingDistanceText &&
               nearestRestaurant.drivingTimeText
-                ? t("restaurants.driveLine", {
-                    defaultValue: "{{distance}} drive ({{time}})",
-                    distance: nearestRestaurant.drivingDistanceText,
-                    time: nearestRestaurant.drivingTimeText,
-                  })
-                : t("restaurants.driveUnknown", {
-                    defaultValue: "Use current location for drive time",
-                  })}
+                ? `${nearestRestaurant.drivingDistanceText} drive (${nearestRestaurant.drivingTimeText})`
+                : "Use current location for drive time"}
             </p>
           </article>
         ) : null}
       </section>
 
       <section className="card-grid three">
-        {restaurants.map((restaurant) => (
-          <article
-            className="surface-card restaurant-result-card"
-            key={restaurant.placeId}
-          >
-            {restaurant.imageUrl ? (
-              <img
-                className="restaurant-image"
-                src={restaurant.imageUrl}
-                alt={restaurant.name}
-                loading="lazy"
-                decoding="async"
-              />
-            ) : (
-              <div className="restaurant-image restaurant-image--placeholder">
-                {t("restaurants.noImage", { defaultValue: "No image" })}
-              </div>
-            )}
+        {visibleRestaurants.map((restaurant) => {
+          const evidence = Array.isArray(restaurant.halalEvidence)
+            ? restaurant.halalEvidence
+            : [];
+          const primaryEvidence = evidence[0] || null;
 
-            <div className="restaurant-title-row">
-              <h3>{restaurant.name}</h3>
-              <span
-                className={`restaurant-halal-sign restaurant-halal-sign--${restaurant.halalSign || "halal"}`}
-              >
-                {restaurant.halalSign === "zabiha"
-                  ? t("restaurants.sign.zabiha", { defaultValue: "ZABIHA" })
-                  : t("restaurants.sign.halal", { defaultValue: "HALAL" })}
-              </span>
-            </div>
-
-            <p>{restaurant.address || restaurant.city}</p>
-            <p>
-              {typeof restaurant.distanceMiles === "number"
-                ? t("restaurants.distanceAway", {
-                    defaultValue: "{{miles}} mi away",
-                    miles: formatNumber(restaurant.distanceMiles),
-                  })
-                : t("restaurants.distanceUnknown", {
-                    defaultValue: "Use location to calculate distance",
-                  })}
-            </p>
-            <p>
-              {restaurant.drivingDistanceText && restaurant.drivingTimeText
-                ? t("restaurants.driveLine", {
-                    defaultValue: "{{distance}} drive ({{time}})",
-                    distance: restaurant.drivingDistanceText,
-                    time: restaurant.drivingTimeText,
-                  })
-                : t("restaurants.driveUnknown", {
-                    defaultValue: "Drive time unavailable",
-                  })}
-            </p>
-            <p>
-              {t("restaurants.rating", {
-                defaultValue: "Rating: {{rating}}",
-                rating: restaurant.rating || "N/A",
-              })}
-            </p>
-            <a
-              className="btn-secondary restaurant-map-link"
-              href={`https://www.google.com/maps?q=${restaurant.location?.lat},${restaurant.location?.lng}`}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => saveRestaurantVisit(restaurant, "map")}
+          return (
+            <article
+              className="surface-card restaurant-result-card"
+              key={restaurant.placeId || restaurant.id}
             >
-              {t("restaurants.openMap", { defaultValue: "Open in Maps" })}
-            </a>
-            {restaurant.menuUrl ? (
+              {restaurant.imageUrl ? (
+                <img
+                  className="restaurant-image"
+                  src={restaurant.imageUrl}
+                  alt={restaurant.name}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div className="restaurant-image restaurant-image--placeholder">
+                  No image
+                </div>
+              )}
+
+              <div className="restaurant-title-row">
+                <h3>{restaurant.name}</h3>
+                <span
+                  className={`restaurant-halal-status ${getHalalBadgeClass(restaurant.halalStatus)}`}
+                  aria-label={`Halal status: ${getHalalBadgeLabel(restaurant.halalStatus)}`}
+                >
+                  {getHalalBadgeLabel(restaurant.halalStatus)}
+                </span>
+              </div>
+
+              <p className="restaurant-cuisine-line">
+                Cuisine:{" "}
+                {restaurant.cuisine || selectedCuisine?.name || "All Halal"}
+              </p>
+
+              {primaryEvidence ? (
+                <p className="restaurant-evidence-line">
+                  Evidence source:{" "}
+                  <strong>
+                    {getEvidenceSourceLabel(primaryEvidence.source)}
+                  </strong>
+                </p>
+              ) : (
+                <p className="restaurant-evidence-line">
+                  Evidence source: Not available
+                </p>
+              )}
+
+              <p>{restaurant.address || restaurant.city}</p>
+              <p>
+                {typeof restaurant.distance === "number"
+                  ? `${formatNumber(restaurant.distance)} mi away`
+                  : "Use location to calculate distance"}
+              </p>
+              <p>
+                {restaurant.drivingDistanceText && restaurant.drivingTimeText
+                  ? `${restaurant.drivingDistanceText} drive (${restaurant.drivingTimeText})`
+                  : "Drive time unavailable"}
+              </p>
+              <p>
+                Rating: {restaurant.rating || "N/A"} (
+                {formatInteger(restaurant.reviewCount || 0)} reviews)
+              </p>
+
               <a
                 className="btn-secondary restaurant-map-link"
-                href={restaurant.menuUrl}
+                href={`https://www.google.com/maps?q=${restaurant.location?.lat},${restaurant.location?.lng}`}
                 target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => saveRestaurantVisit(restaurant, "menu")}
+                rel="noreferrer"
+                onClick={() => saveRestaurantVisit(restaurant, "map")}
               >
-                {getMenuButtonLabel(restaurant)}
+                View on Google Maps
               </a>
-            ) : (
-              <button type="button" className="btn-secondary" disabled>
-                {getMenuButtonLabel(restaurant)}
-              </button>
-            )}
-            <p className="restaurant-menu-source-message">
-              {getMenuSourceMessage(restaurant)}
-            </p>
-          </article>
-        ))}
+
+              {restaurant.websiteUrl ? (
+                <a
+                  className="btn-secondary restaurant-map-link"
+                  href={restaurant.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => saveRestaurantVisit(restaurant, "website")}
+                >
+                  View Official Website
+                </a>
+              ) : null}
+
+              {restaurant.menuUrl ? (
+                <a
+                  className="btn-secondary restaurant-map-link"
+                  href={restaurant.menuUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => saveRestaurantVisit(restaurant, "menu")}
+                >
+                  {getMenuButtonLabel(restaurant)}
+                </a>
+              ) : (
+                <button type="button" className="btn-secondary" disabled>
+                  {getMenuButtonLabel(restaurant)}
+                </button>
+              )}
+
+              <p className="restaurant-menu-source-message">
+                {restaurant.menuSource === "official-website"
+                  ? "Menu and ordering information are provided by the restaurant's official website."
+                  : restaurant.menuSource === "google-maps"
+                    ? "An official website was not available. Check Google Maps for menu information."
+                    : "Menu unavailable"}
+              </p>
+
+              <p className="restaurant-confirm-note">
+                Confirm halal status directly with the restaurant.
+              </p>
+            </article>
+          );
+        })}
       </section>
+
+      {visibleRestaurants.length === 0 && !isLoading ? (
+        <section className="surface-panel stack">
+          <p>
+            No verified or listed halal {selectedCuisine?.name || "cuisine"}{" "}
+            restaurants were found within {radiusFilter} miles. Try increasing
+            your radius.
+          </p>
+        </section>
+      ) : null}
 
       <section className="surface-panel stack restaurant-history-panel">
         <div className="restaurant-history-head">
-          <h2>
-            {t("restaurants.historyTitle", {
-              defaultValue: "Restaurant Visit History",
-            })}
-          </h2>
+          <h2>Restaurant Visit History</h2>
           <button
             type="button"
             className="btn-secondary"
-            onClick={handleClearHistory}
+            onClick={() => setVisitHistory([])}
             disabled={!visitHistory.length}
           >
-            {t("restaurants.clearHistory", {
-              defaultValue: "Clear History",
-            })}
+            Clear History
           </button>
         </div>
         {visitHistory.length ? (
@@ -733,16 +794,10 @@ export default function Restaurants() {
                     <span>{entry.address}</span>
                     <span>
                       {entry.menuSource === "official-website"
-                        ? t("restaurants.viewOfficialWebsite", {
-                            defaultValue: "View Official Website",
-                          })
+                        ? "View Official Website"
                         : entry.menuSource === "google-maps"
-                          ? t("restaurants.viewOnGoogleMaps", {
-                              defaultValue: "View on Google Maps",
-                            })
-                          : t("restaurants.menuUnavailable", {
-                              defaultValue: "Menu unavailable",
-                            })}
+                          ? "View on Google Maps"
+                          : "Menu unavailable"}
                     </span>
                   </div>
                   {destination ? (
@@ -752,13 +807,11 @@ export default function Restaurants() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {t("restaurants.revisit", { defaultValue: "Revisit" })}
+                      Revisit
                     </a>
                   ) : (
                     <button type="button" className="btn-secondary" disabled>
-                      {t("restaurants.menuUnavailable", {
-                        defaultValue: "Menu unavailable",
-                      })}
+                      Menu unavailable
                     </button>
                   )}
                 </li>
@@ -766,12 +819,7 @@ export default function Restaurants() {
             })}
           </ul>
         ) : (
-          <p>
-            {t("restaurants.historyEmpty", {
-              defaultValue:
-                "No restaurants visited yet. Open a menu or map to save history.",
-            })}
-          </p>
+          <p>No restaurants visited yet. Open a menu or map to save history.</p>
         )}
       </section>
 
@@ -786,14 +834,10 @@ export default function Restaurants() {
             onClick={handlePrevPage}
             disabled={isLoading || page <= 1}
           >
-            {t("restaurants.previous", { defaultValue: "Previous" })}
+            Previous
           </button>
           <span className="restaurant-page-label">
-            {t("restaurants.pageXofY", {
-              defaultValue: "Page {{page}} / {{totalPages}}",
-              page: formatInteger(page),
-              totalPages: formatInteger(pageInfo.totalPages),
-            })}
+            Page {formatInteger(page)} / {formatInteger(pageInfo.totalPages)}
           </span>
           <button
             type="button"
@@ -801,7 +845,7 @@ export default function Restaurants() {
             onClick={handleNextPage}
             disabled={isLoading || page >= pageInfo.totalPages}
           >
-            {t("restaurants.next", { defaultValue: "Next" })}
+            Next
           </button>
         </nav>
       ) : null}

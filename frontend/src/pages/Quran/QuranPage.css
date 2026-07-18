@@ -1,0 +1,132 @@
+.quran-page {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.quran-page__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.quran-page__header-title {
+  text-align: center;
+}
+
+.quran-page__header-title h1 {
+  margin: 0;
+  font-family: "Amiri Quran", "Noto Naskh Arabic", "Amiri", serif;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+}
+
+.quran-page__header-title p {
+  margin: 4px 0 0;
+  color: var(--text-soft);
+}
+
+.quran-page__spacer {
+  width: 1px;
+}
+
+.quran-page__sheet {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  min-height: 260px;
+}
+
+.quran-page__status {
+  margin: 0;
+  text-align: center;
+}
+
+.quran-page__error {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.quran-page__error p {
+  margin: 0;
+}
+
+.quran-page__bismillah {
+  margin: 0 0 18px;
+  text-align: center;
+  font-family: "Amiri Quran", "Noto Naskh Arabic", "Amiri", serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  line-height: 2.2;
+}
+
+.quran-arabic-reader {
+  direction: rtl;
+  text-align: center;
+  font-family: "Amiri Quran", "Noto Naskh Arabic", "Amiri", serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 2.4;
+}
+
+.quran-arabic-ayah {
+  display: inline;
+  margin-inline: 0.22rem;
+}
+
+.quran-page__inline-bismillah {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+}
+
+.quran-ayah-number {
+  font-size: 0.55em;
+  margin-inline: 0.36rem;
+}
+
+.quran-ayah-meaning {
+  display: block;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  font-family: Inter, "Noto Sans", sans-serif;
+  font-size: 0.45em;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.quran-page__pager {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.quran-page__pager p {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .quran-page {
+    padding: 12px;
+  }
+
+  .quran-page__header {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .quran-page__sheet {
+    padding: 18px 14px;
+  }
+
+  .quran-page__pager {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+}

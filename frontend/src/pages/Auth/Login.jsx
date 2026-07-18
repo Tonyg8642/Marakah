@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLanguagePreference } from "../../contexts/LanguageContext";
 import { fetchPreferredLanguage } from "../../services/languagePreferenceApi";
 import { NAME_KEY, saveSession } from "../../auth/session";
+import {
+  getLanguageSupportSummary,
+  rankLanguageCatalog,
+} from "../../utils/languageCatalogSearch";
 
 const CREDENTIAL_KEY = "marakah_webauthn_credential_id";
 const MOBILE_VIEW_QUERY = "(max-width: 900px)";
@@ -38,10 +42,13 @@ function fromBase64Url(value) {
 
 export default function Login() {
   const { t } = useTranslation();
-  const { changeLanguage } = useLanguagePreference();
+  const { language, changeLanguage, isSaving, selectableLanguages } =
+    useLanguagePreference();
   const navigate = useNavigate();
   const [authMessage, setAuthMessage] = useState("");
   const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(language);
+  const [languageSearchQuery, setLanguageSearchQuery] = useState("");
   const [isMobileClient, setIsMobileClient] = useState(() => {
     const mobileUA =
       /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -50,6 +57,10 @@ export default function Login() {
 
     return mobileUA || window.matchMedia(MOBILE_VIEW_QUERY).matches;
   });
+
+  useEffect(() => {
+    setSelectedLanguage(language);
+  }, [language]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(MOBILE_VIEW_QUERY);
@@ -63,6 +74,45 @@ export default function Login() {
       mediaQuery.removeEventListener("change", handleQueryChange);
     };
   }, []);
+
+  const languageOptions = useMemo(
+    () =>
+      Array.isArray(selectableLanguages) && selectableLanguages.length
+        ? selectableLanguages
+        : [
+            {
+              id: "english",
+              name: "English",
+              nativeName: "English",
+              tag: "en",
+              region: "Global",
+              classification: "language",
+              direction: "ltr",
+              interfaceStatus: "full",
+              translationStatus: "provider-supported",
+              exactDialectSupported: true,
+            },
+          ],
+    [selectableLanguages],
+  );
+
+  const filteredLanguageOptions = useMemo(
+    () =>
+      rankLanguageCatalog(
+        languageOptions,
+        languageSearchQuery,
+        selectedLanguage,
+      ),
+    [languageOptions, languageSearchQuery, selectedLanguage],
+  );
+
+  const selectedLanguageEntry = useMemo(
+    () =>
+      languageOptions.find((entry) => entry.tag === selectedLanguage) ||
+      filteredLanguageOptions[0] ||
+      null,
+    [filteredLanguageOptions, languageOptions, selectedLanguage],
+  );
 
   async function handleBiometricSignIn() {
     if (!window.PublicKeyCredential || !navigator.credentials) {
@@ -130,10 +180,7 @@ export default function Login() {
 
       const existingName = localStorage.getItem(NAME_KEY) || "Tony Glass";
       saveSession(existingName);
-      const remoteLanguage = await fetchPreferredLanguage(existingName);
-      if (remoteLanguage) {
-        await changeLanguage(remoteLanguage);
-      }
+      await changeLanguage(selectedLanguage);
       setAuthMessage(t("auth.biometricSuccess"));
       navigate("/");
     } catch {
@@ -158,10 +205,14 @@ export default function Login() {
 
     saveSession(normalizedName);
     const remoteLanguage = await fetchPreferredLanguage(normalizedName);
-    if (remoteLanguage) {
-      await changeLanguage(remoteLanguage);
-    }
+    await changeLanguage(remoteLanguage || selectedLanguage);
     navigate("/");
+  }
+
+  async function handleLanguageChange(event) {
+    const nextLanguage = event.target.value;
+    setSelectedLanguage(nextLanguage);
+    await changeLanguage(nextLanguage);
   }
 
   return (
@@ -186,6 +237,75 @@ export default function Login() {
         <p>{isMobileClient ? t("auth.mobileFlow") : t("auth.desktopFlow")}</p>
 
         <form className="auth-form" onSubmit={handlePasswordSignIn}>
+          <label htmlFor="login-language">
+            {t("language.onboardingQuestion", {
+              defaultValue: "What's your preferred language or dialect?",
+            })}
+          </label>
+          <label htmlFor="login-language-search">
+            {t("language.searchLabel", {
+              defaultValue: "Search languages and dialects",
+            })}
+          </label>
+          <div className="language-search-wrap">
+            <span className="language-search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="16.65"
+                  y1="16.65"
+                  x2="21"
+                  y2="21"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            <input
+              id="login-language-search"
+              type="search"
+              value={languageSearchQuery}
+              onChange={(event) => setLanguageSearchQuery(event.target.value)}
+              placeholder={t("language.searchPlaceholder", {
+                defaultValue: "Search languages and dialects",
+              })}
+              autoComplete="off"
+            />
+          </div>
+          <p className="language-search-count" aria-live="polite">
+            {t("language.searchCount", {
+              defaultValue: "{{count}} results",
+              count: filteredLanguageOptions.length,
+            })}
+          </p>
+          <select
+            id="login-language"
+            value={selectedLanguage}
+            onChange={handleLanguageChange}
+            disabled={isSaving || isAuthenticating}
+          >
+            {filteredLanguageOptions.map((option) => (
+              <option key={option.id || option.tag} value={option.tag}>
+                {option.nativeName && option.nativeName !== option.name
+                  ? `${option.name} (${option.nativeName})`
+                  : option.name}
+              </option>
+            ))}
+          </select>
+          {selectedLanguageEntry ? (
+            <p className="language-search-meta" aria-live="polite">
+              {getLanguageSupportSummary(selectedLanguageEntry)}
+            </p>
+          ) : null}
+
           <label htmlFor="login-name">{t("auth.username")}</label>
           <input
             id="login-name"

@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const { identityConfig } = require("../utils/identityValidation");
+const {
+  getSupportedLanguageTags,
+  normalizeTag,
+} = require("../services/languageCatalogService");
 
 const PROFILE_SELECTION_TYPES = [
   "none",
@@ -13,6 +17,7 @@ const PROFILE_SELECTION_TYPES = [
 
 const PROFILE_SELECTION_IDS = identityConfig.map((entry) => entry.id);
 const PROFILE_SPLIT_DIRECTIONS = ["vertical", "horizontal"];
+const SUPPORTED_LANGUAGE_TAGS = getSupportedLanguageTags();
 
 const profileIdentityPreferenceSchema = new mongoose.Schema(
   {
@@ -122,8 +127,15 @@ const userPreferenceSchema = new mongoose.Schema(
     preferredLanguage: {
       type: String,
       required: true,
-      enum: ["en", "ar", "fa", "ur", "so", "es"],
+      validate: {
+        validator: (value) => SUPPORTED_LANGUAGE_TAGS.has(normalizeTag(value)),
+      },
       default: "en",
+    },
+    preferredLanguageId: {
+      type: String,
+      default: "english",
+      trim: true,
     },
     profileIdentityPreference: {
       type: profileIdentityPreferenceSchema,
@@ -149,4 +161,6 @@ const userPreferenceSchema = new mongoose.Schema(
   },
 );
 
-module.exports = mongoose.model("UserPreference", userPreferenceSchema);
+module.exports =
+  mongoose.models.UserPreference ||
+  mongoose.model("UserPreference", userPreferenceSchema);

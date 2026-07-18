@@ -1,0 +1,180 @@
+.sister-badia-series {
+  margin-top: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.sister-badia-series__header h2 {
+  margin: 0;
+}
+
+.sister-badia-series__header p {
+  margin: 8px 0 0;
+  color: var(--text-soft);
+}
+
+.sister-badia-series__status {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.sister-badia-series__player-wrap {
+  display: grid;
+  gap: 8px;
+}
+
+.sister-badia-series__session-label {
+  margin: 0;
+  font-weight: 700;
+}
+
+.sister-badia-series__player-title {
+  margin: 0;
+}
+
+.sister-badia-series__teacher {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.sister-badia-series__player-shell {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sister-badia-series__player {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.sister-badia-series__youtube-link {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.sister-badia-series__sessions-title {
+  margin: 0;
+}
+
+.sister-badia-series__sessions {
+  display: grid;
+  gap: 10px;
+}
+
+.sister-badia-series__session-card {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+  display: grid;
+  grid-template-columns: 156px 1fr;
+  gap: 10px;
+  padding: 10px;
+  text-align: left;
+  color: inherit;
+}
+
+.sister-badia-series__session-card.is-selected {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 1px var(--brand);
+}
+
+.sister-badia-series__thumb-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #121212;
+  min-height: 88px;
+}
+
+.sister-badia-series__thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sister-badia-series__thumb-fallback {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.sister-badia-series__play-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  border-radius: 999px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.sister-badia-series__session-meta {
+  display: grid;
+  gap: 4px;
+  align-content: center;
+}
+
+.sister-badia-series__session-meta h4,
+.sister-badia-series__session-meta p {
+  margin: 0;
+}
+
+.sister-badia-series__session-number {
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.sister-badia-series__watch-label {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.sister-badia-series__now-playing {
+  color: var(--brand-strong);
+  font-weight: 700;
+}
+
+.sister-badia-series__footer {
+  display: grid;
+  gap: 8px;
+}
+
+.sister-badia-series__footer p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.sister-badia-series__session-card:focus-visible,
+.sister-badia-series a:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .sister-badia-series__session-card {
+    grid-template-columns: 1fr;
+  }
+
+  .sister-badia-series__thumb-wrap {
+    min-height: 170px;
+  }
+}

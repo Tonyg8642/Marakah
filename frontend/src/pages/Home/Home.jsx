@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import TranslatedContent from "../../components/Translations/TranslatedContent";
 import "./Home.css";
 
 const NAME_KEY = "marakah_user_name";
@@ -39,18 +40,40 @@ export default function Home() {
 
   return (
     <main className="home">
-      <section className="hero" aria-labelledby="home-hero-heading">
-        <h1 id="home-hero-heading">{t("home.heroTitle")}</h1>
+      <section
+        className="hero"
+        aria-label={t("home.heroRegionAria", {
+          defaultValue: "Welcome to Marakah",
+        })}
+      >
+        <TranslatedContent
+          as="h1"
+          className="home-translated-block"
+          originalText={t("home.heroTitle")}
+        />
 
-        <p>{t("home.heroText")}</p>
+        <TranslatedContent
+          as="p"
+          className="home-translated-block"
+          originalText={t("home.heroText")}
+        />
 
-        <Link className="hero__cta" to="/events" aria-label="Explore events">
+        <Link
+          className="hero__cta"
+          to="/events"
+          aria-label={t("home.exploreEventsAria", {
+            defaultValue: "Explore events",
+          })}
+        >
           {t("home.explore")}
         </Link>
       </section>
 
-      <section className="welcome-user" aria-label="Welcome user">
-        <h2>{t("home.welcome", { name: userName })}</h2>
+      <section
+        className="welcome-user"
+        aria-label={t("home.welcomeAria", { defaultValue: "Welcome user" })}
+      >
+        <h2>{t("home.userWelcome", { name: userName })}</h2>
       </section>
 
       <section className="reminders" aria-labelledby="today-reminders-heading">
@@ -59,8 +82,16 @@ export default function Home() {
         <div className="reminders__grid">
           {reminders.map((reminder) => (
             <article className="reminder-card" key={reminder.title}>
-              <h3>{reminder.title}</h3>
-              <p>{reminder.text}</p>
+              <TranslatedContent
+                as="h3"
+                className="home-translated-block"
+                originalText={reminder.title}
+              />
+              <TranslatedContent
+                as="p"
+                className="home-translated-block"
+                originalText={reminder.text}
+              />
               <button
                 type="button"
                 onClick={() => toggleReason(reminder.title)}
@@ -72,7 +103,11 @@ export default function Home() {
               </button>
 
               {expandedReasons[reminder.title] && (
-                <p className="reminder-card__reason">{reminder.reason}</p>
+                <TranslatedContent
+                  as="p"
+                  className="reminder-card__reason home-translated-block"
+                  originalText={reminder.reason}
+                />
               )}
             </article>
           ))}

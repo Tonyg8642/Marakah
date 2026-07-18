@@ -1,0 +1,60 @@
+.translated-content {
+  display: grid;
+  gap: 8px;
+}
+
+.translated-content__label {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.translated-content__original,
+.translated-content__text,
+.translated-content__transliteration,
+.translated-content__status,
+.translated-content__notice,
+.translated-content__error {
+  margin: 0;
+}
+
+.translated-content__native {
+  font-family:
+    Inter, "Noto Sans", "Noto Sans Arabic", "Noto Sans Devanagari",
+    "Noto Sans Ethiopic", "Noto Sans SC", "Noto Sans JP", "Noto Sans KR",
+    sans-serif;
+  font-size: 1.02em;
+  line-height: 1.5;
+}
+
+.translated-content__transliteration {
+  color: var(--text-soft);
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+.translated-content__translation {
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.translated-content__notice {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+.translated-content__error {
+  color: #8e1f1f;
+  font-size: 0.9rem;
+}
+
+.translated-content__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

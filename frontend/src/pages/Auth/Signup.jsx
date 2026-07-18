@@ -22,18 +22,24 @@ import {
   createProfileUserKey,
   writeStoredObject,
 } from "../Profile/profileStorage";
+import {
+  getLanguageSupportSummary,
+  rankLanguageCatalog,
+} from "../../utils/languageCatalogSearch";
 import "./Signup.css";
 
 export default function Signup() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { language, changeLanguage, isSaving } = useLanguagePreference();
+  const { language, changeLanguage, isSaving, selectableLanguages } =
+    useLanguagePreference();
 
   const initialIdentity = readOnboardingIdentitySelection();
   const [selectedLanguage, setSelectedLanguage] = useState(language);
   const [selectedIdentityIds, setSelectedIdentityIds] = useState(
     initialIdentity.ethnicityIds,
   );
+  const [languageSearchQuery, setLanguageSearchQuery] = useState("");
   const [identitySearchQuery, setIdentitySearchQuery] = useState("");
   const [customEthnicities, setCustomEthnicities] = useState(
     initialIdentity.customEthnicities,
@@ -47,13 +53,41 @@ export default function Signup() {
   const firstIdentityCheckboxRef = useRef(null);
 
   const languageOptions = useMemo(
-    () => ["en", "ar", "fa", "ur", "so", "es"],
-    [],
+    () =>
+      Array.isArray(selectableLanguages) && selectableLanguages.length
+        ? selectableLanguages
+        : [
+            {
+              id: "english",
+              tag: "en",
+              name: "English",
+              nativeName: "English",
+            },
+          ],
+    [selectableLanguages],
   );
 
   const identityOptions = useMemo(
     () => [...IDENTITY_CONFIG].sort((a, b) => a.name.localeCompare(b.name)),
     [],
+  );
+
+  const filteredLanguageOptions = useMemo(
+    () =>
+      rankLanguageCatalog(
+        languageOptions,
+        languageSearchQuery,
+        selectedLanguage,
+      ),
+    [languageOptions, languageSearchQuery, selectedLanguage],
+  );
+
+  const selectedLanguageEntry = useMemo(
+    () =>
+      languageOptions.find((option) => option.tag === selectedLanguage) ||
+      filteredLanguageOptions[0] ||
+      null,
+    [filteredLanguageOptions, languageOptions, selectedLanguage],
   );
 
   const selectedOptions = useMemo(
@@ -237,6 +271,7 @@ export default function Signup() {
 
     await saveSignupIdentityPreference(name, email);
     saveSession(name, email);
+    await changeLanguage(selectedLanguage);
     navigate("/");
   }
 
@@ -287,19 +322,81 @@ export default function Signup() {
             placeholder={t("auth.placeholders.password")}
           />
 
-          <label htmlFor="signup-language">{t("language.label")}</label>
+          <label htmlFor="signup-language">
+            {t("language.onboardingQuestion", {
+              defaultValue: "What's your preferred language or dialect?",
+            })}
+          </label>
+
+          <label htmlFor="signup-language-search">
+            {t("language.searchLabel", {
+              defaultValue: "Search languages and dialects",
+            })}
+          </label>
+          <div className="language-search-wrap">
+            <span className="language-search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="16.65"
+                  y1="16.65"
+                  x2="21"
+                  y2="21"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+            <input
+              id="signup-language-search"
+              type="search"
+              value={languageSearchQuery}
+              onChange={(event) => setLanguageSearchQuery(event.target.value)}
+              placeholder={t("language.searchPlaceholder", {
+                defaultValue: "Search languages and dialects",
+              })}
+              autoComplete="off"
+            />
+          </div>
+
+          <p className="language-search-count" aria-live="polite">
+            {t("language.searchCount", {
+              defaultValue: "{{count}} results",
+              count: filteredLanguageOptions.length,
+            })}
+          </p>
+
           <select
             id="signup-language"
             value={selectedLanguage}
             onChange={handleLanguageChange}
             disabled={isSaving}
           >
-            {languageOptions.map((option) => (
-              <option key={option} value={option}>
-                {t(`language.options.${option}`)}
+            {filteredLanguageOptions.map((option) => (
+              <option key={option.tag} value={option.tag}>
+                {[
+                  option.name,
+                  option.nativeName,
+                  getLanguageSupportSummary(option),
+                ]
+                  .filter(Boolean)
+                  .join(" - ")}
               </option>
             ))}
           </select>
+          {selectedLanguageEntry ? (
+            <p className="language-search-meta" aria-live="polite">
+              {getLanguageSupportSummary(selectedLanguageEntry)}
+            </p>
+          ) : null}
 
           <fieldset className="signup-ethnicity-fieldset">
             <legend>

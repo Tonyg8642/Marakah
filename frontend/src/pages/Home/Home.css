@@ -16,6 +16,14 @@
   margin: 0 0 10px;
 }
 
+.hero .home-translated-block:first-of-type .translated-content__original {
+  margin: 0 0 10px;
+}
+
+.hero .home-translated-block .translated-content__original {
+  line-height: 1.5;
+}
+
 .hero p {
   margin: 0 0 16px;
   line-height: 1.5;
@@ -71,6 +79,10 @@
   font-size: 1.05rem;
   color: #000;
   font-weight: 800;
+}
+
+.reminder-card .home-translated-block .translated-content__original {
+  line-height: 1.45;
 }
 
 .reminder-card p {

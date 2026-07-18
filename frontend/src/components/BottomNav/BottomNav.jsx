@@ -24,7 +24,12 @@ export default function BottomNav() {
   }
 
   return (
-    <nav className="bottom-nav" aria-label="Primary navigation">
+    <nav
+      className="bottom-nav"
+      aria-label={t("nav.primaryNavigationAria", {
+        defaultValue: "Primary navigation",
+      })}
+    >
       <NavLink to="/" end>
         {t("nav.home")}
       </NavLink>
@@ -33,13 +38,29 @@ export default function BottomNav() {
 
       <NavLink to="/recordings">{t("nav.recordings")}</NavLink>
 
+      {signedIn ? (
+        <>
+          <NavLink to="/quran">
+            {t("nav.quran", {
+              defaultValue: "Quran",
+            })}
+          </NavLink>
+
+          <NavLink to="/quran-transliteration">
+            {t("nav.quranTransliteration", {
+              defaultValue: "Quran Transliteration",
+            })}
+          </NavLink>
+        </>
+      ) : null}
+
       <NavLink to="/masjids">{t("nav.masjids")}</NavLink>
 
       <NavLink to="/restaurants">{t("nav.restaurants")}</NavLink>
 
       <NavLink to="/feed">{t("nav.feed")}</NavLink>
 
-      <NavLink to="/profile">{t("nav.profile")}</NavLink>
+      {signedIn ? <NavLink to="/profile">{t("nav.profile")}</NavLink> : null}
 
       {signedIn ? (
         <button
@@ -47,7 +68,7 @@ export default function BottomNav() {
           className="bottom-nav__logout"
           onClick={handleLogout}
         >
-          Log Out
+          {t("nav.logout")}
         </button>
       ) : null}
     </nav>

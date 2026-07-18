@@ -3,22 +3,43 @@ const {
   searchHalalRestaurantsFromGoogle,
 } = require("../services/googlePlacesService");
 const { getDrivingInfo } = require("../services/googleRoutesService");
+const {
+  getHalalCuisineById,
+  listHalalCuisines,
+} = require("../services/halalCuisineConfigService");
+
+const HALAL_STATUS = {
+  VERIFIED: "verified-halal",
+  LISTED: "halal-listed",
+  CLAIMED: "halal-claimed",
+  NOT_VERIFIED: "halal-not-verified",
+};
+
+const TRUSTED_HALAL_SOURCES = new Set([
+  "official-website",
+  "trusted-provider",
+  "manual-verification",
+  "owner-verified",
+]);
+
+const HALAL_SEARCH_CACHE_TTL_MS = 5 * 60 * 1000;
+const searchCache = new Map();
 
 function toNumber(value) {
   const parsed = Number(value);
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-function parseDistanceFilter(rawValue) {
-  const normalized = String(rawValue || "")
+function parseDistanceFilter(rawRadius, rawMaxDistanceMiles) {
+  const first = String(rawRadius || rawMaxDistanceMiles || "")
     .trim()
     .toLowerCase();
 
-  if (normalized === "nationwide" || normalized === "all") {
+  if (first === "nationwide" || first === "all") {
     return null;
   }
 
-  const parsed = toNumber(rawValue);
+  const parsed = toNumber(rawRadius ?? rawMaxDistanceMiles);
   if (parsed !== null && parsed > 0) {
     return parsed;
   }
@@ -37,37 +58,44 @@ function parseLanguage(rawValue) {
   return "en";
 }
 
-function parseEthnicity(rawValue) {
-  const value = String(rawValue || "").trim();
-  if (!value) {
-    return "";
+function parseBoolean(value, defaultValue = false) {
+  if (value === undefined || value === null || value === "") {
+    return defaultValue;
   }
 
-  const supported = new Set([
-    "Egyptian",
-    "Somali",
-    "Desi",
-    "Persian",
-    "Sudanese",
-    "Palestinian",
-    "Lebanese",
-    "Syrian",
-    "Jordanian",
-    "Saudi",
-    "Emirati",
-    "Kuwaiti",
-    "Qatari",
-    "Bahraini",
-    "Omani",
-    "Moroccan",
-    "Algerian",
-    "Tunisian",
-    "Libyan",
-    "Yemeni",
-    "Iraqi",
-  ]);
+  const normalized = String(value).trim().toLowerCase();
+  if (["1", "true", "yes", "on"].includes(normalized)) {
+    return true;
+  }
+  if (["0", "false", "no", "off"].includes(normalized)) {
+    return false;
+  }
 
-  return supported.has(value) ? value : "";
+  return defaultValue;
+}
+
+function parseHalalStatusFilter(rawValue) {
+  const normalized = String(rawValue || "")
+    .trim()
+    .toLowerCase();
+  if (!normalized) {
+    return new Set([
+      HALAL_STATUS.VERIFIED,
+      HALAL_STATUS.LISTED,
+      HALAL_STATUS.CLAIMED,
+    ]);
+  }
+
+  const accepted = new Set(Object.values(HALAL_STATUS));
+  const requested = normalized
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .filter((item) => accepted.has(item));
+
+  return requested.length
+    ? new Set(requested)
+    : new Set([HALAL_STATUS.VERIFIED]);
 }
 
 function haversineMiles(from, to) {
@@ -85,31 +113,199 @@ function haversineMiles(from, to) {
   return earthRadiusMiles * c;
 }
 
-function inferHalalSign(restaurant) {
-  const text =
-    `${restaurant.name || ""} ${restaurant.address || ""}`.toLowerCase();
-
-  if (text.includes("zabiha") || text.includes("zabah")) {
-    return "zabiha";
-  }
-
-  return "halal";
-}
-
 function toUrlOrNull(value) {
   const raw = String(value || "").trim();
   return /^https?:\/\//i.test(raw) ? raw : null;
 }
 
+function getCacheKey(payload) {
+  return JSON.stringify(payload);
+}
+
+function readCachedSearch(cacheKey) {
+  const current = searchCache.get(cacheKey);
+  if (!current) {
+    return null;
+  }
+
+  if (current.expiresAt <= Date.now()) {
+    searchCache.delete(cacheKey);
+    return null;
+  }
+
+  return current.value;
+}
+
+function writeCachedSearch(cacheKey, value) {
+  searchCache.set(cacheKey, {
+    value,
+    expiresAt: Date.now() + HALAL_SEARCH_CACHE_TTL_MS,
+  });
+}
+
+function detectHalalEvidence({
+  restaurant,
+  placeDetails,
+  websiteUrl,
+  menuUrl,
+}) {
+  const evidence = [];
+  const halalRegex =
+    /\b(halal|zabiha|zabihah|dhabiha|muslim-owned|muslim owned|hand[-\s]?slaughtered)\b/i;
+
+  const listingText =
+    `${restaurant.name || ""} ${restaurant.address || ""}`.trim();
+  if (halalRegex.test(listingText)) {
+    evidence.push({
+      source: "listing-name-address",
+      text: listingText,
+      url: null,
+    });
+  }
+
+  const editorialText = String(
+    restaurant.editorialSummary || placeDetails?.editorialSummary?.text || "",
+  ).trim();
+  if (editorialText && halalRegex.test(editorialText)) {
+    evidence.push({
+      source: "trusted-provider",
+      text: editorialText,
+      url: null,
+    });
+  }
+
+  const providerTypes = Array.isArray(restaurant.types) ? restaurant.types : [];
+  const hasProviderHalalType = providerTypes.some((item) =>
+    /halal/i.test(String(item || "")),
+  );
+  if (hasProviderHalalType) {
+    evidence.push({
+      source: "trusted-provider",
+      text: `Provider type: ${providerTypes.join(", ")}`,
+      url: null,
+    });
+  }
+
+  if (websiteUrl && halalRegex.test(websiteUrl)) {
+    evidence.push({
+      source: "official-website",
+      text: "Website URL includes halal keyword",
+      url: websiteUrl,
+    });
+  }
+
+  if (menuUrl && halalRegex.test(menuUrl)) {
+    evidence.push({
+      source: "official-website",
+      text: "Menu URL includes halal keyword",
+      url: menuUrl,
+    });
+  }
+
+  return evidence;
+}
+
+function assignHalalStatus(evidence) {
+  if (!Array.isArray(evidence) || evidence.length === 0) {
+    return HALAL_STATUS.NOT_VERIFIED;
+  }
+
+  if (
+    evidence.some((item) =>
+      TRUSTED_HALAL_SOURCES.has(String(item.source || "")),
+    )
+  ) {
+    return HALAL_STATUS.VERIFIED;
+  }
+
+  if (
+    evidence.some((item) =>
+      ["trusted-provider", "provider-listing"].includes(
+        String(item.source || ""),
+      ),
+    )
+  ) {
+    return HALAL_STATUS.LISTED;
+  }
+
+  return HALAL_STATUS.CLAIMED;
+}
+
+function buildSearchText({ cuisine, query }) {
+  const rawQuery = String(query || "").trim();
+  const cuisineSearchTerms = cuisine?.searchTerms || [];
+
+  if (cuisineSearchTerms.length) {
+    const primary = cuisineSearchTerms[0];
+    return rawQuery ? `${primary} ${rawQuery}` : primary;
+  }
+
+  return rawQuery ? `halal restaurant ${rawQuery}` : "halal restaurant";
+}
+
+function mapLegacyCuisineId(rawEthnicity) {
+  const normalized = String(rawEthnicity || "")
+    .trim()
+    .toLowerCase();
+
+  if (!normalized) {
+    return "";
+  }
+
+  if (normalized === "desi") {
+    return "desi";
+  }
+
+  if (normalized === "persian") {
+    return "persian";
+  }
+
+  if (normalized === "indonesian") {
+    return "indonesian";
+  }
+
+  if (normalized === "arab") {
+    return "arab";
+  }
+
+  return "";
+}
+
+async function listCuisines(req, res) {
+  return res.status(200).json({
+    success: true,
+    cuisines: listHalalCuisines(),
+  });
+}
+
 async function searchRestaurants(req, res) {
-  const city = (req.query.city || "").trim();
-  const query = (req.query.query || "").trim();
-  const ethnicity = parseEthnicity(req.query.ethnicity);
-  const effectiveQuery = ethnicity ? `halal ${ethnicity} restaurant` : query;
-  const userLat = toNumber(req.query.userLat);
-  const userLng = toNumber(req.query.userLng);
-  const maxDistanceMiles = parseDistanceFilter(req.query.maxDistanceMiles);
+  const city = String(req.query.city || "").trim();
+  const query = String(req.query.query || "").trim();
+  const cuisineId = String(req.query.cuisine || "")
+    .trim()
+    .toLowerCase();
+  const legacyCuisineId = mapLegacyCuisineId(req.query.ethnicity);
+  const effectiveCuisineId = cuisineId || legacyCuisineId;
+  const cuisine = effectiveCuisineId
+    ? getHalalCuisineById(effectiveCuisineId)
+    : getHalalCuisineById("all-halal");
+
+  if (effectiveCuisineId && !cuisine) {
+    return res.status(400).json({
+      success: false,
+      message: "Unsupported cuisine id.",
+    });
+  }
+
+  const userLat = toNumber(req.query.lat ?? req.query.userLat);
+  const userLng = toNumber(req.query.lng ?? req.query.userLng);
+  const maxDistanceMiles = parseDistanceFilter(
+    req.query.radius,
+    req.query.maxDistanceMiles,
+  );
   const language = parseLanguage(req.query.language);
+  const halalOnly = parseBoolean(req.query.halalOnly, true);
+  const halalStatusFilter = parseHalalStatusFilter(req.query.halalStatus);
   const page = Math.max(1, Number(req.query.page) || 1);
   const pageSize = Math.min(Math.max(1, Number(req.query.pageSize) || 8), 16);
 
@@ -125,14 +321,33 @@ async function searchRestaurants(req, res) {
       ? { lat: userLat, lng: userLng }
       : null;
 
+  const searchText = buildSearchText({ cuisine, query });
+  const cacheKey = getCacheKey({
+    city,
+    searchText,
+    maxDistanceMiles,
+    userLocation,
+    language,
+    page,
+    pageSize,
+    halalOnly,
+    halalStatus: [...halalStatusFilter].sort(),
+    cuisineId: cuisine?.id || "all-halal",
+  });
+
+  const cached = readCachedSearch(cacheKey);
+  if (cached) {
+    return res.status(200).json(cached);
+  }
+
   try {
     const apiKey = process.env.GOOGLE_MAPS_API_KEY;
     const restaurants = await searchHalalRestaurantsFromGoogle({
       apiKey,
       city,
-      query: effectiveQuery,
+      query: searchText,
       userLocation,
-      limit: 24,
+      limit: 32,
       languageCode: language,
     });
 
@@ -161,6 +376,14 @@ async function searchRestaurants(req, res) {
             ? "google-maps"
             : null;
 
+        const halalEvidence = detectHalalEvidence({
+          restaurant,
+          placeDetails,
+          websiteUrl,
+          menuUrl,
+        });
+        const halalStatus = assignHalalStatus(halalEvidence);
+
         const drivingInfo = userLocation
           ? await getDrivingInfo({
               apiKey,
@@ -182,16 +405,18 @@ async function searchRestaurants(req, res) {
             : null;
 
         return {
-          ...restaurant,
-          halalSign: inferHalalSign(restaurant),
-          websiteUrl,
-          googleMapsUrl,
-          menuUrl,
-          menuSource,
-          internationalPhoneNumber:
-            placeDetails?.internationalPhoneNumber || null,
-          placeDetailsError,
-          distanceMiles: roundedDistanceMiles,
+          id: restaurant.placeId || "",
+          placeId: restaurant.placeId || "",
+          name: restaurant.name || "",
+          cuisine: cuisine?.name || "All Halal",
+          address: restaurant.address || "",
+          city: restaurant.city || "",
+          rating: restaurant.rating || null,
+          reviewCount: restaurant.userRatingsTotal || 0,
+          imageUrl: restaurant.imageUrl || "",
+          location: restaurant.location,
+          distance: roundedDistanceMiles,
+          driveTime: drivingInfo?.drivingTimeText || null,
           drivingDistanceText:
             drivingInfo?.drivingDistanceText ||
             (typeof roundedDistanceMiles === "number"
@@ -202,22 +427,38 @@ async function searchRestaurants(req, res) {
             (typeof estimatedDriveMinutes === "number"
               ? `${estimatedDriveMinutes} min (est.)`
               : null),
+          websiteUrl,
+          googleMapsUrl,
+          menuUrl,
+          menuSource,
+          halalStatus,
+          halalEvidence,
+          halalLastChecked: new Date().toISOString(),
+          placeDetailsError,
         };
       }),
     );
 
-    const detailsErrorCount = enrichedRestaurants.filter(
-      (restaurant) => restaurant.placeDetailsError,
-    ).length;
+    const halalFiltered = enrichedRestaurants.filter((restaurant) => {
+      if (!halalStatusFilter.has(restaurant.halalStatus)) {
+        return false;
+      }
 
-    const sorted = [...enrichedRestaurants].sort((a, b) => {
-      if (a.distanceMiles === null) {
+      if (halalOnly && restaurant.halalStatus === HALAL_STATUS.NOT_VERIFIED) {
+        return false;
+      }
+
+      return true;
+    });
+
+    const sorted = [...halalFiltered].sort((a, b) => {
+      if (a.distance === null) {
         return 1;
       }
-      if (b.distanceMiles === null) {
+      if (b.distance === null) {
         return -1;
       }
-      return a.distanceMiles - b.distanceMiles;
+      return a.distance - b.distance;
     });
 
     const focusedByLocation = userLocation
@@ -225,8 +466,8 @@ async function searchRestaurants(req, res) {
         ? sorted
         : sorted.filter(
             (restaurant) =>
-              typeof restaurant.distanceMiles === "number" &&
-              restaurant.distanceMiles <= maxDistanceMiles,
+              typeof restaurant.distance === "number" &&
+              restaurant.distance <= maxDistanceMiles,
           )
       : sorted;
 
@@ -239,7 +480,7 @@ async function searchRestaurants(req, res) {
       startIndex + pageSize,
     );
 
-    return res.status(200).json({
+    const responsePayload = {
       success: true,
       count: pagedRestaurants.length,
       totalCount,
@@ -252,15 +493,20 @@ async function searchRestaurants(req, res) {
         totalPages,
         totalCount,
       },
-      details: {
-        requested: restaurants.length,
-        errors: detailsErrorCount,
-      },
       filters: {
+        cuisine: cuisine?.id || "all-halal",
+        query,
         maxDistanceMiles,
-        ethnicity,
+        halalOnly,
+        halalStatus: [...halalStatusFilter],
       },
-    });
+      disclaimer:
+        "Halal status can change. Please confirm directly with the restaurant.",
+    };
+
+    writeCachedSearch(cacheKey, responsePayload);
+
+    return res.status(200).json(responsePayload);
   } catch (error) {
     return res.status(500).json({
       success: false,
@@ -270,5 +516,7 @@ async function searchRestaurants(req, res) {
 }
 
 module.exports = {
+  listCuisines,
   searchRestaurants,
+  HALAL_STATUS,
 };

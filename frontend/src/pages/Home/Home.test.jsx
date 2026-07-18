@@ -6,7 +6,7 @@ import Home from "./Home";
 vi.mock("react-i18next", () => ({
   useTranslation: () => ({
     t: (key, opts) => {
-      if (key === "home.welcome") {
+      if (key === "home.userWelcome") {
         return `Welcome ${opts?.name || "Guest"}`;
       }
       return key;
@@ -28,6 +28,8 @@ describe("Home welcome greeting", () => {
       </MemoryRouter>,
     );
 
-    expect(screen.getByRole("heading", { name: "Welcome Amina Noor" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Welcome Amina Noor" }),
+    ).toBeInTheDocument();
   });
 });

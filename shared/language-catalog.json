@@ -1,0 +1,5035 @@
+[
+  {
+    "interfaceStatus": "full",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english",
+    "name": "English",
+    "nativeName": "English",
+    "tag": "en",
+    "baseLanguage": "en",
+    "region": "Global",
+    "countries": [
+      "United States",
+      "United Kingdom",
+      "Canada",
+      "Australia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "English",
+      "en",
+      "Anglais"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english-american",
+    "name": "American English",
+    "nativeName": "American English",
+    "tag": "en-US",
+    "baseLanguage": "en",
+    "region": "North America",
+    "countries": [
+      "United States"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "American English",
+      "US English",
+      "United States"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english-british",
+    "name": "British English",
+    "nativeName": "British English",
+    "tag": "en-GB",
+    "baseLanguage": "en",
+    "region": "Europe",
+    "countries": [
+      "United Kingdom"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "British English",
+      "UK English",
+      "United Kingdom"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english-canadian",
+    "name": "Canadian English",
+    "nativeName": "Canadian English",
+    "tag": "en-CA",
+    "baseLanguage": "en",
+    "region": "North America",
+    "countries": [
+      "Canada"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Canadian English",
+      "Canada English"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english-australian",
+    "name": "Australian English",
+    "nativeName": "Australian English",
+    "tag": "en-AU",
+    "baseLanguage": "en",
+    "region": "Pacific",
+    "countries": [
+      "Australia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Australian English",
+      "Australia English"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english-irish",
+    "name": "Irish English",
+    "nativeName": "Irish English",
+    "tag": "en-IE",
+    "baseLanguage": "en",
+    "region": "Europe",
+    "countries": [
+      "Ireland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Irish English",
+      "Ireland English"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "english-scottish",
+    "name": "Scottish English",
+    "nativeName": "Scottish English",
+    "tag": "en-SC",
+    "baseLanguage": "en",
+    "region": "Europe",
+    "countries": [
+      "Scotland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Scottish English",
+      "Scotland English"
+    ]
+  },
+  {
+    "interfaceStatus": "full",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-msa",
+    "name": "Modern Standard Arabic",
+    "nativeName": "العربية الفصحى",
+    "tag": "ar",
+    "baseLanguage": "ar",
+    "region": "MENA",
+    "countries": [
+      "Morocco",
+      "Algeria",
+      "Tunisia",
+      "Egypt",
+      "Jordan",
+      "Saudi Arabia",
+      "UAE"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Modern Standard Arabic",
+      "MSA",
+      "Arabic",
+      "العربية"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-classical",
+    "name": "Classical Arabic (formal historical)",
+    "nativeName": "العربية الكلاسيكية",
+    "tag": "ar-x-classical",
+    "baseLanguage": "ar",
+    "region": "MENA",
+    "countries": [
+      "MENA region"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "historical-formal-variety",
+    "searchTerms": [
+      "Classical Arabic",
+      "Historical Arabic",
+      "العربية الكلاسيكية"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-moroccan",
+    "name": "Moroccan Arabic",
+    "nativeName": "الدارجة المغربية",
+    "tag": "ar-MA",
+    "baseLanguage": "ar",
+    "region": "North Africa",
+    "countries": [
+      "Morocco"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Moroccan Arabic",
+      "Darija",
+      "الدارجة المغربية",
+      "Arabic Morocco",
+      "Morocco"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-algerian",
+    "name": "Algerian Arabic",
+    "nativeName": "العربية الجزائرية",
+    "tag": "ar-DZ",
+    "baseLanguage": "ar",
+    "region": "North Africa",
+    "countries": [
+      "Algeria"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Algerian Arabic",
+      "Arabic Algeria",
+      "Darja Algeria",
+      "الجزائرية"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-tunisian",
+    "name": "Tunisian Arabic",
+    "nativeName": "العربية التونسية",
+    "tag": "ar-TN",
+    "baseLanguage": "ar",
+    "region": "North Africa",
+    "countries": [
+      "Tunisia"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Tunisian Arabic",
+      "Arabic Tunisia",
+      "تونسي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-libyan",
+    "name": "Libyan Arabic",
+    "nativeName": "العربية الليبية",
+    "tag": "ar-LY",
+    "baseLanguage": "ar",
+    "region": "North Africa",
+    "countries": [
+      "Libya"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Libyan Arabic",
+      "Arabic Libya",
+      "ليبي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-egyptian",
+    "name": "Egyptian Arabic",
+    "nativeName": "العربية المصرية",
+    "tag": "ar-EG",
+    "baseLanguage": "ar",
+    "region": "North Africa",
+    "countries": [
+      "Egypt"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Egyptian Arabic",
+      "Masri",
+      "مصري",
+      "العربية المصرية",
+      "Arabic Egypt",
+      "Egypt"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-sudanese",
+    "name": "Sudanese Arabic",
+    "nativeName": "العربية السودانية",
+    "tag": "ar-SD",
+    "baseLanguage": "ar",
+    "region": "Northeast Africa",
+    "countries": [
+      "Sudan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Sudanese Arabic",
+      "Arabic Sudan",
+      "سوداني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-chadian",
+    "name": "Chadian Arabic",
+    "nativeName": "العربية التشادية",
+    "tag": "ar-TD",
+    "baseLanguage": "ar",
+    "region": "Sahel",
+    "countries": [
+      "Chad"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Chadian Arabic",
+      "Arabic Chad",
+      "تشادي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-levantine",
+    "name": "Levantine Arabic",
+    "nativeName": "العربية الشامية",
+    "tag": "ar-LV",
+    "baseLanguage": "ar",
+    "region": "Levant",
+    "countries": [
+      "Syria",
+      "Lebanon",
+      "Jordan",
+      "Palestine"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Levantine Arabic",
+      "Shami",
+      "شامي",
+      "Arabic Levant"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-syrian",
+    "name": "Syrian Arabic",
+    "nativeName": "العربية السورية",
+    "tag": "ar-SY",
+    "baseLanguage": "ar",
+    "region": "Levant",
+    "countries": [
+      "Syria"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Syrian Arabic",
+      "Arabic Syria",
+      "سوري"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-lebanese",
+    "name": "Lebanese Arabic",
+    "nativeName": "العربية اللبنانية",
+    "tag": "ar-LB",
+    "baseLanguage": "ar",
+    "region": "Levant",
+    "countries": [
+      "Lebanon"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Lebanese Arabic",
+      "Arabic Lebanon",
+      "لبناني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-palestinian",
+    "name": "Palestinian Arabic",
+    "nativeName": "العربية الفلسطينية",
+    "tag": "ar-PS",
+    "baseLanguage": "ar",
+    "region": "Levant",
+    "countries": [
+      "Palestine"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Palestinian Arabic",
+      "Arabic Palestine",
+      "فلسطيني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-jordanian",
+    "name": "Jordanian Arabic",
+    "nativeName": "العربية الأردنية",
+    "tag": "ar-JO",
+    "baseLanguage": "ar",
+    "region": "Levant",
+    "countries": [
+      "Jordan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Jordanian Arabic",
+      "Arabic Jordan",
+      "أردني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-iraqi",
+    "name": "Iraqi Arabic",
+    "nativeName": "العربية العراقية",
+    "tag": "ar-IQ",
+    "baseLanguage": "ar",
+    "region": "Mesopotamia",
+    "countries": [
+      "Iraq"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Iraqi Arabic",
+      "Arabic Iraq",
+      "عراقي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-mesopotamian",
+    "name": "Mesopotamian Arabic",
+    "nativeName": "العربية الرافدينية",
+    "tag": "ar-MES",
+    "baseLanguage": "ar",
+    "region": "Mesopotamia",
+    "countries": [
+      "Iraq",
+      "Syria"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Mesopotamian Arabic",
+      "Iraqi Mesopotamian",
+      "رافديني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-gulf",
+    "name": "Gulf Arabic",
+    "nativeName": "العربية الخليجية",
+    "tag": "ar-GULF",
+    "baseLanguage": "ar",
+    "region": "Gulf",
+    "countries": [
+      "UAE",
+      "Saudi Arabia",
+      "Kuwait",
+      "Qatar",
+      "Bahrain",
+      "Oman"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Gulf Arabic",
+      "Khaleeji",
+      "خليجي",
+      "Arabic Gulf"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-saudi",
+    "name": "Saudi Arabic",
+    "nativeName": "العربية السعودية",
+    "tag": "ar-SA",
+    "baseLanguage": "ar",
+    "region": "Arabian Peninsula",
+    "countries": [
+      "Saudi Arabia"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Saudi Arabic",
+      "Arabic Saudi",
+      "سعودي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-hejazi",
+    "name": "Hejazi Arabic",
+    "nativeName": "العربية الحجازية",
+    "tag": "ar-HEJ",
+    "baseLanguage": "ar",
+    "region": "Arabian Peninsula",
+    "countries": [
+      "Saudi Arabia"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Hejazi Arabic",
+      "Hijazi Arabic",
+      "حجازي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-hijazi-urban",
+    "name": "Hijazi Urban Arabic",
+    "nativeName": "العربية الحجازية الحضرية",
+    "tag": "ar-HEJ-URB",
+    "baseLanguage": "ar",
+    "region": "Arabian Peninsula",
+    "countries": [
+      "Saudi Arabia"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Hijazi urban",
+      "Hijazi urban Arabic",
+      "Urban Hejazi"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-najdi",
+    "name": "Najdi Arabic",
+    "nativeName": "العربية النجدية",
+    "tag": "ar-NAJ",
+    "baseLanguage": "ar",
+    "region": "Arabian Peninsula",
+    "countries": [
+      "Saudi Arabia"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Najdi Arabic",
+      "Arabic Najd",
+      "نجدي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-yemeni",
+    "name": "Yemeni Arabic",
+    "nativeName": "العربية اليمنية",
+    "tag": "ar-YE",
+    "baseLanguage": "ar",
+    "region": "Arabian Peninsula",
+    "countries": [
+      "Yemen"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Yemeni Arabic",
+      "Arabic Yemen",
+      "يمني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-hadhrami",
+    "name": "Hadhrami Arabic",
+    "nativeName": "العربية الحضرمية",
+    "tag": "ar-HAD",
+    "baseLanguage": "ar",
+    "region": "Arabian Peninsula",
+    "countries": [
+      "Yemen"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Hadhrami Arabic",
+      "Arabic Hadhramaut",
+      "حضرمية"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-omani",
+    "name": "Omani Arabic",
+    "nativeName": "العربية العمانية",
+    "tag": "ar-OM",
+    "baseLanguage": "ar",
+    "region": "Gulf",
+    "countries": [
+      "Oman"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Omani Arabic",
+      "Arabic Oman",
+      "عماني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-emirati",
+    "name": "Emirati Arabic",
+    "nativeName": "العربية الإماراتية",
+    "tag": "ar-AE",
+    "baseLanguage": "ar",
+    "region": "Gulf",
+    "countries": [
+      "United Arab Emirates"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Emirati Arabic",
+      "Arabic UAE",
+      "إماراتي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-kuwaiti",
+    "name": "Kuwaiti Arabic",
+    "nativeName": "العربية الكويتية",
+    "tag": "ar-KW",
+    "baseLanguage": "ar",
+    "region": "Gulf",
+    "countries": [
+      "Kuwait"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Kuwaiti Arabic",
+      "Arabic Kuwait",
+      "كويتي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-bahraini",
+    "name": "Bahraini Arabic",
+    "nativeName": "العربية البحرينية",
+    "tag": "ar-BH",
+    "baseLanguage": "ar",
+    "region": "Gulf",
+    "countries": [
+      "Bahrain"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Bahraini Arabic",
+      "Arabic Bahrain",
+      "بحريني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-qatari",
+    "name": "Qatari Arabic",
+    "nativeName": "العربية القطرية",
+    "tag": "ar-QA",
+    "baseLanguage": "ar",
+    "region": "Gulf",
+    "countries": [
+      "Qatar"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Qatari Arabic",
+      "Arabic Qatar",
+      "قطري"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-hassaniya",
+    "name": "Hassaniya Arabic",
+    "nativeName": "العربية الحسانية",
+    "tag": "ar-HSN",
+    "baseLanguage": "ar",
+    "region": "Northwest Africa",
+    "countries": [
+      "Mauritania",
+      "Western Sahara"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Hassaniya Arabic",
+      "Hassaniyya",
+      "حسانية"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-mauritanian",
+    "name": "Mauritanian Arabic",
+    "nativeName": "العربية الموريتانية",
+    "tag": "ar-MR",
+    "baseLanguage": "ar",
+    "region": "Northwest Africa",
+    "countries": [
+      "Mauritania"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-dialect",
+    "searchTerms": [
+      "Mauritanian Arabic",
+      "Arabic Mauritania",
+      "موريتاني"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "ar",
+    "providerTag": "ar",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "arabic-bedouin",
+    "name": "Bedouin Arabic Varieties",
+    "nativeName": "العربية البدوية",
+    "tag": "ar-BED",
+    "baseLanguage": "ar",
+    "region": "MENA",
+    "countries": [
+      "Jordan",
+      "Saudi Arabia",
+      "Syria",
+      "Iraq"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Bedouin Arabic",
+      "Arabic Bedouin",
+      "بدوي"
+    ]
+  },
+  {
+    "interfaceStatus": "supported-or-fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "so",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "somali",
+    "name": "Somali",
+    "nativeName": "Soomaali",
+    "tag": "so",
+    "baseLanguage": "so",
+    "region": "Horn of Africa",
+    "countries": [
+      "Somalia",
+      "Djibouti",
+      "Ethiopia",
+      "Kenya"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Somali",
+      "Soomaali",
+      "Somalia",
+      "Horn of Africa"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "sw",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "swahili",
+    "name": "Swahili",
+    "nativeName": "Kiswahili",
+    "tag": "sw",
+    "baseLanguage": "sw",
+    "region": "East Africa",
+    "countries": [
+      "Kenya",
+      "Tanzania",
+      "Uganda",
+      "DR Congo"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Swahili",
+      "Kiswahili",
+      "East Africa"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "am",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "amharic",
+    "name": "Amharic",
+    "nativeName": "አማርኛ",
+    "tag": "am",
+    "baseLanguage": "am",
+    "region": "Horn of Africa",
+    "countries": [
+      "Ethiopia"
+    ],
+    "script": "Ethiopic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Amharic",
+      "Ethiopia",
+      "አማርኛ"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "om",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "oromo",
+    "name": "Oromo",
+    "nativeName": "Afaan Oromoo",
+    "tag": "om",
+    "baseLanguage": "om",
+    "region": "Horn of Africa",
+    "countries": [
+      "Ethiopia",
+      "Kenya"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Oromo",
+      "Afaan Oromoo"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ti",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tigrinya",
+    "name": "Tigrinya",
+    "nativeName": "ትግርኛ",
+    "tag": "ti",
+    "baseLanguage": "ti",
+    "region": "Horn of Africa",
+    "countries": [
+      "Eritrea",
+      "Ethiopia"
+    ],
+    "script": "Ethiopic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tigrinya",
+      "ትግርኛ"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ha",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hausa",
+    "name": "Hausa",
+    "nativeName": "Hausa",
+    "tag": "ha",
+    "baseLanguage": "ha",
+    "region": "West Africa",
+    "countries": [
+      "Nigeria",
+      "Niger"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Hausa",
+      "Nigeria",
+      "Niger"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "yo",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "yoruba",
+    "name": "Yoruba",
+    "nativeName": "Yoruba",
+    "tag": "yo",
+    "baseLanguage": "yo",
+    "region": "West Africa",
+    "countries": [
+      "Nigeria",
+      "Benin"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Yoruba"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ig",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "igbo",
+    "name": "Igbo",
+    "nativeName": "Igbo",
+    "tag": "ig",
+    "baseLanguage": "ig",
+    "region": "West Africa",
+    "countries": [
+      "Nigeria"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Igbo"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "wo",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "wolof",
+    "name": "Wolof",
+    "nativeName": "Wolof",
+    "tag": "wo",
+    "baseLanguage": "wo",
+    "region": "West Africa",
+    "countries": [
+      "Senegal",
+      "Gambia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Wolof"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ff",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "fula",
+    "name": "Fula",
+    "nativeName": "Fulfulde",
+    "tag": "ff",
+    "baseLanguage": "ff",
+    "region": "West Africa",
+    "countries": [
+      "Senegal",
+      "Guinea",
+      "Mali",
+      "Niger",
+      "Nigeria"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Fula",
+      "Fulfulde",
+      "Fulani"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "bm",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "bambara",
+    "name": "Bambara",
+    "nativeName": "Bamanankan",
+    "tag": "bm",
+    "baseLanguage": "bm",
+    "region": "West Africa",
+    "countries": [
+      "Mali"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Bambara",
+      "Bamanankan"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ak",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "akan",
+    "name": "Akan",
+    "nativeName": "Akan",
+    "tag": "ak",
+    "baseLanguage": "ak",
+    "region": "West Africa",
+    "countries": [
+      "Ghana"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Akan",
+      "Ghana"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ak",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "twi",
+    "name": "Twi",
+    "nativeName": "Twi",
+    "tag": "tw",
+    "baseLanguage": "ak",
+    "region": "West Africa",
+    "countries": [
+      "Ghana"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Twi",
+      "Akan Twi"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ee",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "ewe",
+    "name": "Ewe",
+    "nativeName": "Ewe",
+    "tag": "ee",
+    "baseLanguage": "ee",
+    "region": "West Africa",
+    "countries": [
+      "Ghana",
+      "Togo"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Ewe"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ln",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "lingala",
+    "name": "Lingala",
+    "nativeName": "Lingala",
+    "tag": "ln",
+    "baseLanguage": "ln",
+    "region": "Central Africa",
+    "countries": [
+      "DR Congo",
+      "Republic of the Congo"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Lingala"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "rw",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kinyarwanda",
+    "name": "Kinyarwanda",
+    "nativeName": "Ikinyarwanda",
+    "tag": "rw",
+    "baseLanguage": "rw",
+    "region": "East Africa",
+    "countries": [
+      "Rwanda"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kinyarwanda",
+      "Rwanda"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "rn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kirundi",
+    "name": "Kirundi",
+    "nativeName": "Ikirundi",
+    "tag": "rn",
+    "baseLanguage": "rn",
+    "region": "East Africa",
+    "countries": [
+      "Burundi"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kirundi"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "lg",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "luganda",
+    "name": "Luganda",
+    "nativeName": "Luganda",
+    "tag": "lg",
+    "baseLanguage": "lg",
+    "region": "East Africa",
+    "countries": [
+      "Uganda"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Luganda"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "zu",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "zulu",
+    "name": "Zulu",
+    "nativeName": "isiZulu",
+    "tag": "zu",
+    "baseLanguage": "zu",
+    "region": "Southern Africa",
+    "countries": [
+      "South Africa"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Zulu",
+      "isiZulu"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "xh",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "xhosa",
+    "name": "Xhosa",
+    "nativeName": "isiXhosa",
+    "tag": "xh",
+    "baseLanguage": "xh",
+    "region": "Southern Africa",
+    "countries": [
+      "South Africa"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Xhosa",
+      "isiXhosa"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "st",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "sotho",
+    "name": "Sotho",
+    "nativeName": "Sesotho",
+    "tag": "st",
+    "baseLanguage": "st",
+    "region": "Southern Africa",
+    "countries": [
+      "Lesotho",
+      "South Africa"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Sotho",
+      "Sesotho"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "nso",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "northern-sotho",
+    "name": "Northern Sotho",
+    "nativeName": "Sesotho sa Leboa",
+    "tag": "nso",
+    "baseLanguage": "nso",
+    "region": "Southern Africa",
+    "countries": [
+      "South Africa"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Northern Sotho",
+      "Sepedi"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tswana",
+    "name": "Tswana",
+    "nativeName": "Setswana",
+    "tag": "tn",
+    "baseLanguage": "tn",
+    "region": "Southern Africa",
+    "countries": [
+      "Botswana",
+      "South Africa"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tswana",
+      "Setswana"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "af",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "afrikaans",
+    "name": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "tag": "af",
+    "baseLanguage": "af",
+    "region": "Southern Africa",
+    "countries": [
+      "South Africa",
+      "Namibia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Afrikaans"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "sn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "shona",
+    "name": "Shona",
+    "nativeName": "chiShona",
+    "tag": "sn",
+    "baseLanguage": "sn",
+    "region": "Southern Africa",
+    "countries": [
+      "Zimbabwe"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Shona"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "mg",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "malagasy",
+    "name": "Malagasy",
+    "nativeName": "Malagasy",
+    "tag": "mg",
+    "baseLanguage": "mg",
+    "region": "Indian Ocean",
+    "countries": [
+      "Madagascar"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Malagasy"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ny",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "chewa",
+    "name": "Chewa",
+    "nativeName": "Chichewa",
+    "tag": "ny",
+    "baseLanguage": "ny",
+    "region": "Southern Africa",
+    "countries": [
+      "Malawi",
+      "Zambia",
+      "Mozambique"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Chewa",
+      "Chichewa"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tzm",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tamazight",
+    "name": "Tamazight",
+    "nativeName": "Tamazight",
+    "tag": "tzm",
+    "baseLanguage": "tzm",
+    "region": "North Africa",
+    "countries": [
+      "Morocco",
+      "Algeria"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tamazight",
+      "Amazigh"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tzm",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tarifit",
+    "name": "Tarifit",
+    "nativeName": "Tarifit",
+    "tag": "rif",
+    "baseLanguage": "rif",
+    "region": "North Africa",
+    "countries": [
+      "Morocco"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Tarifit",
+      "Riffian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tzm",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tashelhit",
+    "name": "Tashelhit",
+    "nativeName": "Tachelhit",
+    "tag": "shi",
+    "baseLanguage": "shi",
+    "region": "North Africa",
+    "countries": [
+      "Morocco"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Tashelhit",
+      "Shilha"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "kab",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kabyle",
+    "name": "Kabyle",
+    "nativeName": "Taqbaylit",
+    "tag": "kab",
+    "baseLanguage": "kab",
+    "region": "North Africa",
+    "countries": [
+      "Algeria"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kabyle",
+      "Taqbaylit"
+    ]
+  },
+  {
+    "interfaceStatus": "supported-or-fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "ur",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "urdu",
+    "name": "Urdu",
+    "nativeName": "اردو",
+    "tag": "ur",
+    "baseLanguage": "ur",
+    "region": "South Asia",
+    "countries": [
+      "Pakistan",
+      "India"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Urdu",
+      "اردو",
+      "Pakistan",
+      "South Asia"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "hi",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hindi",
+    "name": "Hindi",
+    "nativeName": "हिन्दी",
+    "tag": "hi",
+    "baseLanguage": "hi",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Devanagari",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Hindi",
+      "हिन्दी"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "bn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "bengali",
+    "name": "Bengali",
+    "nativeName": "বাংলা",
+    "tag": "bn",
+    "baseLanguage": "bn",
+    "region": "South Asia",
+    "countries": [
+      "Bangladesh",
+      "India"
+    ],
+    "script": "Bengali",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Bengali",
+      "Bangla",
+      "বাংলা"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "pa",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "punjabi",
+    "name": "Punjabi",
+    "nativeName": "ਪੰਜਾਬੀ / پنجابی",
+    "tag": "pa",
+    "baseLanguage": "pa",
+    "region": "South Asia",
+    "countries": [
+      "India",
+      "Pakistan"
+    ],
+    "script": "Gurmukhi",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Punjabi",
+      "Eastern Punjabi",
+      "Western Punjabi",
+      "Shahmukhi",
+      "Gurmukhi"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "gu",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "gujarati",
+    "name": "Gujarati",
+    "nativeName": "ગુજરાતી",
+    "tag": "gu",
+    "baseLanguage": "gu",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Gujarati",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Gujarati",
+      "ગુજરાતી"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "mr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "marathi",
+    "name": "Marathi",
+    "nativeName": "मराठी",
+    "tag": "mr",
+    "baseLanguage": "mr",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Devanagari",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Marathi",
+      "मराठी"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ta",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tamil",
+    "name": "Tamil",
+    "nativeName": "தமிழ்",
+    "tag": "ta",
+    "baseLanguage": "ta",
+    "region": "South Asia",
+    "countries": [
+      "India",
+      "Sri Lanka"
+    ],
+    "script": "Tamil",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tamil",
+      "தமிழ்"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "te",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "telugu",
+    "name": "Telugu",
+    "nativeName": "తెలుగు",
+    "tag": "te",
+    "baseLanguage": "te",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Telugu",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Telugu",
+      "తెలుగు"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "kn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kannada",
+    "name": "Kannada",
+    "nativeName": "ಕನ್ನಡ",
+    "tag": "kn",
+    "baseLanguage": "kn",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Kannada",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kannada",
+      "ಕನ್ನಡ"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ml",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "malayalam",
+    "name": "Malayalam",
+    "nativeName": "മലയാളം",
+    "tag": "ml",
+    "baseLanguage": "ml",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Malayalam",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Malayalam",
+      "മലയാളം"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "si",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "sinhala",
+    "name": "Sinhala",
+    "nativeName": "සිංහල",
+    "tag": "si",
+    "baseLanguage": "si",
+    "region": "South Asia",
+    "countries": [
+      "Sri Lanka"
+    ],
+    "script": "Sinhala",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Sinhala",
+      "සිංහල"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ne",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "nepali",
+    "name": "Nepali",
+    "nativeName": "नेपाली",
+    "tag": "ne",
+    "baseLanguage": "ne",
+    "region": "South Asia",
+    "countries": [
+      "Nepal"
+    ],
+    "script": "Devanagari",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Nepali",
+      "नेपाली"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ps",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "pashto",
+    "name": "Pashto",
+    "nativeName": "پښتو",
+    "tag": "ps",
+    "baseLanguage": "ps",
+    "region": "South Asia",
+    "countries": [
+      "Afghanistan",
+      "Pakistan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Pashto",
+      "پښتو"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "fa",
+    "providerTag": "fa",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "dari",
+    "name": "Dari",
+    "nativeName": "دری",
+    "tag": "fa-AF",
+    "baseLanguage": "fa",
+    "region": "South and Central Asia",
+    "countries": [
+      "Afghanistan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Dari",
+      "Afghan Persian",
+      "دری"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ks",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kashmiri",
+    "name": "Kashmiri",
+    "nativeName": "کٲشُر",
+    "tag": "ks",
+    "baseLanguage": "ks",
+    "region": "South Asia",
+    "countries": [
+      "India",
+      "Pakistan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Kashmiri",
+      "Koshur"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "sd",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "sindhi",
+    "name": "Sindhi",
+    "nativeName": "سنڌي",
+    "tag": "sd",
+    "baseLanguage": "sd",
+    "region": "South Asia",
+    "countries": [
+      "Pakistan",
+      "India"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Sindhi",
+      "سنڌي"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "bal",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "balochi",
+    "name": "Balochi",
+    "nativeName": "بلوچی",
+    "tag": "bal",
+    "baseLanguage": "bal",
+    "region": "South Asia",
+    "countries": [
+      "Pakistan",
+      "Iran",
+      "Afghanistan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Balochi",
+      "بلوچی"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "skr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "saraiki",
+    "name": "Saraiki",
+    "nativeName": "سرائیکی",
+    "tag": "skr",
+    "baseLanguage": "skr",
+    "region": "South Asia",
+    "countries": [
+      "Pakistan"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Saraiki",
+      "سرائیکی"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "as",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "assamese",
+    "name": "Assamese",
+    "nativeName": "অসমীয়া",
+    "tag": "as",
+    "baseLanguage": "as",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Assamese",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Assamese",
+      "অসমীয়া"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "or",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "odia",
+    "name": "Odia",
+    "nativeName": "ଓଡ଼ିଆ",
+    "tag": "or",
+    "baseLanguage": "or",
+    "region": "South Asia",
+    "countries": [
+      "India"
+    ],
+    "script": "Odia",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Odia",
+      "Oriya"
+    ]
+  },
+  {
+    "interfaceStatus": "full",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "fa",
+    "providerTag": "fa",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "farsi",
+    "name": "Persian (Farsi)",
+    "nativeName": "فارسی",
+    "tag": "fa",
+    "baseLanguage": "fa",
+    "region": "Middle East",
+    "countries": [
+      "Iran"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Farsi",
+      "Persian",
+      "فارسی"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tg",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tajik",
+    "name": "Tajik",
+    "nativeName": "Тоҷикӣ",
+    "tag": "tg",
+    "baseLanguage": "tg",
+    "region": "Central Asia",
+    "countries": [
+      "Tajikistan"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tajik",
+      "Тоҷикӣ"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ku",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kurdish-kurmanji",
+    "name": "Kurdish (Kurmanji)",
+    "nativeName": "Kurmanci",
+    "tag": "ku",
+    "baseLanguage": "ku",
+    "region": "Middle East",
+    "countries": [
+      "Turkey",
+      "Syria",
+      "Iraq"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kurmanji",
+      "Kurdish Kurmanji"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ckb",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kurdish-sorani",
+    "name": "Kurdish (Sorani)",
+    "nativeName": "سۆرانی",
+    "tag": "ckb",
+    "baseLanguage": "ckb",
+    "region": "Middle East",
+    "countries": [
+      "Iraq",
+      "Iran"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Sorani",
+      "Kurdish Sorani",
+      "سۆرانی"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "tr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "turkish",
+    "name": "Turkish",
+    "nativeName": "Turkce",
+    "tag": "tr",
+    "baseLanguage": "tr",
+    "region": "Middle East",
+    "countries": [
+      "Turkey",
+      "Cyprus"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Turkish",
+      "Turkce"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "az",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "azerbaijani",
+    "name": "Azerbaijani",
+    "nativeName": "Azərbaycanca",
+    "tag": "az",
+    "baseLanguage": "az",
+    "region": "Caucasus",
+    "countries": [
+      "Azerbaijan"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Azerbaijani",
+      "Azari"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "uz",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "uzbek",
+    "name": "Uzbek",
+    "nativeName": "Ozbek",
+    "tag": "uz",
+    "baseLanguage": "uz",
+    "region": "Central Asia",
+    "countries": [
+      "Uzbekistan"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Uzbek"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "kk",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kazakh",
+    "name": "Kazakh",
+    "nativeName": "Қазақ",
+    "tag": "kk",
+    "baseLanguage": "kk",
+    "region": "Central Asia",
+    "countries": [
+      "Kazakhstan"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kazakh",
+      "Қазақ"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ky",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "kyrgyz",
+    "name": "Kyrgyz",
+    "nativeName": "Кыргызча",
+    "tag": "ky",
+    "baseLanguage": "ky",
+    "region": "Central Asia",
+    "countries": [
+      "Kyrgyzstan"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Kyrgyz"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tk",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "turkmen",
+    "name": "Turkmen",
+    "nativeName": "Turkmen",
+    "tag": "tk",
+    "baseLanguage": "tk",
+    "region": "Central Asia",
+    "countries": [
+      "Turkmenistan"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Turkmen"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ug",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "uyghur",
+    "name": "Uyghur",
+    "nativeName": "ئۇيغۇرچە",
+    "tag": "ug",
+    "baseLanguage": "ug",
+    "region": "Central Asia",
+    "countries": [
+      "China"
+    ],
+    "script": "Arabic",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Uyghur",
+      "ئۇيغۇر"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "hy",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "armenian",
+    "name": "Armenian",
+    "nativeName": "Հայերեն",
+    "tag": "hy",
+    "baseLanguage": "hy",
+    "region": "Caucasus",
+    "countries": [
+      "Armenia"
+    ],
+    "script": "Armenian",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Armenian",
+      "Հայերեն"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ka",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "georgian",
+    "name": "Georgian",
+    "nativeName": "ქართული",
+    "tag": "ka",
+    "baseLanguage": "ka",
+    "region": "Caucasus",
+    "countries": [
+      "Georgia"
+    ],
+    "script": "Georgian",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Georgian",
+      "ქართული"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "he",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hebrew",
+    "name": "Hebrew",
+    "nativeName": "עברית",
+    "tag": "he",
+    "baseLanguage": "he",
+    "region": "Middle East",
+    "countries": [
+      "Israel"
+    ],
+    "script": "Hebrew",
+    "direction": "rtl",
+    "classification": "language",
+    "searchTerms": [
+      "Hebrew",
+      "עברית"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "id",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "indonesian",
+    "name": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "tag": "id",
+    "baseLanguage": "id",
+    "region": "Southeast Asia",
+    "countries": [
+      "Indonesia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Indonesian",
+      "Bahasa Indonesia"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ms",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "malay",
+    "name": "Malay",
+    "nativeName": "Bahasa Melayu",
+    "tag": "ms",
+    "baseLanguage": "ms",
+    "region": "Southeast Asia",
+    "countries": [
+      "Malaysia",
+      "Brunei",
+      "Singapore"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Malay",
+      "Bahasa Melayu"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tl",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "filipino",
+    "name": "Filipino",
+    "nativeName": "Filipino",
+    "tag": "fil",
+    "baseLanguage": "fil",
+    "region": "Southeast Asia",
+    "countries": [
+      "Philippines"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Filipino",
+      "Tagalog"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tl",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tagalog",
+    "name": "Tagalog",
+    "nativeName": "Tagalog",
+    "tag": "tl",
+    "baseLanguage": "tl",
+    "region": "Southeast Asia",
+    "countries": [
+      "Philippines"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tagalog"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "tl",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "cebuano",
+    "name": "Cebuano",
+    "nativeName": "Cebuano",
+    "tag": "ceb",
+    "baseLanguage": "ceb",
+    "region": "Southeast Asia",
+    "countries": [
+      "Philippines"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Cebuano"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "th",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "thai",
+    "name": "Thai",
+    "nativeName": "ไทย",
+    "tag": "th",
+    "baseLanguage": "th",
+    "region": "Southeast Asia",
+    "countries": [
+      "Thailand"
+    ],
+    "script": "Thai",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Thai",
+      "ไทย"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "vi",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "vietnamese",
+    "name": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "tag": "vi",
+    "baseLanguage": "vi",
+    "region": "Southeast Asia",
+    "countries": [
+      "Vietnam"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Vietnamese",
+      "Tiếng Việt"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "km",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "khmer",
+    "name": "Khmer",
+    "nativeName": "ខ្មែរ",
+    "tag": "km",
+    "baseLanguage": "km",
+    "region": "Southeast Asia",
+    "countries": [
+      "Cambodia"
+    ],
+    "script": "Khmer",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Khmer",
+      "Cambodian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "my",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "burmese",
+    "name": "Burmese",
+    "nativeName": "ဗမာစာ",
+    "tag": "my",
+    "baseLanguage": "my",
+    "region": "Southeast Asia",
+    "countries": [
+      "Myanmar"
+    ],
+    "script": "Myanmar",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Burmese",
+      "Myanmar"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "lo",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "lao",
+    "name": "Lao",
+    "nativeName": "ລາວ",
+    "tag": "lo",
+    "baseLanguage": "lo",
+    "region": "Southeast Asia",
+    "countries": [
+      "Laos"
+    ],
+    "script": "Lao",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Lao",
+      "ລາວ"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "zh",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "mandarin-chinese",
+    "name": "Mandarin Chinese",
+    "nativeName": "普通话",
+    "tag": "zh",
+    "baseLanguage": "zh",
+    "region": "East Asia",
+    "countries": [
+      "China",
+      "Taiwan",
+      "Singapore"
+    ],
+    "script": "Han",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Mandarin",
+      "Chinese",
+      "普通话"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "zh",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "cantonese",
+    "name": "Cantonese",
+    "nativeName": "廣東話",
+    "tag": "yue",
+    "baseLanguage": "yue",
+    "region": "East Asia",
+    "countries": [
+      "Hong Kong",
+      "Macau"
+    ],
+    "script": "Han",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Cantonese",
+      "Yue",
+      "廣東話"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "zh",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hokkien",
+    "name": "Hokkien",
+    "nativeName": "福建話",
+    "tag": "nan",
+    "baseLanguage": "nan",
+    "region": "East Asia",
+    "countries": [
+      "China",
+      "Taiwan"
+    ],
+    "script": "Han",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Hokkien",
+      "Minnan"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "zh",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hakka",
+    "name": "Hakka",
+    "nativeName": "客家話",
+    "tag": "hak",
+    "baseLanguage": "hak",
+    "region": "East Asia",
+    "countries": [
+      "China",
+      "Taiwan"
+    ],
+    "script": "Han",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Hakka"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "ja",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "japanese",
+    "name": "Japanese",
+    "nativeName": "日本語",
+    "tag": "ja",
+    "baseLanguage": "ja",
+    "region": "East Asia",
+    "countries": [
+      "Japan"
+    ],
+    "script": "Japanese",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Japanese",
+      "日本語"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "ko",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "korean",
+    "name": "Korean",
+    "nativeName": "한국어",
+    "tag": "ko",
+    "baseLanguage": "ko",
+    "region": "East Asia",
+    "countries": [
+      "South Korea",
+      "North Korea"
+    ],
+    "script": "Hangul",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Korean",
+      "한국어"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "mn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "mongolian",
+    "name": "Mongolian",
+    "nativeName": "Монгол",
+    "tag": "mn",
+    "baseLanguage": "mn",
+    "region": "East Asia",
+    "countries": [
+      "Mongolia"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Mongolian"
+    ]
+  },
+  {
+    "interfaceStatus": "full",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "es",
+    "providerTag": "es",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "spanish",
+    "name": "Spanish",
+    "nativeName": "Espanol",
+    "tag": "es",
+    "baseLanguage": "es",
+    "region": "Global",
+    "countries": [
+      "Spain",
+      "Mexico",
+      "Colombia",
+      "Argentina"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Spanish",
+      "Espanol"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "es",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "spanish-mexican",
+    "name": "Mexican Spanish",
+    "nativeName": "Español de México",
+    "tag": "es-MX",
+    "baseLanguage": "es",
+    "region": "Americas",
+    "countries": [
+      "Mexico"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Mexican Spanish",
+      "Spanish Mexico"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "es",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "spanish-argentine",
+    "name": "Argentine Spanish",
+    "nativeName": "Español argentino",
+    "tag": "es-AR",
+    "baseLanguage": "es",
+    "region": "Americas",
+    "countries": [
+      "Argentina"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Argentine Spanish"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "es",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "spanish-colombian",
+    "name": "Colombian Spanish",
+    "nativeName": "Español colombiano",
+    "tag": "es-CO",
+    "baseLanguage": "es",
+    "region": "Americas",
+    "countries": [
+      "Colombia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Colombian Spanish"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "fr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "french",
+    "name": "French",
+    "nativeName": "Français",
+    "tag": "fr",
+    "baseLanguage": "fr",
+    "region": "Global",
+    "countries": [
+      "France",
+      "Canada",
+      "Belgium",
+      "Senegal",
+      "Morocco"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "French",
+      "Français"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "fr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "french-canadian",
+    "name": "Canadian French",
+    "nativeName": "Français canadien",
+    "tag": "fr-CA",
+    "baseLanguage": "fr",
+    "region": "Americas",
+    "countries": [
+      "Canada"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Canadian French",
+      "Quebec French"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "fr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "french-west-african",
+    "name": "West African French",
+    "nativeName": "Français d’Afrique de l’Ouest",
+    "tag": "fr-WA",
+    "baseLanguage": "fr",
+    "region": "West Africa",
+    "countries": [
+      "Senegal",
+      "Mali",
+      "Ivory Coast"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "West African French"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "pt",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "portuguese",
+    "name": "Portuguese",
+    "nativeName": "Português",
+    "tag": "pt",
+    "baseLanguage": "pt",
+    "region": "Global",
+    "countries": [
+      "Portugal",
+      "Brazil"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Portuguese",
+      "Português"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "pt",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "portuguese-brazilian",
+    "name": "Brazilian Portuguese",
+    "nativeName": "Português do Brasil",
+    "tag": "pt-BR",
+    "baseLanguage": "pt",
+    "region": "Americas",
+    "countries": [
+      "Brazil"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Brazilian Portuguese"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "de",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "german",
+    "name": "German",
+    "nativeName": "Deutsch",
+    "tag": "de",
+    "baseLanguage": "de",
+    "region": "Europe",
+    "countries": [
+      "Germany",
+      "Austria",
+      "Switzerland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "German",
+      "Deutsch"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-supported",
+    "exactDialectSupported": true,
+    "fallbackTag": "en",
+    "providerTag": "it",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "italian",
+    "name": "Italian",
+    "nativeName": "Italiano",
+    "tag": "it",
+    "baseLanguage": "it",
+    "region": "Europe",
+    "countries": [
+      "Italy",
+      "Switzerland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Italian",
+      "Italiano"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "nl",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "dutch",
+    "name": "Dutch",
+    "nativeName": "Nederlands",
+    "tag": "nl",
+    "baseLanguage": "nl",
+    "region": "Europe",
+    "countries": [
+      "Netherlands",
+      "Belgium"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Dutch",
+      "Nederlands"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "pl",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "polish",
+    "name": "Polish",
+    "nativeName": "Polski",
+    "tag": "pl",
+    "baseLanguage": "pl",
+    "region": "Europe",
+    "countries": [
+      "Poland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Polish",
+      "Polski"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "uk",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "ukrainian",
+    "name": "Ukrainian",
+    "nativeName": "Українська",
+    "tag": "uk",
+    "baseLanguage": "uk",
+    "region": "Europe",
+    "countries": [
+      "Ukraine"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Ukrainian",
+      "Українська"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ru",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "russian",
+    "name": "Russian",
+    "nativeName": "Русский",
+    "tag": "ru",
+    "baseLanguage": "ru",
+    "region": "Europe and Central Asia",
+    "countries": [
+      "Russia"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Russian",
+      "Русский"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ro",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "romanian",
+    "name": "Romanian",
+    "nativeName": "Română",
+    "tag": "ro",
+    "baseLanguage": "ro",
+    "region": "Europe",
+    "countries": [
+      "Romania",
+      "Moldova"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Romanian",
+      "Română"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "el",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "greek",
+    "name": "Greek",
+    "nativeName": "Ελληνικά",
+    "tag": "el",
+    "baseLanguage": "el",
+    "region": "Europe",
+    "countries": [
+      "Greece",
+      "Cyprus"
+    ],
+    "script": "Greek",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Greek",
+      "Ελληνικά"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "bs",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "bosnian",
+    "name": "Bosnian",
+    "nativeName": "Bosanski",
+    "tag": "bs",
+    "baseLanguage": "bs",
+    "region": "Europe",
+    "countries": [
+      "Bosnia and Herzegovina"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Bosnian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "hr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "croatian",
+    "name": "Croatian",
+    "nativeName": "Hrvatski",
+    "tag": "hr",
+    "baseLanguage": "hr",
+    "region": "Europe",
+    "countries": [
+      "Croatia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Croatian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "sr",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "serbian",
+    "name": "Serbian",
+    "nativeName": "Српски",
+    "tag": "sr",
+    "baseLanguage": "sr",
+    "region": "Europe",
+    "countries": [
+      "Serbia"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Serbian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "bg",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "bulgarian",
+    "name": "Bulgarian",
+    "nativeName": "Български",
+    "tag": "bg",
+    "baseLanguage": "bg",
+    "region": "Europe",
+    "countries": [
+      "Bulgaria"
+    ],
+    "script": "Cyrillic",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Bulgarian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "cs",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "czech",
+    "name": "Czech",
+    "nativeName": "Čeština",
+    "tag": "cs",
+    "baseLanguage": "cs",
+    "region": "Europe",
+    "countries": [
+      "Czech Republic"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Czech"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "sk",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "slovak",
+    "name": "Slovak",
+    "nativeName": "Slovenčina",
+    "tag": "sk",
+    "baseLanguage": "sk",
+    "region": "Europe",
+    "countries": [
+      "Slovakia"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Slovak"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "hu",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hungarian",
+    "name": "Hungarian",
+    "nativeName": "Magyar",
+    "tag": "hu",
+    "baseLanguage": "hu",
+    "region": "Europe",
+    "countries": [
+      "Hungary"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Hungarian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "sv",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "swedish",
+    "name": "Swedish",
+    "nativeName": "Svenska",
+    "tag": "sv",
+    "baseLanguage": "sv",
+    "region": "Europe",
+    "countries": [
+      "Sweden"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Swedish"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "nb",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "norwegian-bokmal",
+    "name": "Norwegian Bokmaal",
+    "nativeName": "Norsk bokmål",
+    "tag": "nb",
+    "baseLanguage": "nb",
+    "region": "Europe",
+    "countries": [
+      "Norway"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Norwegian Bokmaal",
+      "Bokmal"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "da",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "danish",
+    "name": "Danish",
+    "nativeName": "Dansk",
+    "tag": "da",
+    "baseLanguage": "da",
+    "region": "Europe",
+    "countries": [
+      "Denmark"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Danish"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "fi",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "finnish",
+    "name": "Finnish",
+    "nativeName": "Suomi",
+    "tag": "fi",
+    "baseLanguage": "fi",
+    "region": "Europe",
+    "countries": [
+      "Finland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Finnish"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ga",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "irish",
+    "name": "Irish",
+    "nativeName": "Gaeilge",
+    "tag": "ga",
+    "baseLanguage": "ga",
+    "region": "Europe",
+    "countries": [
+      "Ireland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Irish",
+      "Gaeilge"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "cy",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "welsh",
+    "name": "Welsh",
+    "nativeName": "Cymraeg",
+    "tag": "cy",
+    "baseLanguage": "cy",
+    "region": "Europe",
+    "countries": [
+      "United Kingdom"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Welsh",
+      "Cymraeg"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ht",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "haitian-creole",
+    "name": "Haitian Creole",
+    "nativeName": "Kreyol Ayisyen",
+    "tag": "ht",
+    "baseLanguage": "ht",
+    "region": "Caribbean",
+    "countries": [
+      "Haiti"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Haitian Creole",
+      "Kreyol"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "jamaican-patois",
+    "name": "Jamaican Patois",
+    "nativeName": "Patwa",
+    "tag": "jam",
+    "baseLanguage": "jam",
+    "region": "Caribbean",
+    "countries": [
+      "Jamaica"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Jamaican Patois",
+      "Patwa"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "pap",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "papiamento",
+    "name": "Papiamento",
+    "nativeName": "Papiamentu",
+    "tag": "pap",
+    "baseLanguage": "pap",
+    "region": "Caribbean",
+    "countries": [
+      "Aruba",
+      "Curacao"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Papiamento",
+      "Papiamentu"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "gn",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "guarani",
+    "name": "Guarani",
+    "nativeName": "Avañeʼẽ",
+    "tag": "gn",
+    "baseLanguage": "gn",
+    "region": "South America",
+    "countries": [
+      "Paraguay"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Guarani"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "qu",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "quechua",
+    "name": "Quechua",
+    "nativeName": "Runasimi",
+    "tag": "qu",
+    "baseLanguage": "qu",
+    "region": "South America",
+    "countries": [
+      "Peru",
+      "Bolivia",
+      "Ecuador"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Quechua"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "ay",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "aymara",
+    "name": "Aymara",
+    "nativeName": "Aymar aru",
+    "tag": "ay",
+    "baseLanguage": "ay",
+    "region": "South America",
+    "countries": [
+      "Bolivia",
+      "Peru"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Aymara"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "es",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "nahuatl",
+    "name": "Nahuatl",
+    "nativeName": "Nāhuatl",
+    "tag": "nah",
+    "baseLanguage": "nah",
+    "region": "North America",
+    "countries": [
+      "Mexico"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Nahuatl"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "inuktitut",
+    "name": "Inuktitut",
+    "nativeName": "ᐃᓄᒃᑎᑐᑦ",
+    "tag": "iu",
+    "baseLanguage": "iu",
+    "region": "Arctic",
+    "countries": [
+      "Canada"
+    ],
+    "script": "Inuktitut",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Inuktitut"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "da",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "greenlandic",
+    "name": "Greenlandic",
+    "nativeName": "Kalaallisut",
+    "tag": "kl",
+    "baseLanguage": "kl",
+    "region": "Arctic",
+    "countries": [
+      "Greenland"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Greenlandic",
+      "Kalaallisut"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "mi",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "maori",
+    "name": "Maori",
+    "nativeName": "Te Reo Maori",
+    "tag": "mi",
+    "baseLanguage": "mi",
+    "region": "Pacific",
+    "countries": [
+      "New Zealand"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Maori",
+      "Te Reo"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "sm",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "samoan",
+    "name": "Samoan",
+    "nativeName": "Gagana Samoa",
+    "tag": "sm",
+    "baseLanguage": "sm",
+    "region": "Pacific",
+    "countries": [
+      "Samoa"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Samoan"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "to",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tongan",
+    "name": "Tongan",
+    "nativeName": "Lea faka-Tonga",
+    "tag": "to",
+    "baseLanguage": "to",
+    "region": "Pacific",
+    "countries": [
+      "Tonga"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tongan"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "fj",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "fijian",
+    "name": "Fijian",
+    "nativeName": "Vosa Vakaviti",
+    "tag": "fj",
+    "baseLanguage": "fj",
+    "region": "Pacific",
+    "countries": [
+      "Fiji"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Fijian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "hi",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "fiji-hindi",
+    "name": "Fiji Hindi",
+    "nativeName": "Fiji Hindi",
+    "tag": "hif",
+    "baseLanguage": "hif",
+    "region": "Pacific",
+    "countries": [
+      "Fiji"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "regional-variety",
+    "searchTerms": [
+      "Fiji Hindi"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "hawaiian",
+    "name": "Hawaiian",
+    "nativeName": "Olelo Hawaii",
+    "tag": "haw",
+    "baseLanguage": "haw",
+    "region": "Pacific",
+    "countries": [
+      "United States"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Hawaiian"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "tok-pisin",
+    "name": "Tok Pisin",
+    "nativeName": "Tok Pisin",
+    "tag": "tpi",
+    "baseLanguage": "tpi",
+    "region": "Pacific",
+    "countries": [
+      "Papua New Guinea"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Tok Pisin"
+    ]
+  },
+  {
+    "interfaceStatus": "fallback",
+    "translationStatus": "provider-dependent",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": true,
+    "reservedForFeature": "",
+    "lastReviewed": "2026-07-17",
+    "id": "bislama",
+    "name": "Bislama",
+    "nativeName": "Bislama",
+    "tag": "bi",
+    "baseLanguage": "bi",
+    "region": "Pacific",
+    "countries": [
+      "Vanuatu"
+    ],
+    "script": "Latin",
+    "direction": "ltr",
+    "classification": "language",
+    "searchTerms": [
+      "Bislama"
+    ]
+  },
+  {
+    "interfaceStatus": "listed-not-supported",
+    "translationStatus": "not-supported",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": false,
+    "reservedForFeature": "signed-language-accessibility",
+    "lastReviewed": "2026-07-17",
+    "id": "asl",
+    "name": "American Sign Language",
+    "nativeName": "ASL",
+    "tag": "sgn-US",
+    "baseLanguage": "sgn",
+    "region": "North America",
+    "countries": [
+      "United States"
+    ],
+    "script": "Signed",
+    "direction": "ltr",
+    "classification": "signed-language",
+    "searchTerms": [
+      "American Sign Language",
+      "ASL",
+      "Signed"
+    ]
+  },
+  {
+    "interfaceStatus": "listed-not-supported",
+    "translationStatus": "not-supported",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": false,
+    "reservedForFeature": "signed-language-accessibility",
+    "lastReviewed": "2026-07-17",
+    "id": "bsl",
+    "name": "British Sign Language",
+    "nativeName": "BSL",
+    "tag": "sgn-GB",
+    "baseLanguage": "sgn",
+    "region": "Europe",
+    "countries": [
+      "United Kingdom"
+    ],
+    "script": "Signed",
+    "direction": "ltr",
+    "classification": "signed-language",
+    "searchTerms": [
+      "British Sign Language",
+      "BSL"
+    ]
+  },
+  {
+    "interfaceStatus": "listed-not-supported",
+    "translationStatus": "not-supported",
+    "exactDialectSupported": false,
+    "fallbackTag": "en",
+    "providerTag": "en",
+    "alternateNames": [],
+    "active": true,
+    "selectable": true,
+    "allowedInGeneralTranslator": false,
+    "reservedForFeature": "signed-language-accessibility",
+    "lastReviewed": "2026-07-17",
+    "id": "isl",
+    "name": "International Sign",
+    "nativeName": "International Sign",
+    "tag": "sgn-INT",
+    "baseLanguage": "sgn",
+    "region": "Global",
+    "countries": [
+      "Global"
+    ],
+    "script": "Signed",
+    "direction": "ltr",
+    "classification": "signed-language",
+    "searchTerms": [
+      "International Sign"
+    ]
+  }
+]

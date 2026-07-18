@@ -145,20 +145,28 @@ html[dir="rtl"] .list-rows {
 }
 
 .auth-page {
-  min-height: calc(100vh - 180px);
-  display: grid;
-  place-items: center;
-  padding: 20px 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px;
 }
 
 .auth-card {
-  width: min(450px, 100%);
+  width: min(100%, 560px);
+  max-width: 560px;
+  box-sizing: border-box;
+  overflow: hidden;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px;
   display: grid;
   gap: 14px;
+}
+
+.auth-card > * {
+  min-width: 0;
 }
 
 .auth-symbols {
@@ -194,6 +202,8 @@ html[dir="rtl"] .list-rows {
 .auth-form {
   display: grid;
   gap: 10px;
+  width: 100%;
+  min-width: 0;
 }
 
 .auth-form label {
@@ -201,6 +211,9 @@ html[dir="rtl"] .list-rows {
 }
 
 .auth-form input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   border: 1px solid var(--border);
   border-radius: 10px;
   min-height: 44px;
@@ -209,6 +222,9 @@ html[dir="rtl"] .list-rows {
 }
 
 .auth-form select {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   border: 1px solid var(--border);
   border-radius: 10px;
   min-height: 44px;
@@ -217,9 +233,57 @@ html[dir="rtl"] .list-rows {
   background: #fff;
 }
 
+.auth-form button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.language-search-wrap {
+  position: relative;
+}
+
+.language-search-wrap input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px 10px 38px;
+  font: inherit;
+  background: #fff;
+}
+
+.language-search-icon {
+  position: absolute;
+  inset-inline-start: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-soft);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.language-search-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.language-search-count,
+.language-search-meta {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.86rem;
+}
+
 .auth-biometric {
   display: grid;
   gap: 8px;
+  width: 100%;
+  min-width: 0;
 }
 
 .auth-ping {
@@ -252,9 +316,8 @@ html[dir="rtl"] .list-rows {
   }
 
   .auth-page {
-    min-height: calc(100vh - 156px);
-    align-items: start;
-    padding-top: 14px;
+    align-items: flex-start;
+    padding: 14px 12px;
   }
 
   .auth-card {

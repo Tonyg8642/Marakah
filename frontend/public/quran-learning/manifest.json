@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "datasetStatus": "missing",
+  "notes": "Populate quran-learning datasets from verified sources before enabling production learning mode.",
+  "sources": {
+    "arabic": {
+      "name": "Required verified Arabic Quran dataset",
+      "url": ""
+    },
+    "beginnerPronunciation": {
+      "name": "Required verified beginner pronunciation dataset",
+      "url": ""
+    },
+    "wordByWord": {
+      "name": "Required verified word-by-word dataset",
+      "url": ""
+    },
+    "translation": {
+      "name": "Required respected translation dataset",
+      "url": ""
+    }
+  }
+}

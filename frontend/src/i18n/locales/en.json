@@ -2,6 +2,11 @@
   "language": {
     "label": "Language",
     "description": "Choose your preferred language",
+    "onboardingQuestion": "What's your preferred language or dialect?",
+    "searchLabel": "Search languages and dialects",
+    "searchPlaceholder": "Search languages and dialects",
+    "searchCount": "{{count}} results",
+    "appLoading": "Loading your preferred language...",
     "save": "Save language",
     "saved": "Language preference updated.",
     "failed": "Could not save language preference.",
@@ -26,7 +31,10 @@
     "events": "Events",
     "login": "Log In",
     "signup": "Sign Up",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "homepageAria": "Marakah homepage",
+    "headerNavigationAria": "Header navigation",
+    "primaryNavigationAria": "Primary navigation"
   },
   "search": {
     "label": "Search reminders, events, and scholars",
@@ -34,9 +42,13 @@
   },
   "home": {
     "heroTitle": "Welcome to Marakah",
+    "heroRegionAria": "Welcome to Marakah",
     "heroText": "Strengthen your faith through reminders, lectures, and beneficial Islamic knowledge.",
     "explore": "Explore",
+    "exploreEventsAria": "Explore events",
+    "userWelcome": "Welcome {{name}}",
     "welcome": "Welcome {{name}}",
+    "welcomeAria": "Welcome user",
     "todayReminders": "Today's Reminders",
     "readMore": "Read More",
     "readLess": "Read Less",
@@ -113,6 +125,14 @@
     "eyebrow": "Community Feed",
     "title": "Stay connected with beneficial updates"
   },
+  "restaurants": {
+    "cuisines": {
+      "arabAll": "All Arab ethnicities",
+      "desi": "Desi",
+      "indonesian": "Indonesian",
+      "otherHalal": "Other halal spots"
+    }
+  },
   "auth": {
     "welcomeBack": "Welcome Back",
     "createAccount": "Create Account",
@@ -139,6 +159,23 @@
       "password": "Create password",
       "name": "Your full name"
     }
+  },
+  "translation": {
+    "buttonLabel": "Translate",
+    "buttonAria": "Translate this page into another language",
+    "dialogQuestion": "What language would you like this page translated into?",
+    "dialogQuestionEnglish": "What language would you like this page translated into?",
+    "recentLanguages": "Recent",
+    "cancel": "Cancel",
+    "translate": "Translate",
+    "translatedInto": "Translated into {{language}}",
+    "activeTarget": "Current translation target: {{language}}",
+    "showTranslation": "Show translation",
+    "hideTranslation": "Hide translation",
+    "changeLanguage": "Change language",
+    "loading": "Translating...",
+    "errorMessage": "Could not translate this content right now.",
+    "originalLabel": "Original ({{language}})"
   },
   "masjids": {
     "eyebrow": "Community",

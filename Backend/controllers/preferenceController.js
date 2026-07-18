@@ -10,8 +10,11 @@ const {
   sanitizeIdentityPreference,
   validateIdentityPreference,
 } = require("../utils/identityValidation");
+const {
+  getLanguageCatalog,
+  resolvePreferredLanguage,
+} = require("../services/languageCatalogService");
 
-const SUPPORTED_LANGUAGES = new Set(["en", "ar", "fa", "ur", "so", "es"]);
 const ALLOWED_IMAGE_MIME_TYPES = new Set([
   "image/jpeg",
   "image/png",
@@ -26,6 +29,7 @@ const uploadMiddleware = multer({
   },
 }).single("profileImage");
 const preferenceFallback = new Map();
+const preferenceIdFallback = new Map();
 const identityFallback = new Map();
 const profileImageFallback = new Map();
 const profileImageStorage = createProfileImageStorageService({
@@ -42,10 +46,7 @@ function normalizeIdentifier(rawValue) {
 }
 
 function normalizeLanguage(rawValue) {
-  const normalized = String(rawValue || "")
-    .trim()
-    .toLowerCase();
-  return SUPPORTED_LANGUAGES.has(normalized) ? normalized : null;
+  return resolvePreferredLanguage(rawValue);
 }
 
 function isMongoConnected() {
@@ -124,15 +125,22 @@ async function getPreferredLanguage(req, res) {
   try {
     if (isMongoConnected()) {
       const record = await UserPreference.findOne({ identifier }).lean();
+      const resolved = resolvePreferredLanguage(record?.preferredLanguage);
+      const preferredLanguageId =
+        record?.preferredLanguageId || resolved?.id || null;
       return res.status(200).json({
         success: true,
         preferredLanguage: record?.preferredLanguage || null,
+        preferredLanguageTag: record?.preferredLanguage || null,
+        preferredLanguageId,
       });
     }
 
     return res.status(200).json({
       success: true,
       preferredLanguage: preferenceFallback.get(identifier) || null,
+      preferredLanguageTag: preferenceFallback.get(identifier) || null,
+      preferredLanguageId: preferenceIdFallback.get(identifier) || null,
     });
   } catch (error) {
     return res.status(500).json({
@@ -144,7 +152,9 @@ async function getPreferredLanguage(req, res) {
 
 async function updatePreferredLanguage(req, res) {
   const identifier = normalizeIdentifier(req.body.identifier);
-  const preferredLanguage = normalizeLanguage(req.body.preferredLanguage);
+  const preferredLanguageSelection = normalizeLanguage(
+    req.body.preferredLanguage || req.body.preferredLanguageTag,
+  );
 
   if (!identifier) {
     return res.status(400).json({
@@ -153,18 +163,21 @@ async function updatePreferredLanguage(req, res) {
     });
   }
 
-  if (!preferredLanguage) {
+  if (!preferredLanguageSelection) {
     return res.status(400).json({
       success: false,
       message: "A supported preferredLanguage is required.",
     });
   }
 
+  const preferredLanguage = preferredLanguageSelection.tag;
+  const preferredLanguageId = preferredLanguageSelection.id;
+
   try {
     if (isMongoConnected()) {
       await UserPreference.findOneAndUpdate(
         { identifier },
-        { preferredLanguage },
+        { preferredLanguage, preferredLanguageId },
         {
           upsert: true,
           new: true,
@@ -173,16 +186,33 @@ async function updatePreferredLanguage(req, res) {
       );
     } else {
       preferenceFallback.set(identifier, preferredLanguage);
+      preferenceIdFallback.set(identifier, preferredLanguageId);
     }
 
     return res.status(200).json({
       success: true,
       preferredLanguage,
+      preferredLanguageTag: preferredLanguage,
+      preferredLanguageId,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
       message: error.message || "Could not save preferred language.",
+    });
+  }
+}
+
+async function getLanguageCatalogController(req, res) {
+  try {
+    return res.status(200).json({
+      success: true,
+      languages: getLanguageCatalog(),
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Could not load language catalog.",
     });
   }
 }
@@ -480,6 +510,7 @@ async function deleteProfileImage(req, res) {
 
 module.exports = {
   deleteProfileImage,
+  getLanguageCatalogController,
   getPreferredLanguage,
   updatePreferredLanguage,
   getIdentityPreference,

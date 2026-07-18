@@ -6,6 +6,8 @@ const multer = require("multer");
 const masjidRoutes = require("./routes/masjidRoutes");
 const restaurantRoutes = require("./routes/restaurantRoutes");
 const preferenceRoutes = require("./routes/preferenceRoutes");
+const translationRoutes = require("./routes/translationRoutes");
+const youtubeRoutes = require("./routes/youtubeRoutes");
 const { connectDatabase } = require("./config/db");
 
 dotenv.config();
@@ -31,6 +33,9 @@ function createApp() {
   app.use("/api/masjids", masjidRoutes);
   app.use("/api/restaurants", restaurantRoutes);
   app.use("/api/preferences", preferenceRoutes);
+  app.use("/api/translation", translationRoutes);
+  app.use("/api/translations", translationRoutes);
+  app.use("/api/youtube", youtubeRoutes);
 
   app.use((error, req, res, next) => {
     if (

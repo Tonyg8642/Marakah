@@ -5,6 +5,45 @@
   flex-wrap: wrap;
 }
 
+.restaurant-subtitle {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+}
+
+.restaurant-halal-only-badge {
+  margin: 2px 0 6px;
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #d6dfc9;
+  background: #f4f8eb;
+  color: #486233;
+  font-weight: 700;
+}
+
+.restaurant-search-name-wrap {
+  margin-top: 12px;
+  display: grid;
+  gap: 6px;
+}
+
+.restaurant-search-name-wrap label {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.restaurant-search-name-wrap input {
+  width: min(420px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
 .restaurant-ethnic-row {
   margin-top: 12px;
   display: grid;
@@ -86,6 +125,23 @@
   border-color: #d6dfc9;
 }
 
+.restaurant-cuisine-group-toggle {
+  margin-top: 10px;
+}
+
+.restaurant-cuisine-group {
+  margin-top: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.restaurant-cuisine-group h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  color: var(--text-soft);
+}
+
 .restaurant-search-row input,
 .restaurant-search-row select {
   flex: 1;
@@ -102,6 +158,19 @@
   margin-top: 8px;
   color: var(--text-soft);
   font-size: 0.95rem;
+}
+
+.restaurant-halal-disclaimer {
+  border-left: 3px solid #d6dfc9;
+  padding-left: 10px;
+}
+
+.restaurant-unverified-toggle {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
 }
 
 .restaurant-nearest-card {
@@ -182,6 +251,50 @@
   background: #ffeecf;
   color: #7a4a00;
   border-color: #f9d99b;
+}
+
+.restaurant-halal-status {
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border: 1px solid transparent;
+  letter-spacing: 0.02em;
+}
+
+.restaurant-halal-status--verified-halal {
+  background: #d9f2e4;
+  color: #0f6b45;
+  border-color: #b9e6cf;
+}
+
+.restaurant-halal-status--halal-listed {
+  background: #e6f1ff;
+  color: #184d87;
+  border-color: #c8dff9;
+}
+
+.restaurant-halal-status--halal-claimed {
+  background: #fff2d6;
+  color: #7a4a00;
+  border-color: #f9d99b;
+}
+
+.restaurant-halal-status--halal-not-verified {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #d5d8de;
+}
+
+.restaurant-cuisine-line,
+.restaurant-evidence-line,
+.restaurant-confirm-note {
+  margin: 2px 0 0;
+}
+
+.restaurant-confirm-note {
+  color: var(--text-soft);
+  font-size: 0.88rem;
 }
 
 .restaurant-map-link {

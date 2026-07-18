@@ -1,4 +1,4 @@
-import { DEFAULT_LANGUAGE, normalizeLanguage } from "../i18n/constants";
+import { DEFAULT_LANGUAGE, normalizeLanguageTag } from "../i18n/constants";
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
@@ -26,15 +26,24 @@ export async function fetchPreferredLanguage(identifier) {
     }
 
     const payload = await response.json();
-    return normalizeLanguage(payload?.preferredLanguage) || null;
+    return (
+      normalizeLanguageTag(
+        payload?.preferredLanguageTag || payload?.preferredLanguage,
+      ) || null
+    );
   } catch {
     return null;
   }
 }
 
-export async function savePreferredLanguage(identifier, preferredLanguage) {
+export async function savePreferredLanguage(
+  identifier,
+  preferredLanguage,
+  preferredLanguageId,
+) {
   const safeIdentifier = toIdentifier(identifier);
-  const safeLanguage = normalizeLanguage(preferredLanguage) || DEFAULT_LANGUAGE;
+  const safeLanguage =
+    normalizeLanguageTag(preferredLanguage) || DEFAULT_LANGUAGE;
 
   if (!safeIdentifier) {
     return false;
@@ -48,7 +57,9 @@ export async function savePreferredLanguage(identifier, preferredLanguage) {
       },
       body: JSON.stringify({
         identifier: safeIdentifier,
+        preferredLanguageTag: safeLanguage,
         preferredLanguage: safeLanguage,
+        preferredLanguageId: String(preferredLanguageId || "").trim() || null,
       }),
     });
 
